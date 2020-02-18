@@ -2,11 +2,13 @@
 ## Group Members
 
 ## Deadlines
-+ D1: Week 3
-+ D2 API specification URL: Week 5
-+ D2: Week 6
-+ D3: Week 8
-+ D4: Week 11
+| Stage |  Week  | Date |
+|:-----:|:------:|:----:|
+| D1    | Week 3 |      |
+| D2 API specification URL | Week 5 | |
+| D2    | Week 6 |      |
+| D3    | Week 8 |      |
+| D4    | Week 11 |     |
 
 ### Spec & Code
 

@@ -1,5 +1,11 @@
 # SENG3011 API - Project
 ## Group Members
+| Name | zID |
+|:----:|:---:|
+| Cher Ping Choy | z5135745 |
+| Ryan Cai | z5210636 |
+| Wenlue Zhang | z5158333 |
+| Yang Zheng | z5210646 |
 
 ## Deadlines
 | Stage |  Week  | Date |
@@ -16,9 +22,9 @@
 + Spec: [Here](https://webcms3.cse.unsw.edu.au/static/uploads/course/SENG3011/20T1/441d26b246c6ef9beac40077659ca8b051d03cf991e27909f29b25fbd541049c/AnalyticsPlatformEpidemics_v_8_2.pdf)
 
 ### Report
-+ Management Information
-+ Design Details
-+ Testing Documentation
-+ Final Report
+- [ ] Management Information
+- [ ] Design Details
+- [ ] Testing Documentation
+- [ ] Final Report
 
 ### Submit 

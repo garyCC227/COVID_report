@@ -1,4 +1,4 @@
-# SENG3011 API - Project
+# SENG3011 APInteresting - Project
 ## Group Members
 | Name | zID |
 |:----:|:---:|

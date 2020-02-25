@@ -10,7 +10,6 @@ Explanation:
 
 '''
 
-
 DEFAULT_URLS = [
     'https://flutrackers.com/forum/forum/-2019-ncov-new-coronavirus/australia-2019-ncov/824507-australia-2019-ncov-cases-news-information/page3']
 # crawler object
@@ -50,22 +49,23 @@ class MySpider(scrapy.Spider):
 def main():
   urls = []
   while True:
-    url = input("Type a valid url address. Type 'q' to finish.(if you want the default url, just type 'q' at the start)\n")
+    url = input(
+        "Type a valid url address. Type 'q' to finish.(if you want the default url, just type 'q' at the start)\n")
     print(url)
     if url.strip() == 'q':
       break
     urls.append(url)
-  
+
   # store all urls into urls.txt
   if len(urls) > 0:
     store_urls(urls)
   else:
     store_urls()
-  #runing the spider
+  # runing the spider
   process.crawl(MySpider)
   process.start()
-  process.stop() # might be unneccseary
+  process.stop()  # might be unneccseary
 
 
 if __name__ == "__main__":
-    main()
+  main()

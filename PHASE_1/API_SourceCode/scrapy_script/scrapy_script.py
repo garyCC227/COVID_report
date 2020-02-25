@@ -1,6 +1,3 @@
-import scrapy
-from scrapy.crawler import CrawlerProcess
-
 '''
 Explanation:
   1. store urls text into urls.txt
@@ -10,6 +7,9 @@ Explanation:
 
 '''
 
+import scrapy
+from scrapy.crawler import CrawlerProcess
+
 DEFAULT_URLS = [
     'https://flutrackers.com/forum/forum/-2019-ncov-new-coronavirus/australia-2019-ncov/824507-australia-2019-ncov-cases-news-information/page3']
 # crawler object
@@ -18,9 +18,7 @@ process = CrawlerProcess(settings={
     'FEED_URI': 'temp.csv'
 })
 
-# store urls into urls.txt
-
-
+# Function for store urls into urls.txt
 def store_urls(urls=DEFAULT_URLS):
   # store urls into urls.txt
   with open("urls.txt", "w") as f:

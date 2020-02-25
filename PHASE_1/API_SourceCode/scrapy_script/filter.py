@@ -16,7 +16,9 @@ class Filter(object):
 
 
 if __name__ == '__main__':
-  file = '824507-australia-2019-ncov-cases-news-information.html'
+  file = input("Type the file name or Just Enter to use default file\n")
+  if file == '':
+    file = '824507-australia-2019-ncov-cases-news-information.html'
   filter = Filter(file)
   for post in filter.get_all_posts():
     print(post)

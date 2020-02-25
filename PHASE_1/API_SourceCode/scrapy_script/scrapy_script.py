@@ -32,19 +32,23 @@ class MySpider(scrapy.Spider):
   name = "myspider"
   allowed_domains = ['flutrackers.com']
   start_urls = []
+  num_pages = 1
 
   def __init__(self):
     for line in open('./urls.txt', 'r').readlines():
-      self.allowed_domains.append(line)
       self.start_urls.append('%s' % line)
 
+  def start_requests(self):
+     for url in self.start_urls:
+        yield scrapy.Request(url=url, callback=self.parse)
+      
   def parse(self, response):
     page = response.url.split("/")[-2]
-    filename = '%s.html' % page
+    filename = '{}-{}.html'.format(page, self.num_pages)
+    self.num_pages += 1
     with open(filename, 'wb') as f:
       f.write(response.body)
     self.log('Saved file %s' % filename)
-
 
 def main():
   urls = []

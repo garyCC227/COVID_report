@@ -1,14 +1,14 @@
-import scrapy
-from scrapy.crawler import CrawlerProcess
-
 '''
 Explanation:
   1. store urls text into urls.txt
-  2. run the spider by reading all urls from urls.txt
+  2. run the crawler by reading all urls from urls.txt
   3. store the page as html format
   4. TODO:use beautifulsoup to play with the html page
 
 '''
+
+import scrapy
+from scrapy.crawler import CrawlerProcess
 
 DEFAULT_URLS = [
     'https://flutrackers.com/forum/forum/-2019-ncov-new-coronavirus/australia-2019-ncov/824507-australia-2019-ncov-cases-news-information/page3']
@@ -18,9 +18,9 @@ process = CrawlerProcess(settings={
     'FEED_URI': 'temp.csv'
 })
 
-# store urls into urls.txt
-
-
+'''
+Function for store urls into urls.txt
+'''
 def store_urls(urls=DEFAULT_URLS):
   # store urls into urls.txt
   with open("urls.txt", "w") as f:

@@ -24,8 +24,8 @@
 + D1 Spec: [Here](https://webcms3.cse.unsw.edu.au/static/uploads/course/SENG3011/20T1/214ce623c79c14d025178d276e412a20a829da1cf467dbf917031f14b6f73711/Week3_D1_Requirements.pdf)
 
 ### Report
-- [ ] **Management Information (D1)** [Here](https://docs.google.com/document/d/1gp_9YRAAlOWdA5vMbkK582caSYSu5WYWGT2G1Z3Y7UE/edit?usp=sharing)
-- [ ] **Design Details (D1)**
+- [ ] **Design Details (D1)** [Here](https://docs.google.com/document/d/1gp_9YRAAlOWdA5vMbkK582caSYSu5WYWGT2G1Z3Y7UE/edit?usp=sharing)
+- [ ] **Management Information (D1)**[Here](https://docs.google.com/document/d/1Os6aoVmBDKD2V7-D60HiwT_gNO5Mc8BbuFKJTEk5J-I/edit?usp=sharing)
 - [ ] Testing Documentation
 - [ ] Final Report
 

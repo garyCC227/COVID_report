@@ -18,4 +18,10 @@
 + Python 3
 + Flask(?)
 + scrapy(?)
++ VSCode
++ Pycharm
++ Swagger
++ MongoDB
++ MongoDB Compass
++ Postman?
 

@@ -14,14 +14,6 @@
 ## Work Arrangements
 (TBC)
 
-## Software Tools / Technology Stack
-+ Python 3
-+ Flask(?)
-+ scrapy(?)
-+ VSCode
-+ Pycharm
-+ Swagger
-+ MongoDB
-+ MongoDB Compass
-+ Postman?
-
+## Software Tools Used For Management
++ GitHub
++ Messenger

@@ -3,6 +3,16 @@ import json
 import datetime
 from bs4 import BeautifulSoup
 
+
+'''
+what this script does:
+  scrapping the latest activity posts from flu-trackers.
+
+Explanation:
+  please read the comment in main()
+'''
+
+
 class ActivityPost(object):
   def __init__(self, html, last_date):
     self.soup = BeautifulSoup(html, features='lxml')
@@ -34,9 +44,11 @@ if __name__ == "__main__":
   }
   res = requests.post('https://flutrackers.com/forum/activity/get', headers=headers, data=formData)
   res = json.loads(res.text)
+
+  #ActivityPost object. do anything you want here
   PS = ActivityPost(res['template'], int(res['lastDate']))
 
-  # store into json file
+  # store into posts.json file
   data = {
     "posts" : [x for x in PS.get_posts()],
     "count" : PS.num_posts,

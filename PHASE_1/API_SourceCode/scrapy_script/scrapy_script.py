@@ -44,11 +44,21 @@ class MySpider(scrapy.Spider):
       
   def parse(self, response):
     page = response.url.split("/")[-2]
-    filename = '{}-{}.html'.format(page, self.num_pages)
+    # filename = '{}-{}.html'.format(page, self.num_pages)
+    filename = 'temp.html' #consistent name 
     self.num_pages += 1
     with open(filename, 'wb') as f:
       f.write(response.body)
     self.log('Saved file %s' % filename)
+
+def scrapping(url):
+  urls = [url]
+  store_urls(urls)
+  # runing the spider
+  process.crawl(MySpider)
+  process.start()
+  process.stop()  # might be unneccseary
+
 
 def main():
   urls = []

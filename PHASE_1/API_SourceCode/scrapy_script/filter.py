@@ -12,7 +12,13 @@ class Filter(object):
     posts = self.soup.findAll('div', {"class":"js-post__content-text"})
     return [post.text.strip() for post in posts]
 
-
+  def get_source_text_by_p(self):
+    texts = self.soup.findAll('p')
+    content = ""
+    for text in texts:
+      content = content + text.text.strip()
+    
+    return content
 
 
 if __name__ == '__main__':

@@ -26,7 +26,8 @@
 ### Report
 - [ ] **Design Details (D1)** [Here](https://docs.google.com/document/d/1gp_9YRAAlOWdA5vMbkK582caSYSu5WYWGT2G1Z3Y7UE/edit?usp=sharing)
 - [ ] **Management Information (D1)**[Here](https://docs.google.com/document/d/1Os6aoVmBDKD2V7-D60HiwT_gNO5Mc8BbuFKJTEk5J-I/edit?usp=sharing)
+- [ ] **WBS [Here](https://drive.google.com/file/d/1kmW70vYnYG2oKvKwt7Rj6CwFg2IJA8l3/view?usp=sharing)
 - [ ] Testing Documentation
 - [ ] Final Report
 
-### Submit 
+### Submit

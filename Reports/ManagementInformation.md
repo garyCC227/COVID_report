@@ -27,7 +27,7 @@ All team members are enrolled in at least one task. Most of the tasks will have 
 ![grantt_chart](https://user-images.githubusercontent.com/40462331/75735846-9d7c2f00-5d36-11ea-8627-cb315fe7fe6b.png)
 
 ### WBS Diagram
-![WBS](https://user-images.githubusercontent.com/40462331/75735946-e03e0700-5d36-11ea-9bfd-e392622d76c2.png)
+![WBS](https://user-images.githubusercontent.com/40462331/75743393-d07ced80-5d4b-11ea-98ba-2489c85ba95b.png)
 
 ## Code Management
 GitHub is used for version control. In order to prevent errors and ensure there is one working version in the repository, Pull Request will be used. In this procedure, code need to be reviewed and autotested before merging into the master branch.

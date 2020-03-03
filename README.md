@@ -23,11 +23,10 @@
 + Spec: [Here](https://webcms3.cse.unsw.edu.au/static/uploads/course/SENG3011/20T1/441d26b246c6ef9beac40077659ca8b051d03cf991e27909f29b25fbd541049c/AnalyticsPlatformEpidemics_v_8_2.pdf)
 + D1 Spec: [Here](https://webcms3.cse.unsw.edu.au/static/uploads/course/SENG3011/20T1/214ce623c79c14d025178d276e412a20a829da1cf467dbf917031f14b6f73711/Week3_D1_Requirements.pdf)
 + D2 Spec: [Here](https://webcms3.cse.unsw.edu.au/static/uploads/course/SENG3011/20T1/9c388def8b481ef564d80c0f76c110a05de6e34c18cced798346ace9f8560049/Week5and6_D2_Requirements.pdf)
-+ WBS [Here](https://drive.google.com/file/d/1kmW70vYnYG2oKvKwt7Rj6CwFg2IJA8l3/view?usp=sharing)
-+ Grantt Chart [Here](https://drive.google.com/open?id=1Ovd3pMzzHzRxEzVtaZaKnVU2XQTexx-m)
+
 ### Report
-- [ ] **Design Details (D1)** [Here](https://docs.google.com/document/d/1gp_9YRAAlOWdA5vMbkK582caSYSu5WYWGT2G1Z3Y7UE/edit?usp=sharing)
-- [ ] **Management Information (D1)**[Here](https://docs.google.com/document/d/1Os6aoVmBDKD2V7-D60HiwT_gNO5Mc8BbuFKJTEk5J-I/edit?usp=sharing)
+- [x] **Design Details (D1)** [Link](https://github.com/websterzh/SENG3011_APInteresting/blob/master/Reports/DesignDetails.md)
+- [x] **Management Information (D1)** [Link](https://github.com/websterzh/SENG3011_APInteresting/blob/master/Reports/ManagementInformation.md)
 - [ ] Testing Documentation
 - [ ] Final Report
 

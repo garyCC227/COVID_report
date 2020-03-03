@@ -66,6 +66,8 @@ Due to the limitation of Gunicorn, we can only deploy our application on Linux.
 Gunicorn has been chosen because of the easy configuration and good performance on Flask websites. We considered only using Flask as the server application, but it could be too unstable to be used on the actual product. 
 
 ## Data Source & Processing
+![data_handling](https://user-images.githubusercontent.com/40462331/75735103-bbe12b00-5d34-11ea-8f09-f0ba25637fb1.png)
+
 First, we will first scrape all the HTML from the Flu Tracker website using the Scrapy library. The extracted HTML text will then be processed through BeautifulSoup to get text from the HTML elements we specify. Each section of text will then be parsed using the Google NLP API to extract key information such as: Location, Diseases and Syndromes. Location can then be further analysed by the Google Geocode API to get its geocode.  
 
 All information will be given unique IDs and stored on MongoDB in the form of a document. When a user queries our API, the appropriate  document will be selected from our database and sent back to the user in JSON format. 

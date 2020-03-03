@@ -21,7 +21,7 @@ Totally, there are five major technical parts
 + Google Geocode API
 + Data Analysis 
 
-All team members are enrolled in at least one task. Most of the tasks will have two members to work on with in order to prevent single point of failure. Team members who work on MongoDB will communicate with other members to design interfaces of database. Timeline scedule and work distribution is shown in folloing Grantt Chart and WBS.
+All team members are enrolled in at least one task. Most of the tasks will have two members to work on with in order to prevent single point of failure. Team members who work on MongoDB will communicate with other members to design interfaces of the database. Timeline schedule and work distribution are shown in following Grantt Chart and WBS.
 
 ### Grantt Chart
 ![grantt_chart](https://user-images.githubusercontent.com/40462331/75735846-9d7c2f00-5d36-11ea-8627-cb315fe7fe6b.png)
@@ -36,3 +36,5 @@ GitHub is used for version control. In order to prevent errors and ensure there 
 + GitHub (track on coding part)
 + Messenger (Online meeting, one of our member is oversea)
 
+## Google Doc (For editing only)
+https://docs.google.com/document/d/1Os6aoVmBDKD2V7-D60HiwT_gNO5Mc8BbuFKJTEk5J-I/edit#

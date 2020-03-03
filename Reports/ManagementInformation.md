@@ -2,17 +2,33 @@
 
 ## Responsibilities Division
 
-| Task     | Member(s)     | Remarks |
+| Task     | Member(s)     | Status |
 | -------- | ------------- | ------- |
-| API      | Wenlue Zhang  | ------- |
-| ----     | Ryan Cai      | ------- |
-| ----     | Yahnis Zheng  | ------- |
-| Database | Cher Ping Choy| ------- |
-| Scraper  | Linchen Chen  | ------- |
-
+| Design Report | Ping, Ryan, Webster, Gary, Yahnis | Finished D1 version |
+| API Development | Webster, Ping | Not started |
+| API Document    | Ping, Ryan, Webster, Gary, Yahnis | Not started |
+| API Testing     | Ping, Ryan, Webster, Gary, Yahnis | Not started |
+| MongoDB | Ping, Ryan | Not started |
+| Web Scraping and Data Extract | Gary | Almost finished |
+| Geocode API | Yahnis | Not started |
+| Data Analysis | Yahnis, Gary | Working |
 
 ## Work Arrangements
-(TBC)
+Totally, there are five major technical parts
++ API Development
++ MongoDB
++ Web Scraping and Data Extract
++ Google Geocode API
++ Data Analysis 
+
+All team members are enrolled in at least one task. Most of the tasks will have two members to work on with in order to prevent single point of failure. Team members who work on MongoDB will communicate with other members to design interfaces of database. TImeline scedule and work distribution is shown in folloing Grantt Chart and WBS.
+
+### Grantt Chart
+![grantt_chart](https://user-images.githubusercontent.com/40462331/75735846-9d7c2f00-5d36-11ea-8627-cb315fe7fe6b.png)
+
+### WBS Diagram
+![WBS](https://user-images.githubusercontent.com/40462331/75735946-e03e0700-5d36-11ea-9bfd-e392622d76c2.png)
+
 
 ## Software Tools Used For Management
 + GitHub

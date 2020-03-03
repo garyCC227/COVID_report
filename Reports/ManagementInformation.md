@@ -21,7 +21,7 @@ Totally, there are five major technical parts
 + Google Geocode API
 + Data Analysis 
 
-All team members are enrolled in at least one task. Most of the tasks will have two members to work on with in order to prevent single point of failure. Team members who work on MongoDB will communicate with other members to design interfaces of database. TImeline scedule and work distribution is shown in folloing Grantt Chart and WBS.
+All team members are enrolled in at least one task. Most of the tasks will have two members to work on with in order to prevent single point of failure. Team members who work on MongoDB will communicate with other members to design interfaces of database. Timeline scedule and work distribution is shown in folloing Grantt Chart and WBS.
 
 ### Grantt Chart
 ![grantt_chart](https://user-images.githubusercontent.com/40462331/75735846-9d7c2f00-5d36-11ea-8627-cb315fe7fe6b.png)
@@ -29,7 +29,10 @@ All team members are enrolled in at least one task. Most of the tasks will have 
 ### WBS Diagram
 ![WBS](https://user-images.githubusercontent.com/40462331/75735946-e03e0700-5d36-11ea-9bfd-e392622d76c2.png)
 
+## Code Management
+GitHub is used for version control. In order to prevent errors and ensure there is one working version in the repository, Pull Request will be used. In this procedure, code need to be reviewed and autotested before merging into the master branch.
 
 ## Software Tools Used For Management
-+ GitHub
-+ Messenger
++ GitHub (track on coding part)
++ Messenger (Online meeting, one of our member is oversea)
+

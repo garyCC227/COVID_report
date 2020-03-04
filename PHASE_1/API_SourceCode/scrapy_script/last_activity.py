@@ -1,0 +1,104 @@
+import requests 
+import json 
+import datetime
+from bs4 import BeautifulSoup
+import scrapy
+from scrapy.crawler import CrawlerProcess
+
+from scrapy_script import scrapping
+from filter import Filter
+
+'''
+what this script does:
+  scrapping the latest activity posts from flu-trackers.
+
+Explanation:
+  please read the comment in main()
+'''
+
+headers = {
+  'Content-Type':'application/x-www-form-urlencoded'
+}
+
+class ActivityPost(object):
+  def __init__(self, html, last_date):
+    self.soup = BeautifulSoup(html, features='lxml')
+    self.last_datestamp = last_date
+    self.last_date = datetime.datetime.fromtimestamp(last_date) 
+  
+  @property
+  def num_posts(self):
+    posts = self.soup.findAll('li',{"class":"b-post"})
+    return len(posts)
+  
+  def get_posts(self, count=-1):
+    posts = self.soup.findAll('li',{"class":"b-post"})
+    for post in posts:
+      # we will fetch all the post content 
+      nodeid = post['data-node-id']
+      content, url = self.post_all_content_and_url(nodeid)
+      result = {
+        "date": post.find('time')['datetime'],
+        "datestamp":post['data-node-publishdate'],
+        "nodeid": nodeid,
+        "flu_trackers_post_content" : content,
+        "url":url
+      }
+      yield result
+    
+  def post_all_content_and_url(self, nodeid):
+    params ="nodeid={}&securitytoken=guest".format(nodeid)
+    res = requests.post("https://flutrackers.com/forum/activity/fetchText",headers=headers, data=params)
+    res = json.loads(res.text)
+    full_content = BeautifulSoup(res['nodeText'], features='lxml')
+    source_url = full_content.find('a')['href']
+    content = full_content.text.strip()
+    
+    return content, source_url
+  
+  '''
+  Enter the url, we will get all the text from that url.
+  by filter <p>
+  '''
+  @classmethod
+  def get_source_text_for_onepost(cls, url):
+    '''
+    scrapping the html page
+    '''
+    scrapping(url)
+    
+    '''
+    filter text from source url
+    '''
+    filename = 'temp.html' #consistent file name
+    flter = Filter(filename)
+    
+    return flter.get_source_text_by_p()
+  
+
+if __name__ == "__main__":
+  # set up request
+  num_post = input("how many posts you wanna get??\n")
+  formData = 'filters%5Bnodeid%5D=0&filters%5Bview%5D=activity&filters%5Bper-page%5D={}&filters%5Bpagenum%5D=1&filters%5Bmaxpages%5D=20&filters%5Buserid%5D=0&filters%5BshowChannelInfo%5D=1&filters%5Bfilter_time%5D=time_lastmonth&filters%5Bfilter_show%5D=show_all&filters%5Bfilter_new_topics%5D=1&isAjaxTemplateRender=true&isAjaxTemplateRenderWithData=true&securitytoken=guest'.format(num_post)
+  headers = {
+    'Content-Type':'application/x-www-form-urlencoded'
+  }
+  res = requests.post('https://flutrackers.com/forum/activity/get', headers=headers, data=formData)
+  res = json.loads(res.text)
+
+  #ActivityPost object. do anything you want here
+  PS = ActivityPost(res['template'], int(res['lastDate']))
+
+  # store into posts.json file
+  data = {
+    "posts" : [x for x in PS.get_posts()],
+    "count" : PS.num_posts,
+    "lastDatestamp": PS.last_datestamp,
+    "date": str(PS.last_date)
+  }
+  with open('posts.json', 'w') as f:
+      json.dump(data, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
+
+  # test, use the first post to get the source_url content
+  print(PS.get_source_text_for_onepost(data["posts"][0]["url"]))
+      

@@ -9,7 +9,7 @@ class DummyNewsRetriever:
         title = "Dummy News"
         content = "It's just dummy news :("
         dummy_news = News(id, url, time, title, content)
-        return dummy_news.to_dict()
+        return dummy_news
 
     def get_news_list(self):
         result_set = []

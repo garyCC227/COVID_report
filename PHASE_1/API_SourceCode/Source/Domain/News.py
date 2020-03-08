@@ -1,31 +1,23 @@
-class News:
+from .ShortenNews import ShortenNews
 
-    def __init__(self, id, url, date, title, content):
-        self._id = id
-        self._url = url
-        self._date = date
-        self._title = title
-        self._content = content
 
-    def get_id(self):
-        return self._id
+class News(ShortenNews):
 
-    def get_url(self):
-        return self._url
-
-    def get_date(self):
-        return self._date
-
-    def get_title(self):
-        return self._title
+    def __init__(self, id, url, date, title, content, report=None):
+        super().__init__(id, url, date, title, content)
+        self._report = report
 
     def get_content(self):
         return self._content
 
+    def get_report(self):
+        return self._report
+
+    def set_report(self, report):
+        self._report = report
+
     def to_dict(self):
-        return {
-            "id": self.get_id(),
-            "url": self.get_url(),
-            "title": self.get_title(),
-            "content": self.get_content()
-        }
+        result = super().to_dict()
+        if self._report is not None:
+            result['report'] = self.get_report()
+        return result

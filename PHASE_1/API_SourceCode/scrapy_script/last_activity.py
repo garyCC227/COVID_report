@@ -37,8 +37,12 @@ class ActivityPost(object):
       # we will fetch all the post content 
       nodeid = post['data-node-id']
       content, url = self.post_all_content_and_url(nodeid)
+
+      data = ""
+      if post.find('time') != None:
+        date = post.find('time')['datetime']
       result = {
-        "date": post.find('time')['datetime'],
+        "date": date,
         "datestamp":post['data-node-publishdate'],
         "nodeid": nodeid,
         "flu_trackers_post_content" : content,
@@ -83,7 +87,7 @@ if __name__ == "__main__":
   
   # set up request
   num_post = input("how many posts you wanna get??\n")
-  formData = 'filters%5Bnodeid%5D=0&filters%5Bview%5D=activity&filters%5Bper-page%5D={}&filters%5Bpagenum%5D=1&filters%5Bmaxpages%5D=20&filters%5Buserid%5D=0&filters%5BshowChannelInfo%5D=1&filters%5Bfilter_time%5D=time_lastmonth&filters%5Bfilter_show%5D=show_all&filters%5Bfilter_new_topics%5D=1&isAjaxTemplateRender=true&isAjaxTemplateRenderWithData=true&securitytoken=guest'.format(num_post)
+  formData = 'filters%5Bnodeid%5D=0&filters%5Bview%5D=activity&filters%5Bper-page%5D={}&filters%5Bpagenum%5D=1&filters%5Bmaxpages%5D=20&filters%5Buserid%5D=0&filters%5BshowChannelInfo%5D=1&filters%5Bfilter_time%5D=time_all&filters%5Bfilter_show%5D=show_all&filters%5Bfilter_new_topics%5D=1&isAjaxTemplateRender=true&isAjaxTemplateRenderWithData=true&securitytoken=guest'.format(num_post)
   headers = {
     'Content-Type':'application/x-www-form-urlencoded'
   }
@@ -100,8 +104,10 @@ if __name__ == "__main__":
     "lastDatestamp": PS.last_datestamp,
     "date": str(PS.last_date)
   }
-  with open('posts.json', 'w') as f:
-      json.dump(data, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
+  # TODO: comment this line, no updating posts.json
+
+  # with open('posts.json', 'w') as f:
+  #     json.dump(data, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
 
   # test, use the first post to get the source_url content
   for post in data["posts"]:

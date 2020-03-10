@@ -47,7 +47,7 @@ class MySpider(scrapy.Spider):
     # filename = '{}-{}.html'.format(page, self.num_pages)
     filename = 'temp.html' #consistent name 
     self.num_pages += 1
-    with open(filename, 'wb') as f:
+    with open(filename, "wb") as f:
       f.write(response.body)
     self.log('Saved file %s' % filename)
 

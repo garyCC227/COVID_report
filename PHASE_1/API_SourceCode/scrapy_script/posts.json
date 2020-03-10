@@ -1,14 +1,77 @@
 {
-    "count": 1,
-    "date": "2020-02-09 14:18:11",
-    "lastDatestamp": 1581218291,
+    "count": 10,
+    "date": "2020-03-10 23:19:44",
+    "lastDatestamp": 1583842784,
     "posts": [
         {
-            "date": "2020-02-09T03:18:11",
-            "datestamp": "1581218291",
-            "flu_trackers_post_content": "February 4, 2020\n\n\nsnip\n\nGov. Ron DeSantis casually dribbled out a little information two weeks ago during a press event at Omni Middle School in Boca Raton, where he was touting an expansion of speech and debate programs in schools.\n\n\u201cEverybody to this date that has been tested has come back negative,\u201d he said.\n\nsnip\n\nUsing \u201cpatient privacy\u201d as an excuse to tamp down information on a virus well on its way to becoming a pandemic says more about tourism than public safety in Florida.\n\nmore....\n\nhttps://www.palmbeachpost.com/news/2...s-state-secret",
-            "nodeid": "828364",
-            "url": "https://www.palmbeachpost.com/news/20200207/cerabino-sorry-coronavirus-in-florida-is-state-secret"
+            "date": "2020-02-24T14:40:59",
+            "datestamp": "1582555259",
+            "flu_trackers_post_content": "Source: https://nationalpost.com/pmn/health-...coronavirus-tv\n\nOman reports first two cases of coronavirus - TV\nReuters\nFebruary 24, 2020\n9:12 AM EST\n\nDUBAI \u2014 Oman\u2019s health ministry reported on Monday the first two cases of coronavirus infections in the Gulf Arab state, Oman TV said...",
+            "nodeid": "831198",
+            "url": "https://nationalpost.com/pmn/health-pmn/oman-reports-first-two-cases-of-coronavirus-tv"
+        },
+        {
+            "date": "2020-02-26T20:16:22",
+            "datestamp": "1582748182",
+            "flu_trackers_post_content": "Source: https://www.dagsavisen.no/nyheter/in...erum-1.1671773\n\nNordmann tested positive for coronavirus - Five others tested in Elverum\nThis was confirmed by a public health conference on Wednesday evening.\nNTB\nToday 20:46 Last updated: 21:04, 26 Feb 2020\n\nFor the first time, the new coronavirus has been detected in Norway. This was confirmed by a public health conference on Wednesday evening.\n\nThe Norwegian was infected in China and returned home this weekend. The person is now healthy, but in the home quarantine in his own home.\n\nFive Norwegians recently in an infected area in Italy are now being tested for the new coronavirus.\n\nThe five are now isolated at home in Elverum.\n\nThey even contacted an emergency room in Norway after they had the flu symptoms, writes Eastlendingen.\n\n- They have been in an area in Italy where there is infection. When they got home, they contacted the emergency room just as well as told about the situation. Then we have made sure that they are now isolated and do not go outside the house. They are doing well according to the circumstances, says municipal superintendent Knut Skulberg in Elverum to the newspaper.\n\nThe samples have now been sent to Oslo, where they will be analyzed either at the Norwegian Institute of Public Health or at Oslo University Hospital.\npress Conference\n\nThe Public Health Institute (FHI) convenes a press conference on Wednesday evening about the situation related to the coronavirus.\n\nIt is not known what the press conference will specifically deal with.",
+            "nodeid": "831696",
+            "url": "https://www.dagsavisen.no/nyheter/innenriks/nordmann-testet-positivt-pa-koronavirus-fem-andre-testet-i-elverum-1.1671773"
+        },
+        {
+            "date": "2020-02-21T06:17:25",
+            "datestamp": "1582265845",
+            "flu_trackers_post_content": "'A 38-year-old Italian tested positive for the coronavirus test. Counter-analyzes are underway by the Istituto Superiore di Sanit\u00e0. The man is hospitalized in intensive care at the Codogno hospital whose access to the emergency room and whose scheduled activities , as a precautionary measure, they are currently interrupted. People who have been in contact with the patient are being identified and subjected to specific checks and necessary measures '.\n\n\n\nThis was communicated by the Councilor for Welfare of the Lombardy Region Giulio Gallera. According to initial information, the 38-year-old was not recently in China but had contacts with other Italians who returned from China.\n\n\nhttps://milano.repubblica.it/cronaca...-C8-P1-S1.8-T1",
+            "nodeid": "830571",
+            "url": "https://milano.repubblica.it/cronaca/2020/02/21/news/coronavirus_a_milano_contaggiato_38enne_e_un_italiano_ricoverato_a_codogno-249121707/?ref=RHPPLF-BH-I249121710-C8-P1-S1.8-T1"
+        },
+        {
+            "date": "2020-03-10T12:19:44",
+            "datestamp": "1583842784",
+            "flu_trackers_post_content": "Source: https://www.haaretz.com/israel-news/...vals-1.8658523\n\n\nIsrael Orders Quarantine for All Arrivals Over Coronavirus\nWhat do the new coronavirus regulations say? The complete guide\nNoa Landau and Haaretz Mar 10, 2020 12:51 PM\n\nPrime Minister Benjamin Netanyahu on Monday extended quarantine orders to all people arriving in the country, requiring them to stay isolated in their homes for two weeks. Netanyahu called the move \u201ca difficult but vital decision.\u201d  ...",
+            "nodeid": "835493",
+            "url": "https://www.haaretz.com/israel-news/covid-19-in-israel-netanyahu-orders-14-day-quarantine-for-all-arrivals-1.8658523"
+        },
+        {
+            "date": "2020-02-24T12:14:44",
+            "datestamp": "1582546484",
+            "flu_trackers_post_content": "Source: https://www.urdupoint.com/en/health/...es-845566.html\n\n\nKuwait Reports First 3 COVID-19 Cases\nFaizan Hashmi 37 minutes ago Mon 24th February 2020 | 04:35 PM\n\nKUWAIT CITY, (UrduPoint / Pakistan Point News - 24th Feb, 2020 ) :Kuwait's Ministry of Health confirmed on Monday the first three cases of the novel coronavirus disease (COVID-19) in the country, the Kuwait news Agency (KUNA) reported.\n\nThe three cases were among around 800 people evacuated from the Iranian city of Mashhad last week due to the COVID-19 outbreak in Iran, KUNA quoted the ministry's statement as saying...",
+            "nodeid": "831167",
+            "url": "https://www.urdupoint.com/en/health/kuwait-reports-first-3-covid-19-cases-845566.html"
+        },
+        {
+            "date": "2020-02-25T15:03:23",
+            "datestamp": "1582643003",
+            "flu_trackers_post_content": "A case of the novel corona virus has been confirmed for the first time in Switzerland. The federal government announced on Tuesday. One person was tested positive for the virus, said those responsible.",
+            "nodeid": "831392",
+            "url": ""
+        },
+        {
+            "date": "2020-02-24T11:55:56",
+            "datestamp": "1582545356",
+            "flu_trackers_post_content": "(Reuters) - Local health officials in the Iraqi holy Shi\u2019ite city of Najaf have detected the first case of coronavirus in the country, an Iranian theology student, the health ministry said on Monday.\n\nThe patient had entered Iraq before the government shut border crossings and banned the entry of any non-Iraqis coming from Iran, the ministry said in a statement.\n\n\u201cIt has become clear to the ministry that the results of lab tests conducted on a theology student, an Iranian citizen, who had entered the country before ... the decision to stop travel have revealed he is ill with the coronavirus,\u201d it said.",
+            "nodeid": "831160",
+            "url": ""
+        },
+        {
+            "date": "2020-03-09T16:26:39",
+            "datestamp": "1583771199",
+            "flu_trackers_post_content": "Source: https://www.thestar.com.my/news/regi...se-of-covid-19\n\n\nBrunei reports 1st case of Covid-19\n    Monday, 09 Mar 2020\n    11:02 PM MYT\n\nBANDAR SERI BEGAWAN: Brunei reported its first case of Covid-19 (coronavirus) on Monday (March 9), the country's Ministry of Health said.\n\nA 53-year-old local man tested positive for the virus on Monday after returning to the sultanate on March 3 from Kuala Lumpur with three friends.\n\nThe patient is currently receiving treatment at the National Quarantine Center, Tutong District...",
+            "nodeid": "835255",
+            "url": "https://www.thestar.com.my/news/regional/2020/03/09/brunei-reports-1st-case-of-covid-19"
+        },
+        {
+            "date": "2020-02-27T07:37:49",
+            "datestamp": "1582789069",
+            "flu_trackers_post_content": "According to TV2, one of the TV station's employees is the first Danish to be infected with coronavirus.\n\n\nThe first Dane has been tested positive for coronavirus.\n\nThis is stated in a press release by the Ministry of Health and the Elderly.\n\nAccording to the ministry, the person has been found infected the night of Thursday.\n\n'We take the new situation very seriously. Work to contain and track has now begun. '\n\n\"We will do everything we can to prevent the disease from spreading in Denmark,\" says Health and Elder Minister Magnus Heunicke (S).",
+            "nodeid": "831780",
+            "url": ""
+        },
+        {
+            "date": "2020-03-10T11:57:00",
+            "datestamp": "1583841420",
+            "flu_trackers_post_content": "Source: https://www.cbc.ca/news/canada/briti...tage-1.5491409\n\nDental cancellations, layoffs possible due to COVID-19 fueled mask shortage\nDentists, hygienists, doctors and nurses urge the public to stop buying and hoarding disposable masks\nEric Rankin \u00b7 CBC News \u00b7 Posted: Mar 10, 2020 4:00 AM PT | Last Updated: an hour ago\n\nThe B.C. Dental Hygienists Association of B.C. is warning its members could be laid off, and dental visits cancelled, if a medical mask shortage caused by COVID-19 fears continues to grow.\n\nThe hygienists' concerns are echoed by their employers \u2014 the dentists of the province, represented by the B.C. Dental Association \u2014 and fellow health care professionals.\n\nDentists, dental assistants and dental hygienists are required to wear a new, disposable mask for every patient they deal with, to protect themselves from splashes and sprays from the mouths of their patients...",
+            "nodeid": "835484",
+            "url": "https://www.cbc.ca/news/canada/british-columbia/dental-cancellations-layoffs-possible-due-to-covid-19-fueled-mask-shortage-1.5491409"
         }
     ]
 }

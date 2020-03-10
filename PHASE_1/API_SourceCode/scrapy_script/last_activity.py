@@ -51,7 +51,10 @@ class ActivityPost(object):
     res = requests.post("https://flutrackers.com/forum/activity/fetchText",headers=headers, data=params)
     res = json.loads(res.text)
     full_content = BeautifulSoup(res['nodeText'], features='lxml')
-    source_url = full_content.find('a')['href']
+    
+    source_url = ""
+    if full_content.find('a') != None:
+      source_url = full_content.find('a')['href']
     content = full_content.text.strip()
     
     return content, source_url
@@ -77,6 +80,7 @@ class ActivityPost(object):
   
 
 if __name__ == "__main__":
+  
   # set up request
   num_post = input("how many posts you wanna get??\n")
   formData = 'filters%5Bnodeid%5D=0&filters%5Bview%5D=activity&filters%5Bper-page%5D={}&filters%5Bpagenum%5D=1&filters%5Bmaxpages%5D=20&filters%5Buserid%5D=0&filters%5BshowChannelInfo%5D=1&filters%5Bfilter_time%5D=time_lastmonth&filters%5Bfilter_show%5D=show_all&filters%5Bfilter_new_topics%5D=1&isAjaxTemplateRender=true&isAjaxTemplateRenderWithData=true&securitytoken=guest'.format(num_post)
@@ -100,5 +104,8 @@ if __name__ == "__main__":
       json.dump(data, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
 
   # test, use the first post to get the source_url content
-  print(PS.get_source_text_for_onepost(data["posts"][0]["url"]))
+  for post in data["posts"]:
+    if post["url"] != "":
+       PS.get_source_text_for_onepost(post["url"])
+       break
       

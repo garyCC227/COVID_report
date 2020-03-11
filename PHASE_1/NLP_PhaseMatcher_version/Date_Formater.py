@@ -14,6 +14,22 @@ class Date_Formater:
       return self.dateStampFirst
     else :
       return self.dateStampFirst + " to " + self.dateStampLast
+
+  def error_date_ignore(self,date_string):
+    temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",date_string)
+    if temp == None :
+      return self.year + "-xx-xx xx:xx:xx"
+    else :
+      mon = temp.group(2)
+      day = temp.group(3)
+
+      if mon != "xx" and int(mon) > 12 :
+        return self.year + "-xx-xx xx:xx:xx"
+      
+      if day != "xx" and int(day) > 31 :
+        return self.year + "-xx-xx xx:xx:xx"
+    return date_string
+
   
   def check_add_zero(self,string):
     if len(string) == 1 :
@@ -24,13 +40,13 @@ class Date_Formater:
     year = None
     mon = None
     day = None
-    temp = re.search("(20|19|18)[0-9][0-9]",date_string)
+    temp = re.search("20[0-9][0-9]",date_string)
     if temp == None :
       year = self.year
     else :
       year = temp.group()
     
-    temp = re.search("([0-9]{2}|[0-9])(\.|/| |-|_)+([0-9]{2}|[0-9])(\.|/| |-|_)+([0-9]{4})",date_string)
+    temp = re.search("([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{4})",date_string)
     if temp != None :
       year = temp.group(5)
       mon = temp.group(3)
@@ -43,9 +59,9 @@ class Date_Formater:
 
       mon = self.check_add_zero(mon)
       day = self.check_add_zero(day)
-      return  year + "-" + mon + "-" + day + " xx:xx:xx"
+      return  [self.error_date_ignore(year + "-" + mon + "-" + day + " xx:xx:xx")]
     
-    temp = re.search("([0-9]{4})(\.|/| |-|_)+([0-9]{2}|[0-9])(\.|/| |-|_)+([0-9]{2}|[0-9])",date_string)
+    temp = re.search("([0-9]{4})(\.|/| |-|_|,)+([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])",date_string)
     
     if temp != None :
       year = temp.group(1)
@@ -59,10 +75,10 @@ class Date_Formater:
 
       mon = self.check_add_zero(mon)
       day = self.check_add_zero(day)
-      return  year + "-" + mon + "-" + day + " xx:xx:xx"
+      return  [self.error_date_ignore(year + "-" + mon + "-" + day + " xx:xx:xx")]
 
     #Try to match the format and extract data
-    temp = re.search("([0-9]{2}|[0-9])(\.|/| |-|_)+([0-9]{2}|[0-9])(\.|/| |-|_)+([0-9]{2}|[0-9])",date_string)
+    temp = re.search("([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])",date_string)
     if temp != None :
       year = temp.group(5)
       mon = temp.group(3)
@@ -81,7 +97,7 @@ class Date_Formater:
       mon = self.check_add_zero(mon)
       day = self.check_add_zero(day)
 
-      return "20" + year + "-" + mon + "-" + day + " xx:xx:xx"
+      return [self.error_date_ignore("20" + year + "-" + mon + "-" + day + " xx:xx:xx")]
 
     # Try to extract month from string
     temp = re.search("(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)", date_string, re.IGNORECASE)
@@ -112,18 +128,23 @@ class Date_Formater:
         mon = "11"
       else :
         mon = "12"
-    else :
-      temp = re.search("([0-9]{2}|[0-9])(\.|/| |-|_)+([0-9]{2}|[0-9])",date_string)
+      temp = re.search("(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)(\.| |/|,)+([0-9]{2}|[0-9])(-| to |to| to|to )([0-9]{2}|[0-9])", date_string, re.IGNORECASE)
       if temp != None :
-        mon = temp.group(1)
-        day = temp.group(3)
-        if int(mon) > 12 :
-          a = mon
-          mon = day
-          day = a 
-        mon = self.check_add_zero(mon)
-        day = self.check_add_zero(day)
-        return  year + "-" + mon + "-" + day + " xx:xx:xx"
+        day1 = temp.group(3)
+        day2 = temp.group(5)
+        return  [self.error_date_ignore(year + "-" + mon + "-" + self.check_add_zero(day1) + " xx:xx:xx"), self.error_date_ignore(year + "-" + mon + "-" + self.check_add_zero(day2) + " xx:xx:xx")]
+    # else :
+    #   temp = re.search("([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])",date_string)
+    #   if temp != None :
+    #     mon = temp.group(1)
+    #     day = temp.group(3)
+    #     if int(mon) > 12 :
+    #       a = mon
+    #       mon = day
+    #       day = a 
+    #     mon = self.check_add_zero(mon)
+    #     day = self.check_add_zero(day)
+    #     return  self.error_date_ignore(year + "-" + mon + "-" + day + " xx:xx:xx")
     
     # Try to extract day and assume day is in the middle of the phrase
     temp = re.search("\D(([0-9]{2}|[0-9]{1}))\D",date_string)
@@ -143,12 +164,12 @@ class Date_Formater:
         day = self.check_add_zero(temp.group(1))
     
     if mon == None :
-      return year + "-xx-xx xx:xx:xx"
+      return [year + "-xx-xx xx:xx:xx"]
     
     if day == None :
-      return  year + "-" + mon + "-xx xx:xx:xx"
+      return  [year + "-" + mon + "-xx xx:xx:xx"]
 
-    return  year + "-" + mon + "-" + day + " xx:xx:xx"
+    return  [self.error_date_ignore(year + "-" + mon + "-" + day + " xx:xx:xx")]
 
   def get_max_timeStamp(self,year,mon,day) :
     if mon == "xx" :
@@ -164,89 +185,93 @@ class Date_Formater:
       day = "00"
     return int(year + mon + day)
 
+  # add a date from date-like string and check if it's a new date or have been
+  # include in present period of time
+  # this is the main function you should be calling 
   def add_date(self,string):
-    date_string = self.match_date(string)
-    if self.dateStampFirst == None :
-      self.dateStampFirst = date_string
-    else :
-      if self.dateStampLast == None :
-        temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",self.dateStampFirst)
-        old_date = temp.group(0)
-        old_year = temp.group(1)
-        old_mon = temp.group(2)
-        old_day = temp.group(3)
-        
-
-        temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",date_string)
-        new_date = temp.group(0)
-        new_year = temp.group(1)
-        new_mon = temp.group(2)
-        new_day = temp.group(3)
-
-        if old_year == new_year :
-          if old_mon == "xx" :
-            self.dateStampFirst = new_date
-          elif new_mon == "xx" : 
-            self.dateStampFirst = old_date
-          else :
-            if int(old_mon) > int(new_mon) :
-              self.dateStampLast = self.dateStampFirst
-              self.dateStampFirst = new_date
-            elif int(new_mon) > int(old_mon) :
-              self.dateStampLast = new_date
-            else :
-              if old_day == "xx" :
-                self.dateStampFirst = new_date
-              elif new_day == "xx" : 
-                self.dateStampFirst = old_date
-              else :
-                if int(old_day) > int(new_day) :
-                  self.dateStampLast = self.dateStampFirst
-                  self.dateStampFirst = new_date
-                elif int(new_day) > int(old_day) :
-                  self.dateStampLast = new_date
-        elif int(old_year) > int(new_year) :
-          # if old_mon == "xx" :
-          #   self.dateStampFirst = new_date
-          # elif new_mon == "xx" : 
-          #   self.dateStampFirst = old_date
-          # else :
-          self.dateStampLast = self.dateStampFirst
-          self.dateStampFirst = new_date
-        else :
-          # if old_mon == "xx" :
-          #   self.dateStampFirst = new_date
-          # elif new_mon == "xx" : 
-          #   self.dateStampFirst = old_date
-          # else :
-          self.dateStampLast = new_date
+    date_string_list = self.match_date(string)
+    for date_string in date_string_list:
+      if self.dateStampFirst == None :
+        self.dateStampFirst = date_string
       else :
-        temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",self.dateStampFirst)
-        first_date_year = temp.group(1)
-        first_date_mon = temp.group(2)
-        first_date_day = temp.group(3)
-        
-        temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",self.dateStampLast)
-        last_date_year = temp.group(1)
-        last_date_mon = temp.group(2)
-        last_date_day = temp.group(3)
+        if self.dateStampLast == None :
+          temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",self.dateStampFirst)
+          old_date = temp.group(0)
+          old_year = temp.group(1)
+          old_mon = temp.group(2)
+          old_day = temp.group(3)
+          
 
-        temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",date_string)
-        new_date = temp.group(0)
-        new_year = temp.group(1)
-        new_mon = temp.group(2)
-        new_day = temp.group(3)
+          temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",date_string)
+          new_date = temp.group(0)
+          new_year = temp.group(1)
+          new_mon = temp.group(2)
+          new_day = temp.group(3)
 
-        first_timeStamp = self.get_max_timeStamp(first_date_year,first_date_mon,first_date_day)
-        last_timeStamp = self.get_min_timeStamp(last_date_year,last_date_mon,last_date_day)
-        
-        if first_timeStamp > self.get_max_timeStamp(new_year,new_mon,new_day) :
-          self.dateStampFirst = new_date
+          if old_year == new_year :
+            if old_mon == "xx" :
+              self.dateStampFirst = new_date
+            elif new_mon == "xx" : 
+              self.dateStampFirst = old_date
+            else :
+              if int(old_mon) > int(new_mon) :
+                self.dateStampLast = self.dateStampFirst
+                self.dateStampFirst = new_date
+              elif int(new_mon) > int(old_mon) :
+                self.dateStampLast = new_date
+              else :
+                if old_day == "xx" :
+                  self.dateStampFirst = new_date
+                elif new_day == "xx" : 
+                  self.dateStampFirst = old_date
+                else :
+                  if int(old_day) > int(new_day) :
+                    self.dateStampLast = self.dateStampFirst
+                    self.dateStampFirst = new_date
+                  elif int(new_day) > int(old_day) :
+                    self.dateStampLast = new_date
+          elif int(old_year) > int(new_year) :
+            # if old_mon == "xx" :
+            #   self.dateStampFirst = new_date
+            # elif new_mon == "xx" : 
+            #   self.dateStampFirst = old_date
+            # else :
+            self.dateStampLast = self.dateStampFirst
+            self.dateStampFirst = new_date
+          else :
+            # if old_mon == "xx" :
+            #   self.dateStampFirst = new_date
+            # elif new_mon == "xx" : 
+            #   self.dateStampFirst = old_date
+            # else :
+            self.dateStampLast = new_date
+        else :
+          temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",self.dateStampFirst)
+          first_date_year = temp.group(1)
+          first_date_mon = temp.group(2)
+          first_date_day = temp.group(3)
+          
+          temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",self.dateStampLast)
+          last_date_year = temp.group(1)
+          last_date_mon = temp.group(2)
+          last_date_day = temp.group(3)
+
+          temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",date_string)
+          new_date = temp.group(0)
+          new_year = temp.group(1)
+          new_mon = temp.group(2)
+          new_day = temp.group(3)
+
+          first_timeStamp = self.get_max_timeStamp(first_date_year,first_date_mon,first_date_day)
+          last_timeStamp = self.get_min_timeStamp(last_date_year,last_date_mon,last_date_day)
+          
+          if first_timeStamp > self.get_max_timeStamp(new_year,new_mon,new_day) :
+            self.dateStampFirst = new_date
+            return
+          
+          if last_timeStamp < self.get_min_timeStamp(new_year,new_mon,new_day) :
+            self.dateStampLast = new_date
           return
-        
-        if last_timeStamp < self.get_min_timeStamp(new_year,new_mon,new_day) :
-          self.dateStampLast = new_date
-        return
   
     
     

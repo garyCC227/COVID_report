@@ -8,3 +8,5 @@ if __name__ == "__main__":
             break
         else :
             print(test.match_date(val))
+            test.add_date(val)
+    print(test.get_event_date())

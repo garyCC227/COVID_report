@@ -3,17 +3,42 @@ import spacy
 import json
 
 def auto_test() :
-    date_string = ""
-    # print(date_string)
     nlp = spacy.load("en_core_web_sm")
-    doc = nlp(date_string)
+    with open('./content.json') as f:
+        data = json.load(f)
+    i = 0
+    for a in data :
+        print("\n\n\n")
+        print(data[a])
+        doc = nlp(data[a])
+        test = Date_Formater()
+        for ent in doc.ents:
+            if ent.label_ == "TIME" :
+                test.add_time(ent.text)
+            elif ent.label_ == "DATE" or ent.label_ == "ORG" :
+                test.add_date(ent.text)
+        print(test.get_event_date())
+        print("---------")
+        print("\n\n\n")
+        i+=1
+        if i > 30 :
+            break
+    f.close()
+
+def test_time() :
     test = Date_Formater()
-    for ent in doc.ents:
-        if ent.label_ == "DATE":
-            print(ent.text)
-            test.add_date(ent.text)
-    print(test.get_event_date())
-            
+    while (1) :
+        val = input("Enter Time or \"q\" to quit: ")
+        if val == "q" :
+            print("Thank you for testing")
+            break
+        else :
+            a = test.match_time(val)
+            print(a)  
+    val = input("Test again? (y/n)")
+    if val == "y" :
+        return_date_string()  
+
 def auto_test_time() :
     nlp = spacy.load("en_core_web_sm")
     with open('./content.json') as f:
@@ -76,8 +101,11 @@ if __name__ == "__main__":
         elif val == "3" :
             auto_test()
             break
-        elif val == "5" :
+        elif val == "4" :
             auto_test_time()
+            break
+        elif val == "5" :
+            test_time()
             break
         elif val == "q" :
             print("Thank you for testing")

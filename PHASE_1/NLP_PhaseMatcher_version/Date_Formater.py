@@ -4,6 +4,7 @@ class Date_Formater:
 
   def __init__(self, year = "2020"):
     self.year = year
+    self.time_string_buffer = ""
     self.dateStampFirst = None
     self.dateStampLast = None
 
@@ -16,17 +17,17 @@ class Date_Formater:
       return self.dateStampFirst + " to " + self.dateStampLast
 
   def error_date_ignore(self,date_string):
-    temp = re.search("^([0-9]+)-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",date_string)
+    temp = re.search("^([0-9]{4})-([0-9]{2}|x{2})-([0-9]{2}|x{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$",date_string)
     if temp == None :
       return self.year + "-xx-xx xx:xx:xx"
     else :
       mon = temp.group(2)
       day = temp.group(3)
 
-      if mon != "xx" and int(mon) > 12 :
+      if mon != "xx" and (int(mon) > 12 or int(mon) == 0) :
         return self.year + "-xx-xx xx:xx:xx"
       
-      if day != "xx" and int(day) > 31 :
+      if day != "xx" and (int(day) > 31 or int(day) == 0) :
         return self.year + "-xx-xx xx:xx:xx"
     return date_string
 
@@ -36,10 +37,63 @@ class Date_Formater:
       return "0" + string
     return string
 
-  def match_date(self,date_string):
+  def match_time(self,time_string):
+    add_on = 0
+    temp = re.search("p(\.| )*m",time_string, re.IGNORECASE)
+    if temp != None :
+      add_on = 12
+    temp = re.search("([0-2][0-9]|[0-9]):([0-6][0-9]|[0-9])",time_string)
+    if temp != None :
+      hour = temp.group(1)
+      minute = temp.group(2)
+      hour = str((int(hour) + add_on)%24)
+      return self.check_add_zero(hour) + ":" + self.check_add_zero(minute) + ":" + "xx"
+    temp = re.search("([0-2][0-9]|[0-9])-([0-6][0-9]|[0-9])",time_string)
+    if temp != None :
+      hour = temp.group(2)
+      hour = str((int(hour) + add_on)%24)
+      return self.check_add_zero(hour) + ":xx:xx"
+    temp = re.search("([0-2][0-9]|[0-9])",time_string)
+    if temp != None :
+      hour = temp.group()
+      hour = str((int(hour) + add_on)%24)
+      return self.check_add_zero(hour) + ":xx:xx"
+    return None
+
+  def add_time(self,time_string) :
+    time_string = self.match_time(time_string)
+    if time_string != None :
+      if self.dateStampFirst == None :
+        self.time_string_buffer = time_string
+      else :
+        temp = re.search("^(.+) (.+)$",self.dateStampFirst)
+        if temp.group(2) == "xx:xx:xx" and temp.group(1) != "2020-xx-xx":
+          self.dateStampFirst = temp.group(1) + " " + time_string
+        else :
+          if self.dateStampLast == None :
+            self.time_string_buffer = time_string
+          else :
+            temp = re.search("^(.+) (.+)$",self.dateStampLast)
+            if temp.group(1) != "2020-xx-xx" :
+              self.dateStampLast = temp.group(1) + " " + time_string
+
+  def match_date(self,date_string) :
     year = None
     mon = None
     day = None
+
+    temp = re.search("^[0-9]{4}$",date_string)
+    if temp != None :
+      return [self.year + "-xx-xx xx:xx:xx"]
+
+    temp = re.search("[0-9]{4}-([0-9]{4}|[0-9]{2})[^-]",date_string)
+    if temp != None :
+      return [self.year + "-xx-xx xx:xx:xx"]
+
+    temp = re.search("[0-9]{4}-([0-9]{4}|[0-9]{2})$",date_string)
+    if temp != None :
+      return [self.year + "-xx-xx xx:xx:xx"]
+
     temp = re.search("20[0-9][0-9]",date_string)
     if temp == None :
       year = self.year
@@ -190,6 +244,10 @@ class Date_Formater:
   # this is the main function you should be calling 
   def add_date(self,string):
     date_string_list = self.match_date(string)
+    if self.time_string_buffer != "" and date_string_list[0] != (self.year + "-xx-xx xx:xx:xx"):
+      temp = re.search("^(.+) (.+)$", date_string_list[0])
+      date_string_list[0] = temp.group(1) + " " + self.time_string_buffer
+      self.time_string_buffer = ""
     for date_string in date_string_list:
       if self.dateStampFirst == None :
         self.dateStampFirst = date_string

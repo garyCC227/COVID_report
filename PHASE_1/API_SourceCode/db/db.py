@@ -24,7 +24,7 @@ def getDocumentByLocation(location):
 
 def getDocumentBySyndrome(syndrome):
     ret_arr = []
-    query = db.collection(u'syndromes').where(u'locations', u'array_contains', syndrome)
+    query = db.collection(u'reports').where(u'syndromes', u'array_contains', syndrome)
     docs = query.stream()
     for doc in docs:
         ret_arr.append(doc.to_dict())
@@ -32,7 +32,15 @@ def getDocumentBySyndrome(syndrome):
 
 def getDocumentByDisease(disease):
     ret_arr = []
-    query = db.collection(u'diseases').where(u'locations', u'array_contains', disease)
+    query = db.collection(u'reports').where(u'diseases', u'array_contains', disease)
+    docs = query.stream()
+    for doc in docs:
+        ret_arr.append(doc.to_dict())
+    return ret_arr
+
+def getAllDocuments():
+    ret_arr = []
+    query = db.collection(u'reports')
     docs = query.stream()
     for doc in docs:
         ret_arr.append(doc.to_dict())

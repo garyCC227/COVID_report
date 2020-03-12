@@ -1,2 +1,3 @@
-beautifulsoup4==4.8.2
-bs4==0.0.1
+spacy==2.2.3
+# After installed spacy you need to download a mould from spacy to run nlp, just type in:
+# python -m spacy download en_core_web_sm

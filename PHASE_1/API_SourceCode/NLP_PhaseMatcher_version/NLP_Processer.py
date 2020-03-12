@@ -5,6 +5,10 @@ from spacy.matcher import PhraseMatcher
 from Date_Formater import Date_Formater
 from Location_Checker import Location_Checker
 
+# You can alter the path of disease_pattern_loc, search_pattern_loc, syndrome_pattern_loc when creating NLP_Processer object
+# You should call make_reports function to get reports json
+# Sample usage is at the bottom
+
 class NLP_Processer :
 
     def __init__ (self, disease_pattern_loc = "./disease_pattern.json" , search_pattern_loc = "./search_pattern.json", 
@@ -121,6 +125,7 @@ class NLP_Processer :
 
 
 
+# Sample usage
 a = NLP_Processer()
 with open('./content.json') as f:
     data = json.load(f)

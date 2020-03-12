@@ -45,12 +45,13 @@ def auto_test_time() :
         data = json.load(f)
     i = 0
     for a in data :
-        doc = nlp(data[a])
-        for ent in doc.ents:
-            if ent.label_ == "DATE":
-                print(ent.text)
+        if i > 300 :
+            doc = nlp(data[a])
+            for ent in doc.ents:
+                if ent.label_ == "GPE":
+                    print(ent.text)
         i+=1
-        if i > 200 :
+        if i > 600 :
             break
     f.close()
 
@@ -101,7 +102,7 @@ if __name__ == "__main__":
         elif val == "3" :
             auto_test()
             break
-        elif val == "4" :
+        elif val == "6" :
             auto_test_time()
             break
         elif val == "5" :

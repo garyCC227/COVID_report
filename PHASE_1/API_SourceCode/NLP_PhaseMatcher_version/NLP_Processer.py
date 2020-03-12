@@ -9,6 +9,7 @@ from Location_Checker import Location_Checker
 # You should call make_reports function to get reports json
 # Sample usage is at the bottom
 
+
 class NLP_Processer :
 
     def __init__ (self, disease_pattern_loc = "./disease_pattern.json" , search_pattern_loc = "./search_pattern.json", 

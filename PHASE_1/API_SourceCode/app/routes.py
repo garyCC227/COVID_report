@@ -3,6 +3,18 @@ from .response import make_response
 from Source.Application.Actions.GetNewsByIdAction import GetNewsByIdAction
 from Source.Application.Actions.GetReportByIdAction import GetReportByIdAction
 from Source.Application.Actions.GetNewsListAction import GetNewsListAction
+from Source.Infrastructure.Loggers.AccessLogger import AccessLogger
+from flask import request
+
+
+@app.before_request
+def check_identity():
+    identity = request.headers.get('identity')
+    if identity is None or identity == "":
+        return make_response("Please provide us your identity in header for logging.", 401)
+    else:
+        logger = AccessLogger()
+        logger.write(identity, request.path)
 
 @app.route("/")
 def hello():

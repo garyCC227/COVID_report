@@ -42,14 +42,13 @@ def getDocumentByDisease(disease):
 def setDocument(data):
     doc_ref = db.collection(u'reports').document()
     doc_ref.set(data)
-# Sample data entry
 
+def readDocument(file):
+    with open(file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+        setDocument(data)
 
-with open('sample_data.json', 'r', encoding='utf-8') as f :
-    data = json.load(f)
-    print(data)
-
-setDocument(data)
-ret = getDocumentByID(1)
+# Test code
+ret = getDocumentByLocation("China")
 print(ret)
 

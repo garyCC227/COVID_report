@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "locations" : ["China", "Wuhan"],
+  "url": "www.flutrackers.com/test",
+  "title": "Coronavirus Declared as a Pandemic",
+  "body": "KUALA LUMPUR: Malaysia announced its sixth citizen case of the novel coronavirus, a 31-year-old man who worked in Macau, on Monday (Feb 10).\n\nThe man had travelled to mainland China before returning to Malaysia on Feb 1, said Malaysia's Health Director-General Noor Hisham Abdullah in a press statement. ..\n\n..“I would like to advise the residents in Banting to keep calm. The Ministry of Health has taken the relevant steps and will update with the latest developments,” he added.",
+  "diseases": ["Coronavirus", "CoVid19"],
+  "syndromes": ["Coughing", "Sneezing", "Shortness Of Breath"]
+}

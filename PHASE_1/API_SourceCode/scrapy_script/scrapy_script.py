@@ -1,7 +1,7 @@
 '''
 Explanation:
   1. store urls text into urls.txt
-  2. run the spider by reading all urls from urls.txt
+  2. run the crawler by reading all urls from urls.txt
   3. store the page as html format
   4. TODO:use beautifulsoup to play with the html page
 
@@ -19,6 +19,7 @@ process = CrawlerProcess(settings={
 })
 
 # Function for store urls into urls.txt
+
 def store_urls(urls=DEFAULT_URLS):
   # store urls into urls.txt
   with open("urls.txt", "w") as f:
@@ -30,18 +31,32 @@ class MySpider(scrapy.Spider):
   name = "myspider"
   allowed_domains = ['flutrackers.com']
   start_urls = []
+  num_pages = 1
 
   def __init__(self):
     for line in open('./urls.txt', 'r').readlines():
-      self.allowed_domains.append(line)
       self.start_urls.append('%s' % line)
 
+  def start_requests(self):
+     for url in self.start_urls:
+        yield scrapy.Request(url=url, callback=self.parse)
+      
   def parse(self, response):
     page = response.url.split("/")[-2]
-    filename = '%s.html' % page
-    with open(filename, 'wb') as f:
+    # filename = '{}-{}.html'.format(page, self.num_pages)
+    filename = 'temp.html' #consistent name 
+    self.num_pages += 1
+    with open(filename, "wb") as f:
       f.write(response.body)
     self.log('Saved file %s' % filename)
+
+def scrapping(url):
+  urls = [url]
+  store_urls(urls)
+  # runing the spider
+  process.crawl(MySpider)
+  process.start()
+  process.stop()  # might be unneccseary
 
 
 def main():

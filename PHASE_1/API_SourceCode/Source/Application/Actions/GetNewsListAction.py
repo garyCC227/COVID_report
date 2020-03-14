@@ -1,8 +1,8 @@
-from ...Infrastructure.DummyOperations.DummyNewsRetriever import DummyNewsRetriever
+from ...Infrastructure.DbOperations.FirebaseDocumentRetriever import FirebaseDocumentRetriever
 
 
 class GetNewsListAction:
 
     def __new__(cls, all=False):
-        retriever = DummyNewsRetriever()
-        return retriever.get_news_list(all)
+        retriever = FirebaseDocumentRetriever()
+        return retriever.get_all_documents(complete_version=all)

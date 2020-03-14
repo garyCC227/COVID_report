@@ -28,11 +28,11 @@ def get_shorten_news_list():
 def get_news_list():
     return make_response(GetNewsListAction(all=True))
 
-@app.route("/v1/news/<int:id>")
+@app.route("/v1/news/<id>")
 def get_news_by_id(id):
     return make_response(GetNewsByIdAction(id))
 
-@app.route("/v1/reports/<int:id>")
+@app.route("/v1/reports/<id>")
 def get_report_by_id(id):
     return make_response(GetReportByIdAction(id))
 

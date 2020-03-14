@@ -1,21 +1,25 @@
 import spacy
 import re
 import json
+import time
 from spacy.matcher import PhraseMatcher
 from Date_Formater import Date_Formater
 from Location_Checker import Location_Checker
+from Geocode_Location import Geocode_Location
 
 # You can alter the path of disease_pattern_loc, search_pattern_loc, syndrome_pattern_loc when creating NLP_Processer object
 # You should call make_reports function to get reports json
 # Sample usage is at the bottom
 
+
 class NLP_Processer :
 
     def __init__ (self, disease_pattern_loc = "./disease_pattern.json" , search_pattern_loc = "./search_pattern.json", 
-                    syndrome_pattern_loc = "./syndrome_pattern.json"):
+                    syndrome_pattern_loc = "./syndrome_pattern.json", geocode_service = True):
         self.disease_pattern_loc = disease_pattern_loc
         self.search_pattern_loc = search_pattern_loc
         self.syndrome_pattern_loc = syndrome_pattern_loc
+        self.geocode_service = geocode_service
         self.nlp = spacy.load('en_core_web_sm')
         self.matcher = PhraseMatcher(self.nlp.vocab, attr='LOWER', max_length=5)
         self.load_pattern(self.disease_pattern_loc)
@@ -85,8 +89,8 @@ class NLP_Processer :
                 text = text.replace(".","")
                 country = self.location_checker.get_country(text)
                 if country == None :
-                    temp = re.search("([0-9]|:|;)", text)
-                    if temp == None :
+                    temp = re.search("[0-9]|:|;|\(|\)|\"|\'|\\|\/|@|Discover|\`|\=|\+|\?|\!", text)
+                    if temp == None and len(text) > 3:
                         if text in location_dic :
                             location_dic[text] += 1
                         else :
@@ -97,22 +101,24 @@ class NLP_Processer :
                     else :
                         country_dic[country] = 1
         # convert to json
-
-        # diseases_json = json.dumps(sorted(disease_dic.keys()))
-        # syndromes_json = json.dumps(sorted(syndrome_dic.keys()))
-        locations = []
-        for country_name in sorted(country_dic.keys()):
-            d = {}
-            d["country"] = country_name
-            d["location"] = ""
-            locations.append(d)
-        # locations_json = json.dumps(locations)
+        location_handler = Geocode_Location()
+        if self.geocode_service :
+            location_handler.load_locations_countires(sorted(location_dic.keys()), sorted(country_dic.keys()))
         report = {}
         report["event_date"] = test.get_event_date()
-        report["locations"] = locations
+        if self.geocode_service :
+            report["locations"] = location_handler.get_locations()
+        else :
+            l = []
+            for country in sorted(country_dic.keys()) :
+                d = {}
+                d["country"] = country
+                d["location"] = ""
+                l.append(d)
+            report["locations"] = l
         report["diseases"] = sorted(disease_dic.keys())
         report["syndromes"] = sorted(syndrome_dic.keys())
-        report["minor_locations"] = sorted(location_dic.keys())
+        report["keyword_location"] = sorted(location_handler.get_location_keywords())
         report["keyword_frequency"] = keyword_dic
 
         reports = []
@@ -126,18 +132,28 @@ class NLP_Processer :
 
 
 # Sample usage
-a = NLP_Processer()
+# switch to false if you don not need google geocode service
+# or testing a huge bulk of data
+a = NLP_Processer(geocode_service = True)
 with open('./content.json') as f:
     data = json.load(f)
 f.close()
-i = 0
+i = -1
+t1 = time.time()
 for b in data :
+    i+=1
+    if i < 310 :
+        continue
     print("\n")
+    # print out main text
+    print(data[b])
     json_object = a.make_reports(data[b])
     json_formatted_str = json.dumps(json_object, indent=2)
+    # print out the captured report
     print(json_formatted_str)
     print("\n\n")
-    i+=1
-    if i > 100 :
+    if i > 315 :
         break
-        
+
+t2 = time.time()        
+print("%.3f seconds" % (t2 - t1))

@@ -1,9 +1,36 @@
 {
-  "id": 1,
-  "locations" : ["China", "Wuhan"],
-  "url": "www.flutrackers.com/test",
-  "title": "Coronavirus Declared as a Pandemic",
-  "body": "KUALA LUMPUR: Malaysia announced its sixth citizen case of the novel coronavirus, a 31-year-old man who worked in Macau, on Monday (Feb 10).\n\nThe man had travelled to mainland China before returning to Malaysia on Feb 1, said Malaysia's Health Director-General Noor Hisham Abdullah in a press statement. ..\n\n..“I would like to advise the residents in Banting to keep calm. The Ministry of Health has taken the relevant steps and will update with the latest developments,” he added.",
-  "diseases": ["Coronavirus", "CoVid19"],
-  "syndromes": ["Coughing", "Sneezing", "Shortness Of Breath"]
+ "url": "https://www.who.int/csr/don/17-january-2020-novel-coronavirus-japan-exchina/en/",
+ "date_of_publication": "2020-01-17 xx:xx:xx",
+ "headline": "Balabalabala",
+ "main_text": "balabalabzlabalabalabzlabalabalabzlabalabalabzlabalabalabzlabalabalabzlabalabalabzlab",
+ "reports": [
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [
+      {
+        "google_id": "ChIJj6eAWCEXHxURtDaY6bqCkXI",
+        "address": "Beirut, Lebanon"
+      },
+      {
+        "google_id": "ChIJ8R1rwS7s9z4RzvpRntOVsEA",
+        "address": "Iran"
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "keyword_location": [
+      "beirut",
+      "beirut governorate",
+      "ir",
+      "iran",
+      "lb",
+      "lebanon"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 1
+    }
+  }
+]
 }

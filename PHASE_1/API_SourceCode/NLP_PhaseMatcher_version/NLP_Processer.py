@@ -118,7 +118,8 @@ class NLP_Processer :
             report["locations"] = l
         report["diseases"] = sorted(disease_dic.keys())
         report["syndromes"] = sorted(syndrome_dic.keys())
-        report["keyword_location"] = sorted(location_handler.get_location_keywords())
+        if self.geocode_service :
+            report["keyword_location"] = sorted(location_handler.get_location_keywords())
         report["keyword_frequency"] = keyword_dic
 
         reports = []
@@ -142,17 +143,17 @@ i = -1
 t1 = time.time()
 for b in data :
     i+=1
-    if i < 310 :
+    if i < 335 :
         continue
     print("\n")
     # print out main text
-    print(data[b])
+    # print(data[b])
     json_object = a.make_reports(data[b])
     json_formatted_str = json.dumps(json_object, indent=2)
     # print out the captured report
     print(json_formatted_str)
     print("\n\n")
-    if i > 315 :
+    if i > 355 :
         break
 
 t2 = time.time()        

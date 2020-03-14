@@ -24,26 +24,33 @@ class Geocode_Location:
 
     def send_request(self, location) :
         location = location.lower()
-        location = location.replace(" ","+")
         if location in self.location_keywords :
             return
+        ignore_pure_number = re.search("^[^a-zA-Z]+&", location)
+        if ignore_pure_number != None :
+            self.location_keywords.append(location)
+        else :
+            return
+        location = location.replace(" ","+")
         url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location + '&key=' + self.google_api_key
         response = requests.get(url)
         if response.status_code == 200 :
             result = json.loads(response.text)
+            if result["status"] != "OK" :
+                return
             for obj in result["results"][0]["address_components"] :
                 temp = obj["long_name"].lower()
-                ignore_pure_number = re.search("^[0-9]+&",temp)
+                ignore_pure_number = re.search("^[^a-zA-Z]+&",temp)
                 if ignore_pure_number != None :
                     continue
                 if temp not in self.location_keywords :
-                    self.location_keywords.append(obj["long_name"].lower())
+                    self.location_keywords.append(temp)
                 temp  = obj["short_name"].lower()
-                ignore_pure_number = re.search("^[0-9]+&",temp)
+                ignore_pure_number = re.search("^[^a-zA-Z]+&",temp)
                 if ignore_pure_number != None :
                     continue
                 if temp not in self.location_keywords :
-                    self.location_keywords.append(obj["short_name"].lower())
+                    self.location_keywords.append(temp)
         dic = {}
         dic["google_id"] = result["results"][0]["place_id"]
         dic["address"] = result["results"][0]["formatted_address"]

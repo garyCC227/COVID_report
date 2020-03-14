@@ -1,17 +1,17 @@
 class Location:
 
-    def __init__(self, country, location):
-        self._country = country
-        self._location = location
+    def __init__(self, google_id, address):
+        self._google_id = google_id
+        self._address = address
 
-    def get_country(self):
-        return self._country
+    def get_google_id(self):
+        return self._google_id
 
-    def get_location(self):
-        return self._location
+    def get_address(self):
+        return self._address
 
     def to_dict(self):
         return {
-            "country": self.get_country(),
-            "location": self.get_location()
+            "google_id": self.get_google_id(),
+            "address": self.get_address()
         }

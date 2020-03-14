@@ -24,7 +24,7 @@ class ReportFactory(DomainFactory):
 
     def _set_location_list(self, location):
         if isinstance(location, dict):
-            location = Location(location['country'], location['location'])
+            location = Location(location['google_id'], location['address'])
             self._product.add_location(location)
         elif isinstance(location, Location):
             self._product.add_location(location)

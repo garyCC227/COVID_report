@@ -21,7 +21,7 @@ class ShortenNews():
 
     def get_content(self):
         content = self._content
-        return (content + '...') if len(content) > 75 else content
+        return (content[:75] + '...') if len(content) > 75 else content
 
     def to_dict(self):
         return {

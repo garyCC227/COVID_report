@@ -7,12 +7,17 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 def getDocumentByID(id):
-    ret_arr = []
-    query = db.collection(u'reports').where(u'id' , u'==', id)
-    docs = query.stream()
-    for doc in docs:
-        ret_arr.append(doc.to_dict())
-    return ret_arr
+
+    doc_ref = db.collection(u'reports').document(id)
+    try:
+        doc = doc_ref.get()
+        ret_dict = doc.to_dict()
+        ret_dict['id'] = id
+        print(ret_dict)
+        return ret_dict
+    except google.cloud.exceptions.NotFound:
+        print(u'No such document!')
+        return false
 
 def getDocumentByLocation(location):
     ret_arr = []
@@ -57,6 +62,8 @@ def readDocument(file):
         setDocument(data)
 
 # Test code
-ret = getDocumentByLocation("China")
-print(ret)
+# ret = getDocumentByLocation("China")
+# print(ret)
 
+# readDocument("./sample_data.json")
+getDocumentByID("EGzDMpAPw3LvdesCDECZ")

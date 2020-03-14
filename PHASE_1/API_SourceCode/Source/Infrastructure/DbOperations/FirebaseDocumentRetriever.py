@@ -17,9 +17,8 @@ class FirebaseDocumentRetriever():
     def get_document_by_id(self, id):
         db = firestore.client()
         query = db.collection(u'reports').where(u'id', u'==', id)
-        handler = lambda elem: self._create_document(elem, with_report=True)
         result_list = FirebaseListFactory().make(query)
-        return list(map(handler, result_list))
+        return self._create_document(result_list[0], with_report=True)
 
     def get_documents_by_location(self, location):
         db = firestore.client()
@@ -52,7 +51,5 @@ class FirebaseDocumentRetriever():
     def get_report_by_id(self, id):
         db = firestore.client()
         query = db.collection(u'reports').where(u'id', u'==', id)
-        factory = ReportFactory()
-        handler = lambda elem: factory.make(elem)
         result_list = FirebaseListFactory().make(query)
-        return list(map(handler, result_list))
+        return ReportFactory().make(result_list[0])

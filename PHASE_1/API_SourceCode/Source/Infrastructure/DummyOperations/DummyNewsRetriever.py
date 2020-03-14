@@ -29,12 +29,12 @@ class DummyNewsRetriever:
             "date": "2020-03-06 to 2020-03-08",
             "locations": [
                 {
-                    "country": "Dummy country 1",
-                    "location": "Dummy country 1"
+                    "google_id": "string",
+                    "address": "Dummy country 1"
                 },
                 {
-                    "country": "Dummy country 2",
-                    "location": "Dummy country 2"
+                    "google_id": "string",
+                    "address": "Dummy country 2"
                 }
             ],
             "diseases": ["Dummy disease 1"],

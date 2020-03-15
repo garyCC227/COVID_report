@@ -26,6 +26,18 @@ class NLP_Processer :
         self.load_pattern(self.syndrome_pattern_loc)
         self.load_search_pattern(self.search_pattern_loc)
         self.location_checker = Location_Checker()
+        self.keyword_location = []
+        self.keyword_frequency = []
+        self.keyword_list = []
+
+    def get_keyword_location(self) :
+        return self.keyword_location
+    
+    def get_keyword_frequency(self) :
+        return self.keyword_frequency
+    
+    def get_keyword_list(self) :
+        return self.keyword_list
 
     def load_pattern(self,location) :
         with open(location) as f:
@@ -75,6 +87,7 @@ class NLP_Processer :
         temp = dict(disease_dic, **syndrome_dic)
         keyword_dic = dict(temp,**search_dic)
         keyword_dic = dict(sorted(keyword_dic.items(), key=lambda kv: kv[1], reverse=True))
+        keyword_dic = dict((k.lower(), v) for k,v in keyword_dic.items())
         #This is for date and location
         test = Date_Formater()
         country_dic = {}
@@ -115,13 +128,13 @@ class NLP_Processer :
                 d["country"] = country
                 d["location"] = ""
                 l.append(d)
-            report["locations"] = l
+            self.keyword_location = l
         report["diseases"] = sorted(disease_dic.keys())
         report["syndromes"] = sorted(syndrome_dic.keys())
         if self.geocode_service :
-            report["keyword_location"] = sorted(location_handler.get_location_keywords())
-        report["keyword_frequency"] = keyword_dic
-
+            self.keyword_location = sorted(location_handler.get_location_keywords())
+        self.keyword_frequency = keyword_dic
+        self.keyword_list = keyword_dic.keys()
         reports = []
         reports.append(report)
         json_object = json.loads(json.dumps(reports))

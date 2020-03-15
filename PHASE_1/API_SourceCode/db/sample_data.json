@@ -19,18 +19,25 @@
     "diseases": [
       "COVID-19"
     ],
-    "syndromes": [],
-    "keyword_location": [
-      "beirut",
-      "beirut governorate",
-      "ir",
-      "iran",
-      "lb",
-      "lebanon"
-    ],
-    "keyword_frequency": {
-      "COVID-19": 1
-    }
+    "syndromes": ["Coughing, Fever"]
   }
-]
+ ],
+ "keyword_location": [
+  "beirut",
+  "beirut governorate",
+  "ir",
+  "iran",
+  "lb",
+  "lebanon"
+ ],
+  "keywords": [
+    "covid-19",
+    "coughing",
+    "fever"
+  ],
+ "keyword_frequency": {
+  "COVID-19": 1
+ },
+ "start_date" : "2020-01-17 xx:xx:xx",
+ "end_date" : "2020-01-17 xx:xx:xx"
 }

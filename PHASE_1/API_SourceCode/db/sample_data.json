@@ -19,7 +19,7 @@
     "diseases": [
       "COVID-19"
     ],
-    "syndromes": []
+    "syndromes": ["Coughing, Fever"]
   }
  ],
  "keyword_location": [
@@ -30,6 +30,11 @@
   "lb",
   "lebanon"
  ],
+  "keywords": [
+    "covid-19",
+    "coughing",
+    "fever"
+  ],
  "keyword_frequency": {
   "COVID-19": 1
  },

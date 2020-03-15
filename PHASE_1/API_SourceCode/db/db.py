@@ -24,7 +24,10 @@ def getDocumentByLocation(location):
     query = db.collection(u'reports').where(u'locations', u'array_contains', location)
     docs = query.stream()
     for doc in docs:
-        ret_arr.append(doc.to_dict())
+        # extract id from document and add it into return dictionary
+        ret_dict = doc.to_dict()
+        ret_dict[id] = doc.id
+        ret_arr.append(ret_dict)
     return ret_arr
 
 def getDocumentBySyndrome(syndrome):
@@ -32,7 +35,10 @@ def getDocumentBySyndrome(syndrome):
     query = db.collection(u'reports').where(u'syndromes', u'array_contains', syndrome)
     docs = query.stream()
     for doc in docs:
-        ret_arr.append(doc.to_dict())
+        # extract id from document and add it into return dictionary
+        ret_dict = doc.to_dict()
+        ret_dict[id] = doc.id
+        ret_arr.append(ret_dict)
     return ret_arr
 
 def getDocumentByDisease(disease):
@@ -40,7 +46,10 @@ def getDocumentByDisease(disease):
     query = db.collection(u'reports').where(u'diseases', u'array_contains', disease)
     docs = query.stream()
     for doc in docs:
-        ret_arr.append(doc.to_dict())
+        # extract id from document and add it into return dictionary
+        ret_dict = doc.to_dict()
+        ret_dict[id] = doc.id
+        ret_arr.append(ret_dict)
     return ret_arr
 
 def getAllDocuments():
@@ -48,7 +57,10 @@ def getAllDocuments():
     query = db.collection(u'reports')
     docs = query.stream()
     for doc in docs:
-        ret_arr.append(doc.to_dict())
+        # extract id from document and add it into return dictionary
+        ret_dict = doc.to_dict()
+        ret_dict[id] = doc.id
+        ret_arr.append(ret_dict)
     return ret_arr
 
 
@@ -66,4 +78,5 @@ def readDocument(file):
 # print(ret)
 
 # readDocument("./sample_data.json")
-getDocumentByID("EGzDMpAPw3LvdesCDECZ")
+# getDocumentByID("EGzDMpAPw3LvdesCDECZ")
+getAllDocuments()

@@ -13,12 +13,14 @@ class Filter(object):
     return [post.text.strip() for post in posts]
 
   def get_source_text_by_p(self):
+    title = self.soup.find('h1')
+    title = title.text.strip()
     texts = self.soup.findAll('p')
     content = ""
     for text in texts:
       content = content + text.text.strip()
     
-    return content
+    return title, content
 
 
 if __name__ == '__main__':

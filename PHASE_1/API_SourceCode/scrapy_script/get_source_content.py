@@ -20,20 +20,52 @@ def main():
 
   with open('content.json', 'r') as f:
     store = json.load(f)
-    
+
   post = data['posts'][i]
   nodeid = post['nodeid']
+  date = post['date']
+  datestamp = post['datestamp']
+  flutrack_content = ['flu_trackers_post_content']
   url = post['url']
-  post_content = post['flu_trackers_post_content']
+
+  if int(datestamp) < store['lastDatestamp']:
+    print('this is not a newer post\n')
+    return
+
   if not validators.url(url):
     return
     
-  content = ActivityPost.get_source_text_for_onepost(url)
-  store[nodeid] = content
+  title, content = ActivityPost.get_source_text_for_onepost(url)
+  newpost = {}
+  newpost[nodeid] = {
+    "date": date,
+    "datestamp":datestamp,
+    "flu_trackers_post_content" : content,
+    "url":url,
+    'title':title,
+    'content':content
+  }
+  
+  print(newpost)
+  # TODO: add NLP
 
 
-  with open('content.json', 'w') as f:
-    json.dump(store, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
+  # store["posts"][nodeid] = {
+  #   "date": date,
+  #   "datestamp":datestamp,
+  #   "flu_trackers_post_content" : content,
+  #   "url":url,
+  #   'title':title,
+  #   'content':content
+  # }
+  # print(title)
+  
+  # store['count'] = store['count'] + 1
+  # store['date'] = data['date']
+  # store['lastDatestamp'] = data['lastDatestamp']
+
+  # with open('content.json', 'w') as f:
+  #   json.dump(store, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
 
 
 

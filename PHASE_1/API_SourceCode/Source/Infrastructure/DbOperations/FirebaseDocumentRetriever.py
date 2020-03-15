@@ -1,6 +1,8 @@
 from .FirebaseListFactory import FirebaseListFactory
 from ...DomainFactory.ReportFactory import ReportFactory
 from ...DomainFactory.NewsFactory import NewsFactory
+from ...Domain.Exceptions.NewsNotFoundException import NewsNotFoundException
+from ...Domain.Exceptions.ReportNotFoundException import ReportNotFoundException
 from firebase_admin import firestore
 
 
@@ -16,9 +18,14 @@ class FirebaseDocumentRetriever():
 
     def get_document_by_id(self, id):
         db = firestore.client()
-        query = db.collection(u'reports').where(u'id', u'==', id)
-        result_list = FirebaseListFactory().make(query)
-        return self._create_document(result_list[0], with_report=True)
+
+        doc_ref = db.collection(u'reports').document(id)
+        doc = doc_ref.get()
+        result = doc.to_dict()
+        if not result:
+            raise NewsNotFoundException()
+        result['id'] = doc.id
+        return self._create_document(result, with_report=True)
 
     def get_documents_by_location(self, location):
         db = firestore.client()
@@ -50,6 +57,11 @@ class FirebaseDocumentRetriever():
 
     def get_report_by_id(self, id):
         db = firestore.client()
-        query = db.collection(u'reports').where(u'id', u'==', id)
-        result_list = FirebaseListFactory().make(query)
-        return ReportFactory().make(result_list[0])
+
+        doc_ref = db.collection(u'reports').document(id)
+        doc = doc_ref.get()
+        result = doc.to_dict()
+        if not result:
+            raise ReportNotFoundException()
+        result['id'] = doc.id
+        return ReportFactory().make(result)

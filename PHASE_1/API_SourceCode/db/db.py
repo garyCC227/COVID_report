@@ -54,7 +54,7 @@ def getDocumentByDisease(disease):
     ret_arr = []
     # query = db.collection(u'reports').where(u'diseases', u'array_contains', disease)
 
-    query = db.collection(u'reports').where(u"keyword", u'array_contains', disease)
+    query = db.collection(u'reports').where(u"keywords", u'array_contains', disease)
     docs = query.stream()
 
     for doc in docs:
@@ -91,8 +91,7 @@ def readDocument(file):
 # ret = getDocumentByLocation("China")
 # print(ret)
 
-readDocument("./sample_data.json")
-# getDocumentByID("EGzDMpAPw3LvdesCDECZ")
+# readDocument("./sample_data.json")
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")

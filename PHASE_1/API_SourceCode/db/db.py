@@ -48,7 +48,9 @@ def getAllDocuments():
     query = db.collection(u'reports')
     docs = query.stream()
     for doc in docs:
-        ret_arr.append(doc.to_dict())
+        elem = doc.to_dict()
+        elem['id'] = doc.id
+        ret_arr.append(elem)
     return ret_arr
 
 
@@ -66,4 +68,6 @@ def readDocument(file):
 # print(ret)
 
 # readDocument("./sample_data.json")
-getDocumentByID("EGzDMpAPw3LvdesCDECZ")
+print(getAllDocuments())
+
+#getDocumentByID("EGzDMpAPw3LvdesCDECZ")

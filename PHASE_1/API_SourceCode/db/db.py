@@ -20,34 +20,57 @@ def getDocumentByID(id):
         return false
 
 def getDocumentByLocation(location):
+    location = location.lower()
     ret_arr = []
-    query = db.collection(u'reports').where(u'locations', u'array_contains', location)
+    query = db.collection(u'reports').where(u'keyword_location', u'array_contains', location)
     docs = query.stream()
     for doc in docs:
-        ret_arr.append(doc.to_dict())
+        # extract id from document and add it into return dictionary
+        print(doc.to_dict())
+        ret_dict = doc.to_dict()
+        ret_dict['id'] = doc.id
+        ret_arr.append(ret_dict)
     return ret_arr
 
 def getDocumentBySyndrome(syndrome):
+    syndrome = syndrome.lower()
+    query_dict = {}
+
     ret_arr = []
-    query = db.collection(u'reports').where(u'syndromes', u'array_contains', syndrome)
+    query = db.collection(u'reports').where(u'keywords', u'array_contains', syndrome)
+    # var query = db.collection('chatDocs').where("chatMembers", "array-contains", { : "xyz", userName: "abc" });
+
     docs = query.stream()
     for doc in docs:
-        ret_arr.append(doc.to_dict())
+        # extract id from document and add it into return dictionary
+        print(doc.to_dict())
+        ret_dict = doc.to_dict()
+        ret_dict['id'] = doc.id
+        ret_arr.append(ret_dict)
     return ret_arr
 
 def getDocumentByDisease(disease):
+    disease = disease.lower()
     ret_arr = []
-    query = db.collection(u'reports').where(u'diseases', u'array_contains', disease)
+    # query = db.collection(u'reports').where(u'diseases', u'array_contains', disease)
+
+    query = db.collection(u'reports').where(u"keywords", u'array_contains', disease)
     docs = query.stream()
+
     for doc in docs:
-        ret_arr.append(doc.to_dict())
+        # extract id from document and add it into return dictionary
+        print(doc.to_dict())
+        ret_dict = doc.to_dict()
+        ret_dict['id'] = doc.id
+        ret_arr.append(ret_dict)
     return ret_arr
 
 def getAllDocuments():
     ret_arr = []
     query = db.collection(u'reports')
     docs = query.stream()
-    for doc in docs:
+    for doc in docs
+        # extract id from document and add it into return dictionary
         elem = doc.to_dict()
         elem['id'] = doc.id
         ret_arr.append(elem)
@@ -68,6 +91,7 @@ def readDocument(file):
 # print(ret)
 
 # readDocument("./sample_data.json")
-print(getAllDocuments())
+# getAllDocuments()
+# getDocumentByDisease("COVID-19")
+# getDocumentByLocation("beirut")
 
-#getDocumentByID("EGzDMpAPw3LvdesCDECZ")

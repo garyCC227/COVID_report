@@ -138,7 +138,9 @@ class NLP_Processer :
         reports = []
         reports.append(report)
         json_object = json.loads(json.dumps(reports))
-
+        print(self.keyword_location)
+        print(self.keyword_frequency)
+        print(self.keyword_list)
         return json_object
 
 
@@ -156,7 +158,7 @@ i = -1
 t1 = time.time()
 for b in data :
     i+=1
-    if i < 335 :
+    if i < 50 :
         continue
     print("\n")
     # print out main text
@@ -166,7 +168,7 @@ for b in data :
     # print out the captured report
     print(json_formatted_str)
     print("\n\n")
-    if i > 355 :
+    if i > 70 :
         break
 
 t2 = time.time()        

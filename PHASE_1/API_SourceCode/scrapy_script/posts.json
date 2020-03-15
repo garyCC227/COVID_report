@@ -1,14 +1,35 @@
 {
-    "count": 1,
-    "date": "2020-03-15 19:27:57",
-    "lastDatestamp": 1584260877,
+    "count": 4,
+    "date": "2020-03-15 22:39:40",
+    "lastDatestamp": 1584272380,
     "posts": [
         {
-            "date": "2020-03-15T08:27:57",
-            "datestamp": "1584260877",
-            "flu_trackers_post_content": "TASHKENT, March 15 (Reuters) - An Uzbek citizen has tested positive for coronavirus after returning from France, Uzbekistan's Healthcare Ministry said on Sunday, marking the first infection from the virus in the Central Asian country of 34 million.\n\nIt said it was taking the necessary measures to prevent the spread of the virus.\n\nUzbekistan's state airline said on Sunday it was suspending or curbing flights to a number of cities in Western Europe, Asia and the Middle East until the end of April",
-            "nodeid": "837172",
-            "url": ""
+            "date": "2020-03-15T11:39:40",
+            "datestamp": "1584272380",
+            "flu_trackers_post_content": "Guam Case Count 3\n\nFrom the Governor Lou Leon Guerrero\nWe have three confirmed cases of COVID-19 on Guam. Please be aware that all social gatherings of 100 people or more will be cancelled after Wednesday. I strongly urge the public to practice social distancing and avoid close contact.\nSource : https://twitter.com/louleonguerrero/...132132866?s=20",
+            "nodeid": "837230",
+            "url": "https://twitter.com/louleonguerrero/status/1239128272132132866?s=20"
+        },
+        {
+            "date": "2020-03-15T11:21:37",
+            "datestamp": "1584271297",
+            "flu_trackers_post_content": "Source: https://www.postguam.com/news/local/...1b163f2ba.html\n\nBREAKING NEWS: Governor announces 3 cases of COVID-19 on Guam\n    Daily Post Staff\n    Mar 15, 2020 Updated 1 hr ago\n\nThree individuals tested positive for COVID-19, according to Gov. Lou Leon Guerrero during an emergency press conference this evening at Guam Homeland and Security.\n\nThree patients presented to the Guam Memorial Hospital and considered persons under investigation. They are all over the age of 60, she said. Two of the confirmed cases are related to one another, and flew in from Manila on a United Airlines flight on the morning of March 2...",
+            "nodeid": "837226",
+            "url": "https://www.postguam.com/news/local/breaking-news-governor-announces-cases-of-covid--on-guam/article_6d03345e-6696-11ea-b123-43a1b163f2ba.html"
+        },
+        {
+            "date": "2020-03-15T10:55:35",
+            "datestamp": "1584269735",
+            "flu_trackers_post_content": "https://www.liebertpub.com/doi/10.10...2016.29062.eya\n\n\n\n\r\n\t\t\t\r\n\t\t\t\tEric Yarnell.Alternative and Complementary Therapies.Aug 2016.164-174.http://doi.org/10.1089/act.2016.29062.eyaPublished in Volume: 22 Issue 4: August 1, 2016\nAbstract  Several coronavirus (severe acute respiratory syndrome [SARS], Middle East respiratory syndrome [MERS]), flavivirus (yellow fever, West Nile, dengue, Zika), and alphavirus (chikungunya, Ebola) infections have, in the past 10\u201320 years, emerged or reemerged as major problems across large regions of the globe. While, currently, many of these infections are confined to the tropics, global warming, the spread of some mosquito vectors northward, and emergence of temperate-tolerant pathogens such as West Nile virus mean that these problems are increasingly affecting the global north as well. After discussing mosquito-based preventions for the zoonotic infections mentioned in this article, a review of herbal responses to the SARS and MERS epidemics are highlighted. Houttuynia cordata (houttuynia, y\u00fa x\u012bng c\u01ceo) and Glycyrrhiza spp. (licorice) stand out as particularly interesting single herbs for addressing these coronavirus infections. Herbal approaches to flavivirus infections, most notably clinical trials of Carica papaya (papaya) leaves for treating dengue fever, are reviewed. A discussion of many of the extensive range of herbs studied to treat flaviviruses in preclinical studies is provided. Potential herbal treatments for alphavirus infections are then presented.",
+            "nodeid": "837209",
+            "url": "https://www.liebertpub.com/doi/10.1089/act.2016.29062.eya"
+        },
+        {
+            "date": "2020-03-15T10:50:03",
+            "datestamp": "1584269403",
+            "flu_trackers_post_content": "http://physics.ruh.ac.lk/astrobiolog...19-1000159.pdf\n\n\n\n\r\n\t\t\t\r\n\t\t\t\tWickramasinghe NC, Steele E, Wainwright M, Tokoro G, Fernando M, et al. (2017) Sunspot Cycle Minima and Pandemics: The Case\nfor Vigilance? Astrobiol Outreach 5: 159. doi:10.4172/2332-2519.1000159\nAbstract\nDirect records of sunspots and the solar cycle have been maintained in astronomical observatories for about\n1610 AD, while indirect records derived from 14C analysis of ice cores go back to about 900 AD. Minima in the\nsunspot cycle present conditions conducive to the entry or activation of new pathogens and also for mutations of\nalready circulating bacteria and viruses. Three grand minima of solar activity on record\u2013the Sporer minimum\n(1450-1550 AD), Maunder minimum (1650-1700 AD) and the Dalton minimum (1800-1830) have all been marked by\na preponderance of pandemics\u2013Small Pox, English Sweats, Plague and Cholera. The sunspot numbers recorded\nfor the present period 2002-2017 include the deepest sunspot minimum (Cycle 23-24) since records began, and a\ntrend to declining numbers throughout the cycle. The same period has seen the resurgence of several pandemics\u2013\nSARS, MERS, Zika, Ebola, Influenza A. We consider it prudent to take note of these facts whilst planning future\nstrategies for pandemic surveillance and control.",
+            "nodeid": "837206",
+            "url": "http://physics.ruh.ac.lk/astrobiology/pdf/sunspot-cycle-minima-and-pandemics-the-case-for-vigilance-2332-2519-1000159.pdf"
         }
     ]
 }

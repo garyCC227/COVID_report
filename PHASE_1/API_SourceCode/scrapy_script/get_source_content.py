@@ -3,8 +3,8 @@ import validators
 import sys
 
 from last_activity import ActivityPost
-
-
+from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer
+# import db
 '''
 this file is used to get all the source_url content
 by the urls in posts.json
@@ -45,8 +45,27 @@ def main():
     'title':title,
     'content':content
   }
+
+  nlp_processer = NLP_Processer()
+    
+  reports = nlp_processer.make_reports(content)
+  d = {}
+  d["url"] = url
+  d["date_of_publication"] = date
+  d["headline"] = title
+  d["main_text"] = content
+  d["reports"] = reports
+  d["keyword_frequency"] = nlp_processer.get_keyword_frequency()
+  d["keyword_location"] = nlp_processer.get_keyword_location()
+  d["keyword_list"] = nlp_processer.get_keyword_list()
   
-  print(newpost)
+  json_file = json.dumps(d, indent = 2)
+  # db.db.setDocument(json_file)
+
+
+
+
+
   # TODO: add NLP
 
 

@@ -9,9 +9,9 @@
 | API Document    | Ping, Ryan, Webster, Gary, Yahnis | Not started |
 | API Testing     | Ping, Ryan, Webster, Gary, Yahnis | Not started |
 | MongoDB | Ping, Ryan | Not started |
-| Web Scraping and Data Extract | Gary | Almost finished |
-| Geocode API | Yahnis | Not started |
-| Data Analysis | Yahnis, Gary | Working |
+| Web Scraping and Data Extract | Gary | Done |
+| Geocode API | Yahnis | Working |
+| Data Analysis | Yahnis, Gary | Done |
 
 ## Work Arrangements
 Totally, there are five major technical parts

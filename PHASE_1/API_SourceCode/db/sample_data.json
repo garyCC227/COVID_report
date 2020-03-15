@@ -1,0 +1,43 @@
+{
+ "url": "https://www.who.int/csr/don/17-january-2020-novel-coronavirus-japan-exchina/en/",
+ "date_of_publication": "2020-01-17 xx:xx:xx",
+ "headline": "Balabalabala",
+ "main_text": "balabalabzlabalabalabzlabalabalabzlabalabalabzlabalabalabzlabalabalabzlabalabalabzlab",
+ "reports": [
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [
+      {
+        "google_id": "ChIJj6eAWCEXHxURtDaY6bqCkXI",
+        "address": "Beirut, Lebanon"
+      },
+      {
+        "google_id": "ChIJ8R1rwS7s9z4RzvpRntOVsEA",
+        "address": "Iran"
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": ["Coughing, Fever"]
+  }
+ ],
+ "keyword_location": [
+  "beirut",
+  "beirut governorate",
+  "ir",
+  "iran",
+  "lb",
+  "lebanon"
+ ],
+  "keywords": [
+    "covid-19",
+    "coughing",
+    "fever"
+  ],
+ "keyword_frequency": {
+  "COVID-19": 1
+ },
+ "start_date" : "2020-01-17 xx:xx:xx",
+ "end_date" : "2020-01-17 xx:xx:xx"
+}

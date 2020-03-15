@@ -18,9 +18,8 @@ process = CrawlerProcess(settings={
     'FEED_URI': 'temp.csv'
 })
 
-'''
-Function for store urls into urls.txt
-'''
+# Function for store urls into urls.txt
+
 def store_urls(urls=DEFAULT_URLS):
   # store urls into urls.txt
   with open("urls.txt", "w") as f:
@@ -47,7 +46,7 @@ class MySpider(scrapy.Spider):
     # filename = '{}-{}.html'.format(page, self.num_pages)
     filename = 'temp.html' #consistent name 
     self.num_pages += 1
-    with open(filename, 'wb') as f:
+    with open(filename, "wb") as f:
       f.write(response.body)
     self.log('Saved file %s' % filename)
 

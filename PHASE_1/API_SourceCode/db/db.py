@@ -28,7 +28,7 @@ def getDocumentByLocation(location):
         # extract id from document and add it into return dictionary
         print(doc.to_dict())
         ret_dict = doc.to_dict()
-        ret_dict[id] = doc.id
+        ret_dict['id'] = doc.id
         ret_arr.append(ret_dict)
     return ret_arr
 
@@ -45,7 +45,7 @@ def getDocumentBySyndrome(syndrome):
         # extract id from document and add it into return dictionary
         print(doc.to_dict())
         ret_dict = doc.to_dict()
-        ret_dict[id] = doc.id
+        ret_dict['id'] = doc.id
         ret_arr.append(ret_dict)
     return ret_arr
 
@@ -61,7 +61,7 @@ def getDocumentByDisease(disease):
         # extract id from document and add it into return dictionary
         print(doc.to_dict())
         ret_dict = doc.to_dict()
-        ret_dict[id] = doc.id
+        ret_dict['id'] = doc.id
         ret_arr.append(ret_dict)
     return ret_arr
 
@@ -69,12 +69,11 @@ def getAllDocuments():
     ret_arr = []
     query = db.collection(u'reports')
     docs = query.stream()
-    for doc in docs:
+    for doc in docs
         # extract id from document and add it into return dictionary
-        print(doc.to_dict())
-        ret_dict = doc.to_dict()
-        ret_dict[id] = doc.id
-        ret_arr.append(ret_dict)
+        elem = doc.to_dict()
+        elem['id'] = doc.id
+        ret_arr.append(elem)
     return ret_arr
 
 
@@ -95,3 +94,4 @@ def readDocument(file):
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")
+

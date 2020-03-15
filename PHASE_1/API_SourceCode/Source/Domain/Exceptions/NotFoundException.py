@@ -1,7 +1,12 @@
-class NotFoundException(Exception):
+import werkzeug
+
+class NotFoundException(werkzeug.exceptions.HTTPException):
+    code = 404
+    description = "Not Found."
+
     def __init__(self):
         super().__init__()
-        self._message = "Not Found."
+        self.description = "Not Found."
 
     def to_dict(self):
-        return self._message
+        return self.description

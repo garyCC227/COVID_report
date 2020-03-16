@@ -1,4 +1,5 @@
 from .FirebaseListFactory import FirebaseListFactory
+from ...DomainFactory.ReportListFactory import ReportListFactory
 from ...DomainFactory.ReportFactory import ReportFactory
 from ...DomainFactory.NewsFactory import NewsFactory
 from ...Domain.Exceptions.NewsNotFoundException import NewsNotFoundException
@@ -8,10 +9,12 @@ from firebase_admin import firestore
 
 class FirebaseDocumentRetriever():
     def _create_document(self, db_result, shorten=False, with_report=False):
-        db_result['content'] = db_result['body'] if ('body' in db_result) else ""
+        db_result['content'] = db_result['main_text'] if ('main_text' in db_result) else ""
+        db_result['title'] = db_result['headline'] if ('headline' in db_result) else ""
+        db_result['date'] = db_result['date_of_publication'] if ('date_of_publication' in db_result) else ""
         factory = NewsFactory(shorten=shorten)
         if with_report:
-            report = ReportFactory().make(db_result)
+            report = ReportListFactory().make(db_result)
             return factory.make_with_report(db_result, report)
         else:
             return factory.make(db_result)
@@ -64,4 +67,4 @@ class FirebaseDocumentRetriever():
         if not result:
             raise ReportNotFoundException()
         result['id'] = doc.id
-        return ReportFactory().make(result)
+        return ReportListFactory().make(result)

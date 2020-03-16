@@ -1,7 +1,7 @@
 from .DomainFactory import DomainFactory
 from ..Domain.News import News
 from ..Domain.ShortenNews import ShortenNews
-from ..Domain.Report import Report
+from ..Domain.ReportList import ReportList
 
 
 class NewsFactory(DomainFactory):
@@ -37,7 +37,7 @@ class NewsFactory(DomainFactory):
         return self._product
 
     def make_with_report(self, data, report):
-        if isinstance(report, Report):
+        if isinstance(report, ReportList):
             self.make(data)
-            self._product.set_report(report)
+            self._product.set_reports(report)
         return self._product

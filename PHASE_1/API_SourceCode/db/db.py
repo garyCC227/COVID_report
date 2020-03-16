@@ -103,7 +103,7 @@ def headlineExists(headline):
     query = db.collection(u'reports').where(u'headline', u'==', headline )
     docs = query.get()
     for doc in docs:
-        print(doc.to_dict())
+        # print(doc.to_dict())
         if doc.to_dict() != "":
             print("Headline already exists in database: " + headline)
             return True

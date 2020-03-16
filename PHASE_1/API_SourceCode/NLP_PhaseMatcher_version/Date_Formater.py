@@ -228,9 +228,9 @@ class Date_Formater:
     if mon == None :
       return [self.error_date_ignore(year + "-xx-xx xx:xx:xx")]
     
-    if word_expression and int(mon) > self.month:
+    if word_expression and int(mon) > self.month + 1:
         year = str(int(year) - 1)
-        
+
     if day == None :
       return  [self.error_date_ignore(year + "-" + mon + "-xx xx:xx:xx")]
 

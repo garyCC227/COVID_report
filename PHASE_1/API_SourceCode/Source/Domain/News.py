@@ -3,21 +3,21 @@ from .ShortenNews import ShortenNews
 
 class News(ShortenNews):
 
-    def __init__(self, id, url, date, title, content, report=None):
+    def __init__(self, id, url, date, title, content, reports=None):
         super().__init__(id, url, date, title, content)
-        self._report = report
+        self._reports = reports
 
     def get_content(self):
         return self._content
 
-    def get_report(self):
-        return self._report
+    def get_reports(self):
+        return self._reports
 
-    def set_report(self, report):
-        self._report = report
+    def set_reports(self, reports):
+        self._reports = reports
 
     def to_dict(self):
         result = super().to_dict()
-        if self._report is not None:
-            result['report'] = self.get_report()
+        if self._reports is not None:
+            result['reports'] = self.get_reports().to_dict()
         return result

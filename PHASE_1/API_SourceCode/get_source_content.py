@@ -28,6 +28,7 @@ def fetch_resource_context(i):
   post = data['posts'][i]
   nodeid = post['nodeid']
   date = post['date']
+  date = date.replace("T", " ")
   datestamp = post['datestamp']
   flutrack_content = ['flu_trackers_post_content']
   url = post['url']
@@ -57,6 +58,10 @@ def fetch_resource_context(i):
   if detect(content) != "en":
     print("No English\n")
     return 
+
+  if title == "Access Denied" :
+    print("Auh")
+    return
 
   nlp_processer = NLP_Processer()
   reports = nlp_processer.make_reports(content)

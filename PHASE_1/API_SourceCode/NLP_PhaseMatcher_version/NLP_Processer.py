@@ -98,8 +98,9 @@ class NLP_Processer :
         keyword_dic = dict(sorted(keyword_dic.items(), key=lambda kv: kv[1], reverse=True))
         keyword_dic = dict((k.lower(), v) for k,v in keyword_dic.items())
         #This is for date and location
+        temp = re.search("", self.publication_date)
         test = Date_Formater()
-        test.add_date(self.publication_date)
+        
         country_dic = {}
         location_dic = {}
         for ent in doc.ents:

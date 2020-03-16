@@ -17,7 +17,7 @@ def main():
     i = 0
     posts = store['posts']
     for key, post in posts.items():
-        if i < 50 :
+        if i < 450 :
             i+=1
             continue
         maintext = post['content']
@@ -46,7 +46,7 @@ def main():
         json_file = json.loads(json_file)
         setDocument(json_file)
         i+=1
-        if i >  150:
+        if i >  455:
             break
 
     with open('articles.json', 'w') as f:

@@ -1,5 +1,8 @@
 # API Source Code
 
+## API Documentation
+[Here](https://app.swaggerhub.com/apis/websterzh/APInteresting/1.0.0)
+
 ## How to Run
 ### 0. Check Python Version
 Make sure you are using python 3 for this application.

@@ -142,9 +142,7 @@ class NLP_Processer :
         self.keyword_list = sorted(keyword_dic.keys())
         reports = []
         reports.append(report)
-
         return reports
-
 
 
 
@@ -175,3 +173,4 @@ class NLP_Processer :
 
 # t2 = time.time()        
 # print("%.3f seconds" % (t2 - t1))
+

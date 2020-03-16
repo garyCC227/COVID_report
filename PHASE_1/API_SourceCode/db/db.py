@@ -1,6 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from google.api_core.exceptions import NotFound
 import json
 cred = credentials.Certificate(".//fbconfig/apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
 firebase_admin.initialize_app(cred)
@@ -15,9 +16,9 @@ def getDocumentByID(id):
         ret_dict['id'] = id
         print(ret_dict)
         return ret_dict
-    except google.cloud.exceptions.NotFound:
+    except NotFound:
         print(u'No such document!')
-        return false
+        return False
 
 def getDocumentByLocation(location):
     location = location.lower()
@@ -69,7 +70,7 @@ def getAllDocuments():
     ret_arr = []
     query = db.collection(u'reports')
     docs = query.stream()
-    for doc in docs
+    for doc in docs:
         # extract id from document and add it into return dictionary
         elem = doc.to_dict()
         elem['id'] = doc.id
@@ -85,6 +86,9 @@ def readDocument(file):
     with open(file, 'r', encoding='utf-8') as f:
         data = json.load(f)
         setDocument(data)
+
+def checkHeadline(data):
+
 
 # Test code
 # ret = getDocumentByLocation("China")

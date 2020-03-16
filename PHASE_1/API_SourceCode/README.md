@@ -1,30 +1,30 @@
 # API Source Code
 
 ## API Documentation
-[Here](https://app.swaggerhub.com/apis/websterzh/APInteresting/1.0.0)
+[Here](https://apinteresting.xyz/docs/)
 
-## How to Run
+## How to Run in Development Environment
 ### 0. Check Python Version
 Make sure you are using python 3 for this application.
 ```bash
 $ python --version
 ```
 
-If it doesn't look right, try to substitude the `python` with `python3`.   
+If it doesn't look right, try to substitude the `python` with `python3`.
 
-### Enable Virtual Environment
+### 1. Enable Virtual Environment
 ```bash
 $ virtualenv --python=python3 venv
 $ . venv/bin/activate
 $ pip3 install -r requirements.txt
 ```
 
-### Run Application (Development Mode)
+### 2. Run Application (Development Mode)
 ```bash
 $ python3 run.py
 ```
 
-### Disable Virtual Environment
+### 3. Disable Virtual Environment
 ```
 deactivate
 ```

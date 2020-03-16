@@ -28,7 +28,8 @@
 - [x] Design Details (D1) [Link](https://github.com/websterzh/SENG3011_APInteresting/blob/master/Reports/DesignDetails.md)
 - [x] Management Information (D1) [Link](https://github.com/websterzh/SENG3011_APInteresting/blob/master/Reports/ManagementInformation.md)
 - [x] **Swagger Documentation (D2) [Link](https://app.swaggerhub.com/apis/websterzh/APInteresting/1.0.0)**
-- [x] **API Endpoint (D2) (http://34.87.203.142:8000/v1) **
+- [x] **API Endpoint (D2) (https://apinteresting.xyz/v1) **
+- [x] **Swagger Documentation (D2) (https://apinteresting.xyz/docs/) **
 - [ ] **Design Details (D2)**
 - [ ] **Testing Scripts & Documentation (D2)**
 - [ ] Final Report

@@ -26,8 +26,8 @@ class Geocode_Location:
         location = location.lower()
         if location in self.location_keywords :
             return
-        ignore_pure_number = re.search("^[^a-zA-Z]+&", location)
-        if ignore_pure_number != None :
+        ignore_pure_number = re.search("^[^a-zA-Z]+$", location)
+        if ignore_pure_number == None :
             self.location_keywords.append(location)
         else :
             return

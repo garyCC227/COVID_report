@@ -26,9 +26,13 @@ class NLP_Processer :
         self.load_pattern(self.syndrome_pattern_loc)
         self.load_search_pattern(self.search_pattern_loc)
         self.location_checker = Location_Checker()
+        self.publication_date = "2020-xx-xx xx:xx:xx"
         self.keyword_location = []
         self.keyword_frequency = []
         self.keyword_list = []
+
+    def set_publication_date(self, date) :
+        self.publication_date = date
 
     def get_keyword_location(self) :
         return self.keyword_location
@@ -90,6 +94,7 @@ class NLP_Processer :
         keyword_dic = dict((k.lower(), v) for k,v in keyword_dic.items())
         #This is for date and location
         test = Date_Formater()
+        test.add_date(self.publication_date)
         country_dic = {}
         location_dic = {}
         for ent in doc.ents:
@@ -134,42 +139,38 @@ class NLP_Processer :
         if self.geocode_service :
             self.keyword_location = sorted(location_handler.get_location_keywords())
         self.keyword_frequency = keyword_dic
-        self.keyword_list = keyword_dic.keys()
+        self.keyword_list = sorted(keyword_dic.keys())
         reports = []
         reports.append(report)
-        json_object = json.loads(json.dumps(reports))
-        print(self.keyword_location)
-        print(self.keyword_frequency)
-        print(self.keyword_list)
-        return json_object
+        return reports
 
 
 
 
+# # Sample usage
+# # switch to false if you don not need google geocode service
+# # or testing a huge bulk of data
+# a = NLP_Processer(geocode_service = True)
+# with open('./content.json') as f:
+#     data = json.load(f)
+# f.close()
+# i = -1
+# t1 = time.time()
+# for b in data :
+#     i+=1
+#     if i < 335 :
+#         continue
+#     print("\n")
+#     # print out main text
+#     # print(data[b])
+#     json_object = a.make_reports(data[b])
+#     json_formatted_str = json.dumps(json_object, indent=2)
+#     # print out the captured report
+#     print(json_formatted_str)
+#     print("\n\n")
+#     if i > 355 :
+#         break
 
-# Sample usage
-# switch to false if you don not need google geocode service
-# or testing a huge bulk of data
-a = NLP_Processer(geocode_service = True)
-with open('./content.json') as f:
-    data = json.load(f)
-f.close()
-i = -1
-t1 = time.time()
-for b in data :
-    i+=1
-    if i < 50 :
-        continue
-    print("\n")
-    # print out main text
-    # print(data[b])
-    json_object = a.make_reports(data[b])
-    json_formatted_str = json.dumps(json_object, indent=2)
-    # print out the captured report
-    print(json_formatted_str)
-    print("\n\n")
-    if i > 70 :
-        break
+# t2 = time.time()        
+# print("%.3f seconds" % (t2 - t1))
 
-t2 = time.time()        
-print("%.3f seconds" % (t2 - t1))

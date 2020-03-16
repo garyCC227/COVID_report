@@ -53,7 +53,7 @@ def fetch_resource_context(i):
     'content':content
   }
 
-  if len(content) < 300 or content[3:10] in "NCBIErrorYour access to the NCBI website":
+  if len(title) < 3 or len(content) < 300 or content[3:10] in "NCBIErrorYour access to the NCBI website":
     print("Cannot Access\n")
     return
 

@@ -1,11 +1,13 @@
 import json
 import validators
 import sys
+import os
 from langdetect import detect
 
-from db import *
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 
-from last_activity import ActivityPost
+from db.db import *
+from Scrapy.last_activity import ActivityPost
 from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer
 # import sys
 # sys.path.insert(1,"C:\\Users\\ASUS\\se3011\\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\db")
@@ -15,14 +17,12 @@ by the urls in posts.json
 
 '''
 
-
-def main():
-  i = int(sys.argv[1])
+def fetch_resource_context(i):
   print("number is :************************************************ ", i)
-  with open('posts.json', 'r') as f:
+  with open(os.path.join('Scrapy', 'posts.json'), 'r') as f:
     data = json.load(f)
 
-  with open('content.json', 'r') as f:
+  with open(os.path.join('Scrapy', 'content.json'), 'r') as f:
     store = json.load(f)
 
   post = data['posts'][i]
@@ -51,9 +51,11 @@ def main():
   }
 
   if len(content) < 300 or content[3:10] in "NCBIErrorYour access to the NCBI website":
+    print("Cannot Access\n")
     return
 
   if detect(content) != "en":
+    print("No English\n")
     return 
 
   nlp_processer = NLP_Processer()
@@ -73,32 +75,6 @@ def main():
   print(json_file)
   # setDocument(json_file)
 
-
-
-
-
-  # TODO: add NLP
-
-
-  # store["posts"][nodeid] = {
-  #   "date": date,
-  #   "datestamp":datestamp,
-  #   "flu_trackers_post_content" : content,
-  #   "url":url,
-  #   'title':title,
-  #   'content':content
-  # }
-  # print(title)
-  
-  # store['count'] = store['count'] + 1
-  # store['date'] = data['date']
-  # store['lastDatestamp'] = data['lastDatestamp']
-
-  # with open('content.json', 'w') as f:
-  #   json.dump(store, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
-
-
-
 if __name__ == "__main__":
-  # print(sys.argv[1])
-  main()
+    i = int(sys.argv[1])
+    fetch_resource_context(i)

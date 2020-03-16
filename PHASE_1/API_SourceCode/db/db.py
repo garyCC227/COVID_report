@@ -3,9 +3,14 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from google.api_core.exceptions import NotFound
 import json
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
+
 
 # cred = credentials.Certificate(".\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
-cred = credentials.Certificate(r"C:\\Users\\ASUS\\se3011\\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\db\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
+cred = credentials.Certificate(os.path.join("db","fbconfig","apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json"))
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -111,7 +116,7 @@ def headlineExists(headline):
 # ret = getDocumentByLocation("China")
 # print(ret)
 
-readDocument("./sample_data.json")
+# readDocument("./sample_data.json")
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")

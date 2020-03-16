@@ -1,4 +1,6 @@
-max=1398
+#!/bin/sh
+
+max=$1
 c=0
 while [ $c -le $max ]
 do

@@ -14,15 +14,14 @@ DEFAULT_URLS = [
     'https://flutrackers.com/forum/forum/-2019-ncov-new-coronavirus/australia-2019-ncov/824507-australia-2019-ncov-cases-news-information/page3']
 # crawler object
 process = CrawlerProcess(settings={
-    'FEED_FORMAT': 'csv',
-    'FEED_URI': 'temp.csv'
+    'FEED_FORMAT': 'csv'
 })
 
 # Function for store urls into urls.txt
 
 def store_urls(urls=DEFAULT_URLS):
   # store urls into urls.txt
-  with open("urls.txt", "w") as f:
+  with open("./Scrapy/urls.txt", "w") as f:
     for url in urls:
       f.write("{}\n".format(url))
 
@@ -34,7 +33,7 @@ class MySpider(scrapy.Spider):
   num_pages = 1
 
   def __init__(self):
-    for line in open('./urls.txt', 'r').readlines():
+    for line in open('./Scrapy/urls.txt', 'r').readlines():
       self.start_urls.append('%s' % line)
 
   def start_requests(self):
@@ -44,7 +43,7 @@ class MySpider(scrapy.Spider):
   def parse(self, response):
     page = response.url.split("/")[-2]
     # filename = '{}-{}.html'.format(page, self.num_pages)
-    filename = 'temp.html' #consistent name 
+    filename = './Scrapy/temp.html' #consistent name 
     self.num_pages += 1
     with open(filename, "wb") as f:
       f.write(response.body)

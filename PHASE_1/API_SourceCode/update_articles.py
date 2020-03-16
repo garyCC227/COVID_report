@@ -1,69 +1,19 @@
 from langdetect import detect
-from db.db import setDocument
-from scrapy_script.last_activity import ActivityPost
-from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer
 import requests
 import json
 import validators
+import os
+import sys
+import subprocess
 
-def fetch_resource_context(i):
-  print("number is :************************************************ ", i)
-  with open('posts.json', 'r') as f:
-    data = json.load(f)
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 
-  with open('content.json', 'r') as f:
-    store = json.load(f)
-
-  post = data['posts'][i]
-  nodeid = post['nodeid']
-  date = post['date']
-  datestamp = post['datestamp']
-  flutrack_content = ['flu_trackers_post_content']
-  url = post['url']
-
-  if int(datestamp) < store['lastDatestamp']:
-    print('this is not a newer post\n')
-    return
-
-  if not validators.url(url):
-    return
-    
-  title, content = ActivityPost.get_source_text_for_onepost(url)
-  newpost = {}
-  newpost[nodeid] = {
-    "date": date,
-    "datestamp":datestamp,
-    "flu_trackers_post_content" : content,
-    "url":url,
-    'title':title,
-    'content':content
-  }
-
-  if len(content) < 300 or content[3:10] in "NCBIErrorYour access to the NCBI website":
-    return
-
-  if detect(content) != "en":
-    return 
-
-  nlp_processer = NLP_Processer()
-  reports = nlp_processer.make_reports(content)
-  d = {}
-  d["url"] = url
-  d["date_of_publication"] = date
-  d["headline"] = title
-  d["main_text"] = content
-  d["reports"] = reports
-  d["keyword_frequency"] = nlp_processer.get_keyword_frequency()
-  d["keyword_location"] = nlp_processer.get_keyword_location()
-  d["keyword_list"] = nlp_processer.get_keyword_list()
-  
-  json_file = json.dumps(d, indent = 2)
-  # json_file = json.loads(json_file)
-  print(json_file)
-  # setDocument(json_file)
+from db.db import setDocument
+from Scrapy.last_activity import ActivityPost
+from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer
 
 def update_post(posts, PS):
-  with open('content.json', 'r') as f:
+  with open(os.path.join('Scrapy', 'content.json'), 'r') as f:
     data = json.load(f)
 
   last_timestamp = data['lastDatestamp']
@@ -85,16 +35,19 @@ def update_post(posts, PS):
       "lastDatestamp": PS.last_datestamp,
       "date": str(PS.last_date)
     }
-    with open('posts.json', 'w') as f:
+    with open(os.path.join('Scrapy', 'posts.json'), 'w') as f:
       json.dump(new_data, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
+
+    return len(new_posts)
   else:
     print("No new posts\n")
-    return
+    return 0
 
-if __name__ == "__main__":
 
+def main():
+  num_post = 15 #NOTE: we assume 15 new posts addded in flu trackers. so we only get 15 posts back
   # formData = 'filters%5Bnodeid%5D=0&filters%5Bview%5D=activity&filters%5Bper-page%5D={}&filters%5Bpagenum%5D=1&filters%5Bmaxpages%5D=1&filters%5Buserid%5D=0&filters%5BshowChannelInfo%5D=1&filters%5Bfilter_time%5D=time_all&filters%5Bfilter_show%5D=show_all&filters%5Bfilter_new_topics%5D=1&isAjaxTemplateRender=true&isAjaxTemplateRenderWithData=true&securitytoken=guest'.format(num_post)
-  formData = 'filters%5Bnodeid%5D=0&filters%5Bview%5D=activity&filters%5Bper-page%5D={}&filters%5Bpagenum%5D=1&filters%5Bmaxpages%5D=1&filters%5Buserid%5D=0&filters%5BshowChannelInfo%5D=1&filters%5Bfilter_time%5D=time_all&filters%5Bfilter_show%5D=show_all&filters%5Bfilter_new_topics%5D=1&isAjaxTemplateRender=true&isAjaxTemplateRenderWithData=true&securitytoken=guest'.format(num_post)
+  formData = 'filters%5Bnodeid%5D=0&filters%5Bview%5D=activity&filters%5Bper-page%5D={}&filters%5Bpagenum%5D=1&filters%5Bmaxpages%5D=1&filters%5Buserid%5D=0&filters%5BshowChannelInfo%5D=1&filters%5Bfilter_time%5D=time_today&filters%5Bfilter_show%5D=show_all&filters%5Bfilter_new_topics%5D=1&isAjaxTemplateRender=true&isAjaxTemplateRenderWithData=true&securitytoken=guest'.format(num_post)
   headers = {
     'Content-Type':'application/x-www-form-urlencoded'
   }
@@ -108,10 +61,17 @@ if __name__ == "__main__":
   sorted_posts = sorted(posts, key=lambda x:x['datestamp'], reverse=True)
   # build a good format dict to store in json
 
-  update_post(sorted_posts, PS)    
+  num_newposts = update_post(sorted_posts, PS)    
 
   # Now we have the lastest activities urls, I try transfer bash to python
+  if num_newposts > 0:
+    run_shell = "./run.sh"
+    subprocess.call([run_shell, str(num_newposts-1)])
+  else:
+    print("No new posts\n")
+    return
 
-	for i in 0..1398 :
-		fetch_resource_context(i)
+if __name__ == "__main__":
+  main()
+  
 

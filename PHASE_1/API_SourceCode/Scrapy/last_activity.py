@@ -2,11 +2,15 @@ import requests
 import json 
 import datetime
 from bs4 import BeautifulSoup
-import scrapy
 from scrapy.crawler import CrawlerProcess
+import scrapy
+import os
+import sys
 
-from scrapy_script import scrapping
-from filter import Filter
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
+
+from .scrapy_script import scrapping
+from .filter import Filter
 
 '''
 what this script does:
@@ -80,14 +84,14 @@ class ActivityPost(object):
     '''
     filter text from source url
     '''
-    filename = 'temp.html' #consistent file name
+    filename = './Scrapy/temp.html' #consistent file name
     flter = Filter(filename)
     
     return flter.get_source_text_by_p()
 
 
 def update_post(posts, PS):
-  with open('content.json', 'r') as f:
+  with open('./Scrapy/content.json', 'r') as f:
     data = json.load(f)
 
   last_timestamp = data['lastDatestamp']
@@ -109,7 +113,7 @@ def update_post(posts, PS):
       "lastDatestamp": PS.last_datestamp,
       "date": str(PS.last_date)
     }
-    with open('posts.json', 'w') as f:
+    with open('./Scrapy/posts.json', 'w') as f:
       json.dump(new_data, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
   else:
     print("No new posts\n")

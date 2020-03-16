@@ -2,10 +2,15 @@ import spacy
 import re
 import json
 import time
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
+
 from spacy.matcher import PhraseMatcher
-from Date_Formater import Date_Formater
-from Location_Checker import Location_Checker
-from Geocode_Location import Geocode_Location
+from .Date_Formater import Date_Formater
+from .Location_Checker import Location_Checker
+from .Geocode_Location import Geocode_Location
 
 # You can alter the path of disease_pattern_loc, search_pattern_loc, syndrome_pattern_loc when creating NLP_Processer object
 # You should call make_reports function to get reports json
@@ -14,8 +19,8 @@ from Geocode_Location import Geocode_Location
 
 class NLP_Processer :
 
-    def __init__ (self, disease_pattern_loc = "./disease_pattern.json" , search_pattern_loc = "./search_pattern.json", 
-                    syndrome_pattern_loc = "./syndrome_pattern.json", geocode_service = True):
+    def __init__ (self, disease_pattern_loc = os.path.join("NLP_PhaseMatcher_version","disease_pattern.json") , search_pattern_loc = os.path.join("NLP_PhaseMatcher_version","search_pattern.json"), 
+                    syndrome_pattern_loc = os.path.join("NLP_PhaseMatcher_version","syndrome_pattern.json"), geocode_service = True):
         self.disease_pattern_loc = disease_pattern_loc
         self.search_pattern_loc = search_pattern_loc
         self.syndrome_pattern_loc = syndrome_pattern_loc

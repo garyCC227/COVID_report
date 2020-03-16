@@ -1,0 +1,2712 @@
+
+
+[
+  {
+    "event_date": "2020-02-10 xx:xx:xx to 2020-12-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "COVID-19",
+      "other"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Scotland",
+      "Suffolk"
+    ],
+    "keyword_frequency": {
+      "Influenza-like illness": 5,
+      "other": 3,
+      "COVID-19": 1,
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "Japan",
+        "location": ""
+      },
+      {
+        "country": "Spain",
+        "location": ""
+      }
+    ],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-05 15:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Hong Kong",
+        "location": ""
+      },
+      {
+        "country": "US",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Coronavirus"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 5,
+      "virus": 1,
+      "outbreak": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-05-xx xx:xx:xx to 2020-10-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "influenza a/h1n1",
+      "influenza a/h5n1",
+      "other"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "Influenza-like illness": 2,
+      "influenza a/h5n1": 1,
+      "other": 1,
+      "influenza a/h1n1": 1,
+      "emerging": 1,
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-01-xx xx:xx:xx to 2020-02-07 xx:xx:xx",
+    "locations": [
+      {
+        "country": "Germany",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "other"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Baden-Wurttemberg",
+      "Brandenburg",
+      "Bretzfeld",
+      "Paris"
+    ],
+    "keyword_frequency": {
+      "other": 2,
+      "Influenza-like illness": 2,
+      "virus": 2,
+      "outbreak": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2019-xx-xx xx:xx:xx to 2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "COVID-19": 6,
+      "outbreak": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2019-xx-xx xx:xx:xx to 2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "COVID-19": 6,
+      "outbreak": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "other"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Leesburg",
+      "Loudoun County",
+      "Virginia"
+    ],
+    "keyword_frequency": {
+      "Influenza-like illness": 3,
+      "other": 2
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-10 02:xx:xx to 2020-03-10 09:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "England",
+        "location": ""
+      },
+      {
+        "country": "Ireland",
+        "location": ""
+      },
+      {
+        "country": "Italy",
+        "location": ""
+      },
+      {
+        "country": "UK",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "mers-cov",
+      "pneumococcus pneumonia",
+      "sars"
+    ],
+    "syndromes": [
+      "Acute respiratory syndrome",
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Hubei Province",
+      "Scotland",
+      "Wales",
+      "Wuhan",
+      "Wuhan City"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 25,
+      "virus": 8,
+      "Acute respiratory syndrome": 3,
+      "sars": 2,
+      "mers-cov": 2,
+      "Influenza-like illness": 2,
+      "pneumococcus pneumonia": 1,
+      "fever": 1,
+      "mers": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "COVID-19",
+      "sars"
+    ],
+    "syndromes": [
+      "Acute respiratory syndrome"
+    ],
+    "minor_locations": [
+      "New York",
+      "New York City",
+      "New York State",
+      "New York StateStill No",
+      "Translation\ud55c\uad6d\uc5b4"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 8,
+      "virus": 2,
+      "sars": 1,
+      "Acute respiratory syndrome": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2018-08-xx 00:xx:xx to 2020-02-08 xx:xx:xx",
+    "locations": [
+      {
+        "country": "Belize",
+        "location": ""
+      },
+      {
+        "country": "Bolivia",
+        "location": ""
+      },
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Congo",
+        "location": ""
+      },
+      {
+        "country": "Costa Rica",
+        "location": ""
+      },
+      {
+        "country": "El Salvador",
+        "location": ""
+      },
+      {
+        "country": "Honduras",
+        "location": ""
+      },
+      {
+        "country": "Mexico",
+        "location": ""
+      },
+      {
+        "country": "Nicaragua",
+        "location": ""
+      },
+      {
+        "country": "Saudi Arabia",
+        "location": ""
+      },
+      {
+        "country": "Taiwan",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "dengue",
+      "ebola haemorrhagic fever",
+      "mers-cov",
+      "other"
+    ],
+    "syndromes": [
+      "Acute respiratory syndrome",
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Beliza",
+      "Beni",
+      "Dammam",
+      "Discover",
+      "HO-CDI",
+      "Mecca",
+      "Minneapolis",
+      "North Kivu",
+      "Scotland",
+      "Sichuan province",
+      "Taipei",
+      "Taipei City",
+      "Vietnam"
+    ],
+    "keyword_frequency": {
+      "mers-cov": 7,
+      "dengue": 7,
+      "ebola haemorrhagic fever": 5,
+      "ebola": 5,
+      "other": 3,
+      "Influenza-like illness": 3,
+      "virus": 3,
+      "mers": 3,
+      "outbreak": 2,
+      "infection": 2,
+      "COVID-19": 1,
+      "Acute respiratory syndrome": 1,
+      "epidemic": 1,
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-19 00:xx:xx",
+    "locations": [
+      {
+        "country": "Africa",
+        "location": ""
+      },
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "France",
+        "location": ""
+      },
+      {
+        "country": "Japan",
+        "location": ""
+      },
+      {
+        "country": "MD",
+        "location": ""
+      },
+      {
+        "country": "Singapore",
+        "location": ""
+      },
+      {
+        "country": "Spain",
+        "location": ""
+      },
+      {
+        "country": "UK",
+        "location": ""
+      },
+      {
+        "country": "United Kingdom",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "ebola haemorrhagic fever"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Brighton",
+      "Discover",
+      "Geneva",
+      "Hubei",
+      "Les Contamines",
+      "MPH",
+      "Mallorca",
+      "Minneapolis",
+      "Nextstrain",
+      "Wuhan",
+      "Yokohama"
+    ],
+    "keyword_frequency": {
+      "outbreak": 5,
+      "virus": 3,
+      "infectious": 2,
+      "COVID-19": 1,
+      "ebola haemorrhagic fever": 1,
+      "ebola": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "COVID-19": 2
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-01-14 xx:xx:xx to 2020-12-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Wuhan"
+    ],
+    "keyword_frequency": {
+      "epidemic": 5,
+      "virus": 3,
+      "outbreak": 2,
+      "COVID-19": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-01-30 xx:xx:xx",
+    "locations": [
+      {
+        "country": "Singapore",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "sars"
+    ],
+    "syndromes": [
+      "Acute respiratory syndrome"
+    ],
+    "minor_locations": [
+      "Regn",
+      "Wuhan"
+    ],
+    "keyword_frequency": {
+      "virus": 7,
+      "COVID-19": 4,
+      "sars": 3,
+      "Acute respiratory syndrome": 3,
+      "infectious": 3,
+      "outbreak": 2,
+      "emerging": 1,
+      "infection": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-03-10 xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "other",
+      "pneumococcus pneumonia"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Ill"
+    ],
+    "keyword_frequency": {
+      "other": 1,
+      "pneumococcus pneumonia": 1,
+      "Influenza-like illness": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-05-xx xx:xx:xx to 2020-10-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "influenza a/h1n1",
+      "influenza a/h5n1",
+      "other"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "Influenza-like illness": 2,
+      "influenza a/h5n1": 1,
+      "other": 1,
+      "influenza a/h1n1": 1,
+      "emerging": 1,
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-05-xx xx:xx:xx to 2020-10-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "influenza a/h1n1",
+      "influenza a/h5n1",
+      "other"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "Influenza-like illness": 2,
+      "influenza a/h5n1": 1,
+      "other": 1,
+      "influenza a/h1n1": 1,
+      "emerging": 1,
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-12-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "sars"
+    ],
+    "syndromes": [
+      "Acute respiratory syndrome"
+    ],
+    "minor_locations": [
+      "Wuhan"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 10,
+      "virus": 7,
+      "sars": 3,
+      "Acute respiratory syndrome": 3,
+      "outbreak": 3,
+      "illness": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "other"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "MORGANTOWN",
+      "WVa",
+      "aches",
+      "headache"
+    ],
+    "keyword_frequency": {
+      "Influenza-like illness": 11,
+      "other": 7,
+      "virus": 2,
+      "fever": 2,
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-02 xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "mumps"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "mumps": 5,
+      "infection": 2,
+      "Influenza-like illness": 1,
+      "fever": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-09-xx 09:xx:xx",
+    "locations": [
+      {
+        "country": "NC",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "tuberculosis"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Digital DeskDURHAM",
+      "Durham County Schools"
+    ],
+    "keyword_frequency": {
+      "tuberculosis": 5
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-18 xx:xx:xx to 2020-06-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "NC",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "other",
+      "tuberculosis"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Fayetteville",
+      "LUMBERTON",
+      "Robeson County"
+    ],
+    "keyword_frequency": {
+      "tuberculosis": 12,
+      "other": 2,
+      "Influenza-like illness": 2
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2015-08-xx xx:xx:xx to 2020-xx-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "Australia",
+        "location": ""
+      },
+      {
+        "country": "Israel",
+        "location": ""
+      },
+      {
+        "country": "New Zealand",
+        "location": ""
+      },
+      {
+        "country": "Singapore",
+        "location": ""
+      }
+    ],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [
+      "Discover",
+      "JAMAThe",
+      "Minneapolis"
+    ],
+    "keyword_frequency": {
+      "infectious": 2
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2019-10-18 xx:xx:xx to 2020-10-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "Germany",
+        "location": ""
+      },
+      {
+        "country": "Saudi Arabia",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "crimean-congo haemorrhagic fever",
+      "ebola haemorrhagic fever",
+      "mers-cov",
+      "other"
+    ],
+    "syndromes": [
+      "Acute respiratory syndrome",
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Arabia",
+      "Baden-Wurttemberg",
+      "Discover",
+      "Minneapolis",
+      "North Kivu",
+      "Vietnam"
+    ],
+    "keyword_frequency": {
+      "outbreak": 8,
+      "mers-cov": 7,
+      "ebola haemorrhagic fever": 5,
+      "ebola": 5,
+      "COVID-19": 4,
+      "mers": 3,
+      "virus": 3,
+      "crimean-congo haemorrhagic fever": 2,
+      "other": 1,
+      "Acute respiratory syndrome": 1,
+      "Influenza-like illness": 1,
+      "epidemic": 1,
+      "fever": 1,
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-01-31 xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [
+      "Arkansas",
+      "Discover",
+      "Hardeman and Fayette",
+      "Haywood",
+      "Lauderdale County",
+      "Libby",
+      "Minneapolis",
+      "Montana",
+      "Nashville",
+      "Sheridan",
+      "Tennessee",
+      "Tipton County"
+    ],
+    "keyword_frequency": {
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-01-xx xx:xx:xx to 2020-03-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Japan",
+        "location": ""
+      },
+      {
+        "country": "Singapore",
+        "location": ""
+      },
+      {
+        "country": "United States",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "mers-cov",
+      "sars"
+    ],
+    "syndromes": [
+      "Acute respiratory syndrome"
+    ],
+    "minor_locations": [
+      "California",
+      "Discover",
+      "Guangdong",
+      "Henan",
+      "Hubei",
+      "Hubei province",
+      "Minneapolis",
+      "San Diego",
+      "Vietnam",
+      "Wuhan",
+      "Zhejiang"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 11,
+      "outbreak": 11,
+      "Acute respiratory syndrome": 7,
+      "sars": 6,
+      "virus": 6,
+      "mers-cov": 3,
+      "mers": 1,
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Burkina du",
+      "Ouargaye du",
+      "Pour minutebfEnregistrez",
+      "le",
+      "pour",
+      "sera"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 1,
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Burkina du",
+      "Ouargaye du",
+      "Pour minutebfEnregistrez",
+      "le",
+      "pour",
+      "sera"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 1,
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Hong Kong",
+        "location": ""
+      },
+      {
+        "country": "New Zealand",
+        "location": ""
+      },
+      {
+        "country": "Philippines",
+        "location": ""
+      },
+      {
+        "country": "Tonga",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Auckland",
+      "Hubei"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 4,
+      "outbreak": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [
+      "Utah"
+    ],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-12 06:23:xx to 2020-12-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Icheon",
+      "Korea",
+      "Seoul",
+      "South Korea",
+      "South Korea's",
+      "Wuhan",
+      "Yonhap"
+    ],
+    "keyword_frequency": {
+      "virus": 5,
+      "COVID-19": 2,
+      "infection": 1,
+      "epidemic": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-05-xx xx:xx:xx to 2020-10-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "influenza a/h1n1",
+      "influenza a/h5n1",
+      "other"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "Influenza-like illness": 2,
+      "influenza a/h5n1": 1,
+      "other": 1,
+      "influenza a/h1n1": 1,
+      "emerging": 1,
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-12 07:xx:xx to 2020-03-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "Cambodia",
+        "location": ""
+      },
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "England",
+        "location": ""
+      },
+      {
+        "country": "Georgia",
+        "location": ""
+      },
+      {
+        "country": "Guam",
+        "location": ""
+      },
+      {
+        "country": "Hong Kong",
+        "location": ""
+      },
+      {
+        "country": "India",
+        "location": ""
+      },
+      {
+        "country": "Japan",
+        "location": ""
+      },
+      {
+        "country": "Pakistan",
+        "location": ""
+      },
+      {
+        "country": "Philippines",
+        "location": ""
+      },
+      {
+        "country": "Taiwan",
+        "location": ""
+      },
+      {
+        "country": "Thailand",
+        "location": ""
+      },
+      {
+        "country": "US",
+        "location": ""
+      },
+      {
+        "country": "Uganda",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "other",
+      "poliomyelitis"
+    ],
+    "syndromes": [
+      "Acute Flacid Paralysis",
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Bangkok",
+      "Beijing",
+      "Hanoi",
+      "Miami",
+      "Sihanoukville",
+      "Wales",
+      "Westerdam"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 3,
+      "Influenza-like illness": 2,
+      "other": 1,
+      "poliomyelitis": 1,
+      "Acute Flacid Paralysis": 1,
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-12-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Nepal",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "other",
+      "pneumococcus pneumonia"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Hubei",
+      "Moscow MetroRead",
+      "Wuhan"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 9,
+      "Influenza-like illness": 3,
+      "other": 1,
+      "pneumococcus pneumonia": 1,
+      "fever": 1,
+      "infection": 1,
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-03-02 xx:xx:xx to 2020-03-03 xx:xx:xx",
+    "locations": [
+      {
+        "country": "UK",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "COVID-19": 3,
+      "infection": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-06 xx:xx:xx to 2020-02-12 xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "COVID-19": 6,
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-01-22 xx:xx:xx to 2020-02-06 xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Anhui",
+      "Anhui province",
+      "Regn",
+      "Shanghai",
+      "Weibo",
+      "Wuhan"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 5,
+      "outbreak": 2,
+      "epidemic": 2,
+      "fever": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-12 xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Hong Kong",
+        "location": ""
+      },
+      {
+        "country": "Japan",
+        "location": ""
+      },
+      {
+        "country": "US",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "pneumococcus pneumonia"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Hubei",
+      "Hubei Province",
+      "Westerdam",
+      "Wuhan",
+      "Zhejiang Province"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 4,
+      "outbreak": 3,
+      "pneumococcus pneumonia": 1,
+      "epidemic": 1,
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Indonesia",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Jakarta",
+      "Wuhan"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 8,
+      "virus": 5
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-05-xx xx:xx:xx to 2020-10-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "influenza a/h1n1",
+      "influenza a/h5n1",
+      "other"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [],
+    "keyword_frequency": {
+      "Influenza-like illness": 2,
+      "influenza a/h5n1": 1,
+      "other": 1,
+      "influenza a/h1n1": 1,
+      "emerging": 1,
+      "infectious": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2011-03-xx 15:xx:xx to 2020-xx-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Taiwan",
+        "location": ""
+      },
+      {
+        "country": "US",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "influenza a/h1n1",
+      "influenza a/h7n9",
+      "other",
+      "pneumococcus pneumonia"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Beijing",
+      "Los Angeles",
+      "Taichung",
+      "Taipei"
+    ],
+    "keyword_frequency": {
+      "Influenza-like illness": 16,
+      "other": 9,
+      "COVID-19": 6,
+      "virus": 4,
+      "influenza a/h7n9": 3,
+      "influenza a/h1n1": 3,
+      "pneumococcus pneumonia": 1,
+      "fever": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2003-07-xx xx:xx:xx to 2020-06-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Turkey",
+        "location": ""
+      },
+      {
+        "country": "US",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "sars"
+    ],
+    "syndromes": [
+      "Acute respiratory syndrome",
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "California",
+      "Denver",
+      "Kinnelon",
+      "NEW YORK",
+      "New Jersey",
+      "New York",
+      "Pacific Grove",
+      "San Diego",
+      "San Francisco",
+      "Taormina",
+      "Vietnam"
+    ],
+    "keyword_frequency": {
+      "virus": 2,
+      "COVID-19": 1,
+      "sars": 1,
+      "Influenza-like illness": 1,
+      "Acute respiratory syndrome": 1,
+      "outbreak": 1,
+      "epidemic": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2019-06-xx xx:xx:xx to 2020-02-19 xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Hong Kong",
+        "location": ""
+      },
+      {
+        "country": "Macau",
+        "location": ""
+      },
+      {
+        "country": "US",
+        "location": ""
+      },
+      {
+        "country": "United States",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ],
+    "minor_locations": [
+      "Hubei Province",
+      "Molotov",
+      "Wuhan"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 10,
+      "outbreak": 3,
+      "Influenza-like illness": 1,
+      "illness": 1,
+      "fever": 1,
+      "infection": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Germany",
+        "location": ""
+      },
+      {
+        "country": "US",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "America"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 23,
+      "outbreak": 12,
+      "infection": 1,
+      "epidemic": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-02-04 xx:xx:xx to 2020-03-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "Cambodia",
+        "location": ""
+      },
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Congo",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "ebola haemorrhagic fever",
+      "measles"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Kinshasa",
+      "Westerdam",
+      "Yokohama"
+    ],
+    "keyword_frequency": {
+      "outbreak": 9,
+      "COVID-19": 5,
+      "ebola haemorrhagic fever": 4,
+      "ebola": 4,
+      "measles": 1,
+      "epidemic": 1,
+      "infection": 1,
+      "virus": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2019-04-11 xx:xx:xx to 2020-05-xx xx:xx:xx",
+    "locations": [
+      {
+        "country": "Australia",
+        "location": ""
+      },
+      {
+        "country": "China",
+        "location": ""
+      },
+      {
+        "country": "Hong Kong",
+        "location": ""
+      },
+      {
+        "country": "Indonesia",
+        "location": ""
+      },
+      {
+        "country": "Kazakhstan",
+        "location": ""
+      },
+      {
+        "country": "Malaysia",
+        "location": ""
+      },
+      {
+        "country": "Myanmar",
+        "location": ""
+      },
+      {
+        "country": "Philippines",
+        "location": ""
+      },
+      {
+        "country": "Singapore",
+        "location": ""
+      },
+      {
+        "country": "Taiwan",
+        "location": ""
+      },
+      {
+        "country": "Thailand",
+        "location": ""
+      },
+      {
+        "country": "Uzbekistan",
+        "location": ""
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Amman",
+      "Belgrade",
+      "Bengaluru",
+      "Changzhou",
+      "Dongguan",
+      "Foshan",
+      "Guangzhou",
+      "Haikou",
+      "Hainan",
+      "Hangzhou",
+      "Ho Chi Minh City",
+      "Hubei",
+      "Manila",
+      "Nanjing",
+      "Sanya",
+      "Shanghai",
+      "Shanghai Shenhua",
+      "South Korea",
+      "Tokyo",
+      "Vietnam",
+      "Wuhan"
+    ],
+    "keyword_frequency": {
+      "COVID-19": 1,
+      "outbreak": 1
+    }
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [],
+    "syndromes": [],
+    "minor_locations": [],
+    "keyword_frequency": {}
+  }
+]
+
+
+
+
+
+[
+  {
+    "event_date": "2020-03-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": [],
+    "minor_locations": [
+      "Geneva"
+    ],
+    "keyword_frequency": {
+      "outbreak": 6,
+      "COVID-19": 1,
+      "infectious": 1
+    }
+  }
+]
+
+
+

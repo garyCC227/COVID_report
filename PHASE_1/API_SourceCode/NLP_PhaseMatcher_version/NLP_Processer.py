@@ -8,9 +8,9 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 
 from spacy.matcher import PhraseMatcher
-from Date_Formater import Date_Formater
-from Location_Checker import Location_Checker
-from Geocode_Location import Geocode_Location
+from .Date_Formater import Date_Formater
+from .Location_Checker import Location_Checker
+from .Geocode_Location import Geocode_Location
 
 # You can alter the path of disease_pattern_loc, search_pattern_loc, syndrome_pattern_loc when creating NLP_Processer object
 # You should call make_reports function to get reports json

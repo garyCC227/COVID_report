@@ -8,9 +8,9 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 
 from spacy.matcher import PhraseMatcher
-from .Date_Formater import Date_Formater
-from .Location_Checker import Location_Checker
-from .Geocode_Location import Geocode_Location
+from Date_Formater import Date_Formater
+from Location_Checker import Location_Checker
+from Geocode_Location import Geocode_Location
 
 # You can alter the path of disease_pattern_loc, search_pattern_loc, syndrome_pattern_loc when creating NLP_Processer object
 # You should call make_reports function to get reports json
@@ -21,6 +21,9 @@ class NLP_Processer :
 
     def __init__ (self, disease_pattern_loc = os.path.join("NLP_PhaseMatcher_version","disease_pattern.json") , search_pattern_loc = os.path.join("NLP_PhaseMatcher_version","search_pattern.json"), 
                     syndrome_pattern_loc = os.path.join("NLP_PhaseMatcher_version","syndrome_pattern.json"), geocode_service = True):
+    # Yahnis windows' version
+    # def __init__ (self, disease_pattern_loc = "disease_pattern.json" , search_pattern_loc = "search_pattern.json", 
+    #                 syndrome_pattern_loc = "syndrome_pattern.json", geocode_service = True):
         self.disease_pattern_loc = disease_pattern_loc
         self.search_pattern_loc = search_pattern_loc
         self.syndrome_pattern_loc = syndrome_pattern_loc
@@ -69,6 +72,7 @@ class NLP_Processer :
     def make_reports(self, text) :
         doc = self.nlp(text)
         matches = self.matcher(doc)
+        text_length = len([token.text for token in doc])
         disease_dic = {}
         syndrome_dic = {}
         search_dic = {}
@@ -96,11 +100,13 @@ class NLP_Processer :
         temp = dict(disease_dic, **syndrome_dic)
         keyword_dic = dict(temp,**search_dic)
         keyword_dic = dict(sorted(keyword_dic.items(), key=lambda kv: kv[1], reverse=True))
-        keyword_dic = dict((k.lower(), v) for k,v in keyword_dic.items())
+        keyword_dic = dict((k.lower(), round(v/text_length,8)) for k,v in keyword_dic.items())
         #This is for date and location
-        temp = re.search("", self.publication_date)
-        test = Date_Formater()
-        
+        temp = re.search("^([0-9]{4})-([0-9]{2})-([0-9]{2}) ([0-9]{2}|x{2}):([0-9]{2}|x{2}):([0-9]{2}|x{2})$", self.publication_date)
+        if temp == None :
+            print ("error error error nlp processer publication date!")
+        else :
+            test = Date_Formater(year = temp.group(1), month = int(temp.group(2)))
         country_dic = {}
         location_dic = {}
         for ent in doc.ents:

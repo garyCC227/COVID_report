@@ -41,11 +41,13 @@ def fetch_resource_context(i):
     return
     
   title, content = ActivityPost.get_source_text_for_onepost(url)
+  print(date)
+  print(url)
   newpost = {}
   newpost[nodeid] = {
     "date": date,
     "datestamp":datestamp,
-    "flu_trackers_post_content" : content,
+    "flu_trackers_post_content" : flutrack_content,
     "url":url,
     'title':title,
     'content':content
@@ -64,6 +66,7 @@ def fetch_resource_context(i):
     return
 
   nlp_processer = NLP_Processer()
+  nlp_processer.set_publication_date(date)
   reports = nlp_processer.make_reports(content)
   d = {}
   d["url"] = url

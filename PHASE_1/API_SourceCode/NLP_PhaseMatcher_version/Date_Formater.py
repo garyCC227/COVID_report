@@ -2,9 +2,10 @@ import re
 
 class Date_Formater:
 
-  def __init__(self, year = "2020"):
+  def __init__(self, year = "2020", month = 1):
     self.year = year
     self.time_string_buffer = ""
+    self.month = month
     self.dateStampFirst = None
     self.dateStampLast = None
 
@@ -157,10 +158,13 @@ class Date_Formater:
 
       return [self.error_date_ignore("20" + year + "-" + mon + "-" + day + " xx:xx:xx")]
 
+    word_expression = False
+
     # Try to extract month from string
     temp = re.search("(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)", date_string, re.IGNORECASE)
 
     if temp != None :
+      word_expression = True
       extract = temp.group(1).lower()
       if extract == "jan" :
         mon = "01"
@@ -222,10 +226,13 @@ class Date_Formater:
         day = self.check_add_zero(temp.group(1))
     
     if mon == None :
-      return [year + "-xx-xx xx:xx:xx"]
+      return [self.error_date_ignore(year + "-xx-xx xx:xx:xx")]
     
+    if word_expression and int(mon) > self.month:
+        year = str(int(year) - 1)
+        
     if day == None :
-      return  [year + "-" + mon + "-xx xx:xx:xx"]
+      return  [self.error_date_ignore(year + "-" + mon + "-xx xx:xx:xx")]
 
     return  [self.error_date_ignore(year + "-" + mon + "-" + day + " xx:xx:xx")]
 

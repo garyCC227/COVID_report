@@ -21,8 +21,12 @@ class Date_Formater:
     if temp == None :
       return self.year + "-xx-xx xx:xx:xx"
     else :
+      year = temp.group(1)
       mon = temp.group(2)
       day = temp.group(3)
+
+      if (int(year) > int(self.year) + 2) or (int(year) < int(self.year) - 3) :
+        return self.year + "-xx-xx xx:xx:xx"
 
       if mon != "xx" and (int(mon) > 12 or int(mon) == 0) :
         return self.year + "-xx-xx xx:xx:xx"

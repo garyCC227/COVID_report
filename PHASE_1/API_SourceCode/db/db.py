@@ -3,7 +3,9 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from google.api_core.exceptions import NotFound
 import json
-cred = credentials.Certificate("./fbconfig/apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
+
+# cred = credentials.Certificate(".\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
+cred = credentials.Certificate(r"C:\\Users\\ASUS\\se3011\\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\db\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -85,6 +87,7 @@ def setDocument(data):
         print("Writing data to database")
         doc_ref = db.collection(u'reports').document()
         doc_ref.set(data)
+
 
 def readDocument(file):
     with open(file, 'r', encoding='utf-8') as f:

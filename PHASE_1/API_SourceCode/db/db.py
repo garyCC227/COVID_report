@@ -3,7 +3,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from google.api_core.exceptions import NotFound
 import json
-cred = credentials.Certificate(".//fbconfig/apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
+cred = credentials.Certificate("./fbconfig/apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -79,22 +79,36 @@ def getAllDocuments():
 
 
 def setDocument(data):
-    doc_ref = db.collection(u'reports').document()
-    doc_ref.set(data)
+    print(data["headline"])
+    # check if headline already exists
+    if headlineExists(data["headline"]) is False:
+        print("Writing data to database")
+        doc_ref = db.collection(u'reports').document()
+        doc_ref.set(data)
 
 def readDocument(file):
     with open(file, 'r', encoding='utf-8') as f:
         data = json.load(f)
         setDocument(data)
 
-def checkHeadline(data):
+def headlineExists(headline):
+    query = db.collection(u'reports').where(u'headline', u'==', headline )
+    docs = query.get()
+    for doc in docs:
+        print(doc.to_dict())
+        if doc.to_dict() != "":
+            print("Headline already exists in database: " + headline)
+            return True
+
+    return False
+
 
 
 # Test code
 # ret = getDocumentByLocation("China")
 # print(ret)
 
-# readDocument("./sample_data.json")
+readDocument("./sample_data.json")
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")

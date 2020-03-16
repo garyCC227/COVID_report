@@ -9,8 +9,8 @@ class ReportFactory(DomainFactory):
     def make(self, data):
         self._product = Report()
         if isinstance(data, dict):
-            if "date" in data:
-                self._set_date(data['date'])
+            if "event_date" in data:
+                self._set_date(data['event_date'])
             if "locations" in data:
                 self._set_location_list(data['locations'])
             if "diseases" in data:

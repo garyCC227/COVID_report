@@ -1,12 +1,14 @@
 import json
 import validators
 import sys
+from langdetect import detect
+
+from db import *
 
 from last_activity import ActivityPost
 from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer
-import sys
-sys.path.insert(1,"C:\\Users\\ASUS\\se3011\\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\db")
-from db import *
+# import sys
+# sys.path.insert(1,"C:\\Users\\ASUS\\se3011\\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\db")
 '''
 this file is used to get all the source_url content
 by the urls in posts.json
@@ -48,11 +50,13 @@ def main():
     'content':content
   }
 
-  # if len(content) < 300 or content[3..10] in "NCBIErrorYour access to the NCBI website":
-  #   return
+  if len(content) < 300 or content[3:10] in "NCBIErrorYour access to the NCBI website":
+    return
+
+  if detect(content) != "en":
+    return 
 
   nlp_processer = NLP_Processer()
-    
   reports = nlp_processer.make_reports(content)
   d = {}
   d["url"] = url
@@ -64,10 +68,10 @@ def main():
   d["keyword_location"] = nlp_processer.get_keyword_location()
   d["keyword_list"] = nlp_processer.get_keyword_list()
   
-  json_file = json.dumps(d)
-  json_file = json.loads(json_file)
-  # print(type(json_file))
-  setDocument(json_file)
+  json_file = json.dumps(d, indent = 2)
+  # json_file = json.loads(json_file)
+  print(json_file)
+  # setDocument(json_file)
 
 
 

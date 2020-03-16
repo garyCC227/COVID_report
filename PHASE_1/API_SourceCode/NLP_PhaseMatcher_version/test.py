@@ -1,10 +1,13 @@
+import sys
+sys.path.insert(1,"C:\\Users\\ASUS\\se3011\\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\scrapy_script\\NLP_PhaseMatcher_version\\NLP_Processer.py")
 from NLP_Processer import NLP_Processer
+from langdetect import detect
 import json
 
 def main():
     nlp_processer = NLP_Processer()
     l = []
-    with open('content.json', 'r') as f:
+    with open('../content.json', 'r') as f:
         store = json.load(f)
     f.close()
 
@@ -16,14 +19,20 @@ def main():
     i = 0
     posts = store['posts']
     for key, post in posts.items():
-        if i < 50 :
+        if i < 2 :
             i+=1
             continue
         maintext = post['content']
         title = post['title']
         url = post['url']
         date = post['date'].replace("T", " ")
-    
+
+        if len(maintext) < 300 or maintext[3:10] in "NCBIErrorYour access to the NCBI website":
+            continue
+
+        if detect(maintext) != "en":
+            continue  
+
         reports = nlp_processer.make_reports(maintext)
         d = {}
         d["url"] = url

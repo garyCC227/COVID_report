@@ -2,7 +2,8 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 import json
-cred = credentials.Certificate(".//fbconfig/apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
+# cred = credentials.Certificate(".\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
+cred = credentials.Certificate(r"C:\\Users\\ASUS\\se3011\\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\db\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -69,7 +70,7 @@ def getAllDocuments():
     ret_arr = []
     query = db.collection(u'reports')
     docs = query.stream()
-    for doc in docs
+    for doc in docs:
         # extract id from document and add it into return dictionary
         elem = doc.to_dict()
         elem['id'] = doc.id
@@ -78,6 +79,7 @@ def getAllDocuments():
 
 
 def setDocument(data):
+    print(data)
     doc_ref = db.collection(u'reports').document()
     doc_ref.set(data)
 

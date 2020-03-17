@@ -7,6 +7,7 @@ class Geocode_Location:
     def __init__(self, google_api_key = "AIzaSyD9uzu87hhGsu6Wh7C2-7F8tO2WIWWA5bY") :
         self.google_api_key = google_api_key
         self.location_keywords = []
+        self.ids = []
         self.locations = []
     
     def get_location_keywords(self) :
@@ -40,18 +41,21 @@ class Geocode_Location:
                 return
             for obj in result["results"][0]["address_components"] :
                 temp = obj["long_name"].lower()
-                ignore_pure_number = re.search("^[^a-zA-Z]+&",temp)
+                ignore_pure_number = re.search("^[^a-zA-Z]+$",temp)
                 if ignore_pure_number != None :
                     continue
                 if temp not in self.location_keywords :
                     self.location_keywords.append(temp)
                 temp  = obj["short_name"].lower()
-                ignore_pure_number = re.search("^[^a-zA-Z]+&",temp)
+                ignore_pure_number = re.search("^[^a-zA-Z]+$",temp)
                 if ignore_pure_number != None :
                     continue
                 if temp not in self.location_keywords :
                     self.location_keywords.append(temp)
         dic = {}
         dic["google_id"] = result["results"][0]["place_id"]
+        if dic["google_id"] in self.ids:
+            return
         dic["address"] = result["results"][0]["formatted_address"]
+        self.ids.append(dic["google_id"])
         self.locations.append(dic)

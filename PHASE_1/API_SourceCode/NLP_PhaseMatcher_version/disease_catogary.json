@@ -1,0 +1,11 @@
+[
+    {"family" : "repiratory", "disease" : ["COVID-19", "sars", "mers-cov", "pneumococcus pneumonia"], "syndrome" : ["Acute respiratory syndrome", "Influenza-like illness"]},
+    {"family" : "anthrax", "disease" : ["anthrax cutaneous-19", "anthrax gastrointestinous", "anthrax inhalation"], "syndrome" : ["Acute respiratory syndrome", "Acute fever and rash", "Influenza-like illness", "Acute gastroenteritis"]},
+    {"family" : "flu", "disease" : ["influenza a/h5n1", "influenza a/h7n9", "influenza a/h9n2", "influenza a/h1n1", "influenza a/h1n2", "influenza a/h3n5", "influenza a/h3n2", "influenza a/h2n2"], "syndrome" : ["Influenza-like illness", "Fever of unknown Origin"]},
+    {"family" : "hepatitis", "disease" : ["hepatitis a","hepatitis b","hepatitis c", "hepatitis d","hepatitis e"], "syndrome" : ["Acute respiratory syndrome", "Influenza-like illness", "Acute gastroenteritis"]},
+    {"family" : "stomach", "disease" : ["cryptococcosis", "cryptosporidiosis", "enterovirus 71 infection", "norovirus infection", "salmonellosis", "shigellosis"], "syndrome" : ["Acute gastroenteritis", "Haemorrhagic Fever"]},
+    {"family" : "haemorrhage", "disease" : ["crimean-congo haemorrhagic feve", "ebola haemorrhagic fever", "lassa fever", "marburg virus disease"], "syndrome" : ["Haemorrhagic Fever", "SYN-Fever of unknown Origin", "Fever of unknown Origin"]},
+    {"family" : "from_animals", "disease" : ["rabies", "dengue", "malaria", "q fever"], "syndrome" : ["Acute fever and rash", "Influenza-like illness", "Meningitis"]},
+    {"family" : "brain", "disease" : ["nipah virus", "chikungunya", "zika", "west nile virus"], "syndrome" : ["Meningitis", "Encephalitis", "Acute Flacid Paralysis"]},
+    {"family" : "pox", "disease" : ["smallpox", "monkeypox", "vaccinia and cowpox", "varicella"], "syndrome" : ["Acute fever and rash"]}
+]

@@ -20,24 +20,23 @@ from NLP_PhaseMatcher_version.Geocode_Location import Geocode_Location
 class NLP_Processer :
 
     def __init__ (self, disease_pattern_loc = os.path.join("NLP_PhaseMatcher_version","disease_pattern.json") , search_pattern_loc = os.path.join("NLP_PhaseMatcher_version","search_pattern.json"), 
-                    syndrome_pattern_loc = os.path.join("NLP_PhaseMatcher_version","syndrome_pattern.json"), geocode_service = True):
+                    syndrome_pattern_loc = os.path.join("NLP_PhaseMatcher_version","syndrome_pattern.json"), disease_catogary_loc = os.path.join("NLP_PhaseMatcher_version","disease_catogary.json")):
     # Yahnis windows' version
-    # def __init__ (self, disease_pattern_loc = "NLP_PhaseMatcher_version\disease_pattern.json" , search_pattern_loc = "NLP_PhaseMatcher_version\search_pattern.json", 
-    #                 syndrome_pattern_loc = "NLP_PhaseMatcher_version\syndrome_pattern.json", geocode_service = True):
-        self.disease_pattern_loc = disease_pattern_loc
-        self.search_pattern_loc = search_pattern_loc
-        self.syndrome_pattern_loc = syndrome_pattern_loc
-        self.geocode_service = geocode_service
+    # def __init__ (self, disease_pattern_loc = "NLP_PhaseMatcher_version\\disease_pattern.json" , search_pattern_loc = "NLP_PhaseMatcher_version\\search_pattern.json", 
+    #                 syndrome_pattern_loc = "NLP_PhaseMatcher_version\\syndrome_pattern.json", disease_catogary_loc = "NLP_PhaseMatcher_version\\disease_catogary.json" , geocode_service = True):
         self.nlp = spacy.load('en_core_web_sm')
         self.matcher = PhraseMatcher(self.nlp.vocab, attr='LOWER', max_length=5)
-        self.load_pattern(self.disease_pattern_loc)
-        self.load_pattern(self.syndrome_pattern_loc)
-        self.load_search_pattern(self.search_pattern_loc)
+        self.load_pattern(disease_pattern_loc)
+        self.load_pattern(syndrome_pattern_loc)
+        self.load_search_pattern(search_pattern_loc)
         self.location_checker = Location_Checker()
         self.publication_date = "2020-xx-xx xx:xx:xx"
         self.keyword_location = []
         self.keyword_frequency = []
         self.keyword_list = []
+        self.disease_to_family_dic = {}
+        self.family_to_syndrome_dic = {}
+        self.load_dictionary(disease_catogary_loc)
 
     def set_publication_date(self, date) :
         self.publication_date = date
@@ -50,6 +49,17 @@ class NLP_Processer :
     
     def get_keyword_list(self) :
         return self.keyword_list
+
+    def load_dictionary(self,location) :
+        with open(location) as f:
+            datas = json.load(f)
+        f.close()
+
+        for  data in datas:
+            family = data["family"]
+            for disease in data["disease"] :
+                self.disease_to_family_dic[disease] = family
+            self.family_to_syndrome_dic[family] = data["syndrome"]
 
     def load_pattern(self,location) :
         with open(location) as f:
@@ -69,6 +79,62 @@ class NLP_Processer :
         patterns = [self.nlp.make_doc(text) for text in data["keywords"]]
         self.matcher.add(data["name"], None, *patterns)
     
+    def category_report(self, event_date, locations, diseases, syndromes) :
+        syndrome_usage = {}
+        diseases_not_captured = []
+        disease_same_family = {}
+        reports = []
+        for syndrome in syndromes :
+            syndrome_usage[syndrome] = False
+        for disease in diseases :
+            if disease in self.disease_to_family_dic.keys() :
+                family_name = self.disease_to_family_dic[disease]
+                if family_name in disease_same_family.keys() :
+                    disease_same_family[family_name].append(disease)
+                else :
+                    disease_same_family[family_name] = [disease]
+            else :
+                diseases_not_captured.append(disease)
+        for k, v in disease_same_family.items() :
+            syndrome_list = []
+            possible_sydromes = self.family_to_syndrome_dic[k]
+            for syndrome in syndromes :
+                if syndrome in possible_sydromes :
+                    syndrome_list.append(syndrome)
+                    syndrome_usage[syndrome] = True
+            d = {}
+            d["event_date"] = event_date
+            d["locations"] = locations
+            d["diseases"] = v
+            d["syndromes"] = syndrome_list
+            reports.append(d)
+        if diseases_not_captured == [] :
+            if reports == [] :
+                print("weird article!")
+                d = {}
+                d["event_date"] = event_date
+                d["locations"] = locations
+                d["diseases"] = diseases
+                d["syndromes"] = syndromes
+            else :
+                for k, v in syndrome_usage.items() :
+                    if v == False :
+                        reports[0]["syndromes"].append(k)
+        else :
+            d = {}
+            d["event_date"] = event_date
+            d["locations"] = locations
+            d["diseases"] = diseases_not_captured
+            syndrome_list = []
+            for k, v in syndrome_usage.items() :
+                    if v == False :
+                        syndrome_list.append(k)
+            d["syndromes"] = syndrome_list
+            reports.append(d)
+        return reports
+
+        
+
     def make_reports(self, text) :
         doc = self.nlp(text)
         matches = self.matcher(doc)
@@ -132,29 +198,18 @@ class NLP_Processer :
                         country_dic[country] = 1
         # convert to json
         location_handler = Geocode_Location()
-        if self.geocode_service :
-            location_handler.load_locations_countires(sorted(location_dic.keys()), sorted(country_dic.keys()))
-        report = {}
-        report["event_date"] = test.get_event_date()
-        if self.geocode_service :
-            report["locations"] = location_handler.get_locations()
-        else :
-            l = []
-            for country in sorted(country_dic.keys()) :
-                d = {}
-                d["country"] = country
-                d["location"] = ""
-                l.append(d)
-            self.keyword_location = l
-        report["diseases"] = sorted(disease_dic.keys())
-        report["syndromes"] = sorted(syndrome_dic.keys())
-        if self.geocode_service :
-            self.keyword_location = sorted(location_handler.get_location_keywords())
+        location_handler.load_locations_countires(sorted(location_dic.keys()), sorted(country_dic.keys()))
+        event_date = test.get_event_date()
+        locations = location_handler.get_locations()
+        diseases = sorted(disease_dic.keys())
+        syndromes = sorted(syndrome_dic.keys())
+        self.keyword_location = sorted(location_handler.get_location_keywords())
         self.keyword_frequency = keyword_dic
-        self.keyword_list = sorted(keyword_dic.keys())
-        reports = []
-        reports.append(report)
-        return reports
+        d = {}
+        for k, v in keyword_dic.items() :
+            d[k] = True
+        self.keyword_list = d
+        return self.category_report(event_date, locations, diseases, syndromes)
 
 
 

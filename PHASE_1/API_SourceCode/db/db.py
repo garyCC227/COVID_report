@@ -45,7 +45,7 @@ def getDocumentBySyndrome(syndrome):
     query_dict = {}
 
     ret_arr = []
-    query = db.collection(u'reports').where(u'keywords', u'array_contains', syndrome)
+    query = db.collection(u'reports').where(u'keyword_list', u'array_contains', syndrome)
     # var query = db.collection('chatDocs').where("chatMembers", "array-contains", { : "xyz", userName: "abc" });
 
     docs = query.stream()
@@ -62,7 +62,7 @@ def getDocumentByDisease(disease):
     ret_arr = []
     # query = db.collection(u'reports').where(u'diseases', u'array_contains', disease)
 
-    query = db.collection(u'reports').where(u"keywords", u'array_contains', disease)
+    query = db.collection(u'reports').where(u"keyword_list", u'array_contains', disease)
     docs = query.stream()
 
     for doc in docs:

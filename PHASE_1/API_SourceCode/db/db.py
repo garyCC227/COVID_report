@@ -27,6 +27,29 @@ def getDocumentByID(id):
         print(u'No such document!')
         return False
 
+
+def queryDocumentByArguments(startDate, endDate, keywords, location):
+
+    doc_ref = db.collection(u'reports')
+    ret_arr = []
+#     startDate and endDate are always specified so will always need to query date
+    if keywords is [] and location is None:
+        query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication','<', endDate)
+        docs = query.stream()
+    elif keywords is []:
+        query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication','<', endDate).where(u'keyword_location', u'array_contains', location)
+        docs = query.stream()
+    else:
+        for word in keywords:
+            print(word)
+            query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication','<', endDate).where(u'keyword_location', u'array_contains', location).where("keyword_frequency.word" + '['+word + ']', ">" , 0)
+            docs = query.stream()
+    for doc in docs:
+        ret_arr.append(doc)
+
+    return ret_arr
+
+
 def getDocumentByLocation(location):
     location = location.lower()
     ret_arr = []

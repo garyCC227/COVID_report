@@ -27,11 +27,11 @@ def hello():
 
 @app.route("/v1/news")
 def get_shorten_news_list():
-    return make_response(GetNewsListAction())
+    return make_response(GetNewsListAction(params=request.args))
 
 @app.route("/v1/news/all")
 def get_news_list():
-    return make_response(GetNewsListAction(all=True))
+    return make_response(GetNewsListAction(all=True, params=request.args))
 
 @app.route("/v1/news/<id>")
 def get_news_by_id(id):

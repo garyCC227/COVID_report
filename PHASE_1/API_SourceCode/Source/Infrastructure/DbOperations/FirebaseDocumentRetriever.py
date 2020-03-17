@@ -1,4 +1,5 @@
 from .FirebaseListFactory import FirebaseListFactory
+from .Filter import Filter
 from ...DomainFactory.ReportListFactory import ReportListFactory
 from ...DomainFactory.ReportFactory import ReportFactory
 from ...DomainFactory.NewsFactory import NewsFactory
@@ -8,6 +9,10 @@ from firebase_admin import firestore
 
 
 class FirebaseDocumentRetriever():
+    _criteria = {}
+    def __init__(self, filter_criteria={}):
+        self._criteria = filter_criteria
+
     def _create_document(self, db_result, shorten=False, with_report=False):
         db_result['content'] = db_result['main_text'] if ('main_text' in db_result) else ""
         db_result['title'] = db_result['headline'] if ('headline' in db_result) else ""
@@ -18,6 +23,16 @@ class FirebaseDocumentRetriever():
             return factory.make_with_report(db_result, report)
         else:
             return factory.make(db_result)
+
+    def _create_filter(self, list):
+        product = Filter(list)
+        if "start_date" in self._criteria and "end_date" in self._criteria:
+            product.set_date_range(self._criteria["start_date"], self._criteria["end_date"])
+        if "location" in self._criteria:
+            product.set_location(self._criteria["location"])
+        if "keyterms" in self._criteria:
+            product.set_location(self._criteria["keyterms"])
+        return product
 
     def get_document_by_id(self, id):
         db = firestore.client()
@@ -56,6 +71,7 @@ class FirebaseDocumentRetriever():
         query = db.collection(u'reports')
         handler = lambda elem: self._create_document(elem, shorten=not complete_version)
         result_list = FirebaseListFactory().make(query)
+        result_list = self._create_filter(result_list).execute()
         return list(map(handler, result_list))
 
     def get_report_by_id(self, id):

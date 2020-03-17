@@ -27,6 +27,35 @@ def getDocumentByID(id):
         print(u'No such document!')
         return False
 
+
+def queryDocumentByArguments(startDate, endDate, keywords=[], location=None):
+
+    doc_ref = db.collection(u'reports')
+    ret_arr = []
+    
+    # startDate and endDate are always specified so will always need to query date
+    query = doc_ref
+    
+    if startDate:
+        query = query.where(u'date_of_publication', '>', startDate)
+    
+    if endDate:
+        query = query.where(u'date_of_publication','<', endDate)
+    
+    if location:
+        query = query.where(u'keyword_location', u'array_contains', location)
+
+    for word in keywords:
+        query = query.where("keyword_frequency.word" + '[' + word + ']', ">", 0)
+
+    docs = query.stream()
+    for doc in docs:
+        print(doc.to_dict())
+        ret_arr.append(doc)
+
+    return ret_arr
+
+
 def getDocumentByLocation(location):
     location = location.lower()
     ret_arr = []
@@ -45,9 +74,8 @@ def getDocumentBySyndrome(syndrome):
     query_dict = {}
 
     ret_arr = []
-    query = db.collection(u'reports').where(u'keywords', u'array_contains', syndrome)
+    query = db.collection(u'reports').where(u'keyword_list', u'array_contains', syndrome)
     # var query = db.collection('chatDocs').where("chatMembers", "array-contains", { : "xyz", userName: "abc" });
-
     docs = query.stream()
     for doc in docs:
         # extract id from document and add it into return dictionary
@@ -62,7 +90,7 @@ def getDocumentByDisease(disease):
     ret_arr = []
     # query = db.collection(u'reports').where(u'diseases', u'array_contains', disease)
 
-    query = db.collection(u'reports').where(u"keywords", u'array_contains', disease)
+    query = db.collection(u'reports').where(u"keyword_list", u'array_contains', disease)
     docs = query.stream()
 
     for doc in docs:
@@ -120,4 +148,4 @@ def headlineExists(headline):
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")
-
+# queryDocumentByArguments("2020-03-13 20:20:21", "2020-03-13 22:20:21", [], "florida")

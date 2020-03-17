@@ -38,6 +38,7 @@ def queryDocumentByArguments(startDate, endDate, keywords=[], location=None):
     
     if startDate:
         query = query.where(u'date_of_publication', '>', startDate)
+
     
     if endDate:
         query = query.where(u'date_of_publication','<', endDate)
@@ -46,7 +47,8 @@ def queryDocumentByArguments(startDate, endDate, keywords=[], location=None):
         query = query.where(u'keyword_location', u'array_contains', location)
 
     for word in keywords:
-        query = query.where("keyword_frequency.word" + '[' + word + ']', ">", 0)
+
+        query = query.where("keyword_frequency." + word, "==", True)
 
     docs = query.stream()
     for doc in docs:
@@ -148,4 +150,5 @@ def headlineExists(headline):
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")
-# queryDocumentByArguments("2020-03-13 20:20:21", "2020-03-13 22:20:21", [], "florida")
+# queryDocumentByArguments("2020-02-13 20:20:21", "2020-03-13 22:20:21", ["outbreak"], "china")
+

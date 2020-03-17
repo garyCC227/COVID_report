@@ -54,6 +54,7 @@ def queryDocumentByArguments(startDate, endDate, keywords, location):
 
     docs = query.stream()
     for doc in docs:
+        print(doc.to_dict())
         ret_arr.append(doc)
 
     return ret_arr
@@ -79,7 +80,6 @@ def getDocumentBySyndrome(syndrome):
     ret_arr = []
     query = db.collection(u'reports').where(u'keyword_list', u'array_contains', syndrome)
     # var query = db.collection('chatDocs').where("chatMembers", "array-contains", { : "xyz", userName: "abc" });
-
     docs = query.stream()
     for doc in docs:
         # extract id from document and add it into return dictionary
@@ -152,4 +152,4 @@ def headlineExists(headline):
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")
-
+# queryDocumentByArguments("2020-03-13 20:20:21", "2020-03-13 22:20:21", [], "florida")

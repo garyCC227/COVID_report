@@ -36,14 +36,23 @@ def queryDocumentByArguments(startDate, endDate, keywords, location):
     if keywords is [] and location is None:
         query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication','<', endDate)
         docs = query.stream()
+        for doc in docs:
+            ret_arr.append(doc)
     elif keywords is []:
         query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication','<', endDate).where(u'keyword_location', u'array_contains', location)
         docs = query.stream()
+        for doc in docs:
+            ret_arr.append(doc)
     else:
+        query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication', '<',
+                                                                            endDate).where(u'keyword_location',
+                                                                                           u'array_contains', location)
         for word in keywords:
             print(word)
-            query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication','<', endDate).where(u'keyword_location', u'array_contains', location).where("keyword_frequency.word" + '['+word + ']', ">" , 0)
-            docs = query.stream()
+            query = query.where("keyword_frequency.word" + '['+word + ']', ">" , 0)
+
+        docs = query.stream()
+
     for doc in docs:
         ret_arr.append(doc)
 

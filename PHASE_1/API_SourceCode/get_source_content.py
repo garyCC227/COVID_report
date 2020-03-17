@@ -2,13 +2,16 @@ import json
 import validators
 import sys
 import os
-from langdetect import detect
+import time
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 
 from db.db import *
 from Scrapy.last_activity import ActivityPost
 from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer
+from langdetect import detect
+from datetime import datetime
+
 # import sys
 # sys.path.insert(1,"C:\\Users\\ASUS\\se3011\\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\db")
 '''
@@ -53,7 +56,7 @@ def fetch_resource_context(i):
     'content':content
   }
 
-  if len(title) < 3 or len(content) < 300 or content[3:10] in "NCBIErrorYour access to the NCBI website":
+  if len(title) < 2 or len(content) < 300 or content[3:10] in "NCBIErrorYour access to the NCBI website":
     print("Cannot Access\n")
     return
 
@@ -70,7 +73,9 @@ def fetch_resource_context(i):
   reports = nlp_processer.make_reports(content)
   d = {}
   d["url"] = url
-  d["date_of_publication"] = date
+  dt = datetime.strptime(date, "%Y-%m-%d %H:%M:%S")
+  ts = time.mktime(dt.timetuple())
+  d["date_of_publication"] = int(ts)
   d["headline"] = title
   d["main_text"] = content
   d["reports"] = reports

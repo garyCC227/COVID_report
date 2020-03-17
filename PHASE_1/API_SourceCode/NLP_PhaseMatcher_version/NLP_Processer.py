@@ -22,8 +22,8 @@ class NLP_Processer :
     def __init__ (self, disease_pattern_loc = os.path.join("NLP_PhaseMatcher_version","disease_pattern.json") , search_pattern_loc = os.path.join("NLP_PhaseMatcher_version","search_pattern.json"), 
                     syndrome_pattern_loc = os.path.join("NLP_PhaseMatcher_version","syndrome_pattern.json"), geocode_service = True):
     # Yahnis windows' version
-    # def __init__ (self, disease_pattern_loc = "NLP_PhaseMatcher_version\disease_pattern.json" , search_pattern_loc = "NLP_PhaseMatcher_version\search_pattern.json", 
-    #                 syndrome_pattern_loc = "NLP_PhaseMatcher_version\syndrome_pattern.json", geocode_service = True):
+    # def __init__ (self, disease_pattern_loc = ".\disease_pattern.json" , search_pattern_loc = ".\search_pattern.json", 
+    #                 syndrome_pattern_loc = ".\syndrome_pattern.json", geocode_service = True):
         self.disease_pattern_loc = disease_pattern_loc
         self.search_pattern_loc = search_pattern_loc
         self.syndrome_pattern_loc = syndrome_pattern_loc

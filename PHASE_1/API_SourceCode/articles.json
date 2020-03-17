@@ -4,7 +4,7 @@
             "url": "https://www.sciencemag.org/news/2020/02/united-states-badly-bungled-coronavirus-testing-things-may-soon-improve",
             "date_of_publication": "2020-02-29 10:48:19",
             "headline": "The United States badly bungled coronavirus testing\u2014but things may soon improve",
-            "main_text": "A faulty reagent in a test kit distributed by the U.S. Centers for Disease Control and Prevention has hampered efforts to find and confirm COVID-19 cases.By Jon CohenFeb. 28, 2020 , 5:45 PMSpeed is critical in the response to COVID-19. So why has the United States been so slow in its attempt to develop reliable diagnostic tests and use them widely?The World Health Organization (WHO) has shipped testing kits to 57 countries. China had five commercial tests on the market 1 month ago and can now do up to 1.6 million tests a week; South Korea has tested 65,000 people so far. The U. S. Centers for Disease Control and Prevention (CDC), in contrast, has done only 459 tests since the epidemic began. The rollout of a CDC-designed test kit to state and local labs has become a fiasco because it contained a faulty reagent. Labs around the country eager to test more suspected cases\u2014and test them faster\u2014have been unable to do so. No commercial or state labs have the approval to use their own tests.In what is already an infamous snafu, CDC initially refused a request to test a patient in Northern California who turned out to be the first probable COVID19 case without known links to an infected person.The situation may soon improve. State labs and commercial diagnostic developers hope to win approval from the Food and Drug Administration (FDA) for their own tests, and FDA and CDC on Wednesday agreed on a workaround for the faulty CDC kit\u2014which has a problem that is not essential to its proper functioning\u2014so that it can now be used by at least some of the state labs that have it.But there\u2019s widespread discontent with the way the system has worked. \u201cThe U.S. government has not appropriately prioritized diagnostic tests and supported the laboratory response network to the degree they should have been supported over the years,\u201d says Luciana Borio, who in previous jobs had lead roles in responding to emerging threats at the National Security Council and FDA.If a new disease emerges, CDC normally \u201cgets the ball rolling\u201d with diagnostics because it has the expertise and the biosafety laboratories to handle dangerous novel pathogens, says Borio, who now works for In-Q-Tel, a not-for-profit venture capital firm. Typically, there are few confirmed viral samples from patients at the outset, which researchers need to validate their tests, and CDC has the capability to grow the virus for this critical quality assurance step. Once the agency has a working test, that goes out to state labs. Then, in a third phase, commercial labs take over and either produce their own tests or scale-up the CDC one. \u201cI would have hoped to see that third phase by now,\u201d Borio says.In the case of SARS-CoV-2, as the virus causing COVID-19 is officially known, CDC\u2019s sluggishness was apparent 1\u00a0month ago. On 26 January, the agency held an unusual Sunday teleconference for the media to provide an update about the rapidly growing outbreak. There were then five cases in the United States, but the CDC lab in Atlanta was still the only one in the country able to test for the virus, and it repeatedly had backlogs. Asked why more labs weren\u2019t able to do the tests, Nancy Messonnier, who then was leading CDC\u2019s response, said it was a quality issue. \u201cWe hold ourselves to an incredibly high standard of precision in terms of laboratory testing,\u201d Messonnier said. \u201cWe wouldn\u2019t want to inadvertently make a mistake in patient care.\u201dCDC finally started to send\u00a0kits to state and local health labs on 5 February. But on 12 February, it revealed that several labs had difficulty validating the test because of a problem with one of the reagents.The key problem with the kits is what\u2019s known as a negative control, says Kelly Wroblewski, director of infectious diseases at the Association of Public Health Laboratories (APHL). CDC\u2019s test uses the polymerase chain reaction (PCR) assay to find tiny amounts of the SARS-CoV-2 genome in, say, a nose swab. To make sure a test is working properly, kits also include DNA unrelated to SARS-CoV-2. The assay should not react to this negative control, but the CDC reagents did at many, but not all, state labs. The labs where the negative control failed were not allowed to use the test; they have to continue to send their samples to Atlanta.The declaration of a public health emergency \u2026 limited the diagnostic capacity of this country. It\u2019s insane.But at the moment, they\u2019re not allowed to do that without FDA approval. When the United States\u00a0declared the outbreak\u00a0a public health emergency\u00a0on 31 January, a bureaucratic process kicked in that requires FDA\u2019s \u201cemergency use approval\u201d for any tests. \u201cThe declaration of a public health emergency did exactly what it shouldn\u2019t have. It limited the diagnostic capacity of this country,\u201d Mina says. \u201cIt\u2019s insane.\u201dOn 24 February, APHL asked FDA Commissioner Stephen Hahn for \u201cenforcement discretion\u201d to sidestep the emergency process and allow APHL members labs to use their own tests. On 26 February, Hahn replied that the CDC test could be modified to use just the primers that specifically detect SARS-CoV-2, essentially ignoring the faulty portion of the kits. FDA, in other words, would look the other way to make more widespread testing possible.CDC has notified labs of FDA\u2019s decision in a letter, but the agency must still file an emergency use authorization with FDA for the protocol change. Once it does, it won\u2019t take long, Hahn promised in his letter to APHL: \u201cFDA has been able to authorize tests for public health emergencies within as little as 1 day upon receipt of the complete validation.\u201dIn New York, the State Department of Health has\u00a0designed its own test\u00a0based on the CDC protocol and plans to seek emergency use authorization.CDC provided an update about the situation in an email but did not respond to\u00a0Science\u2019s\u00a0request for an interview with a scientist to discuss the details of the problem. Mina stresses he has great respect for CDC\u2019s competence overall, but says, \u201cThere\u2019s no good explanation for what\u2019s going on here.\u201ddoi:10.1126/science.abb5152Jon is a staff writer for Science.By Jon CohenMar. 9, 2020By Rodrigo P\u00e9rez Ortega Feb. 27, 2020By Rodrigo P\u00e9rez Ortega Feb. 26, 2020By Rodrigo P\u00e9rez Ortega Feb. 21, 2020By Rodrigo P\u00e9rez Ortega Jan. 21, 2020More SifterVol 367,\n\n      Issue 6483\u00a9 2020\u00a0American Association for the Advancement of Science. All rights Reserved. AAAS is a partner of HINARI, AGORA, OARE,\u00a0CHORUS, CLOCKSS, CrossRef and COUNTER.",
+            "main_text": "A, OARE,\u00a0CHORUS, CLOCKSS, CrossRef and COUNTER.",
             "reports": [
                 {
                     "event_date": "2020-01-21 xx:xx:xx to 2020-02-27 xx:xx:xx",
@@ -37,37 +37,17 @@
             ],
             "keyword_frequency": {
                 "sars": 0.00308642,
-                "acute respiratory syndrome": 0.00308642,
-                "covid-19": 0.00231481,
-                "virus": 0.00231481,
-                "outbreak": 0.00154321,
-                "epidemic": 0.0007716,
-                "emerging": 0.0007716,
-                "infectious": 0.0007716
+                "acute respiratory syndrome": 0.00308642
             },
             "keyword_location": [
                 "atlanta",
                 "china",
                 "cn",
-                "fulton county",
-                "ga",
-                "georgia",
-                "kr",
-                "new york",
-                "ny",
-                "south korea",
-                "united states",
-                "us"
+                "fulton county"
             ],
             "keyword_list": [
                 "acute respiratory syndrome",
-                "covid-19",
-                "emerging",
-                "epidemic",
-                "infectious",
-                "outbreak",
-                "sars",
-                "virus"
+                "covid-19"
             ]
         },
         {

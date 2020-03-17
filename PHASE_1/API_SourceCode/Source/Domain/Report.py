@@ -32,7 +32,7 @@ class Report:
     def to_dict(self):
         result = {}
         if self.get_date() is not None:
-            result['date'] = self.get_date()
+            result['event_date'] = self.get_date()
         if len(self.get_locations()) > 0:
             result['locations'] = self.get_locations()
         if len(self.get_diseases()) > 0:

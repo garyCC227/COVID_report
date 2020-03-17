@@ -27,7 +27,7 @@ class ShortenNews():
         return {
             "id": self.get_id(),
             "url": self.get_url(),
-            "date": self.get_date(),
-            "title": self.get_title(),
-            "content": self.get_content()
+            "date_of_publication": self.get_date(),
+            "headline": self.get_title(),
+            "main_text": self.get_content()
         }

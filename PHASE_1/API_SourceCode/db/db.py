@@ -28,29 +28,25 @@ def getDocumentByID(id):
         return False
 
 
-def queryDocumentByArguments(startDate, endDate, keywords, location):
+def queryDocumentByArguments(startDate, endDate, keywords=[], location=None):
 
     doc_ref = db.collection(u'reports')
     ret_arr = []
-#     startDate and endDate are always specified so will always need to query date
-    if keywords is [] and location is None:
-        query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication','<', endDate)
-    elif keywords is []:
-        query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication','<', endDate).where(u'keyword_location', u'array_contains', location)
-    elif location is None:
-        query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication', '<', endDate)
-        for word in keywords:
-            print(word)
-            query = query.where("keyword_frequency.word" + '[' + word + ']', ">", 0)
+    
+    # startDate and endDate are always specified so will always need to query date
+    query = doc_ref
+    
+    if startDate:
+        query = query.where(u'date_of_publication', '>', startDate)
+    
+    if endDate:
+        query = query.where(u'date_of_publication','<', endDate)
+    
+    if location:
+        query = query.where(u'keyword_location', u'array_contains', location)
 
-    else:
-        query = doc_ref.where(u'date_of_publication', '>', startDate).where(u'date_of_publication', '<',
-                                                                            endDate).where(u'keyword_location',
-                                                                                           u'array_contains', location)
-        for word in keywords:
-            print(word)
-            query = query.where("keyword_frequency.word" + '['+word + ']', ">" , 0)
-
+    for word in keywords:
+        query = query.where("keyword_frequency.word" + '[' + word + ']', ">", 0)
 
     docs = query.stream()
     for doc in docs:

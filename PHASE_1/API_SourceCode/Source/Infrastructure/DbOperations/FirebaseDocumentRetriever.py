@@ -79,8 +79,6 @@ class FirebaseDocumentRetriever():
         result_list = FirebaseListFactory().make(query)
         result_list = self._create_document_list(result_list, filter.get_keyterms())
         result_list = sorted(result_list, key=self._tf_key, reverse=True)
-        for result in result_list:
-            print(result.get_tf())
         return result_list
 
     def get_report_by_id(self, id):

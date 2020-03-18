@@ -9,5 +9,5 @@ class FirebaseDocumentFilterFactory:
         if "location" in criteria:
             product.set_location(criteria["location"])
         if "keyterms" in criteria:
-            product.set_location(criteria["keyterms"])
+            product.set_keyterms(criteria["keyterms"])
         return product

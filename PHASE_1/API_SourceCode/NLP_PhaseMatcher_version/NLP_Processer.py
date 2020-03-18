@@ -19,11 +19,11 @@ from NLP_PhaseMatcher_version.Geocode_Location import Geocode_Location
 
 class NLP_Processer :
 
-    def __init__ (self, disease_pattern_loc = os.path.join("NLP_PhaseMatcher_version","disease_pattern.json") , search_pattern_loc = os.path.join("NLP_PhaseMatcher_version","search_pattern.json"), 
-                    syndrome_pattern_loc = os.path.join("NLP_PhaseMatcher_version","syndrome_pattern.json"), disease_catogary_loc = os.path.join("NLP_PhaseMatcher_version","disease_catogary.json")):
+    # def __init__ (self, disease_pattern_loc = os.path.join("NLP_PhaseMatcher_version","disease_pattern.json") , search_pattern_loc = os.path.join("NLP_PhaseMatcher_version","search_pattern.json"), 
+    #                 syndrome_pattern_loc = os.path.join("NLP_PhaseMatcher_version","syndrome_pattern.json"), disease_catogary_loc = os.path.join("NLP_PhaseMatcher_version","disease_catogary.json")):
     # Yahnis windows' version
-    # def __init__ (self, disease_pattern_loc = "NLP_PhaseMatcher_version\\disease_pattern.json" , search_pattern_loc = "NLP_PhaseMatcher_version\\search_pattern.json", 
-    #                 syndrome_pattern_loc = "NLP_PhaseMatcher_version\\syndrome_pattern.json", disease_catogary_loc = "NLP_PhaseMatcher_version\\disease_catogary.json" , geocode_service = True):
+    def __init__ (self, disease_pattern_loc = "NLP_PhaseMatcher_version\\disease_pattern.json" , search_pattern_loc = "NLP_PhaseMatcher_version\\search_pattern.json", 
+                    syndrome_pattern_loc = "NLP_PhaseMatcher_version\\syndrome_pattern.json", disease_catogary_loc = "NLP_PhaseMatcher_version\\disease_catogary.json" , geocode_service = True):
         self.nlp = spacy.load('en_core_web_sm')
         self.matcher = PhraseMatcher(self.nlp.vocab, attr='LOWER', max_length=5)
         self.load_pattern(disease_pattern_loc)

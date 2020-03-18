@@ -17,6 +17,7 @@ class NewsFactory(DomainFactory):
         url = None
         title = None
         content = None
+        tf = 0
         if isinstance(data, dict):
             if "id" in data:
                 id = data['id']
@@ -28,11 +29,13 @@ class NewsFactory(DomainFactory):
                 title = data['title']
             if "content" in data:
                 content = data['content']
+            if "tf" in data:
+                tf = data['tf']
 
         if not self._shorten:
-            self._product = News(id, url, date, title, content)
+            self._product = News(id, url, date, title, content, tf)
         else:
-            self._product = ShortenNews(id, url, date, title, content)
+            self._product = ShortenNews(id, url, date, title, content, tf)
 
         return self._product
 

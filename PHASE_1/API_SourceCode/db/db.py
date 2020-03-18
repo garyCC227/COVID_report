@@ -9,8 +9,8 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 
 
-cred = credentials.Certificate(".\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
- # cred = credentials.Certificate(os.path.join("db","fbconfig","apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json"))
+# cred = credentials.Certificate(".\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
+cred = credentials.Certificate(os.path.join("db","fbconfig","apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json"))
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -151,5 +151,5 @@ def headlineExists(headline):
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")
-queryDocumentByArguments(1582933600, 1582933700, ["outbreak"])
+# queryDocumentByArguments(1582933600, 1582933700, ["outbreak"])
 

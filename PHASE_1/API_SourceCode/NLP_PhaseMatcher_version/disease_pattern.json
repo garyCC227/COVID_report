@@ -1,6 +1,6 @@
 [
     { "name": "DIS-unknown", "general_names" : ["unknown disease", "unknown diseases", "unknown origin"] },
-    { "name": "DIS-other", "general_names" : ["other disease", "bronchitis", "flu"] },
+    { "name": "DIS-other", "general_names" : ["other disease", "bronchitis"] },
     { "name": "DIS-anthrax cutaneous", "general_names" : ["anthrax cutaneous"] },
     { "name": "DIS-anthrax gastrointestinous", "general_names" : ["anthrax gastrointestinous"] },
     { "name": "DIS-anthrax inhalation", "general_names" : ["anthrax inhalation"] },
@@ -19,7 +19,7 @@
     { "name": "DIS-influenza a/h5n1", "general_names" : ["h5n1"] },
     { "name": "DIS-influenza a/h7n9", "general_names" : ["h7n9", "influenza a"] },
     { "name": "DIS-influenza a/h9n2", "general_names" : ["h9n2"] },
-    { "name": "DIS-influenza a/h1n1", "general_names" : ["h1n1"] },
+    { "name": "DIS-influenza a/h1n1", "general_names" : ["h1n1", "flu"] },
     { "name": "DIS-influenza a/h1n2", "general_names" : ["h1n2"] },
     { "name": "DIS-influenza a/h3n5", "general_names" : ["h3n5"] },
     { "name": "DIS-influenza a/h3n2", "general_names" : ["h3n2"] },
@@ -64,7 +64,7 @@
     { "name": "DIS-yellow fever", "general_names" : ["yellow fever", "yellow jack", "yellow plague", "bronze john"] },
     { "name": "DIS-yersiniosis", "general_names" : ["yersiniosis", "yersinia enterocolitica"] },
     { "name": "DIS-zika", "general_names" : ["zika", "zikv", "riboviria", "flavivirus", "flaviviridae"] },
-    { "name": "DIS-legionares", "general_names" : [ "legionares", "legionellosis", "legion fever", "legionnaires"] },
+    { "name": "DIS-legionares", "general_names" : [ "legionares", "legionellosis", "legion fever", "legionnaires", "legionella"] },
     { "name": "DIS-listeriosis", "general_names" : ["listeriosis", "listeria", "monocytogenes"] },
     { "name": "DIS-monkeypox", "general_names" : ["variole du singe", "monkey pox", "monkeypox"] },
     { "name": "DIS-COVID-19", "general_names" : ["coronavirus", "corona virus", "covid", "cornidovirineae", "covid-19"]}

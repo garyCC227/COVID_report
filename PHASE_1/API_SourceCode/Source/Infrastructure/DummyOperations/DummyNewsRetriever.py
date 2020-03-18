@@ -5,7 +5,7 @@ from ...DomainFactory.ReportListFactory import ReportListFactory
 
 class DummyNewsRetriever:
 
-    def get_news_by_id(self, id):
+    def get_document_by_id(self, id):
         url = "https://dummy.url.com/"
         time = "2020-02-23 12:12:00"
         title = "Dummy News"

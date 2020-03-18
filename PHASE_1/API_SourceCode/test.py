@@ -17,9 +17,10 @@ def main():
     i = 0
     posts = store['posts']
     for key, post in posts.items():
-        if i < 450 :
+        if i < 425 :
             i+=1
             continue
+        print(i)
         maintext = post['content']
         title = post['title']
         url = post['url']
@@ -42,11 +43,11 @@ def main():
         d["keyword_location"] = nlp_processer.get_keyword_location()
         d["keyword_list"] = nlp_processer.get_keyword_list()
         new['data'].append(d)
-        json_file = json.dumps(d, indent = 2)
-        json_file = json.loads(json_file)
-        setDocument(json_file)
+        # json_file = json.dumps(d, indent = 2)
+        # json_file = json.loads(json_file)
+        # setDocument(json_file)
         i+=1
-        if i >  455:
+        if i >  450:
             break
 
     with open('articles.json', 'w') as f:

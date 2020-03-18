@@ -20,9 +20,9 @@ class FirebaseDocumentFilter:
 
     def set_date_range(self, start, end):
         if start:
-            self._start_date = start # self._parse_time(start)
+            self._start_date = int(start) # self._parse_time(start)
         if end:
-            self._end_date = end # self._parse_time(end)
+            self._end_date = int(end) # self._parse_time(end)
 
     def set_location(self, location):
         if location:
@@ -38,14 +38,28 @@ class FirebaseDocumentFilter:
         if isinstance(keyterms, list):
             self._keyterms = keyterms
 
+    def get_start_date(self):
+        return self._start_date
+
+    def get_end_date(self):
+        return self._end_date
+
+    def get_location(self):
+        return self._location
+
+    def get_keyterms(self):
+        return self._keyterms
+
     def apply(self, query):
+        print(self._start_date, self._end_date)
+        print(self._keyterms, self._location)
         if self._start_date:
             query = query.where(u'date_of_publication', '>', self._start_date)
         if self._end_date:
             query = query.where(u'date_of_publication', '<', self._end_date)
         if self._location:
             query = query.where(u'keyword_location', u'array_contains', self._location)
-        for word in self._keyterms:
-            query = query.where("keyword_frequency.word" + '[' + word + ']', ">", 0)
+        #if self._location is None and len(self._keyterms) > 0:
+        #    query = query.where("keyword_list", u'array_contains', self._keyterms[0])
 
         return query

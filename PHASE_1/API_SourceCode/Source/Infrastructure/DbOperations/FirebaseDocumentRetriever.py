@@ -77,7 +77,7 @@ class FirebaseDocumentRetriever():
         query = filter.apply(query)
         handler = lambda elem: self._create_document(elem)
         result_list = FirebaseListFactory().make(query)
-        result_list = self._create_document_list(result_list, filter.get_keyterms())
+        result_list = self._create_document_list(result_list, filter.get_keyterms(), shorten=not complete_version)
         result_list = sorted(result_list, key=self._tf_key, reverse=True)
         return result_list
 

@@ -1,11 +1,14 @@
-class ShortenNews():
+from datetime import datetime
 
-    def __init__(self, id, url, date, title, content):
+
+class ShortenNews():
+    def __init__(self, id, url, date, title, content, tf=0):
         self._id = id
         self._url = url
-        self._date = date
+        self._date = datetime.fromtimestamp(date).strftime('%Y-%m-%d %H:%M:%S')
         self._title = title
         self._content = content
+        self._tf = tf
 
     def get_id(self):
         return self._id
@@ -22,6 +25,9 @@ class ShortenNews():
     def get_content(self):
         content = self._content
         return (content[:75] + '...') if len(content) > 75 else content
+
+    def get_tf(self):
+        return self._tf
 
     def to_dict(self):
         return {

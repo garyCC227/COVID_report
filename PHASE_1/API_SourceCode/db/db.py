@@ -151,5 +151,5 @@ def headlineExists(headline):
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")
-# queryDocumentByArguments(1582933600, 1582933700, ["outbreak"])
+queryDocumentByArguments(1583470271, 1583471371, ["outbreak", "sars"], "ga")
 

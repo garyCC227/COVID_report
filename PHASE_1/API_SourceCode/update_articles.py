@@ -5,6 +5,7 @@ import validators
 import os
 import sys
 import subprocess
+from pathlib import Path
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 
@@ -13,7 +14,7 @@ from Scrapy.last_activity import ActivityPost
 from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer
 
 def update_post(posts, PS):
-  with open(os.path.join('Scrapy', 'content.json'), 'r') as f:
+  with open(Path('Scrapy/content.json'), 'r') as f:
     data = json.load(f)
 
   last_timestamp = data['lastDatestamp']
@@ -35,7 +36,7 @@ def update_post(posts, PS):
       "lastDatestamp": PS.last_datestamp,
       "date": str(PS.last_date)
     }
-    with open(os.path.join('Scrapy', 'posts.json'), 'w') as f:
+    with open(Path('Scrapy/posts.json'), 'w') as f:
       json.dump(new_data, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
 
     return len(new_posts)
@@ -52,7 +53,9 @@ def main():
     'Content-Type':'application/x-www-form-urlencoded'
   }
   res = requests.post('https://flutrackers.com/forum/activity/get', headers=headers, data=formData)
+  # print(res)
   res = json.loads(res.text)
+  # print(res)
 
   #ActivityPost object. do anything you want here
   PS = ActivityPost(res['template'], int(res['lastDate']))
@@ -69,7 +72,6 @@ def main():
     subprocess.call([run_shell, str(num_newposts-1)])
   else:
     print("No new posts\n")
-    return
 
 if __name__ == "__main__":
   main()

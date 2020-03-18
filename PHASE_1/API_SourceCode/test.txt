@@ -1,0 +1,175 @@
+number is :************************************************  0
+2020-03-18 03:12:20
+https://www.newsroom.co.nz/2020/03/16/1085756/no-countrys-got-enough-icu-capacity-a-concern?fbclid=IwAR3V4PA160Bf41zHu7H6zdDP8kexksEgbjs1QvVUv2WamR2-U1MySmWw1gc
+{
+  "url": "https://www.newsroom.co.nz/2020/03/16/1085756/no-countrys-got-enough-icu-capacity-a-concern?fbclid=IwAR3V4PA160Bf41zHu7H6zdDP8kexksEgbjs1QvVUv2WamR2-U1MySmWw1gc",
+  "date_of_publication": 1584461540,
+  "headline": "Covid-19: Concerns over ICU capacity",
+  "main_text": "Become a supportervia PressPatronNew Zealand could have around 3500 simultaneous Covid-19 cases before running out of intensive care capacity. Photo: Lynn GrievesonMarc Daalder is a political reporter based in Wellington who covers climate change, energy, primary industries, technology and the far-right. Twitter: @marcdaalder.Covid-19Analysis: Leading experts on New Zealand's intensive care system worry\u00a0the country doesn't have the capacity to deal with a serious outbreak. Marc Daalder reports.The maths is bleak. According to data from overseas outbreaks, around 5\u00a0percent of people who test positive for Covid-19 end up requiring intensive care. What percentage of the general population will catch the virus is anybody's guess - forecasts vary from 20 percent of the global population to as high as 50 or 70 percent in some countries.These forecasts also assume the virus will continue to spread, perhaps seasonally, for at least the next 18 months, if not longer. This makes calculating the needed intensive care capacity - not to mention capacity for other resources, such as general hospital beds and active medical staff - exceedingly difficult.Nonetheless, New Zealand's stock of intensive care units - just 176 beds - doesn't inspire confidence, David Galler says. Galler has been an intensive care specialist at Middlemore Hospital for more than three decades.Slowing the spread our best shot\"No country's got enough ICU units for a pandemic. You can't do that, ever,\" Galler said. \"No country's got enough.\"The Government's efforts so far have focused on preventing community transmission of the virus in New Zealand and blunting any potential exponential increase in cases. It's what expert\u00a0Siouxsie Wiles refers to as flattening the curve and stopping the spread.These measures are important, as they make it easier for the medical system to absorb a similar number of cases over a prolonged period of time. \"It depends on the rate of rise of numbers - that's what it's going to boil down to. That's why all of these efforts by the Government - identification, isolation, contact tracing - all that stuff, that's why it's so important,\" Galler said.\"It depends on the size of the outbreak,\" Craig Carr told Newsroom. Carr is the New Zealand regional director for the Australia New Zealand Intensive Care Society. \"That's why the ICU community in New Zealand applauds the Government action at the weekend. We appreciate it wasn't easy for them but it's why everyone is speaking about flattening the curve.\"Building more intensive care units in a matter of weeks or months to deal with the pandemic just isn't feasible, Galler believes. Instead, we have to hunker down and hope we can slow the spread enough to give the medical system a chance.\"Given the resource that we've got, which can't be increased overnight, there is an extraordinary amount of collaboration and preparation going on. The health system in New Zealand is always working hard to keep up. There's no slack in it, to meet [new] demand.\"ICU capacity insufficientThe alternative is dire. \"If we get what Italy's got, we're going to be in big trouble like Italy's in big trouble,\" Galler said.\"If you have very high numbers of people in the population with Covid at any one time, then that has the potential to overwhelm the capacity in the healthcare system to respond to it,\" Carr said.Under the current numbers, New Zealand could have around 3500 simultaneous Covid-19 cases before running out of intensive care capacity - and that's assuming\u00a0ICU beds are used by Covid-19 patients only, not anyone else with a medical issue.What are the chances of us having 3500 simultaneous cases? Just eight countries have had 3500 or more cases so far, but we're only two months into what experts warn could last for more than a year. It would also imply an infection rate of more than 0.07 percent, something we haven't seen in any other country this far - but, as previously mentioned, experts estimate that rate will increase over the coming months.Experts work to \"flex capacity\"Caroline McElnay, New Zealand's\u00a0Director of Public Health, said on February 25 that the country's ICU directors had met to begin working on a pandemic plan. \"We have a network of clinical intensive care unit directors and they have now met specifically around ICU, high-dependency unit and negative pressure beds that we have around the country,\" she said.\"In a pandemic scenario, we would use this group to provide advice on how best to manage demand for those beds across the country from a national perspective. It is important to note that these are beds that are already in use around the country. Part of the role of this group would be to advise on the demand for these beds and equipment.\"The Ministry of Health was unable to provide comment for this article by the time of publication.Carr said the ICU community was working on\u00a0contingency plans\u00a0to increase ICU capacity, but that these alterations would be better to avoid. \"We do have the ability to create surge capacity in extraordinary times. Around the country, we're looking at where else we can ventilate patients. You've seen Italy and Spain are using theatre ventilators, post-operative units to ventilate patients in. Similarly, we are looking at all of these things and making plans.\"\"Now we are hoping, because of the actions the Government has taken, that we won't see these very high numbers in patients that they're seeing, but we do have at least the benefit of their experience. The countries that have had this, China, Spain, Italy, everyone's been sharing their experience and learning so it affords us some opportunity to prepare,\" he said.\"We have the ability to flex the capacity that we've got and we are looking all up and down the country at what we can do. We hope not to have to do extraordinary things like you're seeing in Spain, where they've got field hospitals, but if we need to, we're looking at things like that. But if we can flatten that curve, then everyone's better off.\"Perils of limited capacity evidentIf New Zealand does have an outbreak of sufficient size and pace, then ICU capacity could be\u00a0quickly swamped.\"If you look at a community like mine in South Auckland, if that virus takes hold there, my God,\" Galler said. \"It's going to swoop through that population because they're\u00a0so unwell - it's one of the most unwell populations in New Zealand.\"What would that look like? The perils of running out of intensive care capacity have been demonstrated most graphically in Italy, where doctors have been issued guidelines by the\u00a0Italian College of Anesthesia, Analgesia, Resuscitation and Intensive Care (SIAARTI) to help them choose who to treat when they can't help everyone.The document compares the situation to wartime \"catastrophe medicine\" and warns doctors they will be put into situations where they choose who lives and who dies. SIAARTI tells doctors to follow \"the most widely shared criteria regarding distributive justice and the appropriate allocation of limited health resources\", according to a translation in The Atlantic.\"Informed by the principle of maximising benefits for the largest number, the allocation criteria need to guarantee that those patients with the highest chance of therapeutic success will retain access to intensive care.\"The other question is what happens to business as usual\" in the event of a pandemic, Galler notes. He raises the subject of the Whakaari-White Island eruption in December, which weighed heavily on the health system's resources and made it difficult for some people to seek treatment unrelated to the eruption.\"Whenever something like this happens - Whakaari we managed very well - but there's a price to pay and that's people missing out on services. People who have so-called elective surgery - and elective is the wrong term because it's not really elective, it's schedulable surgery, it's people who really need it like cancers and all sorts of things - those people get bumped.\"Overseas, elective surgeries of varying urgency are being delayed to make room for Covid-19 treatment. In the United States, not only are candidates for hip replacements and ACL reconstruction having their procedures postponed, but patients with prostate and cervical cancer are facing delays as well.Covid-19 is transmitted like the flu. The\u00a0Ministry of Health recommends\u00a0that all New Zealanders wash their hands frequently and refrain from touching their face in order to protect themselves and others. Call Healthline on\u00a00800 358 5453\u00a0if you have any symptoms and have been to any\u00a0countries or territories of concern\u00a0or have been in close contact with someone confirmed with\u00a0Covid-19.Supporting calm, considered journalism has never been so important.Already in 2020 the value of public interest journalism, shorn of hype and hysteria, has become acutely evident. Being an election year, the need for judgment, balance and persistence in reporting and interpretation is vital.Reader donations are critical to what we do. If you've appreciated our reporting and want to see Newsroom continue, please click the button below to make a donation (monthly if you can). Thank you for reading and for your support.The coalition\u2019s coronavirus response includes some pet projects, but seems largely sensible - the National leader\u2019s response, not so much.Sam SachdevaThe Government\u2019s monumental and fast cash injections for small businesses and beneficiaries mark a welcome turnaround. Bernard Hickey argues a GST cut and equally massive Reserve Bank money printing will be needed in the dark months to come.Bernard HickeyAn essay by Wellington writer Ren\u00e9e on the joys of self-isolating: \u201cEveryone gives old people soap or chutney.\u201dReneeNewsroom does not allow comments directly on this website. \n                                We invite all readers who wish to discuss a story or leave \n                                a comment to visit us on Twitter \n                                or Facebook. We also welcome \n                                your news tips and feedback via email: contact@newsroom.co.nz.\n                                Thank you.Start your day with our best stories in your inboxWith thanks to our partnersStart your day with our best stories in your inboxDummy text",
+  "reports": [
+    {
+      "event_date": "2019-12-xx xx:xx:xx to 2020-02-25 xx:xx:xx",
+      "locations": [
+        {
+          "google_id": "ChIJBQiCnsFNDW0R6HK7_D2IgBY",
+          "address": "South Auckland, Manukau, Auckland 2104, New Zealand"
+        },
+        {
+          "google_id": "ChIJy3TpSfyxOG0RcLQTomPvAAo",
+          "address": "Wellington, New Zealand"
+        },
+        {
+          "google_id": "ChIJLRI1_X_Bb20RwAecJGLvAA8",
+          "address": "Whakaari / White Island, Bay Of Plenty, New Zealand"
+        },
+        {
+          "google_id": "ChIJ-WlSaT7et4kRZcMhICc4qug",
+          "address": "9570 Berger Rd suite j, Columbia, MD 21046, USA"
+        },
+        {
+          "google_id": "ChIJwULG5WSOUDERbzafNHyqHZU",
+          "address": "China"
+        },
+        {
+          "google_id": "ChIJA9KNRIL-1BIRb15jJFz1LOI",
+          "address": "Italy"
+        },
+        {
+          "google_id": "ChIJi7xhMnjjQgwR7KNoB5Qs7KY",
+          "address": "Spain"
+        }
+      ],
+      "diseases": [
+        "COVID-19"
+      ],
+      "syndromes": []
+    },
+    {
+      "event_date": "2019-12-xx xx:xx:xx to 2020-02-25 xx:xx:xx",
+      "locations": [
+        {
+          "google_id": "ChIJBQiCnsFNDW0R6HK7_D2IgBY",
+          "address": "South Auckland, Manukau, Auckland 2104, New Zealand"
+        },
+        {
+          "google_id": "ChIJy3TpSfyxOG0RcLQTomPvAAo",
+          "address": "Wellington, New Zealand"
+        },
+        {
+          "google_id": "ChIJLRI1_X_Bb20RwAecJGLvAA8",
+          "address": "Whakaari / White Island, Bay Of Plenty, New Zealand"
+        },
+        {
+          "google_id": "ChIJ-WlSaT7et4kRZcMhICc4qug",
+          "address": "9570 Berger Rd suite j, Columbia, MD 21046, USA"
+        },
+        {
+          "google_id": "ChIJwULG5WSOUDERbzafNHyqHZU",
+          "address": "China"
+        },
+        {
+          "google_id": "ChIJA9KNRIL-1BIRb15jJFz1LOI",
+          "address": "Italy"
+        },
+        {
+          "google_id": "ChIJi7xhMnjjQgwR7KNoB5Qs7KY",
+          "address": "Spain"
+        }
+      ],
+      "diseases": [
+        "influenza a/h1n1"
+      ],
+      "syndromes": []
+    },
+    {
+      "event_date": "2019-12-xx xx:xx:xx to 2020-02-25 xx:xx:xx",
+      "locations": [
+        {
+          "google_id": "ChIJBQiCnsFNDW0R6HK7_D2IgBY",
+          "address": "South Auckland, Manukau, Auckland 2104, New Zealand"
+        },
+        {
+          "google_id": "ChIJy3TpSfyxOG0RcLQTomPvAAo",
+          "address": "Wellington, New Zealand"
+        },
+        {
+          "google_id": "ChIJLRI1_X_Bb20RwAecJGLvAA8",
+          "address": "Whakaari / White Island, Bay Of Plenty, New Zealand"
+        },
+        {
+          "google_id": "ChIJ-WlSaT7et4kRZcMhICc4qug",
+          "address": "9570 Berger Rd suite j, Columbia, MD 21046, USA"
+        },
+        {
+          "google_id": "ChIJwULG5WSOUDERbzafNHyqHZU",
+          "address": "China"
+        },
+        {
+          "google_id": "ChIJA9KNRIL-1BIRb15jJFz1LOI",
+          "address": "Italy"
+        },
+        {
+          "google_id": "ChIJi7xhMnjjQgwR7KNoB5Qs7KY",
+          "address": "Spain"
+        }
+      ],
+      "diseases": [
+        "other"
+      ],
+      "syndromes": []
+    }
+  ],
+  "keyword_frequency": {
+    "covid-19": 0.00410467,
+    "virus": 0.00205233,
+    "outbreak": 0.00153925,
+    "other": 0.00051308,
+    "influenza a/h1n1": 0.00051308,
+    "covid": 0.00051308,
+    "infection": 0.00051308,
+    "cancer": 0.00051308,
+    "flu": 0.00051308,
+    "coronavirus": 0.00051308
+  },
+  "keyword_location": [
+    "analgesia",
+    "auckland",
+    "bay of plenty",
+    "berger rd",
+    "berger road",
+    "china",
+    "cn",
+    "columbia",
+    "es",
+    "howard county",
+    "hysteria",
+    "it",
+    "italy",
+    "manukau",
+    "maryland",
+    "md",
+    "new zealand",
+    "nz",
+    "savage",
+    "south auckland",
+    "spain",
+    "suite j",
+    "united states",
+    "us",
+    "wellington",
+    "whakaari",
+    "whakaari / white island"
+  ],
+  "keyword_list": {
+    "covid-19": true,
+    "virus": true,
+    "outbreak": true,
+    "other": true,
+    "influenza a/h1n1": true,
+    "covid": true,
+    "infection": true,
+    "cancer": true,
+    "flu": true,
+    "coronavirus": true
+  }
+}

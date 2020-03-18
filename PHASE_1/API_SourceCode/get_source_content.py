@@ -11,6 +11,7 @@ from Scrapy.last_activity import ActivityPost
 from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer
 from langdetect import detect
 from datetime import datetime
+from pathlib import Path
 
 # import sys
 # sys.path.insert(1,"C:\\Users\\ASUS\\se3011\\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\db")
@@ -22,10 +23,10 @@ by the urls in posts.json
 
 def fetch_resource_context(i):
   print("number is :************************************************ ", i)
-  with open(os.path.join('Scrapy', 'posts.json'), 'r') as f:
+  with open(Path('Scrapy/posts.json'), 'r') as f:
     data = json.load(f)
 
-  with open(os.path.join('Scrapy', 'content.json'), 'r') as f:
+  with open(Path('Scrapy/content.json'), 'r') as f:
     store = json.load(f)
 
   post = data['posts'][i]
@@ -42,8 +43,11 @@ def fetch_resource_context(i):
 
   if not validators.url(url):
     return
-    
+  
+  open(Path('Scrapy/temp.html'), 'w').close()
   title, content = ActivityPost.get_source_text_for_onepost(url)
+  open(Path('Scrapy/temp.html'), 'w').close()
+
   print(date)
   print(url)
   newpost = {}
@@ -57,7 +61,7 @@ def fetch_resource_context(i):
   }
 
   if len(title) < 2 or len(content) < 300 or content[3:10] in "NCBIErrorYour access to the NCBI website":
-    print("Cannot Access\n")
+    print("Cannot Access or too less content\n")
     return
 
   if detect(content) != "en":

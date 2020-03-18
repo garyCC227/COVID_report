@@ -6,6 +6,7 @@ from scrapy.crawler import CrawlerProcess
 import scrapy
 import os
 import sys
+from pathlib import Path
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 
@@ -84,7 +85,7 @@ class ActivityPost(object):
     '''
     filter text from source url
     '''
-    filename = './Scrapy/temp.html' #consistent file name
+    filename = Path('Scrapy/temp.html') #consistent file name
     flter = Filter(filename)
     
     return flter.get_source_text_by_p()

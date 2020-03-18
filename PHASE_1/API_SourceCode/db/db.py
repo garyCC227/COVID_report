@@ -9,8 +9,8 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 
 
-#cred = credentials.Certificate(".\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
- cred = credentials.Certificate(os.path.join("db","fbconfig","apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json"))
+cred = credentials.Certificate(".\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")
+ # cred = credentials.Certificate(os.path.join("db","fbconfig","apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json"))
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -39,15 +39,16 @@ def queryDocumentByArguments(startDate, endDate, keywords=[], location=None):
     if startDate:
         query = query.where(u'date_of_publication', '>', startDate)
 
-    
+
     if endDate:
         query = query.where(u'date_of_publication','<', endDate)
-    
+
     if location:
         query = query.where(u'keyword_location', u'array_contains', location)
 
-    for word in keywords:
-        query = query.where("keyword_list." + word, "==", True)
+    if location is None and len(keywords) > 0:
+        print(keywords[0])
+        query = query.where("keyword_list", "array_contains", keywords[0])
 
 
     docs = query.stream()
@@ -150,5 +151,5 @@ def headlineExists(headline):
 # getAllDocuments()
 # getDocumentByDisease("COVID-19")
 # getDocumentByLocation("beirut")
-#queryDocumentByArguments("2020-02-13 20:20:21", "2020-03-13 22:20:21", ["outbreak"], "china")
+queryDocumentByArguments(1582933600, 1582933700, ["outbreak"])
 

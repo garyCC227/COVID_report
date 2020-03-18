@@ -1,7 +1,7 @@
 [
     { "name": "DIS-unknown", "general_names" : ["unknown disease", "unknown diseases", "unknown origin"] },
-    { "name": "DIS-other", "general_names" : ["other disease", "bronchitis"] },
-    { "name": "DIS-anthrax cutaneous", "general_names" : ["anthrax cutaneous"] },
+    { "name": "DIS-other", "general_names" : ["other disease", "bronchitis", "cancer", "amebiasis", "ralstonia", "swine", "herpersvirus", "herpers virus", "lyme", "borreliosis", "powassan", "syphilis"] },
+    { "name": "DIS-anthrax cutaneous", "general_names" : ["anthrax cutaneous", "anthrax"] },
     { "name": "DIS-anthrax gastrointestinous", "general_names" : ["anthrax gastrointestinous"] },
     { "name": "DIS-anthrax inhalation", "general_names" : ["anthrax inhalation"] },
     { "name": "DIS-botulism", "general_names" : ["botulism", "undulant fever", "undulating fever", "mediterranean fever", "malta fever", "cyprus fever", "rock fever"] },
@@ -44,7 +44,7 @@
     { "name": "DIS-pertussis", "general_names" : ["whooping", "pertussis", "100 day", "100-day"] },
     { "name": "DIS-plague", "general_names" : ["plague", "bubonic", "septicemic", "black death"] },
     { "name": "DIS-pneumococcus pneumonia", "general_names" : ["pneumonic", "pneumonia", "pneumococcus", "pneumococcal", "streptococcus"] },
-    { "name": "DIS-poliomyelitis", "general_names" : ["poliomyelitis", "polio"] },
+    { "name": "DIS-poliomyelitis", "general_names" : ["poliomyelitis", "polio", "vdpv", "cvdpv"] },
     { "name": "DIS-q fever", "general_names" : ["q fever", "query fever", "coxiella", "burnetii"] },
     { "name": "DIS-rabies", "general_names" : ["rabies", "lyssavirus", "lyssa"] },
     { "name": "DIS-rift valley fever", "general_names" : ["rvf", "zoonosis", "rift valley fever"] },
@@ -67,5 +67,5 @@
     { "name": "DIS-legionares", "general_names" : [ "legionares", "legionellosis", "legion fever", "legionnaires", "legionella"] },
     { "name": "DIS-listeriosis", "general_names" : ["listeriosis", "listeria", "monocytogenes"] },
     { "name": "DIS-monkeypox", "general_names" : ["variole du singe", "monkey pox", "monkeypox"] },
-    { "name": "DIS-COVID-19", "general_names" : ["coronavirus", "corona virus", "covid", "cornidovirineae", "covid-19"]}
+    { "name": "DIS-COVID-19", "general_names" : ["coronavirus", "corona virus", "covid", "cornidovirineae", "covid-19", "ncov", "2019-ncov"]}
 ]

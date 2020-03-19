@@ -1,6 +1,7 @@
 import datetime
 import time
 import os
+from ...Domain.Exceptions.MalformedRequestException import MalformedRequestException
 
 
 class FirebaseDocumentFilter:
@@ -15,14 +16,19 @@ class FirebaseDocumentFilter:
         self.set_keyterms(keyterms)
 
     def _parse_time(self, t, format='%Y-%m-%dT%H:%M:%S'):
-        t = datetime.datetime.strptime(t, format).timetuple()
-        return time.mktime(t)
+        try:
+            t = datetime.datetime.strptime(t, format).timetuple()
+            return time.mktime(t)
+        except ValueError:
+            raise MalformedRequestException()
 
     def set_date_range(self, start, end):
         if start:
             self._start_date = int(self._parse_time(start))
         if end:
             self._end_date = int(self._parse_time(end))
+        if start and end and self._start_date > self._end_date:
+            raise MalformedRequestException()
 
     def set_location(self, location):
         if location:

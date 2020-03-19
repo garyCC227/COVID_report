@@ -3,3 +3,6 @@ pytest==5.3.5
 pymongo==3.10.1
 google-cloud-firestore==1.6.2
 firebase-admin==4.0.0
+spacy==2.2.3
+# After installed spacy you need to download a mould from spacy to run nlp, just type in:
+# python -m spacy download en_core_web_sm

@@ -206,7 +206,7 @@ class NLP_Processer :
         syndromes = sorted(syndrome_dic.keys())
         self.keyword_location = sorted(location_handler.get_location_keywords())
         self.keyword_frequency = keyword_dic
-        self.keyword_list = sorted(keyword_frequency.keys()),
+        self.keyword_list = sorted(self.keyword_frequency.keys()),
         return self.category_report(event_date, locations, diseases, syndromes)
 
 

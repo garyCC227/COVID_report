@@ -1,6 +1,7 @@
 import datetime
 import time
 import os
+from ...Domain.Exceptions.MalformedRequestException import MalformedRequestException
 
 
 class FirebaseDocumentFilter:
@@ -15,14 +16,19 @@ class FirebaseDocumentFilter:
         self.set_keyterms(keyterms)
 
     def _parse_time(self, t, format='%Y-%m-%dT%H:%M:%S'):
-        t = datetime.datetime.strptime(t, format).timetuple()
-        return time.mktime(t)
+        try:
+            t = datetime.datetime.strptime(t, format).timetuple()
+            return time.mktime(t)
+        except ValueError:
+            raise MalformedRequestException()
 
     def set_date_range(self, start, end):
         if start:
-            self._start_date = int(start) # self._parse_time(start)
+            self._start_date = int(self._parse_time(start))
         if end:
-            self._end_date = int(end) # self._parse_time(end)
+            self._end_date = int(self._parse_time(end))
+        if start and end and self._start_date > self._end_date:
+            raise MalformedRequestException()
 
     def set_location(self, location):
         if location:
@@ -51,15 +57,13 @@ class FirebaseDocumentFilter:
         return self._keyterms
 
     def apply(self, query):
-        print(self._start_date, self._end_date)
-        print(self._keyterms, self._location)
         if self._start_date:
             query = query.where(u'date_of_publication', '>', self._start_date)
         if self._end_date:
             query = query.where(u'date_of_publication', '<', self._end_date)
         if self._location:
             query = query.where(u'keyword_location', u'array_contains', self._location)
-        #if self._location is None and len(self._keyterms) > 0:
-        #    query = query.where("keyword_list", u'array_contains', self._keyterms[0])
+        if self._location is None and len(self._keyterms) > 0:
+            query = query.where(u"keyword_list", u'array_contains', self._keyterms[0])
 
         return query

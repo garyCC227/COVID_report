@@ -1,0 +1,280 @@
+openapi: 3.0.0
+servers:
+  - url: https://apinteresting.xyz/v1
+info:
+  description: |
+    API Documentation created by SENG3011 - APInteresting
+
+    ## Data Source
+    [FluTrackers](https://flutrackers.com/forum/)
+
+    ## Data Processing
+    In this API, we enables clients to search articles and reports from our database. When searching, _term frequency_ will be taken into account in order to get a list of best matching.
+
+    Articles are fetched by scrapy every 12 hours, analysed by NLP library and geocode libray, then stored in Database using Firebase.
+
+    ## Features
+    * Support geo-location taxonomy _(e.g. search for NSW and ariticles about sydney can be returned)_. 
+    * Nice formatted address for each location
+    * Searched Articles will be ranked by term frequency before return
+    * large database contains thousands of non-duplicate articles
+    * New ariticles will be captured every 12 hours
+
+    ## Notice
+    A client should attach `identity` as a HTTP header in every request, otherwise the API will return reponse with 401 status code. In order to make testing easilier, in swagger, this can be done by click the Authorize button below and specify the value. This value should typically be the group name. It will not be validated in current version but it will be logged.
+
+    ## Contact Us
+  version: "1.0.0"
+  title: APInteresting
+  contact:
+    name: Yahnis Yang
+    email: happysheepqaq@gmail.com
+tags:
+  - name: news
+    description: Article-related operations
+paths:
+  /news:
+    get:
+      tags:
+        - news
+      summary: get list of all news in summary form
+      operationId: getAllNewsSummary
+      description: |
+        This operation will enable client obtain a list of 
+        **article summaries** for previewing. ```main_text``` will be capped at 75th character afterward. 
+
+        The client may filter some articles by providing specific criteria.
+
+        If a user is interested in any specific article, complete form(including reports) is provided by accessing /news/{id}, and the report is provided by accessing /reports/{id}, where ```id``` is the ID of the corresponding article.
+      parameters:
+        - in: query
+          name: start_date
+          schema:
+            type: string
+          required: true
+          description: Filtering by start date, which needs to be earilier than end_date.
+          example: "2020-01-01T00:00:00"
+        - in: query
+          name: end_date
+          schema:
+            type: string
+          required: true
+          description: Filtering by end date, which needs to be later than start_date.
+          example: "2020-03-01T00:00:00"
+        - in: query
+          name: keyterms
+          schema:
+            type: string
+          required: false
+          description: Filtering by keywords, if there are multiple keywords, sperate them by comma(,)
+          example: "coronavirus,flu"
+        - in: query
+          name: location
+          schema:
+            type: string
+          required: false
+          description: Filtering by location. It matches from countries to cities. (e.g. searching "China" will return all articles mentioning any city in China)
+          example: "Canada"
+
+      responses:
+        "200":
+          description: a list of news
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsList"
+        "400":
+          description: Malformed Request (need to check user input)
+        "401":
+          description: Unauthorized (Provide ```identity``` in the header)
+      security:
+        - Identity: []
+
+  /news/all:
+    get:
+      tags:
+        - news
+      summary: get list of all news in detailed form
+      operationId: getAllNews
+      description: |
+        This operation will return a list of
+        articles, in **detailed** form, but **excluding** the reports. The client may filter some articles by providing specific criteria.
+      parameters:
+        - in: query
+          name: start_date
+          schema:
+            type: string
+          required: true
+          description: Filtering by start date, which needs to be earilier than end_date.
+          example: "2020-01-01T00:00:00"
+        - in: query
+          name: end_date
+          schema:
+            type: string
+          required: true
+          description: Filtering by end date, which needs to be later than start_date.
+          example: "2020-03-01T00:00:00"
+        - in: query
+          name: keyterms
+          schema:
+            type: string
+          required: false
+          description: Filtering by keywords, if there are multiple keywords, sperate them by comma(,)
+          example: "coronavirus,flu"
+        - in: query
+          name: location
+          schema:
+            type: string
+          required: false
+          description: Filtering by location. It matches from countries to cities. (e.g. searching "China" will return all articles mentioning any city in China)
+          example: "Canada"
+      responses:
+        "200":
+          description: a list of news
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsList"
+        "400":
+          description: Malformed Request (need to check user input)
+        "401":
+          description: Unauthorized (Provide ```identity``` in the header)
+      security:
+        - Identity: []
+
+  /news/{id}:
+    get:
+      tags:
+        - news
+      summary: get an article/news in detailed form
+      operationId: getNewsById
+      description: |
+        This operation will enable client obtain the **detailed/complete** form for a specific article, **including** reports. 
+
+        ID can be obtained by accessing /news or /news/all
+      parameters:
+        - in: path
+          name: id
+          description: ID for the article
+          required: true
+          schema:
+            type: string
+          example: "046fu6uh96V9zlcVlUTK"
+      responses:
+        "200":
+          description: The corresponding article/news
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DetailedNews"
+        "401":
+          description: Unauthorized (Provide ```identity``` in the header)
+        "404":
+          description: The requested news is not found
+      security:
+        - Identity: []
+
+  /reports/{id}:
+    get:
+      tags:
+        - news
+      summary: get report list for specific article
+      operationId: getReportsById
+      description: |
+        This operation returns client **only report** for a specific article. ID can be obtained by accessing /news
+
+        ID can be obtained by accessing /news or /news/all
+      parameters:
+        - in: path
+          name: id
+          description: ID for the article
+          required: true
+          schema:
+            type: string
+          example: "046fu6uh96V9zlcVlUTK"
+      responses:
+        "200":
+          description: The report list for corresponding article
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Report"
+        "401":
+          description: Unauthorized (Provide ```identity``` in the header)
+        "404":
+          description: The requested article is not found
+      security:
+        - Identity: []
+
+components:
+  securitySchemes:
+    Identity:
+      type: apiKey
+      in: header
+      name: identity
+
+  schemas:
+    News:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "046fu6uh96V9zlcVlUTK"
+        url:
+          type: string
+          example: "http://www.cidrap.umn.edu/news-perspective/2020/02/canada-lebanon-report-iran-linked-covid-19-cases-concerns-rise"
+        date_of_publication:
+          type: string
+          example: "2020-02-21 23:05:21"
+        headline:
+          type: string
+          example: "Canada, Lebanon report Iran-linked COVID-19 cases as concerns rise"
+        main_text:
+          type: string
+          example: "University of Minnesota. Driven to Discover.Following recent reports of COV..."
+
+    NewsList:
+      type: array
+      items:
+        $ref: "#/components/schemas/News"
+
+    Report:
+      type: object
+      properties:
+        event_date:
+          type: string
+          example: "2020-01-03 to 2020-01-15"
+        locations:
+          type: array
+          items:
+            $ref: "#/components/schemas/Location"
+        diseases:
+          type: array
+          items:
+            type: string
+          example: ["coronavirus", "COVID-19"]
+        syndromes:
+          type: array
+          items:
+            type: string
+          example: ["Coughing", "Sneezing", "Shortness Of Breath"]
+
+    DetailedNews:
+      allOf:
+        - $ref: "#/components/schemas/News"
+        - type: object
+          properties:
+            reports:
+              type: array
+              items:
+                $ref: "#/components/schemas/Report"
+
+    Location:
+      type: object
+      properties:
+        google_id:
+          type: string
+        address:
+          type: string

@@ -33,7 +33,7 @@ class NewsFactory(DomainFactory):
                 tf = data['tf']
 
         if not self._shorten:
-            self._product = News(id, url, date, title, content, tf)
+            self._product = News(id, url, date, title, content, None, tf)
         else:
             self._product = ShortenNews(id, url, date, title, content, tf)
 

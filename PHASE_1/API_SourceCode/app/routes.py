@@ -5,6 +5,7 @@ from Source.Application.Actions.GetReportByIdAction import GetReportByIdAction
 from Source.Application.Actions.GetNewsListAction import GetNewsListAction
 from Source.Infrastructure.Loggers.AccessLogger import AccessLogger
 from Source.Domain.Exceptions.NotFoundException import NotFoundException
+from Source.Domain.Exceptions.MalformedRequestException import MalformedRequestException
 from flask import request
 
 
@@ -18,6 +19,10 @@ def check_identity():
         logger.write(identity, request.path)
 
 @app.errorhandler(NotFoundException)
+def handle_not_found(e):
+    return make_response(e, e.code)
+
+@app.errorhandler(MalformedRequestException)
 def handle_bad_request(e):
     return make_response(e, e.code)
 

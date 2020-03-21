@@ -3,8 +3,8 @@ from .ShortenNews import ShortenNews
 
 class News(ShortenNews):
 
-    def __init__(self, id, url, date, title, content, reports=None):
-        super().__init__(id, url, date, title, content)
+    def __init__(self, id, url, date, title, content, reports=None, tf=0):
+        super().__init__(id, url, date, title, content, tf)
         self._reports = reports
 
     def get_content(self):

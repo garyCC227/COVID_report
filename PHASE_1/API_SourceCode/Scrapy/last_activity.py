@@ -7,8 +7,15 @@ import scrapy
 import os
 import sys
 from pathlib import Path
+import re
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
+for root, dirs, files in os.walk(".."):
+    for d in dirs:
+        if re.search("/API_SourceCode$",os.path.abspath(os.path.join(root, d))):
+            sourcepath = os.path.abspath(os.path.join(root, d))
+        sys.path.insert(0, os.path.abspath(os.path.join(root, d)))
+
 
 from .scrapy_script import scrapping
 from .filter import Filter
@@ -87,7 +94,8 @@ class ActivityPost(object):
     '''
     filter text from source url
     '''
-    filename = Path('Scrapy/temp.html') #consistent file name
+    
+    filename = Path(sourcepath,'Scrapy/temp.html') #consistent file name
     flter = Filter(filename)
     
     return flter.get_source_text_by_p()

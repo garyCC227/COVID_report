@@ -10,6 +10,14 @@ Explanation:
 import scrapy
 from scrapy.crawler import CrawlerProcess
 from pathlib import Path
+import re, os, sys
+
+
+for root, dirs, files in os.walk(".."):
+    for d in dirs:
+        if re.search("/API_SourceCode$",os.path.abspath(os.path.join(root, d))):
+            sourcepath = os.path.abspath(os.path.join(root, d))
+        sys.path.insert(0, os.path.abspath(os.path.join(root, d)))
 
 DEFAULT_URLS = [
     'https://flutrackers.com/forum/forum/-2019-ncov-new-coronavirus/australia-2019-ncov/824507-australia-2019-ncov-cases-news-information/page3']
@@ -22,7 +30,7 @@ process = CrawlerProcess(settings={
 
 def store_urls(urls=DEFAULT_URLS):
   # store urls into urls.txt
-  with open(Path("Scrapy/urls.txt"), "w") as f:
+  with open(Path(sourcepath,"Scrapy/urls.txt"), "w") as f:
     for url in urls:
       f.write("{}\n".format(url))
 
@@ -34,7 +42,7 @@ class MySpider(scrapy.Spider):
   num_pages = 1
 
   def __init__(self):
-    for line in open(Path('Scrapy/urls.txt'), 'r').readlines():
+    for line in open(Path(sourcepath, 'Scrapy/urls.txt'), 'r').readlines():
       self.start_urls.append('%s' % line)
 
   def start_requests(self):
@@ -44,7 +52,7 @@ class MySpider(scrapy.Spider):
   def parse(self, response):
     page = response.url.split("/")[-2]
     # filename = '{}-{}.html'.format(page, self.num_pages)
-    filename = Path('Scrapy/temp.html') #consistent name 
+    filename = Path(sourcepath, 'Scrapy/temp.html') #consistent name 
     self.num_pages += 1
     with open(filename, "wb") as f:
       f.write(response.body)

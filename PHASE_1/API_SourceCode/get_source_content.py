@@ -3,10 +3,17 @@ import validators
 import sys
 import os
 import time
+import re
+
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
+for root, dirs, files in os.walk(".."):
+    for d in dirs:
+        if re.search("/API_SourceCode$",os.path.abspath(os.path.join(root, d))):
+            sourcepath = os.path.abspath(os.path.join(root, d))
+        sys.path.insert(0, os.path.abspath(os.path.join(root, d)))
 
-from db.db import *
+from DB.db import *
 from Scrapy.last_activity import ActivityPost
 from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer
 from langdetect import detect
@@ -23,10 +30,10 @@ by the urls in posts.json
 
 def fetch_resource_context(i):
   print("number is :************************************************ ", i)
-  with open(Path('Scrapy/posts.json'), 'r') as f:
+  with open(Path(sourcepath,'Scrapy/posts.json'), 'r') as f:
     data = json.load(f)
 
-  with open(Path('Scrapy/content.json'), 'r') as f:
+  with open(Path(sourcepath, 'Scrapy/content.json'), 'r') as f:
     store = json.load(f)
 
   post = data['posts'][i]
@@ -44,9 +51,9 @@ def fetch_resource_context(i):
   if not validators.url(url):
     return
   
-  open(Path('Scrapy/temp.html'), 'w').close()
+  open(Path(sourcepath, 'Scrapy/temp.html'), 'w').close()
   title, content = ActivityPost.get_source_text_for_onepost(url)
-  open(Path('Scrapy/temp.html'), 'w').close()
+  open(Path(sourcepath, 'Scrapy/temp.html'), 'w').close()
 
   # print(date)
   # print(url)

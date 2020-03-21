@@ -29,6 +29,9 @@ class ShortenNews():
     def get_tf(self):
         return self._tf
 
+    def compensate_tf(self):
+        self._tf += 1
+
     def to_dict(self):
         return {
             "id": self.get_id(),

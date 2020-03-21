@@ -48,8 +48,8 @@ def fetch_resource_context(i):
   title, content = ActivityPost.get_source_text_for_onepost(url)
   open(Path('Scrapy/temp.html'), 'w').close()
 
-  print(date)
-  print(url)
+  # print(date)
+  # print(url)
   newpost = {}
   newpost[nodeid] = {
     "date": date,

@@ -27,6 +27,7 @@ headers = {
 
 class ActivityPost(object):
   def __init__(self, html, last_date):
+    self.html = html
     self.soup = BeautifulSoup(html, features='lxml')
     self.last_datestamp = last_date
     self.last_date = datetime.datetime.fromtimestamp(last_date) 
@@ -36,17 +37,18 @@ class ActivityPost(object):
     posts = self.soup.findAll('li',{"class":"b-post"})
     return len(posts)
   
+  @property
+  def valid_html(self):
+    return bool(BeautifulSoup(self.html, "html.parser").find())
+
   def get_posts(self, count=-1):
     posts = self.soup.findAll('li',{"class":"b-post"})
     for post in posts:
       # we will fetch all the post content 
       nodeid = post['data-node-id']
-      # # TODO: Test for posts number
-      # content = ""
-      # url = ""
       content, url = self.post_all_content_and_url(nodeid)
 
-      data = ""
+      date = ""
       if post.find('time') != None:
         date = post.find('time')['datetime']
       result = {
@@ -90,35 +92,6 @@ class ActivityPost(object):
     
     return flter.get_source_text_by_p()
 
-
-def update_post(posts, PS):
-  with open('./Scrapy/content.json', 'r') as f:
-    data = json.load(f)
-
-  last_timestamp = data['lastDatestamp']
-
-  # posts is sorted by decreasing order
-  new_posts = []
-  for post in posts:
-    # print((post['date']))
-    if int(post['datestamp']) > last_timestamp:
-      new_posts.append(post)
-    else:
-      break
-      # pass
-  #
-  if len(new_posts) >= 1:
-    new_data = {
-      "posts" : new_posts,
-      "count" : len(new_posts),
-      "lastDatestamp": PS.last_datestamp,
-      "date": str(PS.last_date)
-    }
-    with open('./Scrapy/posts.json', 'w') as f:
-      json.dump(new_data, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
-  else:
-    print("No new posts\n")
-    return
 
 if __name__ == "__main__":
   

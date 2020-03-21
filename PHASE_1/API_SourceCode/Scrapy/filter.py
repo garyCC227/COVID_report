@@ -6,12 +6,6 @@ class Filter(object):
     f = open(file, 'r', encoding='utf-8', errors='ignore')
     self.soup = BeautifulSoup(f.read(), 'html.parser')
 
-  #IMPORTANT ASSUMPOTION: all post have 'js-post__content-text' class
-  def get_all_posts(self):
-    #filter all the post
-    posts = self.soup.findAll('div', {"class":"js-post__content-text"})
-    return [post.text.strip() for post in posts]
-
   def get_source_text_by_p(self):
     if self.soup.find('h1') != None:
       title = self.soup.find('h1')

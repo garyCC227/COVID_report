@@ -1,175 +1,145 @@
-number is :************************************************  0
-2020-03-18 03:12:20
-https://www.newsroom.co.nz/2020/03/16/1085756/no-countrys-got-enough-icu-capacity-a-concern?fbclid=IwAR3V4PA160Bf41zHu7H6zdDP8kexksEgbjs1QvVUv2WamR2-U1MySmWw1gc
-{
-  "url": "https://www.newsroom.co.nz/2020/03/16/1085756/no-countrys-got-enough-icu-capacity-a-concern?fbclid=IwAR3V4PA160Bf41zHu7H6zdDP8kexksEgbjs1QvVUv2WamR2-U1MySmWw1gc",
-  "date_of_publication": 1584461540,
-  "headline": "Covid-19: Concerns over ICU capacity",
-  "main_text": "Become a supportervia PressPatronNew Zealand could have around 3500 simultaneous Covid-19 cases before running out of intensive care capacity. Photo: Lynn GrievesonMarc Daalder is a political reporter based in Wellington who covers climate change, energy, primary industries, technology and the far-right. Twitter: @marcdaalder.Covid-19Analysis: Leading experts on New Zealand's intensive care system worry\u00a0the country doesn't have the capacity to deal with a serious outbreak. Marc Daalder reports.The maths is bleak. According to data from overseas outbreaks, around 5\u00a0percent of people who test positive for Covid-19 end up requiring intensive care. What percentage of the general population will catch the virus is anybody's guess - forecasts vary from 20 percent of the global population to as high as 50 or 70 percent in some countries.These forecasts also assume the virus will continue to spread, perhaps seasonally, for at least the next 18 months, if not longer. This makes calculating the needed intensive care capacity - not to mention capacity for other resources, such as general hospital beds and active medical staff - exceedingly difficult.Nonetheless, New Zealand's stock of intensive care units - just 176 beds - doesn't inspire confidence, David Galler says. Galler has been an intensive care specialist at Middlemore Hospital for more than three decades.Slowing the spread our best shot\"No country's got enough ICU units for a pandemic. You can't do that, ever,\" Galler said. \"No country's got enough.\"The Government's efforts so far have focused on preventing community transmission of the virus in New Zealand and blunting any potential exponential increase in cases. It's what expert\u00a0Siouxsie Wiles refers to as flattening the curve and stopping the spread.These measures are important, as they make it easier for the medical system to absorb a similar number of cases over a prolonged period of time. \"It depends on the rate of rise of numbers - that's what it's going to boil down to. That's why all of these efforts by the Government - identification, isolation, contact tracing - all that stuff, that's why it's so important,\" Galler said.\"It depends on the size of the outbreak,\" Craig Carr told Newsroom. Carr is the New Zealand regional director for the Australia New Zealand Intensive Care Society. \"That's why the ICU community in New Zealand applauds the Government action at the weekend. We appreciate it wasn't easy for them but it's why everyone is speaking about flattening the curve.\"Building more intensive care units in a matter of weeks or months to deal with the pandemic just isn't feasible, Galler believes. Instead, we have to hunker down and hope we can slow the spread enough to give the medical system a chance.\"Given the resource that we've got, which can't be increased overnight, there is an extraordinary amount of collaboration and preparation going on. The health system in New Zealand is always working hard to keep up. There's no slack in it, to meet [new] demand.\"ICU capacity insufficientThe alternative is dire. \"If we get what Italy's got, we're going to be in big trouble like Italy's in big trouble,\" Galler said.\"If you have very high numbers of people in the population with Covid at any one time, then that has the potential to overwhelm the capacity in the healthcare system to respond to it,\" Carr said.Under the current numbers, New Zealand could have around 3500 simultaneous Covid-19 cases before running out of intensive care capacity - and that's assuming\u00a0ICU beds are used by Covid-19 patients only, not anyone else with a medical issue.What are the chances of us having 3500 simultaneous cases? Just eight countries have had 3500 or more cases so far, but we're only two months into what experts warn could last for more than a year. It would also imply an infection rate of more than 0.07 percent, something we haven't seen in any other country this far - but, as previously mentioned, experts estimate that rate will increase over the coming months.Experts work to \"flex capacity\"Caroline McElnay, New Zealand's\u00a0Director of Public Health, said on February 25 that the country's ICU directors had met to begin working on a pandemic plan. \"We have a network of clinical intensive care unit directors and they have now met specifically around ICU, high-dependency unit and negative pressure beds that we have around the country,\" she said.\"In a pandemic scenario, we would use this group to provide advice on how best to manage demand for those beds across the country from a national perspective. It is important to note that these are beds that are already in use around the country. Part of the role of this group would be to advise on the demand for these beds and equipment.\"The Ministry of Health was unable to provide comment for this article by the time of publication.Carr said the ICU community was working on\u00a0contingency plans\u00a0to increase ICU capacity, but that these alterations would be better to avoid. \"We do have the ability to create surge capacity in extraordinary times. Around the country, we're looking at where else we can ventilate patients. You've seen Italy and Spain are using theatre ventilators, post-operative units to ventilate patients in. Similarly, we are looking at all of these things and making plans.\"\"Now we are hoping, because of the actions the Government has taken, that we won't see these very high numbers in patients that they're seeing, but we do have at least the benefit of their experience. The countries that have had this, China, Spain, Italy, everyone's been sharing their experience and learning so it affords us some opportunity to prepare,\" he said.\"We have the ability to flex the capacity that we've got and we are looking all up and down the country at what we can do. We hope not to have to do extraordinary things like you're seeing in Spain, where they've got field hospitals, but if we need to, we're looking at things like that. But if we can flatten that curve, then everyone's better off.\"Perils of limited capacity evidentIf New Zealand does have an outbreak of sufficient size and pace, then ICU capacity could be\u00a0quickly swamped.\"If you look at a community like mine in South Auckland, if that virus takes hold there, my God,\" Galler said. \"It's going to swoop through that population because they're\u00a0so unwell - it's one of the most unwell populations in New Zealand.\"What would that look like? The perils of running out of intensive care capacity have been demonstrated most graphically in Italy, where doctors have been issued guidelines by the\u00a0Italian College of Anesthesia, Analgesia, Resuscitation and Intensive Care (SIAARTI) to help them choose who to treat when they can't help everyone.The document compares the situation to wartime \"catastrophe medicine\" and warns doctors they will be put into situations where they choose who lives and who dies. SIAARTI tells doctors to follow \"the most widely shared criteria regarding distributive justice and the appropriate allocation of limited health resources\", according to a translation in The Atlantic.\"Informed by the principle of maximising benefits for the largest number, the allocation criteria need to guarantee that those patients with the highest chance of therapeutic success will retain access to intensive care.\"The other question is what happens to business as usual\" in the event of a pandemic, Galler notes. He raises the subject of the Whakaari-White Island eruption in December, which weighed heavily on the health system's resources and made it difficult for some people to seek treatment unrelated to the eruption.\"Whenever something like this happens - Whakaari we managed very well - but there's a price to pay and that's people missing out on services. People who have so-called elective surgery - and elective is the wrong term because it's not really elective, it's schedulable surgery, it's people who really need it like cancers and all sorts of things - those people get bumped.\"Overseas, elective surgeries of varying urgency are being delayed to make room for Covid-19 treatment. In the United States, not only are candidates for hip replacements and ACL reconstruction having their procedures postponed, but patients with prostate and cervical cancer are facing delays as well.Covid-19 is transmitted like the flu. The\u00a0Ministry of Health recommends\u00a0that all New Zealanders wash their hands frequently and refrain from touching their face in order to protect themselves and others. Call Healthline on\u00a00800 358 5453\u00a0if you have any symptoms and have been to any\u00a0countries or territories of concern\u00a0or have been in close contact with someone confirmed with\u00a0Covid-19.Supporting calm, considered journalism has never been so important.Already in 2020 the value of public interest journalism, shorn of hype and hysteria, has become acutely evident. Being an election year, the need for judgment, balance and persistence in reporting and interpretation is vital.Reader donations are critical to what we do. If you've appreciated our reporting and want to see Newsroom continue, please click the button below to make a donation (monthly if you can). Thank you for reading and for your support.The coalition\u2019s coronavirus response includes some pet projects, but seems largely sensible - the National leader\u2019s response, not so much.Sam SachdevaThe Government\u2019s monumental and fast cash injections for small businesses and beneficiaries mark a welcome turnaround. Bernard Hickey argues a GST cut and equally massive Reserve Bank money printing will be needed in the dark months to come.Bernard HickeyAn essay by Wellington writer Ren\u00e9e on the joys of self-isolating: \u201cEveryone gives old people soap or chutney.\u201dReneeNewsroom does not allow comments directly on this website. \n                                We invite all readers who wish to discuss a story or leave \n                                a comment to visit us on Twitter \n                                or Facebook. We also welcome \n                                your news tips and feedback via email: contact@newsroom.co.nz.\n                                Thank you.Start your day with our best stories in your inboxWith thanks to our partnersStart your day with our best stories in your inboxDummy text",
-  "reports": [
-    {
-      "event_date": "2019-12-xx xx:xx:xx to 2020-02-25 xx:xx:xx",
-      "locations": [
-        {
-          "google_id": "ChIJBQiCnsFNDW0R6HK7_D2IgBY",
-          "address": "South Auckland, Manukau, Auckland 2104, New Zealand"
-        },
-        {
-          "google_id": "ChIJy3TpSfyxOG0RcLQTomPvAAo",
-          "address": "Wellington, New Zealand"
-        },
-        {
-          "google_id": "ChIJLRI1_X_Bb20RwAecJGLvAA8",
-          "address": "Whakaari / White Island, Bay Of Plenty, New Zealand"
-        },
-        {
-          "google_id": "ChIJ-WlSaT7et4kRZcMhICc4qug",
-          "address": "9570 Berger Rd suite j, Columbia, MD 21046, USA"
-        },
-        {
-          "google_id": "ChIJwULG5WSOUDERbzafNHyqHZU",
-          "address": "China"
-        },
-        {
-          "google_id": "ChIJA9KNRIL-1BIRb15jJFz1LOI",
-          "address": "Italy"
-        },
-        {
-          "google_id": "ChIJi7xhMnjjQgwR7KNoB5Qs7KY",
-          "address": "Spain"
-        }
-      ],
-      "diseases": [
-        "COVID-19"
-      ],
-      "syndromes": []
-    },
-    {
-      "event_date": "2019-12-xx xx:xx:xx to 2020-02-25 xx:xx:xx",
-      "locations": [
-        {
-          "google_id": "ChIJBQiCnsFNDW0R6HK7_D2IgBY",
-          "address": "South Auckland, Manukau, Auckland 2104, New Zealand"
-        },
-        {
-          "google_id": "ChIJy3TpSfyxOG0RcLQTomPvAAo",
-          "address": "Wellington, New Zealand"
-        },
-        {
-          "google_id": "ChIJLRI1_X_Bb20RwAecJGLvAA8",
-          "address": "Whakaari / White Island, Bay Of Plenty, New Zealand"
-        },
-        {
-          "google_id": "ChIJ-WlSaT7et4kRZcMhICc4qug",
-          "address": "9570 Berger Rd suite j, Columbia, MD 21046, USA"
-        },
-        {
-          "google_id": "ChIJwULG5WSOUDERbzafNHyqHZU",
-          "address": "China"
-        },
-        {
-          "google_id": "ChIJA9KNRIL-1BIRb15jJFz1LOI",
-          "address": "Italy"
-        },
-        {
-          "google_id": "ChIJi7xhMnjjQgwR7KNoB5Qs7KY",
-          "address": "Spain"
-        }
-      ],
-      "diseases": [
-        "influenza a/h1n1"
-      ],
-      "syndromes": []
-    },
-    {
-      "event_date": "2019-12-xx xx:xx:xx to 2020-02-25 xx:xx:xx",
-      "locations": [
-        {
-          "google_id": "ChIJBQiCnsFNDW0R6HK7_D2IgBY",
-          "address": "South Auckland, Manukau, Auckland 2104, New Zealand"
-        },
-        {
-          "google_id": "ChIJy3TpSfyxOG0RcLQTomPvAAo",
-          "address": "Wellington, New Zealand"
-        },
-        {
-          "google_id": "ChIJLRI1_X_Bb20RwAecJGLvAA8",
-          "address": "Whakaari / White Island, Bay Of Plenty, New Zealand"
-        },
-        {
-          "google_id": "ChIJ-WlSaT7et4kRZcMhICc4qug",
-          "address": "9570 Berger Rd suite j, Columbia, MD 21046, USA"
-        },
-        {
-          "google_id": "ChIJwULG5WSOUDERbzafNHyqHZU",
-          "address": "China"
-        },
-        {
-          "google_id": "ChIJA9KNRIL-1BIRb15jJFz1LOI",
-          "address": "Italy"
-        },
-        {
-          "google_id": "ChIJi7xhMnjjQgwR7KNoB5Qs7KY",
-          "address": "Spain"
-        }
-      ],
-      "diseases": [
-        "other"
-      ],
-      "syndromes": []
-    }
-  ],
-  "keyword_frequency": {
-    "covid-19": 0.00410467,
-    "virus": 0.00205233,
-    "outbreak": 0.00153925,
-    "other": 0.00051308,
-    "influenza a/h1n1": 0.00051308,
-    "covid": 0.00051308,
-    "infection": 0.00051308,
-    "cancer": 0.00051308,
-    "flu": 0.00051308,
-    "coronavirus": 0.00051308
-  },
-  "keyword_location": [
-    "analgesia",
-    "auckland",
-    "bay of plenty",
-    "berger rd",
-    "berger road",
-    "china",
-    "cn",
-    "columbia",
-    "es",
-    "howard county",
-    "hysteria",
-    "it",
-    "italy",
-    "manukau",
-    "maryland",
-    "md",
-    "new zealand",
-    "nz",
-    "savage",
-    "south auckland",
-    "spain",
-    "suite j",
-    "united states",
-    "us",
-    "wellington",
-    "whakaari",
-    "whakaari / white island"
-  ],
-  "keyword_list": {
-    "covid-19": true,
-    "virus": true,
-    "outbreak": true,
-    "other": true,
-    "influenza a/h1n1": true,
-    "covid": true,
-    "infection": true,
-    "cancer": true,
-    "flu": true,
-    "coronavirus": true
-  }
-}
+https://www.ncbi.nlm.nih.gov/pubmed/32192233#
+R I Med J (2013). 2020 Mar 19;103(2):75-76.
+Co-infection with SARS-CoV-2 and Human Metapneumovirus.
+
+
+Touzard-Romo F1, Tapé C2, Lonks JR3.
+
+Author information
+
+
+
+
+Abstract
+
+The novel coronavirus (now called SARS-CoV-2) initially discovered in Wuhan, China, has now become a global pandemic. We describe a patient presenting to an Emergency Department in Rhode Island on March 12, 2020 with cough and shortness of breath after a trip to Jamaica. The patient underwent nasopharyngeal swab for a respiratory pathogen panel as well as SARS-CoV-2 RT-PCR. When the respiratory pathogen panel was positive for human metapneumovirus, the patient was treated and discharged. SARS-CoV-2 RT-PCR came back positive 24 hours later. Although respiratory viral co-infection is thought to be relatively uncommon in adults, this case reflects that SARS-CoV-2 testing algorithms that exclude patients who test positive for routine viral pathogens may miss SARS-CoV-2 co-infected patients.
+
+
+
+KEYWORDS:
+
+COVID-19; SARS-CoV-2; co-infection; human metapneumovirus
+
+
+PMID:32192233
+https://afludiary.blogspot.com/2020/03/the-most-predicted-global-crisis-of.html
+The Most Predicted Global Crisis of the 21st Century
+
+
+Credit Wikipedia
+
+
+#15,120
+
+This weekend, as the world slips deeper into a pandemic winter of unknown duration - and nations desperately try to cobble together some kind of coherent response - the sobering fact is this critical  junction in history has been predicted for decades.
+Not so much by this humble blogger, but by thousands of scientists, researchers, emergency planners, and yes . . . even the bean counters at Lloyds of London.  
+While everyone knew that another pandemic was `inevitable', and that it was just a matter of time, our politicians and leaders somehow convinced themselves that - if it happens, it won't be as bad as predicted.  And even if it is, it probably won't happen on my watch. 
+And so we've let decades go by without seriously preparing for this day.  
+Although our current crop of leaders will undoubtedly take the bulk of the blame, this has been a systemic failure of long duration by governments all around the world. And because of that, we don't have the PPEs, the ventilators, or the hospital and public health surge capacity that we so desperately need right now.
+If I sound just a bit angry over this. I am.  
+I get emails from all around the country from nurses telling me they either don't have N95 respirators, or have so few they will have to reuse them.  Some are even being told not to wear surgical masks - not because they don't help - but because their facilities don't have enough of them. 
+
+We've spent billions of dollars on high-tech `pandemic solutions', but we've neglected the most basic of preps. Personal Protective Equipment (PPEs) for those on the front line.  And it isn't as if this shortage wasn't widely anticipated.
+
+More than a decade ago, during the opening weeks of the 2009 H1N1 pandemic - many hospitals had an inadequate supply of PPEs on hand - and that led to a number of protests (see Nurses Protest Lack Of PPE’s , Report: Nurses File Complaint Over Lack Of PPE).In some cases nurses reported they were issued only one N95 mask to be used for an entire 8 hour shift, and told to don it only when in direct contact with a potentially infected patient.
+In other venues, HCWs were issued surgical masks in lieu of N95s, despite the recommendation at the time from the CDC that N95 masks were the preferred level of protection.
+Our Strategic National Stockpile reportedly contains more than 100 million N95 and surgical masks (see Caught With Our Masks Down), but more than 10 years ago the HHS estimated the nation would need 30 billion masks (27 billion surgical, 5 Billion N95) to deal with a major pandemic (see Time Magazine A New Pandemic Fear: A Shortage of Surgical Masks).
+We have less than 1% of what we would require during a severe pandemic.  And since we buy most of our PPEs from other countries, our ability to replenish supplies in the middle of a pandemic is in serious doubt. 
+In late 2011 a study published in the journal Infection Control and Hospital Epidemiology showed that the inadequate use of masks by healthcare workers during the opening days of the 2009 pandemic put them at greater risk of contracting the virus (and spreading it to patients).
+Still, nobody did anything about it.  Sure, many of our leaders talked about the problem.  But they assumed there would be time, and besides, there were always `sexier' things to spend money on.  Preparedness is boring.  
+As a result, some HCWs are going to die for a lack of proper PPEs (including N95s, gowns, gloves, and face shields) during this pandemic, while others may find it too risky to work without them (see  HCWs Willingness To Work During A Pandemic).
+A problem which has been predicted - and discussed ad nauseam - for more than a decade.  But largely ignored.  
+In Italy, a shortage of ICU beds and ventilators - and specialized HCWS to use them -  is believed largely responsible for their stunning number of deaths from COVID-19 over the past 3 weeks.  Yesterday Italy reported over 600 new deaths, or about 1 every 4 minutes.
+
+Once again, this was predicted, and rather than invest in more ventilators - countries, including the United States - decided instead to create a triage plan on how to allocate vents (ie. decide who will live, and who will die)  during a pandemic.
+Harsh?  Perhaps, but true.  
+The Italian College of Anesthesia, Analgesia, Resuscitation and Intensive Care (SIAARTI) recently published guidelines for doctors to use in triaging patients during this emergency, but we've also published similar guidelines in the United States.
+
+Three years ago, in Pandemic Realities: Ventilator Shortages, we looked at a study of the number of ventilators and ICU beds available in the United States, that envisioned a `severe scenario' -  albeit, one likely less severe than we are seeing with COVID-19 - that warned:
+. . . Without the unlikely rapid addition of 35,000 to 60,500 ventilators (and trained staff, oxygen, drugs, and electricity to run them) - 200,000 to 300,000 Americans that might otherwise be saved, would die for the lack of ventilator resources. 
+The CDC's 2011 document Ethical Considerations for Decision Making Regarding Allocation of Mechanical Ventilators during a Severe Influenza Pandemic or Other Public Health Emergency spends 27 pages looking at a myriad of legal and ethical considerations, but concludes that `policy decisions need to be set and implemented by the responsible public health officials.'
+Is it possible to have on hand enough ventilators to cover every possible pandemic contingency?   Of course not.  
+But a even a modest increase in our National Strategic Stockpile over the past 10 years would be paying big dividends today.
+Over the next few months, it won't just be N95s, and ventilators that we run short of. Almost all of the IV equipment, drugs, and medical devices used in our hospitals - all of which are produced in other countries - are going to become precious commodities.  
+Fifteen years ago Dr. Michael Osterholm, director of CIDRAP, priescently likened a severe pandemic to an 18-month global blizzard, where nearly everything is shut down. Many will find themselves without a paycheck, either due to their refusal to work and risk exposure, or because their jobs are simply no longer available (see Baby, it's Cold Outside).
+Pretty much what we are seeing unfold around the world today.  
+More recently, in his 2017 book Deadliest Enemy (see my Review: Deadliest Enemy: Our War Against Killer Germs), Dr. Osterholm revisits the idea of our JIT economy, and writes:
+Ironically, the ways we have organized the modern world for efficiency, economic development, and for enhanced lifestyle -- the largely successful attempts to transform the planet into a global village -- have made us more susceptible to the effects of infectious disease than we were in 1918.
+And the more sophisticated, complex, and technologically integrated the world becomes, the more vulnerable we will be to one disastrous element devastating the entire system. 
+In 2008, in Lloyd's: A Pandemic Is Inevitable and in The Lloyds Report: A Closer Look, we looked at their predictions for the next pandemic.
+EXECUTIVE SUMMARY
+
+1. A PANDEMIC IS INEVITABLE With historic recurrence rates of 30-50 years it is prudent to assume that a pandemic will occur at some point in the future. The severity of such events is highly variable; some estimates suggest the most severe to date, in 1918, killed up to 100m. Many pandemics affect the old and young; but some (including the 1918 event) can, perversely, affect the most healthy.
+
+2. 1918 MAY NOT BE THE WORST CASE It is certainly true that the 1918 event was extreme relative to other pandemics in history. However many published “worst case” scenarios take 1918 as a base. There is a danger that we over optimise to this one scenario. There are other forms of pandemic than influenza, some have higher case mortality. Pandemic preparedness should consider a range of scenarios to ensure plans are appropriately flexible.
+
+3. ECONOMIC IMPACTS MAY BE SIGNIFICANT A repeat of the 1918 event is expected to cause a global recession with estimated impacts ranging from 1% to 10% of global GDP. Most industries will be affected, some more than others. In particular, industries with significant face to face contact will be impacted significantly. Insurers investment assets may be affected depending on the mix held. Wider economic and social effects may lead to secondary forms of loss for insurers.
+
+4. MANY INSURANCE LOSSES ARE POSSIBLE For some classes of business such as, life and health it is clear that the impact will be adverse. For other classes of business it is less clear but many forms of liability covers including general liability, D&O, Medical Malpractice as well as specific products offering business interruption and event cancellation could be triggered. Inner limits for Pandemic losses (vertical and sideways) may help to contain exposure.
+
+5. SECONDARY IMPACTS MAY OCCUR Events causing significant global and societal turmoil can give rise to considerable secondary impacts. It is far from clear which of these, if any, would occur; but for resilience planning purposes it is worth considering them. For example the lawlessness experienced in New Orleans after Katrina could be repeated if police services are affected. Traditional claims such as fire loss may be exacerbated if fire emergency services have depleted efficiency and if tradesmen are in short supply. 
+I could list hundreds more reports, studys, table top exercises (EVENT 201, CLADE X), and clarion calls (WHO/World Bank GPMB Pandemic Report : `A World At Risk) - all warning of our vulnerability to a severe pandemic - and urging greater preparedness.
+And while some progress has been made, it hasn't been near enough.  
+When this COVID-19 crisis is over - after we mourn our losses and start to put society back together again - I hope we remember that we had plenty of warning, and countless opportunities to blunt its impact over the past 15 years.
+
+We simply had other priorities.  We put most of our time and resources into more immediately gratifying projects, and now find ourselves badly unprepared.  While we can't undo that legacy of inaction, we can change it going forward.
+We can decide to treat pandemic - and `All Threats' - preparedness as the national security issue that it is.  We can vow never to be caught short, and unprepared again.  
+Because this won't be the last time we are tested.  
+
+https://afludiary.blogspot.com/2020/...crisis-of.html
+https://www.noticiasaominuto.com/mundo/1438982/cabo-verde-confirma-mais-dois-casos-da-covid-19-na-ilha-da-boa-vista
+Source: https://www.noticiasaominuto.com/mun...a-da-boa-vista
+
+Cape Verde confirms two more Covid-19 cases on the island of Boa Vista
+The Cape Verdean Minister of Health confirmed today two more cases of covid-19 in Boa Vista, which add to the first confirmed case, on Thursday, of an English tourist, also on that island, placing a second hotel in quarantine.
+21/03/20 13:13 ‧ 17 mins ago by Lusa
+
+
+At a press conference held this morning in Praia, Minister Arlindo do Rosário explained that one of the samples that confirmed the presence of the new coronavirus is "a contact" of the first case, the 62-year-old English tourist.
+
+The second positive case confirmed today is that of a tourist from the Netherlands, in another hotel in Boa Vista, which has also been quarantined, according to the official.
+
+"It means that at this moment we have three confirmed cases in Boa Vista," said the minister, guaranteeing that they all have a "good" clinical condition.
+
+The cases of covid-19 in Cape Verde continue to be confined to the island of Boa Vista, which is quarantined, with no air or sea connections to the rest of the archipelago.
+
+The new coronavirus has already caused at least 11,401 deaths worldwide and more than 271,660 cases of infection have been detected in 164 countries and territories.
+
+Several countries have adopted exceptional measures, including the quarantine regime and border closure.
+https://www.towleroad.com/2020/03/medical-worker-covid-19/
+Source: https://www.towleroad.com/2020/03/me...rker-covid-19/
+
+
+Medical Worker: Seeing Terrifying Lung Failure Even in Young Patients Completely Changed My Perspective on COVID-19
+March 21, 2020 by Lizzie Presser, ProPublica
+
+As of Friday, Louisiana was reporting 479 confirmed cases of COVID-19, one of the highest numbers in the country. Ten people had died. The majority of cases are in New Orleans, which now has one confirmed case for every 1,000 residents. New Orleans had held Mardi Gras celebrations just two weeks before its first patient, with more than a million revelers on its streets.
+
+I spoke to a respiratory therapist there, whose job is to ensure that patients are breathing well. He works in a medium-sized city hospital’s intensive care unit. (We are withholding his name and employer, as he fears retaliation.) Before the virus came to New Orleans, his days were pretty relaxed, nebulizing patients with asthma, adjusting oxygen tubes that run through the nose or, in the most severe cases, setting up and managing ventilators. His patients were usually older, with chronic health conditions and bad lungs.
+
+Since last week, he’s been running ventilators for the sickest COVID-19 patients. Many are relatively young, in their 40s and 50s, and have minimal, if any, preexisting conditions in their charts. He is overwhelmed, stunned by the manifestation of the infection, both its speed and intensity. The ICU where he works has essentially become a coronavirus unit. He estimates that his hospital has admitted dozens of confirmed or presumptive coronavirus patients. About a third have ended up on ventilators.
+
+His hospital had not prepared for this volume before the virus first appeared. One physician had tried to raise alarms, asking about negative pressure rooms and ventilators. Most staff concluded that he was overreacting. “They thought the media was overhyping it,” the respiratory therapist told me. “In retrospect, he was right to be concerned.”
+
+He spoke to me by phone on Thursday about why, exactly, he has been so alarmed. His account has been condensed and edited for clarity....
+https://www.ncbi.nlm.nih.gov/pubmed/32191830#
+Anaesthesiol Intensive Ther. 2020 Mar 20. pii: 40133. doi: 10.5114/ait.2020.93756. [Epub ahead of print]
+COVID-19 - what should anaethesiologists and intensivists know about it?
+
+
+Wujtewicz M, Dylczyk-Sommer A, Aszkiełowicz A, Zdanowski S, Piwowarczyk S, Owczuk R.
+
+Abstract
+
+in English, Polish
+Over the past three months, the world has faced an unprecedented health hazard. The World Health Organization has announced a pandemic infection with an unknown species of coronavirus called SARS-CoV-2. Spreading mainly through the droplet route, the virus causes mild symptoms in the majority of cases, the most common being: fever (80%), dry cough (56%), fatigue (22%) and muscle pain (7%); less common symptoms include a sore throat, a runny nose, diarrhea, hemoptysis and chills. A life-threatening complication of SARS-CoV-2 infection is an acute respiratory distress syndrome (ARDS), which occurs more often in older adults, those with immune disorders and co-morbidities. Severe forms of the infection, being an indication for treatment in the intensive care unit, comprise acute lung inflammation, ARDS, sepsis and septic shock. The article presents basic information about etiology, pathogenesis and diagnostics (with particular emphasis on the importance of tomocomputer imaging), clinical picture, treatment and prevention of the infection. It goes on to emphasize the specific risks of providing anesthesiology and intensive care services. Due to the fact that effective causal treatment is not yet available and the number of infections and deaths increases day by day, infection prevention and strict adherence to recommendations of infection control organizations remain the basis for fighting the virus.
+
+
+
+KEYWORDS:
+
+COVID-19; SARS-CoV-2; acute respiratory distress syndrome (ARDS); acute pneumonia; infection; viruses
+
+
+PMID:32191830DOI:10.5114/ait.2020.93756
+Free full text

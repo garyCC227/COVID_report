@@ -7,7 +7,7 @@ import sys
 import subprocess
 from pathlib import Path
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
+sys.path.append(os.path.abspath('__file__'))
 
 from db.db import setDocument
 from Scrapy.last_activity import ActivityPost
@@ -46,19 +46,21 @@ def update_post(posts, PS):
 
 
 def main():
-  num_post = 15 #NOTE: we assume 15 new posts addded in flu trackers. so we only get 15 posts back
+  num_post = 5 #NOTE: we assume 15 new posts addded in flu trackers. so we only get 15 posts back
   # formData = 'filters%5Bnodeid%5D=0&filters%5Bview%5D=activity&filters%5Bper-page%5D={}&filters%5Bpagenum%5D=1&filters%5Bmaxpages%5D=1&filters%5Buserid%5D=0&filters%5BshowChannelInfo%5D=1&filters%5Bfilter_time%5D=time_all&filters%5Bfilter_show%5D=show_all&filters%5Bfilter_new_topics%5D=1&isAjaxTemplateRender=true&isAjaxTemplateRenderWithData=true&securitytoken=guest'.format(num_post)
   formData = 'filters%5Bnodeid%5D=0&filters%5Bview%5D=activity&filters%5Bper-page%5D={}&filters%5Bpagenum%5D=1&filters%5Bmaxpages%5D=1&filters%5Buserid%5D=0&filters%5BshowChannelInfo%5D=1&filters%5Bfilter_time%5D=time_today&filters%5Bfilter_show%5D=show_all&filters%5Bfilter_new_topics%5D=1&isAjaxTemplateRender=true&isAjaxTemplateRenderWithData=true&securitytoken=guest'.format(num_post)
   headers = {
     'Content-Type':'application/x-www-form-urlencoded'
   }
   res = requests.post('https://flutrackers.com/forum/activity/get', headers=headers, data=formData)
-  # print(res)
   res = json.loads(res.text)
-  # print(res)
 
   #ActivityPost object. do anything you want here
   PS = ActivityPost(res['template'], int(res['lastDate']))
+  
+  if PS.valid_html == False:
+    print("No a Valid post html")
+    return
 
   posts = [x for x in PS.get_posts()] 
   sorted_posts = sorted(posts, key=lambda x:x['datestamp'], reverse=True)

@@ -5,6 +5,7 @@ import json
 import time
 import re
 from datetime import datetime
+from Scrapy.last_activity import ActivityPost
 
 def check_add_zero(string):
     if len(string) == 1 :
@@ -100,4 +101,18 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    correct = {
+      '839519': ['1584789301','https://www.ncbi.nlm.nih.gov/pubmed/32192233#' ],
+      '839545': ['1584791601', 'https://afludiary.blogspot.com/2020/03/the-most-predicted-global-crisis-of.html'],
+      '839566': ['1584797659', 'https://www.noticiasaominuto.com/mundo/1438982/cabo-verde-confirma-mais-dois-casos-da-covid-19-na-ilha-da-boa-vista'],
+      '839549': ['1584792324', 'https://www.towleroad.com/2020/03/medical-worker-covid-19/'],
+      '839520': ['1584789354', 'https://www.ncbi.nlm.nih.gov/pubmed/32191830#']
+  }
+    file = open('scrapy_test.html', 'r')
+    content = file.read()
+    AP =  ActivityPost(content, 1584797659)
+    for id, post in correct.items():
+        content, url = AP.post_all_content_and_url(id)
+        print(url)
+        print(content)

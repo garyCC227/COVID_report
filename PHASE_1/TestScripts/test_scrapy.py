@@ -143,6 +143,23 @@ def test_filter_get_text_byp_invalid_url():
   assert detect(content) != "en"
   assert detect(title) != "en"
 
+
+def test_invalid_post():
+  file = 'invalid_post.html'
+  AP = ActivityPost(file, 1580000000)
+  posts = list(AP.get_posts())
+  for post in posts:
+    assert post['nodeid']== '838556'
+    assert post['date'] == ""
+    assert post['url'] == ""
+
+def test_invalid_source_content():
+  file = 'invalid_post.html'
+  f = Filter(file)
+  title, content = f.get_source_text_by_p()
+  assert title == "" and content == ""
+
+
 if __name__ == "__main__":
   for root, dirs, files in os.walk(".."):
     for d in dirs:

@@ -6,17 +6,27 @@ from Source.Application.Actions.GetNewsListAction import GetNewsListAction
 from Source.Infrastructure.Loggers.AccessLogger import AccessLogger
 from Source.Domain.Exceptions.NotFoundException import NotFoundException
 from Source.Domain.Exceptions.MalformedRequestException import MalformedRequestException
-from flask import request
+from flask import request, g
+import time
 
 
 @app.before_request
 def check_identity():
+    g.start = time.time()
     identity = request.headers.get('identity')
     if identity is None or identity == "":
         return make_response("Please provide us your identity in header for logging.", 401)
-    else:
+
+@app.after_request
+def after_request(response):
+    time_used = time.time() - g.start
+    identity = request.headers.get('identity')
+    identity = '<Unknown>' if identity is None or identity == "" else identity
+    if response.response:
+        status = response.status_code
         logger = AccessLogger()
-        logger.write(identity, request.path)
+        logger.write(identity, request.path, status, time_used * 1000)
+    return response
 
 @app.errorhandler(NotFoundException)
 def handle_not_found(e):
@@ -28,7 +38,7 @@ def handle_bad_request(e):
 
 @app.route("/")
 def hello():
-    return make_response("Hello World!")
+    return make_response("Welcome to our API - APInteresting")
 
 @app.route("/v1/news")
 def get_shorten_news_list():

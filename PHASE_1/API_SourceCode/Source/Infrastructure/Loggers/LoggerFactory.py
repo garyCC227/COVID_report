@@ -4,6 +4,8 @@ import logging
 class LoggerFactory:
     def __new__(cls, name, formatter=None, file_handler=None, level=logging.NOTSET):
         logger = logging.getLogger(name)
+        if len(logger.handlers) >= 1:
+            return logger
         logger.setLevel(level)
 
         if formatter is not None and isinstance(formatter, logging.Formatter):

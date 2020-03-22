@@ -10,5 +10,5 @@ class AccessLogger:
         handler = logging.FileHandler('./logs/access.log', encoding='UTF-8')
         self._logger = LoggerFactory("access_logger", logging_format, handler, logging.INFO)
 
-    def write(self, identity, uri):
-        self._logger.info("{} {}".format(identity, uri))
+    def write(self, identity, uri, status, time_used):
+        self._logger.info("{} {} {} {}".format(identity, uri, status, time_used))

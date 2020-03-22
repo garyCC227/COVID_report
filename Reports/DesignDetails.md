@@ -71,7 +71,7 @@ Gunicorn has been chosen because of the easy configuration and good performance 
 
 First, we will first scrape all the HTML from the Flu Tracker website using the Scrapy library. The extracted HTML text will then be processed through BeautifulSoup to get text from the HTML elements we specify. Each section of text will then be parsed using the Google NLP API to extract key information such as: Location, Diseases and Syndromes. Location can then be further analysed by the Google Geocode API to get its geocode.  
 
-All information will be given unique IDs and stored on MongoDB in the form of a document. When a user queries our API, the appropriate  document will be selected from our database and sent back to the user in JSON format. 
+All information will be given unique IDs and stored on Firestore in the form of a document. When a user queries our API, the appropriate  document will be selected from our database and sent back to the user in JSON format. 
 
 ## API Usage
 ### Parameters and Results

@@ -14,7 +14,7 @@ def make_response(data, status_code=200, extra_headers={}):
         # "status": status_code,
         "data": data,
         "apiBy": "APInteresting",
-        "resourceFrom": "FluTrucker",
+        "resourceFrom": "FluTracker",
         "responseTime": int(time.time())
     }
     json_data = json.dumps(data, default=to_json_handler)

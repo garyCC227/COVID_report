@@ -1,0 +1,26 @@
+[
+  {
+    "event_date": "2019-12-xx xx:xx:xx to 2020-01-15 xx:xx:xx",
+    "locations": [
+      {
+        "google_id": "ChIJ_SueuUqpLjQRPZRMYLa0qVs",
+        "address": "Wu Han Hua Nan Hai Xian Pi Fa Shi Chang, Jianghan Qu, Wuhan Shi, Hubei Sheng, China"
+      },
+      {
+        "google_id": "ChIJb_KF3fiuLjQRECJYbKzJwjk",
+        "address": "Wuhan, Hubei, China"
+      },
+      {
+        "google_id": "ChIJLxl_1w9OZzQRRFJmfNR1QvU",
+        "address": "Japan"
+      }
+    ],
+    "diseases": [
+      "COVID-19",
+      "pneumococcus pneumonia"
+    ],
+    "syndromes": [
+      "Influenza-like illness"
+    ]
+  }
+]

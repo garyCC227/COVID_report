@@ -1,0 +1,12 @@
+[
+  {
+    "event_date": "2018-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "other"
+    ],
+    "syndromes": [
+      "Acute gastroenteritis"
+    ]
+  }
+]

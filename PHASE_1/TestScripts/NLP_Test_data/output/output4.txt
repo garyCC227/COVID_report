@@ -1,0 +1,148 @@
+[
+  {
+    "event_date": "2020-02-03 xx:xx:xx to 2020-02-16 xx:xx:xx",
+    "locations": [
+      {
+        "google_id": "ChIJPV4oX_65j4ARVW8IJ6IJUYs",
+        "address": "California, USA"
+      },
+      {
+        "google_id": "ChIJP1yvMvGFUjERKZ8lCW8c1C4",
+        "address": "Guangdong Province, China"
+      },
+      {
+        "google_id": "ChIJBeB5Twbb_3sRKIbMdNKCd0s",
+        "address": "Hawaii, USA"
+      },
+      {
+        "google_id": "ChIJYd_UVOOS1jURyxqiJ3gVsoI",
+        "address": "Henan, China"
+      },
+      {
+        "google_id": "ChIJb_KF3fiuLjQRPpKqljdJeeU",
+        "address": "Hubei, China"
+      },
+      {
+        "google_id": "ChIJTTiHaRi6IDQR5Syu5AuRIcw",
+        "address": "Hunan, China"
+      },
+      {
+        "google_id": "ChIJvbt3k5Azs1IRB-56L4TJn5M",
+        "address": "Minneapolis, MN, USA"
+      },
+      {
+        "google_id": "ChIJD7fiBh9u5kcRYJSMaMOCCwQ",
+        "address": "Paris, France"
+      },
+      {
+        "google_id": "ChIJSTKCCzZwQIYRPN4IGI8c6xY",
+        "address": "Texas, USA"
+      },
+      {
+        "google_id": "ChIJeX68GYWyAGARynFP_dR2zo8",
+        "address": "Wakayama, Japan"
+      },
+      {
+        "google_id": "ChIJCWW2u-xbGGARAFQoYPaDlgY",
+        "address": "Yokohama, Kanagawa, Japan"
+      },
+      {
+        "google_id": "ChIJv8wKpTQSSTQRt3wYNsVx74E",
+        "address": "Zhejiang, China"
+      },
+      {
+        "google_id": "ChIJQzfc1L-HBzERUxL0ieC_t-Q",
+        "address": "Cambodia"
+      },
+      {
+        "google_id": "ChIJrzBnX5fTNDAR2BwhKJOWRQc",
+        "address": "Malaysia"
+      },
+      {
+        "google_id": "ChIJdZOLiiMR2jERxPWrUs9peIg",
+        "address": "Singapore"
+      },
+      {
+        "google_id": "ChIJL1cHXAbzbjQRaVScvwTwEec",
+        "address": "Taiwan"
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": []
+  },
+  {
+    "event_date": "2020-02-03 xx:xx:xx to 2020-02-16 xx:xx:xx",
+    "locations": [
+      {
+        "google_id": "ChIJPV4oX_65j4ARVW8IJ6IJUYs",
+        "address": "California, USA"
+      },
+      {
+        "google_id": "ChIJP1yvMvGFUjERKZ8lCW8c1C4",
+        "address": "Guangdong Province, China"
+      },
+      {
+        "google_id": "ChIJBeB5Twbb_3sRKIbMdNKCd0s",
+        "address": "Hawaii, USA"
+      },
+      {
+        "google_id": "ChIJYd_UVOOS1jURyxqiJ3gVsoI",
+        "address": "Henan, China"
+      },
+      {
+        "google_id": "ChIJb_KF3fiuLjQRPpKqljdJeeU",
+        "address": "Hubei, China"
+      },
+      {
+        "google_id": "ChIJTTiHaRi6IDQR5Syu5AuRIcw",
+        "address": "Hunan, China"
+      },
+      {
+        "google_id": "ChIJvbt3k5Azs1IRB-56L4TJn5M",
+        "address": "Minneapolis, MN, USA"
+      },
+      {
+        "google_id": "ChIJD7fiBh9u5kcRYJSMaMOCCwQ",
+        "address": "Paris, France"
+      },
+      {
+        "google_id": "ChIJSTKCCzZwQIYRPN4IGI8c6xY",
+        "address": "Texas, USA"
+      },
+      {
+        "google_id": "ChIJeX68GYWyAGARynFP_dR2zo8",
+        "address": "Wakayama, Japan"
+      },
+      {
+        "google_id": "ChIJCWW2u-xbGGARAFQoYPaDlgY",
+        "address": "Yokohama, Kanagawa, Japan"
+      },
+      {
+        "google_id": "ChIJv8wKpTQSSTQRt3wYNsVx74E",
+        "address": "Zhejiang, China"
+      },
+      {
+        "google_id": "ChIJQzfc1L-HBzERUxL0ieC_t-Q",
+        "address": "Cambodia"
+      },
+      {
+        "google_id": "ChIJrzBnX5fTNDAR2BwhKJOWRQc",
+        "address": "Malaysia"
+      },
+      {
+        "google_id": "ChIJdZOLiiMR2jERxPWrUs9peIg",
+        "address": "Singapore"
+      },
+      {
+        "google_id": "ChIJL1cHXAbzbjQRaVScvwTwEec",
+        "address": "Taiwan"
+      }
+    ],
+    "diseases": [
+      "influenza a/h1n1"
+    ],
+    "syndromes": []
+  }
+]

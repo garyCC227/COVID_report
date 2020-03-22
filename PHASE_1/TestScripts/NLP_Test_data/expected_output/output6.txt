@@ -1,0 +1,43 @@
+[
+  {
+    "event_date": "2019-xx-xx xx:xx:xx to 2020-02-18 xx:xx:xx",
+    "locations": [
+      {
+        "google_id": "ChIJPV4oX_65j4ARVW8IJ6IJUYs",
+        "address": "California, USA"
+      },
+      {
+        "google_id": "ChIJyQ4nv_C3akgRcUVL2YU8Qm4",
+        "address": "Cornwall, UK"
+      },
+      {
+        "google_id": "ChIJSTKCCzZwQIYRPN4IGI8c6xY",
+        "address": "Texas, USA"
+      },
+      {
+        "google_id": "ChIJubs9LUhDwYkRvNdciX9WFs8",
+        "address": "Trenton, NJ, USA"
+      },
+      {
+        "google_id": "ChIJ2WrMN9MDDUsRpY9Doiq3aJk",
+        "address": "Canada"
+      },
+      {
+        "google_id": "ChIJwULG5WSOUDERbzafNHyqHZU",
+        "address": "China"
+      },
+      {
+        "google_id": "ChIJD5gyo-3iAzQRfMnq27qzivA",
+        "address": "Hong Kong"
+      },
+      {
+        "google_id": "ChIJLxl_1w9OZzQRRFJmfNR1QvU",
+        "address": "Japan"
+      }
+    ],
+    "diseases": [
+      "COVID-19"
+    ],
+    "syndromes": []
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "event_date": "2019-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "COVID-19",
+      "sars"
+    ],
+    "syndromes": [
+      "Acute respiratory syndrome"
+    ]
+  },
+  {
+    "event_date": "2019-xx-xx xx:xx:xx",
+    "locations": [],
+    "diseases": [
+      "hantavirus",
+      "other"
+    ],
+    "syndromes": []
+  }
+]

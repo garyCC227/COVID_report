@@ -1,6 +1,6 @@
 [
     { "name": "DIS-unknown", "general_names" : ["unknown disease", "unknown diseases", "unknown origin"] },
-    { "name": "DIS-other", "general_names" : ["other disease", "bronchitis", "cancer", "amebiasis", "ralstonia", "swine", "herpersvirus", "herpers virus", "lyme", "borreliosis", "powassan", "syphilis"] },
+    { "name": "DIS-other", "general_names" : ["other disease", "bronchitis", "cancer", "amebiasis", "ralstonia", "swine", "herpersvirus", "herpers virus", "lyme", "borreliosis", "powassan", "syphilis", "parasite"] },
     { "name": "DIS-anthrax cutaneous", "general_names" : ["anthrax cutaneous", "anthrax"] },
     { "name": "DIS-anthrax gastrointestinous", "general_names" : ["anthrax gastrointestinous"] },
     { "name": "DIS-anthrax inhalation", "general_names" : ["anthrax inhalation"] },

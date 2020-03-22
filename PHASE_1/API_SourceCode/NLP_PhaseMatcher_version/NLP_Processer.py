@@ -7,6 +7,11 @@ import sys
 from pathlib import Path
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
+for root, dirs, files in os.walk(".."):
+    for d in dirs:
+        if re.search("API_SourceCode$",os.path.abspath(os.path.join(root, d))):
+            sourcepath = os.path.abspath(os.path.join(root, d))
+        sys.path.insert(0, os.path.abspath(os.path.join(root, d)))
 
 from spacy.matcher import PhraseMatcher
 from NLP_PhaseMatcher_version.Date_Formater import Date_Formater
@@ -23,8 +28,8 @@ class NLP_Processer :
     # def __init__ (self, disease_pattern_loc = os.path.join("NLP_PhaseMatcher_version","disease_pattern.json") , search_pattern_loc = os.path.join("NLP_PhaseMatcher_version","search_pattern.json"), 
     #                 syndrome_pattern_loc = os.path.join("NLP_PhaseMatcher_version","syndrome_pattern.json"), disease_catogary_loc = os.path.join("NLP_PhaseMatcher_version","disease_catogary.json")):
     # Yahnis windows' version
-    def __init__ (self, disease_pattern_loc = "NLP_PhaseMatcher_version/disease_pattern.json" , search_pattern_loc = "NLP_PhaseMatcher_version/search_pattern.json", 
-                    syndrome_pattern_loc = "NLP_PhaseMatcher_version/syndrome_pattern.json", disease_catogary_loc = "NLP_PhaseMatcher_version/disease_catogary.json", geocode_service = True):
+    def __init__ (self, disease_pattern_loc = Path(sourcepath,"NLP_PhaseMatcher_version/disease_pattern.json") , search_pattern_loc = Path(sourcepath,"NLP_PhaseMatcher_version/search_pattern.json"), 
+                    syndrome_pattern_loc = Path(sourcepath,"NLP_PhaseMatcher_version/syndrome_pattern.json"), disease_catogary_loc = Path(sourcepath,"NLP_PhaseMatcher_version/disease_catogary.json"), geocode_service = True):
         self.nlp = spacy.load('en_core_web_sm')
         self.matcher = PhraseMatcher(self.nlp.vocab, attr='LOWER', max_length=5)
         self.load_pattern(disease_pattern_loc)

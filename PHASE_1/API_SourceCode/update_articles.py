@@ -13,7 +13,7 @@ for root, dirs, files in os.walk(".."):
         if re.search("API_SourceCode$",os.path.abspath(os.path.join(root, d))):
             sourcepath = os.path.abspath(os.path.join(root, d))
         sys.path.insert(0, os.path.abspath(os.path.join(root, d)))
-print(sourcepath)
+
 # from DB.db import setDocument
 from Scrapy.last_activity import ActivityPost
 from NLP_PhaseMatcher_version.NLP_Processer import NLP_Processer

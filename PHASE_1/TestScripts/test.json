@@ -1,0 +1,58 @@
+{
+            "url": "https://something_non_exist",
+            "date_of_publication": "2020-03-22 10:56:15",
+            "headline": "This is a testing headline",
+            "main_text": "This report is for testing only",
+            "reports": [
+                {
+                    "event_date": "2020-01-21 xx:xx:xx to 2020-02-27 xx:xx:xx",
+                    "locations": [
+                        {
+                            "google_id": "ChIJjQmTaV0E9YgRC2MLmS_e_mY",
+                            "address": "Atlanta, GA, USA"
+                        },
+                        {
+                            "google_id": "ChIJOwg_06VPwokRYv534QaPC8g",
+                            "address": "New York, NY, USA"
+                        },
+                        {
+                            "google_id": "ChIJm7oRy-tVZDURS9uIugCbJJE",
+                            "address": "South Korea"
+                        },
+                        {
+                            "google_id": "ChIJwULG5WSOUDERbzafNHyqHZU",
+                            "address": "China"
+                        }
+                    ],
+                    "diseases": [
+                        "Testing deseases"
+                    ],
+                    "syndromes": [
+                        "Testing syndromes"
+                    ]
+                }
+            ],
+            "keyword_frequency": {
+                "sars": 0.00308642,
+                "acute respiratory syndrome": 0.00308642,
+                "covid-19": 0.00231481,
+                "virus": 0.00231481,
+                "outbreak": 0.00154321,
+                "epidemic": 0.0007716,
+                "emerging": 0.0007716,
+                "infectious": 0.0007716
+            },
+            "keyword_location": [
+                "Testing place"
+            ],
+            "keyword_list": {
+                "sars": true,
+                "acute respiratory syndrome": true,
+                "covid-19": true,
+                "virus": true,
+                "outbreak": true,
+                "epidemic": true,
+                "emerging": true,
+                "infectious": true
+            }
+        }

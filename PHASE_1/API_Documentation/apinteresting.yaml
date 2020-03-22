@@ -17,6 +17,7 @@ info:
     * Support geo-location taxonomy _(e.g. search for NSW and ariticles about sydney can be returned)_. 
     * Nice formatted address for each location
     * Searched Articles will be ranked by term frequency before return
+      * _Note: If a location filter is applied, it will have a higher priority in ranking_
     * large database contains thousands of non-duplicate articles
     * New ariticles will be captured every 12 hours
 
@@ -82,7 +83,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/NewsList"
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/NewsList"
+                  apiBy:
+                    type: string
+                    example: "APInteresting"
+                  resourceFrom: 
+                    type: string
+                    example: "FluTracker"
+                  responseTime:
+                    type: integer
+                    example: 1584858970
         "400":
           description: Malformed Request (need to check user input)
         "401":
@@ -134,7 +147,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/NewsList"
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/NewsList"
+                  apiBy:
+                    type: string
+                    example: "APInteresting"
+                  resourceFrom: 
+                    type: string
+                    example: "FluTracker"
+                  responseTime:
+                    type: integer
+                    example: 1584858970
         "400":
           description: Malformed Request (need to check user input)
         "401":
@@ -166,7 +191,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DetailedNews"
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/DetailedNews"
+                  apiBy:
+                    type: string
+                    example: "APInteresting"
+                  resourceFrom: 
+                    type: string
+                    example: "FluTracker"
+                  responseTime:
+                    type: integer
+                    example: 1584858970
         "401":
           description: Unauthorized (Provide ```identity``` in the header)
         "404":
@@ -198,9 +235,19 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Report"
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Report"
+                  apiBy:
+                    type: string
+                    example: "APInteresting"
+                  resourceFrom: 
+                    type: string
+                    example: "FluTracker"
+                  responseTime:
+                    type: integer
+                    example: 1584858970
         "401":
           description: Unauthorized (Provide ```identity``` in the header)
         "404":

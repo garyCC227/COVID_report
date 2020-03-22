@@ -1,28 +1,14 @@
 {
-    "count": 3,
-    "date": "2020-03-21 21:34:19",
-    "lastDatestamp": 1584797659,
+    "count": 1,
+    "date": "2020-03-22 12:13:53",
+    "lastDatestamp": 1584850433,
     "posts": [
         {
-            "date": "2020-03-21T12:05:24",
-            "datestamp": "1584248003",
-            "flu_trackers_post_content": "Source: https://www.towleroad.com/2020/03/me...rker-covid-19/\n\n\nMedical Worker: Seeing Terrifying Lung Failure Even in Young Patients Completely Changed My Perspective on COVID-19\nMarch 21, 2020 by Lizzie Presser, ProPublica\n\nAs of Friday, Louisiana was reporting 479 confirmed cases of COVID-19, one of the highest numbers in the country. Ten people had died. The majority of cases are in New Orleans, which now has one confirmed case for every 1,000 residents. New Orleans had held Mardi Gras celebrations just two weeks before its first patient, with more than a million revelers on its streets.\n\nI spoke to a respiratory therapist there, whose job is to ensure that patients are breathing well. He works in a medium-sized city hospital\u2019s intensive care unit. (We are withholding his name and employer, as he fears retaliation.) Before the virus came to New Orleans, his days were pretty relaxed, nebulizing patients with asthma, adjusting oxygen tubes that run through the nose or, in the most severe cases, setting up and managing ventilators. His patients were usually older, with chronic health conditions and bad lungs.\n\nSince last week, he\u2019s been running ventilators for the sickest COVID-19 patients. Many are relatively young, in their 40s and 50s, and have minimal, if any, preexisting conditions in their charts. He is overwhelmed, stunned by the manifestation of the infection, both its speed and intensity. The ICU where he works has essentially become a coronavirus unit. He estimates that his hospital has admitted dozens of confirmed or presumptive coronavirus patients. About a third have ended up on ventilators.\n\nHis hospital had not prepared for this volume before the virus first appeared. One physician had tried to raise alarms, asking about negative pressure rooms and ventilators. Most staff concluded that he was overreacting. \u201cThey thought the media was overhyping it,\u201d the respiratory therapist told me. \u201cIn retrospect, he was right to be concerned.\u201d\n\nHe spoke to me by phone on Thursday about why, exactly, he has been so alarmed. His account has been condensed and edited for clarity....",
-            "nodeid": "839549",
-            "url": "https://www.towleroad.com/2020/03/medical-worker-covid-19/"
-        },
-        {
-            "date": "2020-03-21T11:15:54",
-            "datestamp": "1584248003",
-            "flu_trackers_post_content": "Anaesthesiol Intensive Ther. 2020 Mar 20. pii: 40133. doi: 10.5114/ait.2020.93756. [Epub ahead of print]\nCOVID-19 - what should anaethesiologists and intensivists know about it?\n\n\nWujtewicz M, Dylczyk-Sommer A, Aszkie\u0142owicz A, Zdanowski S, Piwowarczyk S, Owczuk R.\n\nAbstract\n\nin English, Polish\nOver the past three months, the world has faced an unprecedented health hazard. The World Health Organization has announced a pandemic infection with an unknown species of coronavirus called SARS-CoV-2. Spreading mainly through the droplet route, the virus causes mild symptoms in the majority of cases, the most common being: fever (80%), dry cough (56%), fatigue (22%) and muscle pain (7%); less common symptoms include a sore throat, a runny nose, diarrhea, hemoptysis and chills. A life-threatening complication of SARS-CoV-2 infection is an acute respiratory distress syndrome (ARDS), which occurs more often in older adults, those with immune disorders and co-morbidities. Severe forms of the infection, being an indication for treatment in the intensive care unit, comprise acute lung inflammation, ARDS, sepsis and septic shock. The article presents basic information about etiology, pathogenesis and diagnostics (with particular emphasis on the importance of tomocomputer imaging), clinical picture, treatment and prevention of the infection. It goes on to emphasize the specific risks of providing anesthesiology and intensive care services. Due to the fact that effective causal treatment is not yet available and the number of infections and deaths increases day by day, infection prevention and strict adherence to recommendations of infection control organizations remain the basis for fighting the virus.\n\n\n\nKEYWORDS:\n\nCOVID-19; SARS-CoV-2; acute respiratory distress syndrome (ARDS); acute pneumonia; infection; viruses\n\n\nPMID:32191830DOI:10.5114/ait.2020.93756\nFree full text",
-            "nodeid": "839520",
-            "url": "https://www.ncbi.nlm.nih.gov/pubmed/32191830#"
-        },
-        {
-            "date": "2020-03-21T11:15:01",
-            "datestamp": "1584248003",
-            "flu_trackers_post_content": "R I Med J (2013). 2020 Mar 19;103(2):75-76.\nCo-infection with SARS-CoV-2 and Human Metapneumovirus.\n\n\nTouzard-Romo F1, Tap\u00e9 C2, Lonks JR3.\n\nAuthor information\n\n\n\n\nAbstract\n\nThe novel coronavirus (now called SARS-CoV-2) initially discovered in Wuhan, China, has now become a global pandemic. We describe a patient presenting to an Emergency Department in Rhode Island on March 12, 2020 with cough and shortness of breath after a trip to Jamaica. The patient underwent nasopharyngeal swab for a respiratory pathogen panel as well as SARS-CoV-2 RT-PCR. When the respiratory pathogen panel was positive for human metapneumovirus, the patient was treated and discharged. SARS-CoV-2 RT-PCR came back positive 24 hours later. Although respiratory viral co-infection is thought to be relatively uncommon in adults, this case reflects that SARS-CoV-2 testing algorithms that exclude patients who test positive for routine viral pathogens may miss SARS-CoV-2 co-infected patients.\n\n\n\nKEYWORDS:\n\nCOVID-19; SARS-CoV-2; co-infection; human metapneumovirus\n\n\nPMID:32192233",
-            "nodeid": "839519",
-            "url": "https://www.ncbi.nlm.nih.gov/pubmed/32192233#"
+            "date": "2020-03-22T04:13:53",
+            "datestamp": "1584850433",
+            "flu_trackers_post_content": "The staff member had returned home from overseas on March 10 before working two night shifts at the facility with no symptoms at that time. \n\nThey told their manager after a day off that they had a headache and were required to follow protocol by talking to a doctor. The person was then tested for Covid-19, which came back positive.\n\nhttps://www.tvnz.co.nz/one-news/new-...ve-coronavirus",
+            "nodeid": "839837",
+            "url": "https://www.tvnz.co.nz/one-news/new-zealand/auckland-rest-home-worker-tests-positive-coronavirus"
         }
     ]
 }

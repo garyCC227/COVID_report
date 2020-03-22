@@ -109,10 +109,11 @@ if __name__ == "__main__":
       '839549': ['1584792324', 'https://www.towleroad.com/2020/03/medical-worker-covid-19/'],
       '839520': ['1584789354', 'https://www.ncbi.nlm.nih.gov/pubmed/32191830#']
   }
-    file = open('scrapy_test.html', 'r')
-    content = file.read()
-    AP =  ActivityPost(content, 1584797659)
-    for id, post in correct.items():
-        content, url = AP.post_all_content_and_url(id)
-        print(url)
-        print(content)
+  print("hello")
+    # file = open('scrapy_test.html', 'r')
+    # content = file.read()
+    # AP =  ActivityPost(content, 1584797659)
+    # for id, post in correct.items():
+    #     content, url = AP.post_all_content_and_url(id)
+    #     print(url)
+    #     print(content)

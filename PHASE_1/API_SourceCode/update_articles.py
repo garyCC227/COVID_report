@@ -75,8 +75,9 @@ def main():
 
   # Now we have the lastest activities urls, I try transfer bash to python
   if num_newposts > 0:
-    run_shell = "./run.sh"
-    subprocess.call([run_shell, str(num_newposts-1)])
+    run_shell = "python"
+    for i in range(num_newposts):
+      subprocess.call([run_shell, "get_source_content.py",str(i)])
   else:
     print("No new posts\n")
 

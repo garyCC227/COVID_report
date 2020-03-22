@@ -6,8 +6,15 @@ import pytest
 import json
 import os
 import sys
+import re
 
-sys.path.append("F:\\Github\SENG3011_APInteresting\\PHASE_1\\API_SourceCode\\DB")
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
+for root, dirs, files in os.walk(".."):
+    for d in dirs:
+        if re.search("API_SourceCode$",os.path.abspath(os.path.join(root, d))):
+            sourcepath = os.path.abspath(os.path.join(root, d))
+        sys.path.insert(0, os.path.abspath(os.path.join(root, d)))
+sys.path.append(os.path.join(sourcepath,"DB"))
 
 from db import readDocument, getDocumentByLocation, headlineExists, getDocumentBySyndrome, getDocumentByDisease
 #cred = credentials.Certificate(".\\API_SourceCode\\DB\\fbconfig\\apinteresting-firebase-adminsdk-9y5el-1848ac33f0.json")

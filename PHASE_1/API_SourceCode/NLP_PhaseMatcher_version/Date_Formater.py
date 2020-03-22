@@ -25,7 +25,6 @@ class Date_Formater:
       year = temp.group(1)
       mon = temp.group(2)
       day = temp.group(3)
-
       if (int(year) > int(self.year) + 2) or (int(year) < int(self.year) - 3) :
         return self.year + "-xx-xx xx:xx:xx"
 
@@ -44,7 +43,7 @@ class Date_Formater:
 
   def match_time(self,time_string):
     add_on = 0
-    temp = re.search("p(\.| )*m",time_string, re.IGNORECASE)
+    temp = re.search(r"p(\.| )*m",time_string, re.IGNORECASE)
     if temp != None :
       add_on = 12
     temp = re.search("([0-2][0-9]|[0-9]):([0-6][0-9]|[0-9])",time_string)
@@ -89,15 +88,7 @@ class Date_Formater:
 
     temp = re.search("^[0-9]{4}$",date_string)
     if temp != None :
-      return [self.year + "-xx-xx xx:xx:xx"]
-
-    temp = re.search("[0-9]{4}-([0-9]{4}|[0-9]{2})[^-]",date_string)
-    if temp != None :
-      return [self.year + "-xx-xx xx:xx:xx"]
-
-    temp = re.search("[0-9]{4}-([0-9]{4}|[0-9]{2})$",date_string)
-    if temp != None :
-      return [self.year + "-xx-xx xx:xx:xx"]
+      return [self.error_date_ignore(temp.group() + "-xx-xx xx:xx:xx")]
 
     temp = re.search("20[0-9][0-9]",date_string)
     if temp == None :
@@ -105,7 +96,7 @@ class Date_Formater:
     else :
       year = temp.group()
     
-    temp = re.search("([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{4})",date_string)
+    temp = re.search(r"([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{4})",date_string)
     if temp != None :
       year = temp.group(5)
       mon = temp.group(3)
@@ -120,7 +111,7 @@ class Date_Formater:
       day = self.check_add_zero(day)
       return  [self.error_date_ignore(year + "-" + mon + "-" + day + " xx:xx:xx")]
     
-    temp = re.search("([0-9]{4})(\.|/| |-|_|,)+([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])",date_string)
+    temp = re.search(r"([0-9]{4})(\.|/| |-|_|,)+([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])",date_string)
     
     if temp != None :
       year = temp.group(1)
@@ -137,7 +128,7 @@ class Date_Formater:
       return  [self.error_date_ignore(year + "-" + mon + "-" + day + " xx:xx:xx")]
 
     #Try to match the format and extract data
-    temp = re.search("([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])",date_string)
+    temp = re.search(r"([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])",date_string)
     if temp != None :
       year = temp.group(5)
       mon = temp.group(3)
@@ -190,10 +181,14 @@ class Date_Formater:
         mon = "11"
       else :
         mon = "12"
-      temp = re.search("(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)(\.| |/|,)+([0-9]{2}|[0-9])(-| to |to| to|to )([0-9]{2}|[0-9])", date_string, re.IGNORECASE)
+      temp = re.search(r"(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|january|feburary|march|april|may|june|july|august|september|october|november|december)(\.| |/|,)+([0-9]{2}|[0-9])(-| to |to| to|to )([0-9]{2}|[0-9])", date_string, re.IGNORECASE)
       if temp != None :
         day1 = temp.group(3)
         day2 = temp.group(5)
+        if word_expression and int(mon) > self.month + 1:
+          temp = re.search("[0-9]{4}",date_string)
+          if temp == None :
+            year = str(int(year) - 1)
         return  [self.error_date_ignore(year + "-" + mon + "-" + self.check_add_zero(day1) + " xx:xx:xx"), self.error_date_ignore(year + "-" + mon + "-" + self.check_add_zero(day2) + " xx:xx:xx")]
     # else :
     #   temp = re.search("([0-9]{2}|[0-9])(\.|/| |-|_|,)+([0-9]{2}|[0-9])",date_string)
@@ -209,19 +204,19 @@ class Date_Formater:
     #     return  self.error_date_ignore(year + "-" + mon + "-" + day + " xx:xx:xx")
     
     # Try to extract day and assume day is in the middle of the phrase
-    temp = re.search("\D(([0-9]{2}|[0-9]{1}))\D",date_string)
+    temp = re.search(r"\D(([0-9]{2}|[0-9]{1}))\D",date_string)
     if temp != None :
       day = self.check_add_zero(temp.group(1))
     
     # Try to extract day and assume day is at the first of the phrase
     if day == None :
-      temp = re.search("^(([0-9]{2}|[0-9]{1}))\D",date_string)
+      temp = re.search(r"^(([0-9]{2}|[0-9]{1}))\D",date_string)
       if temp != None :
         day = self.check_add_zero(temp.group(1))
 
     # Try to extract day and assume day is at the end of the phrase
     if day == None :
-      temp = re.search("\D(([0-9]{2}|[0-9]{1}))$",date_string)
+      temp = re.search(r"\D(([0-9]{2}|[0-9]{1}))$",date_string)
       if temp != None :
         day = self.check_add_zero(temp.group(1))
     
@@ -229,6 +224,8 @@ class Date_Formater:
       return [self.error_date_ignore(year + "-xx-xx xx:xx:xx")]
     
     if word_expression and int(mon) > self.month + 1:
+      temp = re.search("[0-9]{4}",date_string)
+      if temp == None :
         year = str(int(year) - 1)
 
     if day == None :

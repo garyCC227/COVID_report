@@ -16,6 +16,8 @@ info:
     ## Features
     * Support geo-location taxonomy _(e.g. search for NSW and ariticles about sydney can be returned)_. 
     * Nice formatted address for each location
+    * Multiple reports can be generated from an ariticle
+    * Report Event Date accurate to minutes
     * Searched Articles will be ranked by term frequency before return
       * _Note: If a location filter is applied, it will have a higher priority in ranking_
     * large database contains thousands of non-duplicate articles

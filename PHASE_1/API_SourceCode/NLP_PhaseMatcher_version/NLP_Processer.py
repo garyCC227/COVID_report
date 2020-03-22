@@ -23,8 +23,8 @@ class NLP_Processer :
     # def __init__ (self, disease_pattern_loc = os.path.join("NLP_PhaseMatcher_version","disease_pattern.json") , search_pattern_loc = os.path.join("NLP_PhaseMatcher_version","search_pattern.json"), 
     #                 syndrome_pattern_loc = os.path.join("NLP_PhaseMatcher_version","syndrome_pattern.json"), disease_catogary_loc = os.path.join("NLP_PhaseMatcher_version","disease_catogary.json")):
     # Yahnis windows' version
-    def __init__ (self, disease_pattern_loc = Path("NLP_PhaseMatcher_version/disease_pattern.json") , search_pattern_loc = Path("NLP_PhaseMatcher_version/search_pattern.json"), 
-                    syndrome_pattern_loc = Path("NLP_PhaseMatcher_version/syndrome_pattern.json"), disease_catogary_loc = Path("NLP_PhaseMatcher_version/disease_catogary.json") , geocode_service = True):
+    def __init__ (self, disease_pattern_loc = "NLP_PhaseMatcher_version/disease_pattern.json" , search_pattern_loc = "NLP_PhaseMatcher_version/search_pattern.json", 
+                    syndrome_pattern_loc = "NLP_PhaseMatcher_version/syndrome_pattern.json", disease_catogary_loc = "NLP_PhaseMatcher_version/disease_catogary.json", geocode_service = True):
         self.nlp = spacy.load('en_core_web_sm')
         self.matcher = PhraseMatcher(self.nlp.vocab, attr='LOWER', max_length=5)
         self.load_pattern(disease_pattern_loc)
@@ -186,7 +186,7 @@ class NLP_Processer :
                 text = text.replace(".","")
                 country = self.location_checker.get_country(text)
                 if country == None :
-                    temp = re.search("[0-9]|:|;|\(|\)|\"|\'|\\|\/|@|Discover|\`|\=|\+|\?|\!", text)
+                    temp = re.search(r"[0-9]|:|;|\(|\)|\"|\'|\\|\/|@|Discover|\`|\=|\+|\?|\!", text)
                     if temp == None and len(text) > 3:
                         if text in location_dic :
                             location_dic[text] += 1

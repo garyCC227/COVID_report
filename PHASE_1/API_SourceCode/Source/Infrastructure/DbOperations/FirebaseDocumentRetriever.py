@@ -60,9 +60,10 @@ class FirebaseDocumentRetriever():
             return db_result
 
     def _compensate_location_tf(self, result_list, location):
-        for news in result_list:
-            if location.lower() in news.get_title().lower():
-                news.compensate_tf()
+        if location:
+            for news in result_list:
+                if location.lower() in news.get_title().lower():
+                    news.compensate_tf()
         return result_list
 
     def get_document_by_id(self, id):

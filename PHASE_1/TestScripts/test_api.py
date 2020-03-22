@@ -12,20 +12,40 @@ def _parse_time(t, format='%Y-%m-%dT%H:%M:%S'):
     return time.mktime(t)
 
 
+def test_response_format():
+    global api_base, identity_header
+    header = {}
+    url = "{}/test".format(api_base)
+    response = requests.get(url, headers=header)
+    assert response.status_code == 401
+    response = json.loads(response.content.decode("utf-8"))
+    assert isinstance(response, object)
+    assert 'apiBy' in response
+    assert 'resourceFrom' in response
+    assert 'responseTime' in response
+    assert response['apiBy'] == 'APInteresting'
+    assert response['resourceFrom'] == 'FluTracker'
+    assert isinstance(response['responseTime'], int)
+    assert 'data' in response
+    assert response['data'] == "Please provide us your identity in header for logging."
+
 def test_not_exists_identity():
     global api_base, identity_header
     header = {}
     url = "{}/news".format(api_base)
     response = requests.get(url, headers=header)
     assert response.status_code == 401
-    assert response.content == b'"Please provide us your identity in header for logging."'
+
+    response = json.loads(response.content.decode("utf-8"))
+    assert response['data']  == "Please provide us your identity in header for logging."
 
 def test_not_exists_url():
     global api_base, identity_header
     url = "{}/not_exists".format(api_base)
     response = requests.get(url, headers=identity_header)
     assert response.status_code == 404
-    assert 'Not Found' in response.content.decode("utf-8")
+    response = json.loads(response.content.decode("utf-8"))
+    assert 'Not Found' in response['data']
 
 def test_get_news_error_date_format1():
     global api_base, identity_header
@@ -33,7 +53,8 @@ def test_get_news_error_date_format1():
     url = "{}/news".format(api_base)
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 400
-    assert 'Malformed Request' in response.content.decode("utf-8")
+    response = json.loads(response.content.decode("utf-8"))
+    assert 'Malformed Request' in response['data']
 
 def test_get_news_error_date_format2():
     global api_base, identity_header
@@ -41,7 +62,8 @@ def test_get_news_error_date_format2():
     url = "{}/news".format(api_base)
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 400
-    assert 'Malformed Request' in response.content.decode("utf-8")
+    response = json.loads(response.content.decode("utf-8"))
+    assert 'Malformed Request' in response['data']
 
 def test_get_news_error_date_format3():
     global api_base, identity_header
@@ -49,7 +71,8 @@ def test_get_news_error_date_format3():
     url = "{}/news".format(api_base)
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 400
-    assert 'Malformed Request' in response.content.decode("utf-8")
+    response = json.loads(response.content.decode("utf-8"))
+    assert 'Malformed Request' in response['data']
 
 def test_get_news_all_error_date_format1():
     global api_base, identity_header
@@ -57,7 +80,8 @@ def test_get_news_all_error_date_format1():
     url = "{}/news/all".format(api_base)
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 400
-    assert 'Malformed Request' in response.content.decode("utf-8")
+    response = json.loads(response.content.decode("utf-8"))
+    assert 'Malformed Request' in response['data']
 
 def test_get_news_all_error_date_format2():
     global api_base, identity_header
@@ -65,7 +89,8 @@ def test_get_news_all_error_date_format2():
     url = "{}/news/all".format(api_base)
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 400
-    assert 'Malformed Request' in response.content.decode("utf-8")
+    response = json.loads(response.content.decode("utf-8"))
+    assert 'Malformed Request' in response['data']
 
 def test_get_news_all_error_date_format3():
     global api_base, identity_header
@@ -73,7 +98,8 @@ def test_get_news_all_error_date_format3():
     url = "{}/news/all".format(api_base)
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 400
-    assert 'Malformed Request' in response.content.decode("utf-8")
+    response = json.loads(response.content.decode("utf-8"))
+    assert 'Malformed Request' in response['data']
 
 def test_get_news_correct():
     global api_base, identity_header
@@ -82,7 +108,8 @@ def test_get_news_correct():
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 200
 
-    content = json.loads(response.content.decode("utf-8"))
+    response = json.loads(response.content.decode("utf-8"))
+    content = response['data']
     assert isinstance(content, list)
     for news in content:
         assert isinstance(news, object)
@@ -103,7 +130,8 @@ def test_get_news_all_correct():
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 200
 
-    content = json.loads(response.content.decode("utf-8"))
+    response = json.loads(response.content.decode("utf-8"))
+    content = response['data']
     assert isinstance(content, list)
     for news in content:
         assert isinstance(news, object)
@@ -126,7 +154,8 @@ def test_get_all_location_correct():
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 200
 
-    content = json.loads(response.content.decode("utf-8"))
+    response = json.loads(response.content.decode("utf-8"))
+    content = response['data']
     assert isinstance(content, list)
     for news in content:
         assert isinstance(news, object)
@@ -146,7 +175,8 @@ def test_get_report_and_article_by_id():
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 200
 
-    content = json.loads(response.content.decode("utf-8"))
+    response = json.loads(response.content.decode("utf-8"))
+    content = response['data']
     assert isinstance(content, list)
     id = None
     for news in content:
@@ -159,7 +189,8 @@ def test_get_report_and_article_by_id():
     url = "{}/news/{}".format(api_base, id)
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 200
-    news = json.loads(response.content.decode("utf-8"))
+    response = json.loads(response.content.decode("utf-8"))
+    news = response['data']
     assert isinstance(news, object)
     assert "reports" in news
     assert "id" in news
@@ -168,6 +199,7 @@ def test_get_report_and_article_by_id():
     url = "{}/reports/{}".format(api_base, id)
     response = requests.get(url, params=payload, headers=identity_header)
     assert response.status_code == 200
-    reports = json.loads(response.content.decode("utf-8"))
+    response = json.loads(response.content.decode("utf-8"))
+    reports = response['data']
     assert isinstance(reports, list)
 

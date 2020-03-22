@@ -33,9 +33,10 @@ In order to prevent any exceptions. We will have some autotest function to check
 Java and Python 3 are considered. Because of the abundance of libraries and simple code structure, Python 3 has been chosen as the implementation language. The usage of Python 3 makes products can be delivered in a shorter development time. Another consideration for Python 3 is although all members have used Java before, we are more confident with Python 3 and Flask as they have been used more frequently in our previous studies.
 
 ### Database Implementation
-**MongoDB**
+**Firestore**
 
-We considered MySQL/PostgreSQL and MongoDB then chose MongoDB. For MySQL and PostgreSQL, as they are both relational databases, much time will need to be spent on designing the schema according to our previous experiences on databases. Also, what has been scraped will also need to be stored as more atomic form to prevent performance loss during querying. However, json can be directly read and stored into the document-based database without reducing too much performance. Besides, MongoDB provides great documentation and some helpful programs in the MongoDB suite, specifically MongoDB Compass.
+We first considered MySQL/PostgreSQL and MongoDB. For MySQL and PostgreSQL, as they are both relational databases, much time will need to be spent on designing the schema according to our previous experiences on databases. Also, what has been scraped will also need to be stored as more atomic form to prevent performance loss during querying. However, json can be directly read and stored into the document-based database without reducing too much performance. 
+At first we decided to use MongoDB. However, upon further thought we decided that Firestore would be more suitable as Phase 2 of the project required a platform. Firestore is easily integrateable with Google Cloud Platform and will give us some experience with the Google Cloud Platform functions when the time comes to design our platform. 
 
 ### Text analysis implementation
 **Google natural language API, Rapid text analysis API**
@@ -70,7 +71,7 @@ Gunicorn has been chosen because of the easy configuration and good performance 
 
 First, we will first scrape all the HTML from the Flu Tracker website using the Scrapy library. The extracted HTML text will then be processed through BeautifulSoup to get text from the HTML elements we specify. Each section of text will then be parsed using the Google NLP API to extract key information such as: Location, Diseases and Syndromes. Location can then be further analysed by the Google Geocode API to get its geocode.  
 
-All information will be given unique IDs and stored on MongoDB in the form of a document. When a user queries our API, the appropriate  document will be selected from our database and sent back to the user in JSON format. 
+All information will be given unique IDs and stored on Firestore in the form of a document. When a user queries our API, the appropriate  document will be selected from our database and sent back to the user in JSON format. 
 
 ## API Usage
 ### Parameters and Results

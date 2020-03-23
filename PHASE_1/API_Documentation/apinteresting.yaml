@@ -96,8 +96,8 @@ paths:
                     type: string
                     example: "FluTracker"
                   responseTime:
-                    type: integer
-                    example: 1584858970
+                    type: string
+                    example: "23 Mar 2020 07:55:15 +0000"
         "400":
           description: Malformed Request (need to check user input)
         "401":
@@ -160,8 +160,8 @@ paths:
                     type: string
                     example: "FluTracker"
                   responseTime:
-                    type: integer
-                    example: 1584858970
+                    type: string
+                    example: "23 Mar 2020 07:55:15 +0000"
         "400":
           description: Malformed Request (need to check user input)
         "401":
@@ -204,8 +204,8 @@ paths:
                     type: string
                     example: "FluTracker"
                   responseTime:
-                    type: integer
-                    example: 1584858970
+                    type: string
+                    example: "23 Mar 2020 07:55:15 +0000"
         "401":
           description: Unauthorized (Provide ```identity``` in the header)
         "404":
@@ -248,8 +248,8 @@ paths:
                     type: string
                     example: "FluTracker"
                   responseTime:
-                    type: integer
-                    example: 1584858970
+                    type: string
+                    example: "23 Mar 2020 07:55:15 +0000"
         "401":
           description: Unauthorized (Provide ```identity``` in the header)
         "404":

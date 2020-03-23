@@ -15,7 +15,7 @@ def make_response(data, status_code=200, extra_headers={}):
         "data": data,
         "apiBy": "APInteresting",
         "resourceFrom": "FluTracker",
-        "responseTime": int(time.time())
+        "responseTime": time.strftime("%d %b %Y %H:%M:%S +0000", time.gmtime())
     }
     json_data = json.dumps(data, default=to_json_handler)
     response.set_data(json_data)

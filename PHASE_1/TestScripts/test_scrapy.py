@@ -21,7 +21,7 @@ def AP():
   consistent html flu racker posts file to do test
   1. 5 posts
   '''
-  file = open('scrapy_test.html', 'r')
+  file = open('scrapy_test_data/scrapy_test.html', 'r')
   content = file.read()
   return ActivityPost(content, 1584797659)
 
@@ -130,14 +130,14 @@ def test_get_source_text_for_onepost(AP):
 #Test filter with invalid html page
 def test_filter_get_text_byp_invalid_url():
   #cannot access url
-  file = 'access_denied.html'
+  file = 'scrapy_test_data/access_denied.html'
   f = Filter(file)
   title, content = f.get_source_text_by_p()
   # special test only for flu-trackers, since it often scrape 'ncbi' website
   assert "NCBIErrorYour access to the NCBI website" in content
 
   #scrape non-english url
-  file = 'non_english.html'
+  file = 'scrapy_test_data/non_english.html'
   f = Filter(file)
   title, content = f.get_source_text_by_p()
   assert detect(content) != "en"
@@ -145,7 +145,7 @@ def test_filter_get_text_byp_invalid_url():
 
 
 def test_invalid_post():
-  file = 'invalid_post.html'
+  file = 'scrapy_test_data/invalid_post.html'
   AP = ActivityPost(file, 1580000000)
   posts = list(AP.get_posts())
   for post in posts:
@@ -154,7 +154,7 @@ def test_invalid_post():
     assert post['url'] == ""
 
 def test_invalid_source_content():
-  file = 'invalid_post.html'
+  file = 'scrapy_test_data/invalid_post.html'
   f = Filter(file)
   title, content = f.get_source_text_by_p()
   assert title == "" and content == ""

@@ -4,14 +4,14 @@
 
 | Task     | Member(s)     | Status |
 | -------- | ------------- | ------- |
-| Design Report | Ping, Ryan, Webster, Gary, Yahnis | Finished D1 version |
-| API Development | Webster, Ping | Not started |
-| API Document    | Ping, Ryan, Webster, Gary, Yahnis | Not started |
-| API Testing     | Ping, Ryan, Webster, Gary, Yahnis | Not started |
-| MongoDB | Ping, Ryan | Not started |
-| Web Scraping and Data Extract | Gary | Done |
-| Geocode API | Yahnis | Working |
-| Data Analysis | Yahnis, Gary | Done |
+| Design Report | Ping, Ryan, Webster, Gary, Yahnis | Finished |
+| API Development | Webster, Ping | Finished |
+| API Document    | Ping, Ryan, Webster, Gary, Yahnis | Finished |
+| API Testing     | Ping, Ryan, Webster, Gary, Yahnis | Finished |
+| MongoDB | Ping, Ryan | Finished |
+| Web Scraping and Data Extract | Gary | Finished |
+| Geocode API | Yahnis | Finished |
+| Data Analysis | Yahnis, Gary | Finished |
 
 ## Work Arrangements
 Totally, there are five major technical parts
@@ -34,7 +34,8 @@ GitHub is used for version control. In order to prevent errors and ensure there 
 
 ## Software Tools Used For Management
 + GitHub (track on coding part)
-+ Messenger (Online meeting, one of our member is oversea)
++ Messenger (Online meeting, one of our member is working from oversea)
++ Zoom (Online meeting)
 
 ## Google Doc (For editing only)
 https://docs.google.com/document/d/1Os6aoVmBDKD2V7-D60HiwT_gNO5Mc8BbuFKJTEk5J-I/edit#

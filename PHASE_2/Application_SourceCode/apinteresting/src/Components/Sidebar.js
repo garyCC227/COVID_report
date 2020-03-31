@@ -5,7 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import Drawer from '@material-ui/core/Drawer';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { BrowserRouter, Redirect, Link, Route, Switch, withRouter } from 'react-router-dom'
 
 
 
@@ -33,6 +33,11 @@ export default function Sidebar() {
             backgroundColor: theme.palette.background.default,
             padding: theme.spacing(3),
         },
+        sidenav_text: {
+            textDecoration: 'none',
+            fontSize: 18
+
+        }
     }));
 
     const classes = useStyles()
@@ -50,13 +55,19 @@ export default function Sidebar() {
             <div className={classes.toolbar} />
             <Divider />
             <List>
-                {['Article List', 'Alerts', 'Social Media'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+
+                <ListItem>
+                    <ListItemText><Link to="/article-list" className={classes.sidenav_text} >Article List</Link></ListItemText>
+                </ListItem>
+                <ListItem>
+                    <Link to="/alerts" className={classes.sidenav_text} >Alerts</Link>
+                </ListItem>
+                <ListItem>
+                    <Link to="/social-media" className={classes.sidenav_text} >Social Media</Link>
+                </ListItem>
+
             </List>
-        </Drawer>);
+        </Drawer >);
 
 }
 

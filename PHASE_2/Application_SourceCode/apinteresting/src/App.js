@@ -4,6 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Sidebar from './Components/Sidebar'
 import Navbar from './Components/Navbar'
+import Home from './Components/Home'
+import Map from './Components/Map'
+import Alerts from './Components/Alerts'
+import SocialMedia from './Components/SocialMedia'
+import ArticleList from './Components/ArticleList'
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
+
 
 const drawerWidth = 240;
 
@@ -37,12 +44,23 @@ export default function App() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Navbar />
-      <Sidebar />
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <div>This is the skeleton.</div>
-      </main>
-    </div>
+
+      <BrowserRouter>
+        <Navbar />
+        <Sidebar />
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          <Switch>
+            <Route path="/map" component={Map} />
+            <Route path="/alerts" component={Alerts} />
+            <Route path="/article-list" component={ArticleList} />
+            <Route path="/social-media" component={SocialMedia} />
+            <Route path="/" component={Home} />
+          </Switch>
+
+
+        </main>
+      </BrowserRouter>
+    </div >
   );
 }

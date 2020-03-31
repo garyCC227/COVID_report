@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Sidebar from './Components/Sidebar'
 import Navbar from './Components/Navbar'
 import Home from './Components/Home'
+import Map from './Components/Map'
 import { BrowserRouter, Redirect, Link, Route, Switch, withRouter } from 'react-router-dom'
 
 
@@ -43,10 +44,14 @@ export default function App() {
       <Navbar />
       <Sidebar />
       <BrowserRouter>
-        <Route path="/" component={Home}
         <main className={classes.content}>
           <div className={classes.toolbar} />
-        <div>This is the skeleton.</div>
+          <Switch>
+            <Route path="/map" component={Map} />
+            <Route path="/" component={Home} />
+          </Switch>
+
+
         </main>
       </BrowserRouter>
     </div >

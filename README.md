@@ -14,8 +14,8 @@
 | D1    | Week 3 | 03/03/2020 17:00 |
 | D2 API specification URL | Week 5 | 17/03/2020 17:00 |
 | D2    | Week 6 | 24/03/2020 17:00 |
-| D3    | Week 8 |      |
-| D4    | Week 11 |     |
+| D3    | Week 8 | 06/04/2020 10:30 |
+| D4    | Week 11 | 27/04/2020 10:30 |
 
 ### Spec & Code
 
@@ -28,10 +28,10 @@
 ### Deliverables
 - [x] Design Details (D1) [Link](https://github.com/websterzh/SENG3011_APInteresting/blob/master/Reports/DesignDetails.md)
 - [x] Management Information (D1) [Link](https://github.com/websterzh/SENG3011_APInteresting/blob/master/Reports/ManagementInformation.md)
-- [x] **Swagger Documentation (D2) (https://apinteresting.xyz/docs/)**
-- [x] **API Endpoint (D2) (https://apinteresting.xyz/v1)**
-- [ ] **Design Details (D2)**
-- [ ] **Testing Scripts & Documentation (D2)**
+- [x] Swagger Documentation (D2) (https://apinteresting.xyz/docs/)
+- [x] API Endpoint (D2) (https://apinteresting.xyz/v1)
+- [x] Design Details (D2)
+- [x] Testing Scripts & Documentation (D2)
 - [ ] Final Report
 
 ### Submit

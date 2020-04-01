@@ -25,15 +25,15 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-export default function Sidebar() {
+export default function Sidebar(props) {
 
     const classes = useStyles();
     return (
         <AppBar position="fixed" className={classes.appBar}>
             <Toolbar>
                 <Typography variant="h6" noWrap>
-                    APInteresting
-          </Typography>
+                    {props.pageName}
+                </Typography>
             </Toolbar>
         </AppBar>
     )

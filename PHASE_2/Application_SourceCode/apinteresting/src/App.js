@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -38,15 +38,17 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
+
 export default function App() {
   const classes = useStyles();
+  const [title, setTitle] = useState('Home');
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-
       <BrowserRouter>
-        <Navbar />
+        <Navbar pageName={title} />
         <Sidebar />
         <main className={classes.content}>
           <div className={classes.toolbar} />

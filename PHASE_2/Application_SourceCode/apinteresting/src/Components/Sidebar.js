@@ -5,7 +5,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import Drawer from '@material-ui/core/Drawer';
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter, Redirect, Link, Route, Switch, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Toolbar } from '@material-ui/core';
 
 
 
@@ -33,15 +34,25 @@ export default function Sidebar() {
             backgroundColor: theme.palette.background.default,
             padding: theme.spacing(3),
         },
-        sidenav_text: {
+        sideNavText: {
             textDecoration: 'none',
-            fontSize: 18
-
+            fontSize: '1rem',
+            color: '#000',
         }
     }));
 
     const classes = useStyles()
 
+    const [state, setState] = React.useState({
+        left: false
+    });
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+
+        setState({ ...state, [anchor]: open });
+    };
 
     return (
         <Drawer
@@ -52,19 +63,30 @@ export default function Sidebar() {
             }}
             anchor="left"
         >
-            <div className={classes.toolbar} />
+            <Toolbar><b>SENG3011 - APInteresting</b></Toolbar>
             <Divider />
             <List>
 
-                <ListItem>
-                    <ListItemText><Link to="/article-list" className={classes.sidenav_text} >Article List</Link></ListItemText>
-                </ListItem>
-                <ListItem>
-                    <Link to="/alerts" className={classes.sidenav_text} >Alerts</Link>
-                </ListItem>
-                <ListItem>
-                    <Link to="/social-media" className={classes.sidenav_text} >Social Media</Link>
-                </ListItem>
+                <Link to="/" className={classes.sideNavText}>
+                    <ListItem button>
+                        <ListItemText>Home</ListItemText>
+                    </ListItem>
+                </Link>
+                <Link to="/article-list" className={classes.sideNavText}>
+                    <ListItem button>
+                        <ListItemText>Article List</ListItemText>
+                    </ListItem>
+                </Link>
+                <Link to="/social-media" className={classes.sideNavText}>
+                    <ListItem button>
+                        <ListItemText>Social Media</ListItemText>
+                    </ListItem>
+                </Link>
+                <Link to="/alerts" className={classes.sideNavText}>
+                    <ListItem button>
+                        <ListItemText>Alerts</ListItemText>
+                    </ListItem>
+                </Link>
 
             </List>
         </Drawer >);

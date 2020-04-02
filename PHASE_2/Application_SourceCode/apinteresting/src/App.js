@@ -8,8 +8,8 @@ import Home from './Components/Home'
 import Map from './Components/Map'
 import Alerts from './Components/Alerts'
 import SocialMedia from './Components/SocialMedia'
-import ArticleList from './Components/ArticleList'
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
+import ArticleListPage from './Components/ArticleListPage';
 
 
 const drawerWidth = 240;
@@ -55,7 +55,7 @@ export default function App() {
           <Switch>
             <Route path="/map" component={Map} />
             <Route path="/alerts" component={Alerts} />
-            <Route path="/article-list" component={ArticleList} />
+            <Route path="/article-list" component={ArticleListPage} />
             <Route path="/social-media" component={SocialMedia} />
             <Route path="/" component={Home} />
           </Switch>

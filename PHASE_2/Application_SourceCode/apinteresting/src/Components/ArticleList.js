@@ -5,6 +5,7 @@ import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import Link from '@material-ui/core/Link';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,71 +32,73 @@ export default function ArticleList() {
   const classes = useStyles();
 
   return (
-    <List className={classes.root}>
-      <ListItem alignItems="flex-start">
-        <ListItemText
-          primary={
-            <div>
-              <Link href="https://www.google.com/" color="inherit">
-                <h3>{data.headline}</h3>
-              </Link>
-            </div>
-          }
-          secondary={
-            <React.Fragment>
-              {data.date_of_publication}
-              <span> - </span>
-              <Link href={data.url}>{data.url}</Link>
-              <br />
-              <p className={classes.previewText}>{data.main_text}</p>
-            </React.Fragment>
-          }
-        />
+    <Box m={1}>
+      <List className={classes.root}>
+        <ListItem alignItems="flex-start">
+          <ListItemText
+            primary={
+              <div>
+                <Link href="https://www.google.com/" color="inherit">
+                  <h3>{data.headline}</h3>
+                </Link>
+              </div>
+            }
+            secondary={
+              <React.Fragment>
+                {data.date_of_publication}
+                <span> - </span>
+                <Link href={data.url}>{data.url}</Link>
+                <br />
+                <p className={classes.previewText}>{data.main_text}</p>
+              </React.Fragment>
+            }
+          />
 
-      </ListItem>
-      <Divider component="li" />
-      <ListItem alignItems="flex-start">
-        <ListItemText
-          primary={
-            <div>
-              <Link href="https://www.google.com/" color="inherit">
-                <h3>{data.headline}</h3>
-              </Link>
-            </div>
-          }
-          secondary={
-            <React.Fragment>
-              {data.date_of_publication}
-              <span> - </span>
-              <Link href={data.url}>{data.url}</Link>
-              <br />
-              <p className={classes.previewText}>{data.main_text}</p>
-            </React.Fragment>
-          }
-        />
+        </ListItem>
+        <Divider component="li" />
+        <ListItem alignItems="flex-start">
+          <ListItemText
+            primary={
+              <div>
+                <Link href="https://www.google.com/" color="inherit">
+                  <h3>{data.headline}</h3>
+                </Link>
+              </div>
+            }
+            secondary={
+              <React.Fragment>
+                {data.date_of_publication}
+                <span> - </span>
+                <Link href={data.url}>{data.url}</Link>
+                <br />
+                <p className={classes.previewText}>{data.main_text}</p>
+              </React.Fragment>
+            }
+          />
 
-      </ListItem>
-      <Divider component="li" /><ListItem alignItems="flex-start">
-        <ListItemText
-          primary={
-            <div>
-              <Link href="https://www.google.com/" color="inherit">
-                <h3>{data.headline}</h3>
-              </Link>
-            </div>
-          }
-          secondary={
-            <React.Fragment>
-              {data.date_of_publication}
-              <span> - </span>
-              <Link href={data.url}>{data.url}</Link>
-              <br />
-              <p className={classes.previewText}>{data.main_text}</p>
-            </React.Fragment>
-          }
-        />
+        </ListItem>
+        <Divider component="li" /><ListItem alignItems="flex-start">
+          <ListItemText
+            primary={
+              <div>
+                <Link href="https://www.google.com/" color="inherit">
+                  <h3>{data.headline}</h3>
+                </Link>
+              </div>
+            }
+            secondary={
+              <React.Fragment>
+                {data.date_of_publication}
+                <span> - </span>
+                <Link href={data.url}>{data.url}</Link>
+                <br />
+                <p className={classes.previewText}>{data.main_text}</p>
+              </React.Fragment>
+            }
+          />
 
-      </ListItem>
-    </List>
+        </ListItem>
+      </List>
+    </Box>
   );
 }

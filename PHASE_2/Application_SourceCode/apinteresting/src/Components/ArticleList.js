@@ -21,22 +21,13 @@ import Box from '@material-ui/core/Box';
 // }));
 
 
-const data = {
-  "id": "046fu6uh96V9zlcVlUTK",
-  "url": "http://www.cidrap.umn.edu/news-perspective/2020/02/canada-lebanon-report-iran-linked-covid-19-cases-concerns-rise",
-  "date_of_publication": "2020-02-21 23:05:21",
-  "headline": "Canada, Lebanon report Iran-linked COVID-19 cases as concerns rise",
-  "main_text": "University of Minnesota. Driven to Discover.Following recent reports of COV..."
-}
-
-
 class ArticleList extends React.Component{
   constructor(){
     super();
   }
 
   render(){
-    const articles = this.props.articles.map(function(){ 
+    const articles = this.props.articles.map(function(data){ 
       return(
         <div>
          <ListItem alignItems="flex-start">

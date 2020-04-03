@@ -4,57 +4,76 @@ import Divider from "@material-ui/core/Divider";
 import ArticleSearchToolbar from "./ArticleSearchToolbar";
 import ArticleList from "./ArticleList";
 
-const data = {
-  id: "046fu6uh96V9zlcVlUTK",
+const invalid = {
+  id: "00000",
   url:
-    "http://www.cidrap.umn.edu/news-perspective/2020/02/canada-lebanon-report-iran-linked-covid-19-cases-concerns-rise",
-  date_of_publication: "2020-02-21 23:05:21",
+    "",
+  date_of_publication: "",
   headline:
-    "Canada, Lebanon report Iran-linked COVID-19 cases as concerns rise",
+    "Invalid Search..",
   main_text:
-    "University of Minnesota. Driven to Discover.Following recent reports of COV..."
+    "Please try again..."
 };
 
 class ArticleListPage extends React.Component {
   constructor() {
     super();
+
     this.state = {
-      articles: this.initValue()
+      articles: []
     };
 
     this.onSearchSubmit = this.onSearchSubmit.bind(this);
+    this.initValue = this.initValue.bind(this);
   }
 
   //TODO:
-  initValue() {
-    const url =
-      "https://apinteresting.xyz/v1/news?start_date=2020-02-15T00%3A00%3A00&end_date=2020-03-01T00%3A00%3A00&keyterms=coronavirus%2Cflu&location=China";
-    const lists = fetch(url, {
+  initValue = async ()=> {
+    const url ="https://apinteresting.xyz/v1/news?start_date=2020-03-01T00%3A00%3A00&end_date=2020-03-15T00%3A00%3A00&keyterms=coronavirus%2Cflu&location=China";
+    const lists = await fetch(url, {
       method: "GET",
       headers: { identity: "header" }
     })
       .then(res => {
-        console.log(res);
-        return res.json;
+        // console.log(res.json());
+        return res.json();
       })
       .then(res => {
+        // console.log(Array(res.data));
+        return res.data;
+      });
+    
+    this.setState({articles:lists})
+  }
+
+  componentDidMount(){
+    this.initValue();
+  }
+
+
+  //change to fetch later
+  onSearchSubmit = async (search_form) => {
+    var url = `https://apinteresting.xyz/v1/news?start_date=${search_form.start_date}:00&end_date=${search_form.end_date}:00&keyterms=${search_form.keyword}&location=${search_form.location}`;
+    const lists = await fetch(url, {
+      method: "GET",
+      headers: { identity: "header" }
+    })
+      .then(res => {
+        // console.log(res.json());
+        return res.json();
+      })
+      .then(res => {
+        // console.log(Array(res.data));
         return res.data;
       });
 
-    console.log(lists);
-    return [data];
-  }
-
-  //change to fetch later
-  onSearchSubmit(search_form) {
-    //TODO: change to fetch later
-    console.log(
-      search_form.start_date,
-      search_form.end_date,
-      search_form.location,
-      search_form.keyword
-    );
-    this.setState({ articles: [data, data, data] });
+    //TODO: handle invalid input
+    if (Array.isArray(lists) == true && lists.length > 0){
+      // console.log(lists);
+      this.setState({articles:lists});
+    }else{
+      this.setState({articles:[invalid]});
+    }
   }
 
   render() {

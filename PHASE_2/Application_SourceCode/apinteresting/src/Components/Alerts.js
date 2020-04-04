@@ -6,7 +6,13 @@ import Temp from './Temp';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import Box from '@material-ui/core/Box';
 import Button from "@material-ui/core/Button";
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
+import ListItemText from '@material-ui/core/ListItemText';
+import Link from '@material-ui/core/Link';
 
 
 import {
@@ -21,9 +27,34 @@ import {
   // customized marker on the map, compare function
 
 export default class Alerts extends React.Component {
+    state = {}
+    state = {
+      articles: [],
+    };
     constructor(){
         super();
     }
+
+    componentDidMount = () => {
+      console.log("Mounted")
+      var url = 'http://newsapi.org/v2/top-headlines?' +
+                'q=coronavirus&' +
+                'apiKey=cd9567c0810a4be09ec8558e5733d54c';
+      var req = new Request(url);
+      var alerts = new Array();
+
+      fetch(req)
+      .then(res => res.json())
+      .then(res => res.articles)
+      .then(res => {
+       //    this.setState({articles: newAlerts})
+       //    console.log("state", this.state.articles);
+       this.setState({ articles: res })
+       //console.log(res)
+       // this.addAlerts(res)
+     });
+    }
+
     render() {
         let styleobj = { font: "helvetica", fontSize: 35 , fontWeight: "bold"}
         return (
@@ -83,6 +114,40 @@ export default class Alerts extends React.Component {
                 <Button variant="contained" color="primary" type="submit">
                  Compare two country
                 </Button>
+                <Box m ={1}>
+                  <List style={{
+                      root: {
+                          width: '100%',
+                          },
+                      }}>
+                      {this.state.articles.map((item, index) => {
+                        //console.log(item)
+                        return (
+                        <ListItem alignItems="flex-start">
+                          <ListItemText
+                            primary={
+                              <div>
+                              <Link href={item.url} color="inherit">
+                              <h3>{item.title}</h3>
+                              </Link>
+                              </div>
+                            }
+                            secondary={
+                              <React.Fragment>
+                              {item.publishedAt}
+                              <span> - </span>
+                              <Link>{item.url}</Link>
+                              <br />
+                              <span style={{ color: '#000', }}>{item.content}</span>
+                              </React.Fragment>
+                            }
+                            />
+                            </ListItem>
+                          )
+                        })
+                      }
+                    </List>
+                  </Box >
             </div>
         );
       }

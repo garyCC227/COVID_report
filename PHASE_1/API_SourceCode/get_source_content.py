@@ -95,9 +95,9 @@ def fetch_resource_context(i):
   d["keyword_list"] = nlp_processer.get_keyword_list()
   
   json_file = json.dumps(d, indent = 2)
-  # json_file = json.loads(json_file)
   print(json_file)
-  # setDocument(json_file)
+  json_file = json.loads(json_file)
+  setDocument(json_file)
 
 if __name__ == "__main__":
     i = int(sys.argv[1])

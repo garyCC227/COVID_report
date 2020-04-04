@@ -123,7 +123,6 @@ def getAllDocuments():
 
 
 def setDocument(data):
-    print(data["headline"])
     # check if headline already exists
     if headlineExists(data["headline"]) is False:
         print("Writing data to database")

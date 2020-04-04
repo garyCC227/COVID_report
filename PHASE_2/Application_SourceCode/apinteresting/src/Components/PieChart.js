@@ -12,8 +12,14 @@ export default class PieChart extends React.Component {
 		const options = {
             animationEnabled: true,
             startAngle: 80,
+            animationDuration: 1000,
 			title: {
-				text: "Outbreak cases"
+                text: "  Outbreak Category",
+                verticalAlign: "top", // "top", "center", "bottom"
+				horizontalAlign: "left", // "left", "right", "center"
+				font: "helvetica",
+                fontWeight: "bold",
+                fontSize: "35"
 			},
 			// subtitles: [{
 			// 	text: "71% Positive",
@@ -33,7 +39,11 @@ export default class PieChart extends React.Component {
 				dataPoints: [
 					{ name: "Other", y: 2 },
 					{ name: "H1N5", y: 12 },
-					{ name: "Coronavirus", y: 235 }
+                    { name: "Coronavirus", y: 235 },
+                    { name: "Zika", y: 9 },
+					{ name: "Lassa Fever", y: 12 },
+                    { name: "Hantavirus", y: 18 },
+                    { name: "Hepatitis", y: 35 }
 				]
 			}]
 		}

@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import PieChart from './PieChart';
 
 
 
 
-
-export default function Alerts() {
-
-
-    return (
-        <div>This should be the alerts page!</div>
-    )
+export default class Alerts extends React.Component {
+    constructor(){
+        super();
+    }
+    render() {
+        return (
+            <div>
+                <PieChart/>
+            </div>
+        );
+      }
 }

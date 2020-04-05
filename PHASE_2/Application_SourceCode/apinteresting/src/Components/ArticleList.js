@@ -34,7 +34,7 @@ class ArticleList extends React.Component {
             <ListItemText
               primary={
                 <div>
-                  <Link href="https://www.google.com/" color="inherit">
+                  <Link href={data.url} color="inherit">
                     <h3>{data.headline}</h3>
                   </Link>
                 </div>
@@ -42,8 +42,6 @@ class ArticleList extends React.Component {
               secondary={
                 <React.Fragment>
                   {data.date_of_publication}
-                  <span> - </span>
-                  <Link href={data.url}>{data.url}</Link>
                   <br />
                   {data.main_text}
                 </React.Fragment>

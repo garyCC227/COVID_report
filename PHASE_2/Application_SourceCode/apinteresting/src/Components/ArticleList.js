@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
+import ArticleDialog from './ArticleDialog';
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -34,19 +35,20 @@ class ArticleList extends React.Component {
             <ListItemText
               primary={
                 <div>
-                  <Link href="https://www.google.com/" color="inherit">
+                  <Link href={data.url} color="inherit" target="_blank">
                     <h3>{data.headline}</h3>
                   </Link>
+
                 </div>
               }
               secondary={
                 <React.Fragment>
                   {data.date_of_publication}
-                  <span> - </span>
-                  <Link href={data.url}>{data.url}</Link>
                   <br />
                   {data.main_text}
+                  <ArticleDialog article={data} />
                 </React.Fragment>
+
               }
             />
           </ListItem>

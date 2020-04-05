@@ -45,6 +45,7 @@ export default class Alerts extends React.Component {
       //health, waiting to change to other api if needed
       var url = 'http://newsapi.org/v2/top-headlines?' +
                 'category=health&' +
+                'pageSize=5&' +
                 'apiKey=cd9567c0810a4be09ec8558e5733d54c';
       var req = new Request(url);
       var alerts = new Array();
@@ -78,37 +79,14 @@ export default class Alerts extends React.Component {
                 <br />
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
-                  <PieChart/>
-                  <br />
-                  <Temp/>
-                  <br />
                 </GridItem>
                 <GridItem xs={12} sm={12} md={6}>
-                <div>
-                    <b style = {styleobj}>Outbreak Location</b>
-                </div>
-                <StaticGoogleMap region = "AU" scale = "2" size="275x275" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center = "AU">
-                    <Marker.Group label="T" color="red" size="small">
-                        <Marker location="Perth" />
-                        <Marker location="Sydney" />
-                        <Marker location="Gold Coast" />
-                        <Marker location="Melbourn"/>
-                        <Marker location="Central Coast"/>
-                    </Marker.Group>
-                    <Marker.Group label="T" color="blue" size="small">
-                        <Marker location="Perth" />
-                        <Marker location="Aldelaide" />
-                    </Marker.Group>
-                    <Marker.Group label="T" color="green" size="small">
-                        <Marker location="Alice Spring" />
-                    </Marker.Group>
-                </StaticGoogleMap>
-                <Button variant="contained" color="primary" type="submit">
-                 Compare two country
-                </Button>
-                <br/>
                 </GridItem>
               </GridContainer>
+                <br />
+                <PieChart/>
+                <br />
+                <Temp/>
                 <br />
               <FormGroup style={{display: 'flex', flexDirection: 'row'}}>
                 <b style = {styleobj}>Display Disease: </b>
@@ -134,6 +112,31 @@ export default class Alerts extends React.Component {
                 />
             </FormGroup>
                 <LineChart/>
+                <br />
+                <div>
+                    <b style = {styleobj}>Outbreak Location</b>
+                </div>
+                <StaticGoogleMap region = "AU" scale = "2" size="275x275" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center = "AU">
+                    <Marker.Group label="T" color="red" size="small">
+                        <Marker location="Perth" />
+                        <Marker location="Sydney" />
+                        <Marker location="Gold Coast" />
+                        <Marker location="Melbourn"/>
+                        <Marker location="Central Coast"/>
+                    </Marker.Group>
+                    <Marker.Group label="T" color="blue" size="small">
+                        <Marker location="Perth" />
+                        <Marker location="Aldelaide" />
+                    </Marker.Group>
+                    <Marker.Group label="T" color="green" size="small">
+                        <Marker location="Alice Spring" />
+                    </Marker.Group>
+                </StaticGoogleMap>
+                <br />
+                <Button variant="contained" color="primary" type="submit">
+                 Compare two country
+                </Button>
+                <br />
                 <br />
                 <br />
                 <CardHeader color="info">

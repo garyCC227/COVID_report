@@ -45,7 +45,7 @@ class ArticleList extends React.Component {
                 <React.Fragment>
                   {data.date_of_publication}
                   <br />
-                  {data.main_text}
+                  <p>{data.main_text}</p>
                   <ArticleDialog article={data} />
                 </React.Fragment>
 
@@ -61,7 +61,6 @@ class ArticleList extends React.Component {
       <Box m={1}>
         <List className="">
           {articles}
-          {/* {lists} */}
         </List>
       </Box>
     );

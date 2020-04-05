@@ -7,57 +7,83 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 
-export default function ArticleDialog(props) {
-  const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState('paper');
-
-  const handleClickOpen = (scrollType) => () => {
-    setOpen(true);
-    setScroll(scrollType);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-
-  const descriptionElementRef = React.useRef(null);
-  React.useEffect(() => {
-    if (open) {
-      const { current: descriptionElement } = descriptionElementRef;
-      if (descriptionElement !== null) {
-        descriptionElement.focus();
+export default class ArticleDialog extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      open:false,
+      scroll:'paper',
+      report:{
+        url :'Loading...'
       }
     }
-  }, [open]);
+    this.onBoxOpen = this.onBoxOpen.bind(this);
+    this.onBoxClose = this.onBoxClose.bind(this);
+    
+  }
 
-  return (
-    <div>
-      <Button onClick={handleClickOpen('paper')} size="small" variant="outlined" color="primary">
-        View Report
-      </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        scroll={scroll}
-        aria-labelledby="scroll-dialog-title"
-        aria-describedby="scroll-dialog-description"
-      >
-        <DialogTitle>{props.article.headline}</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
-          <DialogContentText
-            ref={descriptionElementRef}
-            tabIndex={-1}
-          >
-            {`Report here`}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
-  );
+  GetReport = async () =>{
+    const url =`https://apinteresting.xyz/v1/news/${this.props.article.id}`
+    const res = await fetch(url, {
+      method: "GET",
+      headers: { identity: "header" }
+    })
+      .then(res => {
+        // console.log(res.json());
+        return res.json();
+      })
+      .then(res => {
+        // console.log(res.data);
+        return res.data;
+      });
+    console.log(res);
+    this.setState({report: res});
+  }
+
+  onBoxOpen(){
+    this.GetReport();
+    this.setState({open:true, scroll:'paper'});
+  }
+
+  onBoxClose(){
+    this.setState({open:false});
+  }
+
+
+  render(){
+
+    return (
+      <div>
+        <Button onClick={this.onBoxOpen} size="small" variant="outlined" color="primary">
+          View Report
+        </Button>
+        <Dialog
+          open={this.state.open}
+          onClose={this.onBoxClose}
+          scroll={this.state.scroll}
+          aria-labelledby="scroll-dialog-title"
+          aria-describedby="scroll-dialog-description"
+        >
+          <DialogTitle>{this.props.article.headline}</DialogTitle>
+          <DialogContent dividers={this.state.scroll === 'paper'}>
+            <DialogContentText
+              ref={this.state.descriptionElementRef}
+              tabIndex={-1}
+            >
+              <div>
+                <Button size="small" variant="outlined" color="primary"> <a href={this.state.report.url}> View Article</a> </Button>
+                <p>{'TODO: add style for reports'} </p>
+              </div>
+
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.onBoxClose} color="primary">
+              Cancel
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+    );
+  }
 }

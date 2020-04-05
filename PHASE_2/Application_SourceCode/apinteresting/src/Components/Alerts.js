@@ -166,18 +166,18 @@ export default class Alerts extends React.Component {
           Outbreak Location
         </Typography>
         <StaticGoogleMap region="AU" scale="2" size="350x350" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center="AU">
-          <Marker.Group label="T" color="red" size="small">
+          <Marker.Group label="T" color="red" size="tiny">
             <Marker location="Perth" />
             <Marker location="Sydney" />
             <Marker location="Gold Coast" />
             <Marker location="Melbourn" />
             <Marker location="Central Coast" />
           </Marker.Group>
-          <Marker.Group label="T" color="blue" size="small">
+          <Marker.Group label="T" color="blue" size="tiny">
             <Marker location="Perth" />
             <Marker location="Aldelaide" />
           </Marker.Group>
-          <Marker.Group label="T" color="green" size="small">
+          <Marker.Group label="T" color="green" size="tiny">
             <Marker location="Alice Spring" />
           </Marker.Group>
         </StaticGoogleMap>

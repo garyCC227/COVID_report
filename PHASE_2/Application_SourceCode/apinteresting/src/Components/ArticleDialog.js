@@ -72,7 +72,7 @@ export default class ArticleDialog extends React.Component {
             >
               <div>
                 <Button size="small" variant="outlined" color="primary"> <a href={this.state.report.url}> View Article</a> </Button>
-                <p>{'TODO: add style for reports'} </p>
+                <p>{JSON.stringify(this.state.report.reports)} </p>
               </div>
 
             </DialogContentText>

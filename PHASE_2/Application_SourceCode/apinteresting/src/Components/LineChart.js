@@ -30,33 +30,35 @@ export default class LineChart extends React.Component {
                 dockInsidePlotArea: true
             },
             data: [{
+                    type: "line",
+                    axisYType: "secondary",
+                    name: "All Cases",
+                    showInLegend: true,
+                    markerSize: 10,
+                    dataPoints: [
+                        { x: new Date("2020-03-28"), y: 13 },
+                        { x: new Date("2020-03-29"), y: 28 },
+                        { x: new Date("2020-03-30"), y: 49},
+                        { x: new Date("2020- 03- 31"), y: 65 },
+                        { x: new Date("2020- 04- 01"), y: 85 },
+                        { x: new Date("2020- 04- 02"), y: 107 },
+                        { x: new Date("2020-04- 03"), y: 148 }
+                    ]
+                },
+                {
                 type: "line",
                 axisYType: "secondary",
                 name: "Coronavirus Cases",
                 showInLegend: true,
                 markerSize: 10,
                 dataPoints: [
-                    { x: new Date("2020- 01- 01"), y: 12 },
-                    { x: new Date("2020- 01- 08"), y: 15 },
-					{ x: new Date("2020- 02- 20"), y: 15 },
-					{ x: new Date("2020- 03- 11"), y: 22 },
-					{ x: new Date("2020- 04- 05"), y: 11 },
-					{ x: new Date("2020- 05- 04"), y: 8 }
-                ]
-            },
-            {
-                type: "line",
-                axisYType: "secondary",
-                name: "All Cases",
-                showInLegend: true,
-                markerSize: 10,
-                dataPoints: [
-                    { x: new Date("2020- 01- 01"), y: 18 },
-                    { x: new Date("2020- 01- 08"), y: 19 },
-					{ x: new Date("2020- 02- 20"), y: 22 },
-					{ x: new Date("2020- 03- 11"), y: 33 },
-					{ x: new Date("2020- 04- 05"), y: 28 },
-					{ x: new Date("2020- 05- 04"), y: 17 }
+                    { x: new Date("2020-03-28"), y: 11 },
+                    { x: new Date("2020-03-29"), y: 26 },
+					{ x: new Date("2020-03-30"), y: 46},
+                    { x: new Date("2020- 03- 31"), y: 62 },
+                    { x: new Date("2020- 04- 01"), y: 81 },
+					{ x: new Date("2020- 04- 02"), y: 98 },
+					{ x: new Date("2020-04- 03"), y: 123 }
                 ]
             },
             {
@@ -66,12 +68,13 @@ export default class LineChart extends React.Component {
                 showInLegend: true,
                 markerSize: 10,
                 dataPoints: [
-                    { x: new Date("2020- 01- 01"), y: 1 },
-                    { x: new Date("2020- 01- 08"), y: 2 },
-					{ x: new Date("2020- 02- 20"), y: 5 },
-					{ x: new Date("2020- 03- 11"), y: 8 },
-					{ x: new Date("2020- 04- 05"), y: 8 },
-					{ x: new Date("2020- 05- 04"), y: 9 }
+                    { x: new Date("2020-03-28"), y: 1 },
+                    { x: new Date("2020-03-29"), y: 3 },
+					{ x: new Date("2020-03-30"), y: 6},
+                    { x: new Date("2020- 03- 31"), y: 6 },
+                    { x: new Date("2020- 04- 01"), y: 6 },
+					{ x: new Date("2020- 04- 02"), y: 6 },
+					{ x: new Date("2020-04- 03"), y: 7 }
                 ]
             }]
 		}

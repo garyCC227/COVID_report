@@ -20,6 +20,12 @@ export default class PieChart extends React.Component {
                 fontWeight: "bold",
                 fontSize: "35"
 			},
+			subtitles: [{
+				text: "Total 148 Cases",
+				verticalAlign: "center",
+				fontSize: 22,
+				dockInsidePlotArea: true
+			}],
             legend:{
                 verticalAlign: "bottom",
                 horizontalAlign: "center"
@@ -30,13 +36,12 @@ export default class PieChart extends React.Component {
 				indexLabel: "{name}: {y} cases",
 				// yValueFormatString: "#,###'%'",
 				dataPoints: [
-					{ name: "Other", y: 2 },
-					{ name: "H1N5", y: 12 },
-                    { name: "Coronavirus", y: 235 },
+					{ name: "Swine Fever", y: 2 },
+					{ name: "Dengue", y: 7 },
+                    { name: "Coronavirus", y: 122 },
                     { name: "Zika", y: 9 },
-					{ name: "Lassa Fever", y: 12 },
-                    { name: "Hantavirus", y: 18 },
-                    { name: "Hepatitis", y: 35 }
+					{ name: "Lassa Fever", y: 3 },
+                    { name: "Hantavirus", y: 5 },
 				]
 			}]
 		}

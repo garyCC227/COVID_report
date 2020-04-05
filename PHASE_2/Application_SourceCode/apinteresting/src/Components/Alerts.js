@@ -107,28 +107,6 @@ export default class Alerts extends React.Component {
           justify="center"
           alignItems="center"
         >
-          <FormGroup row>
-            <FormControlLabel
-              control={<Checkbox name="gilad" checked="true" color="primary" />}
-              label="Total"
-            />
-            <FormControlLabel
-              control={<Checkbox name="jason" checked="true" color="primary" />}
-              label="Coronavirus"
-            />
-            <FormControlLabel
-              control={<Checkbox name="antoine" color="primary" />}
-              label="H1N5"
-            />
-            <FormControlLabel
-              control={<Checkbox name="antoine" color="primary" />}
-              label="Zika"
-            />
-            <FormControlLabel
-              control={<Checkbox name="antoine" checked="true" color="primary" />}
-              label="Other"
-            />
-          </FormGroup>
         </Grid>
         <br />
         <Divider />
@@ -140,6 +118,36 @@ export default class Alerts extends React.Component {
         <br />
         <Divider />
         <br />
+        <FormGroup row>
+            <FormControlLabel
+              control={<Checkbox name="gilad" checked="true" color="primary" />}
+              label="Total"
+            />
+            <FormControlLabel
+              control={<Checkbox name="jason" checked="true" color="primary" />}
+              label="Coronavirus"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary" />}
+              label="Swine Fever"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary" />}
+              label="Zika"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" checked="true" color="primary"  />}
+              label="Dengue"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary"  />}
+              label="Lassa Fever"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary"   />}
+              label="Hantavirus"
+            />
+          </FormGroup>
         <Typography variant="h5">
           Accumulated Cases
         </Typography>

@@ -45,6 +45,10 @@ export default class AlertSearchBar extends React.Component {
     this.setState({ country: evt.target.value });
   }
 
+  componentDidMount() {
+    this.setPreviousDaysPeriod(7);
+  }
+
   setPreviousDaysPeriod(numOfDate) {
     const today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');

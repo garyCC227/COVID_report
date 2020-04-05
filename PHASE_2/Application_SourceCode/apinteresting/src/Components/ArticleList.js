@@ -21,41 +21,41 @@ import Box from '@material-ui/core/Box';
 // }));
 
 
-class ArticleList extends React.Component{
-  constructor(){
+class ArticleList extends React.Component {
+  constructor() {
     super();
   }
 
-  render(){
-    const articles = this.props.articles.map(function(data){ 
-      return(
-        <div>
-         <ListItem alignItems="flex-start">
-           <ListItemText
-             primary={
-               <div>
-                 <Link href="https://www.google.com/" color="inherit">
-                   <h3>{data.headline}</h3>
-                 </Link>
-               </div>
-             }
-             secondary={
-               <React.Fragment>
-                 {data.date_of_publication}
-                 <span> - </span>
-                 <Link href={data.url}>{data.url}</Link>
-                 <br />
-                 <p className="">{data.main_text}</p>
-               </React.Fragment>
-             }
-           />
-       </ListItem>
-       <Divider component="li"/>
-       </div>
-         );
-     });
+  render() {
+    const articles = this.props.articles.map(function (data) {
+      return (
+        <div key={data.id}>
+          <ListItem alignItems="flex-start">
+            <ListItemText
+              primary={
+                <div>
+                  <Link href="https://www.google.com/" color="inherit">
+                    <h3>{data.headline}</h3>
+                  </Link>
+                </div>
+              }
+              secondary={
+                <React.Fragment>
+                  {data.date_of_publication}
+                  <span> - </span>
+                  <Link href={data.url}>{data.url}</Link>
+                  <br />
+                  {data.main_text}
+                </React.Fragment>
+              }
+            />
+          </ListItem>
+          <Divider component="li" />
+        </div>
+      );
+    });
 
-    return(
+    return (
       <Box m={1}>
         <List className="">
           {articles}

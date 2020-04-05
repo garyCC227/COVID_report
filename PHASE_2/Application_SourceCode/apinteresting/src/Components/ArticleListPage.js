@@ -20,10 +20,9 @@ class ArticleListPage extends React.Component {
     this.initValue = this.initValue.bind(this);
   }
 
-  //TODO:
   initValue = async () => {
     const url =
-      "https://apinteresting.xyz/v1/news?start_date=2020-03-01T00%3A00%3A00&end_date=2020-03-15T00%3A00%3A00&keyterms=coronavirus%2Cflu&location=China";
+      "https://apinteresting.xyz/v1/news?start_date=2020-03-03T12%3A56%3A00&end_date=2020-03-03T12%3A57%3A00&keyterms=coronavirus%2Cflu&location=China";
     const lists = await fetch(url, {
       method: "GET",
       headers: { identity: "header" }

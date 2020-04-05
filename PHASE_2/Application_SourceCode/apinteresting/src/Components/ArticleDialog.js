@@ -41,6 +41,16 @@ export default class ArticleDialog extends React.Component {
     this.setState({ report: res });
   }
 
+  exportAsJson(json) {
+    const element = document.createElement("a");
+    const file = new Blob([JSON.stringify(json)], { type: 'text/plain' });
+    element.href = URL.createObjectURL(file);
+    element.download = "export.json";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+
   onBoxOpen() {
     this.GetReport();
     this.setState({ open: true, scroll: 'paper' });
@@ -136,8 +146,15 @@ export default class ArticleDialog extends React.Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.onBoxClose} color="primary">
-              Cancel
+            <Button
+              onClick={() => this.exportAsJson(this.state.report.reports)}
+              color="primary"
+              variant="outlined"
+            >
+              Export As Json
+            </Button>
+            <Button onClick={this.onBoxClose} color="primary" variant="contained">
+              OK
             </Button>
           </DialogActions>
         </Dialog>

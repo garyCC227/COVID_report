@@ -76,45 +76,12 @@ export default class Alerts extends React.Component {
                 <br />
                 <AlertSearchBar/>
                 <br />
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
-                  <PieChart/>
-                  <br />
-                  <Temp/>
-                  <br />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                <div>
-                    <b style = {styleobj}>Outbreak Location</b>
-                </div>
-                <StaticGoogleMap region = "AU" scale = "2" size="275x275" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center = "AU">
-                    <Marker.Group label="T" color="red" size="small">
-                        <Marker location="Perth" />
-                        <Marker location="Sydney" />
-                        <Marker location="Gold Coast" />
-                        <Marker location="Melbourn"/>
-                        <Marker location="Central Coast"/>
-                    </Marker.Group>
-                    <Marker.Group label="T" color="blue" size="small">
-                        <Marker location="Perth" />
-                        <Marker location="Aldelaide" />
-                    </Marker.Group>
-                    <Marker.Group label="T" color="green" size="small">
-                        <Marker location="Alice Spring" />
-                    </Marker.Group>
-                </StaticGoogleMap>
-                <Button variant="contained" color="primary" type="submit">
-                 Compare two country
-                </Button>
-                <br/>
-                </GridItem>
-              </GridContainer>
-                <br />
-              <FormGroup style={{display: 'flex', flexDirection: 'row'}}>
+                <PieChart/>
+                <FormGroup style={{display: 'flex', flexDirection: 'row'}}>
                 <b style = {styleobj}>Display Disease: </b>
                 <FormControlLabel
                     control={<Checkbox  name="gilad" checked= "true"/>}
-                    label="All"
+                    label="Total"
                 />
                 <FormControlLabel
                     control={<Checkbox  name="jason" checked= "true"/>}
@@ -133,10 +100,37 @@ export default class Alerts extends React.Component {
                     label="Other"
                 />
             </FormGroup>
-                <LineChart/>
+                  <br />
+                  <LineChart/>
+                  <br />
+                  <Temp/>
+                  <br />
+                  <div>
+                    <b style = {styleobj}>Outbreak Location</b>
+                </div>
+                  <StaticGoogleMap region = "AU" scale = "2" size="350x350" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center = "AU">
+                      <Marker.Group label="T" color="red" size="small">
+                          <Marker location="Perth" />
+                          <Marker location="Sydney" />
+                          <Marker location="Gold Coast" />
+                          <Marker location="Melbourn"/>
+                          <Marker location="Central Coast"/>
+                      </Marker.Group>
+                      <Marker.Group label="T" color="blue" size="small">
+                          <Marker location="Perth" />
+                          <Marker location="Aldelaide" />
+                      </Marker.Group>
+                      <Marker.Group label="T" color="green" size="small">
+                          <Marker location="Alice Spring" />
+                      </Marker.Group>
+                  </StaticGoogleMap>
+                <Button variant="contained" color="primary" type="submit">
+                 Compare two country
+                </Button>
                 <br />
                 <br />
-                <CardHeader color="info">
+                <br />
+                {/* <CardHeader color="info">
                   <h2>Health Care</h2>
                   <p>
                   <a target="_blank" >
@@ -177,7 +171,7 @@ export default class Alerts extends React.Component {
                         })
                       }
                     </List>
-                  </Box >
+                  </Box > */}
             </div>
         );
       }

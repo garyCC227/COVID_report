@@ -152,6 +152,10 @@ export default class AlertSearchBar extends React.Component {
           <Button variant="contained" color="primary" type="submit">
             Go
           </Button>
+          &nbsp;
+          <Button variant="contained" variant="outlined" disabled color="primary" type="submit">
+            Compare Two Countries
+        </Button>
         </form>
       </Box>
     );

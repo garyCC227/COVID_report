@@ -11,7 +11,6 @@ export default class Temp extends React.Component {
 			exportEnabled: true,
 			theme: "light1", // "light1", "dark1", "dark2"
 			title:{
-                text: "  New Cases",
                 verticalAlign: "top", // "top", "center", "bottom"
                 horizontalAlign: "left", // "left", "right", "center"
                 font: "helvetica",

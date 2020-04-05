@@ -14,19 +14,12 @@ export default class PieChart extends React.Component {
             startAngle: 80,
             animationDuration: 1000,
 			title: {
-                text: "  Outbreak Category",
                 verticalAlign: "top", // "top", "center", "bottom"
 				horizontalAlign: "left", // "left", "right", "center"
 				font: "helvetica",
                 fontWeight: "bold",
                 fontSize: "35"
 			},
-			// subtitles: [{
-			// 	text: "71% Positive",
-			// 	verticalAlign: "center",
-			// 	fontSize: 24,
-			// 	dockInsidePlotArea: true
-            // }],
             legend:{
                 verticalAlign: "bottom",
                 horizontalAlign: "center"

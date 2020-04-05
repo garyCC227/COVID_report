@@ -22,6 +22,7 @@ import {
   Marker,
   Path,
 } from 'react-static-google-map';
+import { Typography, Grid } from '@material-ui/core';
 
 
 // To Do
@@ -29,12 +30,35 @@ import {
 // customized marker on the map, compare function
 
 export default class Alerts extends React.Component {
-  state = {}
-  state = {
-    articles: [],
-  };
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      articles: [],
+      // TODO: FIXME: Hard-coded
+      diseases: [
+        "Total",
+        "Coronavirus",
+        "H1N5",
+        "Zika",
+        "Other",
+      ],
+      display: {
+        "Total": false,
+        "Coronavirus": false,
+        "H1N5": false,
+        "Zika": false,
+        "Other": false,
+      }
+    }
+
+    this.toggleDisplay = this.toggleDisplay.bind(this)
+  }
+
+  toggleDisplay(disease) {
+    const displayState = { ...this.state.display }
+    displayState[disease] = !displayState[disease]
+    this.setState({ display: displayState })
   }
 
   componentDidMount = () => {
@@ -74,49 +98,65 @@ export default class Alerts extends React.Component {
             </a>
           </p>
         </CardHeader>
-        <br />
         <AlertSearchBar />
+        <Divider />
         <br />
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
-          </GridItem>
-        </GridContainer>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+          <FormGroup row>
+            <FormControlLabel
+              control={<Checkbox name="gilad" checked="true" color="primary" />}
+              label="Total"
+            />
+            <FormControlLabel
+              control={<Checkbox name="jason" checked="true" color="primary" />}
+              label="Coronavirus"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary" />}
+              label="H1N5"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary" />}
+              label="Zika"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" checked="true" color="primary" />}
+              label="Other"
+            />
+          </FormGroup>
+        </Grid>
         <br />
+        <Divider />
+        <br />
+        <Typography variant="h5">
+          Outbreaks
+        </Typography>
         <PieChart />
         <br />
-        <FormGroup style={{ display: 'flex', flexDirection: 'row' }}>
-          <b style={styleobj}>Display Disease: </b>
-          <FormControlLabel
-            control={<Checkbox name="gilad" checked="true" />}
-            label="Total"
-          />
-          <FormControlLabel
-            control={<Checkbox name="jason" checked="true" />}
-            label="Coronavirus"
-          />
-          <FormControlLabel
-            control={<Checkbox name="antoine" />}
-            label="H1N5"
-          />
-          <FormControlLabel
-            control={<Checkbox name="antoine" />}
-            label="Zika"
-          />
-          <FormControlLabel
-            control={<Checkbox name="antoine" checked="true" />}
-            label="Other"
-          />
-        </FormGroup>
+        <Divider />
         <br />
+        <Typography variant="h5">
+          Accumulated Cases
+        </Typography>
         <LineChart />
         <br />
+        <Divider />
+        <br />
+        <Typography variant="h5">
+          New Cases
+        </Typography>
         <Temp />
         <br />
-        <div>
-          <b style={styleobj}>Outbreak Location</b>
-        </div>
+        <Divider />
+        <br />
+        <Typography variant="h5">
+          Outbreak Location
+        </Typography>
         <StaticGoogleMap region="AU" scale="2" size="350x350" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center="AU">
           <Marker.Group label="T" color="red" size="small">
             <Marker location="Perth" />
@@ -133,9 +173,7 @@ export default class Alerts extends React.Component {
             <Marker location="Alice Spring" />
           </Marker.Group>
         </StaticGoogleMap>
-        <Button variant="contained" color="primary" type="submit">
-          Compare two country
-                </Button>
+        <br />
         <br />
         <br />
         <br />
@@ -181,7 +219,7 @@ export default class Alerts extends React.Component {
                       }
                     </List>
                   </Box > */}
-      </div>
+      </div >
     );
   }
 }

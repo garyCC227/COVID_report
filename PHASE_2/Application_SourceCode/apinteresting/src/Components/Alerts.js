@@ -18,155 +18,174 @@ import GridItem from "./Style/GridItem.js";
 import GridContainer from "./Style/GridContainer.js";
 
 import {
-    StaticGoogleMap,
-    Marker,
-    Path,
-  } from 'react-static-google-map';
+  StaticGoogleMap,
+  Marker,
+  Path,
+} from 'react-static-google-map';
+import { Typography, Grid } from '@material-ui/core';
 
 
-  // To Do
-  // Css, Call real API from group Pigeons, Pass those data chart
-  // customized marker on the map, compare function
+// To Do
+// Css, Call real API from group Pigeons, Pass those data chart
+// customized marker on the map, compare function
 
 export default class Alerts extends React.Component {
-    state = {}
-    state = {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       articles: [],
-    };
-    constructor(){
-        super();
+      // TODO: FIXME: Hard-coded
+      diseases: [
+        "Total",
+        "Coronavirus",
+        "H1N5",
+        "Zika",
+        "Other",
+      ],
+      display: {
+        "Total": false,
+        "Coronavirus": false,
+        "H1N5": false,
+        "Zika": false,
+        "Other": false,
+      }
     }
 
-    componentDidMount = () => {
-      console.log("Mounted")
+    this.toggleDisplay = this.toggleDisplay.bind(this)
+  }
 
-      // TO DO
-      // Currently this is calling from google news api for category
-      //health, waiting to change to other api if needed
-      var url = 'http://newsapi.org/v2/top-headlines?' +
-                'category=health&' +
-                'pageSize=5&' +
-                'apiKey=cd9567c0810a4be09ec8558e5733d54c';
-      var req = new Request(url);
-      var alerts = new Array();
+  toggleDisplay(disease) {
+    const displayState = { ...this.state.display }
+    displayState[disease] = !displayState[disease]
+    this.setState({ display: displayState })
+  }
 
-      fetch(req)
+  componentDidMount = () => {
+    console.log("Mounted")
+
+    // TO DO
+    // Currently this is calling from google news api for category
+    //health, waiting to change to other api if needed
+    var url = 'http://newsapi.org/v2/top-headlines?' +
+      'category=health&' +
+      'pageSize=5&' +
+      'apiKey=cd9567c0810a4be09ec8558e5733d54c';
+    var req = new Request(url);
+    var alerts = new Array();
+
+    fetch(req)
       .then(res => res.json())
       .then(res => res.articles)
       .then(res => {
-       //    this.setState({articles: newAlerts})
-       //    console.log("state", this.state.articles);
-       this.setState({ articles: res })
-       //console.log(res)
-       // this.addAlerts(res)
-     });
-    }
+        //    this.setState({articles: newAlerts})
+        //    console.log("state", this.state.articles);
+        this.setState({ articles: res })
+        //console.log(res)
+        // this.addAlerts(res)
+      });
+  }
 
-    render() {
-        let styleobj = { font: "helvetica", fontSize: 35 , fontWeight: "bold"}
-        return (
-            <div >
-              <CardHeader color="danger">
-                <h2>Alerts</h2>
-                <p>
-                <a target="_blank" >
-                Outbreak Alerts from Google News
-                </a>
-                </p>
-              </CardHeader>
-                <br />
-                <AlertSearchBar/>
-                <br />
-              <GridContainer>
-                <GridItem xs={12} sm={12} md={6}>
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                </GridItem>
-              </GridContainer>
-                <br />
-                <PieChart/>
-                <br />
-                <Temp/>
-                <br />
-              <FormGroup style={{display: 'flex', flexDirection: 'row'}}>
-                <b style = {styleobj}>Display Disease: </b>
-                <FormControlLabel
-                    control={<Checkbox  name="gilad" checked= "true"/>}
-                    label="Total"
-                />
-                <FormControlLabel
-                    control={<Checkbox  name="jason" checked= "true"/>}
-                    label="Coronavirus"
-                />
-                <FormControlLabel
-                    control={<Checkbox  name="antoine"/>}
-                    label="H1N5"
-                />
-                <FormControlLabel
-                    control={<Checkbox  name="antoine" />}
-                    label="Zika"
-                />
-                <FormControlLabel
-                    control={<Checkbox  name="antoine" checked= "true"/>}
-                    label="Other"
-                />
-            </FormGroup>
-                  <br />
-                  <LineChart/>
-                  <br />
-                  <Temp/>
-                  <br />
-                  <div>
-                    <b style = {styleobj}>Outbreak Location</b>
-                </div>
-                  <StaticGoogleMap region = "AU" scale = "2" size="350x350" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center = "AU">
-                      <Marker.Group label="T" color="red" size="small">
-                          <Marker location="Perth" />
-                          <Marker location="Sydney" />
-                          <Marker location="Gold Coast" />
-                          <Marker location="Melbourn"/>
-                          <Marker location="Central Coast"/>
-                      </Marker.Group>
-                      <Marker.Group label="T" color="blue" size="small">
-                          <Marker location="Perth" />
-                          <Marker location="Aldelaide" />
-                      </Marker.Group>
-                      <Marker.Group label="T" color="green" size="small">
-                          <Marker location="Alice Spring" />
-                      </Marker.Group>
-                  </StaticGoogleMap>
-                <Button variant="contained" color="primary" type="submit">
-                 Compare two country
-                </Button>
-                <br />
-                <br />
-                <div>
-                    <b style = {styleobj}>Outbreak Location</b>
-                </div>
-                <StaticGoogleMap region = "AU" scale = "2" size="275x275" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center = "AU">
-                    <Marker.Group label="T" color="red" size="small">
-                        <Marker location="Perth" />
-                        <Marker location="Sydney" />
-                        <Marker location="Gold Coast" />
-                        <Marker location="Melbourn"/>
-                        <Marker location="Central Coast"/>
-                    </Marker.Group>
-                    <Marker.Group label="T" color="blue" size="small">
-                        <Marker location="Perth" />
-                        <Marker location="Aldelaide" />
-                    </Marker.Group>
-                    <Marker.Group label="T" color="green" size="small">
-                        <Marker location="Alice Spring" />
-                    </Marker.Group>
-                </StaticGoogleMap>
-                <br />
-                <Button variant="contained" color="primary" type="submit">
-                 Compare two country
-                </Button>
-                <br />
-                <br />
-                <br />
-                {/* <CardHeader color="info">
+  render() {
+    let styleobj = { font: "helvetica", fontSize: 35, fontWeight: "bold" }
+    return (
+      <div >
+        <CardHeader color="danger">
+          <h2>Alerts</h2>
+          <p>
+            <a target="_blank" >
+              Outbreak Alerts from Google News
+            </a>
+          </p>
+        </CardHeader>
+        <AlertSearchBar />
+        <Divider />
+        <br />
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+        </Grid>
+        <br />
+        <Divider />
+        <br />
+        <Typography variant="h5">
+          Outbreaks
+        </Typography>
+        <PieChart />
+        <br />
+        <Divider />
+        <br />
+        <FormGroup row>
+            <FormControlLabel
+              control={<Checkbox name="gilad" checked="true" color="primary" />}
+              label="Total"
+            />
+            <FormControlLabel
+              control={<Checkbox name="jason" checked="true" color="primary" />}
+              label="Coronavirus"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary" />}
+              label="Swine Fever"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary" />}
+              label="Zika"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" checked="true" color="primary"  />}
+              label="Dengue"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary"  />}
+              label="Lassa Fever"
+            />
+            <FormControlLabel
+              control={<Checkbox name="antoine" color="primary"   />}
+              label="Hantavirus"
+            />
+          </FormGroup>
+        <Typography variant="h5">
+          Accumulated Cases
+        </Typography>
+        <LineChart />
+        <br />
+        <Divider />
+        <br />
+        <Typography variant="h5">
+          New Cases
+        </Typography>
+        <Temp />
+        <br />
+        <Divider />
+        <br />
+        <Typography variant="h5">
+          Outbreak Location
+        </Typography>
+        <StaticGoogleMap region="AU" scale="2" size="350x350" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center="AU">
+          <Marker.Group label="T" color="red" size="tiny">
+            <Marker location="Perth" />
+            <Marker location="Sydney" />
+            <Marker location="Gold Coast" />
+            <Marker location="Melbourn" />
+            <Marker location="Central Coast" />
+          </Marker.Group>
+          <Marker.Group label="T" color="blue" size="tiny">
+            <Marker location="Perth" />
+            <Marker location="Aldelaide" />
+          </Marker.Group>
+          <Marker.Group label="T" color="green" size="tiny">
+            <Marker location="Alice Spring" />
+          </Marker.Group>
+        </StaticGoogleMap>
+        <br />
+        <br />
+        <br />
+        <br />
+        {/* <CardHeader color="info">
                   <h2>Health Care</h2>
                   <p>
                   <a target="_blank" >
@@ -208,7 +227,7 @@ export default class Alerts extends React.Component {
                       }
                     </List>
                   </Box > */}
-            </div>
-        );
-      }
+      </div >
+    );
+  }
 }

@@ -14,19 +14,18 @@ export default class PieChart extends React.Component {
             startAngle: 80,
             animationDuration: 1000,
 			title: {
-                text: "  Outbreak Category",
                 verticalAlign: "top", // "top", "center", "bottom"
 				horizontalAlign: "left", // "left", "right", "center"
 				font: "helvetica",
                 fontWeight: "bold",
                 fontSize: "35"
 			},
-			// subtitles: [{
-			// 	text: "71% Positive",
-			// 	verticalAlign: "center",
-			// 	fontSize: 24,
-			// 	dockInsidePlotArea: true
-            // }],
+			subtitles: [{
+				text: "Total 148 Cases",
+				verticalAlign: "center",
+				fontSize: 22,
+				dockInsidePlotArea: true
+			}],
             legend:{
                 verticalAlign: "bottom",
                 horizontalAlign: "center"
@@ -37,13 +36,12 @@ export default class PieChart extends React.Component {
 				indexLabel: "{name}: {y} cases",
 				// yValueFormatString: "#,###'%'",
 				dataPoints: [
-					{ name: "Other", y: 2 },
-					{ name: "H1N5", y: 12 },
-                    { name: "Coronavirus", y: 235 },
+					{ name: "Swine Fever", y: 2 },
+					{ name: "Dengue", y: 7 },
+                    { name: "Coronavirus", y: 122 },
                     { name: "Zika", y: 9 },
-					{ name: "Lassa Fever", y: 12 },
-                    { name: "Hantavirus", y: 18 },
-                    { name: "Hepatitis", y: 35 }
+					{ name: "Lassa Fever", y: 3 },
+                    { name: "Hantavirus", y: 5 },
 				]
 			}]
 		}

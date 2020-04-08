@@ -79,12 +79,12 @@ export default function Sidebar() {
                 </Link>
                 <Link to="/social-media" className={classes.sideNavText}>
                     <ListItem button>
-                        <ListItemText>Social Media</ListItemText>
+                        <ListItemText>Social Impact</ListItemText>
                     </ListItem>
                 </Link>
                 <Link to="/alerts" className={classes.sideNavText}>
                     <ListItem button>
-                        <ListItemText>Alerts</ListItemText>
+                        <ListItemText>Outbreak Info</ListItemText>
                     </ListItem>
                 </Link>
 

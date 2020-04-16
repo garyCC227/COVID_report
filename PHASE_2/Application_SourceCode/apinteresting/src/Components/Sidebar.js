@@ -87,7 +87,11 @@ export default function Sidebar() {
                         <ListItemText>Outbreak Info</ListItemText>
                     </ListItem>
                 </Link>
-
+                <Link to="/health-care" className={classes.sideNavText}>
+                    <ListItem button>
+                        <ListItemText>Health Care</ListItemText>
+                    </ListItem>
+                </Link>
             </List>
         </Drawer >);
 

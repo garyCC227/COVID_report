@@ -67,8 +67,9 @@ export default class Alerts extends React.Component {
     // TO DO
     // Currently this is calling from google news api for category
     //health, waiting to change to other api if needed
-    var url = 'http://newsapi.org/v2/top-headlines?' +
-      'category=health&' +
+    var url = 'http://newsapi.org/v2/everything?' +
+      'q=outbreak&' +
+      'sortBy=popularity&' +
       'pageSize=5&' +
       'apiKey=cd9567c0810a4be09ec8558e5733d54c';
     var req = new Request(url);
@@ -90,13 +91,44 @@ export default class Alerts extends React.Component {
     let styleobj = { font: "helvetica", fontSize: 35, fontWeight: "bold" }
     return (
       <div >
-        <CardHeader color="danger">
+        <CardHeader color="primary">
           <h2>Alerts</h2>
           <p>
             <a target="_blank" >
               Outbreak Alerts from Google News
             </a>
           </p>
+          <Box m ={1}>
+              <List style={{
+                    root: {
+                        width: '100%',
+                            },
+              }}> {this.state.articles.map((item, index) => {
+                          //console.log(item)
+                          return (
+                          <ListItem alignItems="flex-start">
+                            <ListItemText
+                              primary={
+                                <div>
+                                <Link href={item.url} color="inherit">
+                                <h3>{item.title}</h3>
+                                </Link>
+                                </div>
+                              }
+                              secondary={
+                                <React.Fragment>
+                                {item.publishedAt}
+                                <br />
+                                <span style={{ color: '#000', }}>{item.content}</span>
+                                </React.Fragment>
+                              }
+                              />
+                              </ListItem>
+                            )
+                          })
+                        }
+                </List>
+            </Box >
         </CardHeader>
         <AlertSearchBar />
         <Divider />
@@ -185,48 +217,6 @@ export default class Alerts extends React.Component {
         <br />
         <br />
         <br />
-        {/* <CardHeader color="info">
-                  <h2>Health Care</h2>
-                  <p>
-                  <a target="_blank" >
-                  Prevent From disease
-                  </a>
-                  </p>
-                </CardHeader>
-                <Box m ={1}>
-                  <List style={{
-                      root: {
-                          width: '100%',
-                          },
-                      }}>
-                      {this.state.articles.map((item, index) => {
-                        //console.log(item)
-                        return (
-                        <ListItem alignItems="flex-start">
-                          <ListItemText
-                            primary={
-                              <div>
-                              <Link href={item.url} color="inherit">
-                              <h3>{item.title}</h3>
-                              </Link>
-                              </div>
-                            }
-                            secondary={
-                              <React.Fragment>
-                              {item.publishedAt}
-                              <span> - </span>
-                              <Link>{item.url}</Link>
-                              <br />
-                              <span style={{ color: '#000', }}>{item.content}</span>
-                              </React.Fragment>
-                            }
-                            />
-                            </ListItem>
-                          )
-                        })
-                      }
-                    </List>
-                  </Box > */}
       </div >
     );
   }

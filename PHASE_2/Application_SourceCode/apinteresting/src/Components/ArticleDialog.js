@@ -7,6 +7,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Alert } from '@material-ui/lab';
 import { Link, Divider } from '@material-ui/core';
+import ArticleReport from './ArticleReport'
 
 
 export default class ArticleDialog extends React.Component {
@@ -64,47 +65,11 @@ export default class ArticleDialog extends React.Component {
     if (!reports) {
       return (<div></div>);
     }
-    return reports.map((report) => (
-      <div>
-        <h3>Event Date</h3>
-        <div>{report.event_date}</div>
-        <h3>Addresses Mentioned</h3>
-        <div>
-          {
-            report.locations.map(function (el) {
-              return (
-                <li>{el.address} ({el.google_id})</li>
-              )
-            })
-          }
-        </div>
-        <h3>Diseases</h3>
-        {(report.diseases) &&
-          <div>
-            {
-              report.diseases.map(function (el) {
-                return (
-                  <li>{el}</li>
-                )
-              })
-            }
-          </div>
-        }
-        <h3>Syndromes</h3>
-        {(report.syndromes) &&
-          <div>
-            {
-              report.syndromes.map(function (el) {
-                return (
-                  <li>{el}</li>
-                )
-              })
-            }
-          </div>
-        }
-        <Divider />
-      </div>
-    ))
+    return <div>
+      {reports.map((report, i) => (
+        <ArticleReport report={report} index={i+1} />
+      ))}
+    </div>
   }
 
 
@@ -136,7 +101,6 @@ export default class ArticleDialog extends React.Component {
                   <Link href={this.state.report.url} target="_blank">View the article</Link>
                 </Alert>
                 <br />
-                <Divider />
                 {this.renderReports(this.state.report.reports)}
               </div>
               <div hidden={this.state.report.reports !== undefined}>

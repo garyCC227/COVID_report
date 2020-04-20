@@ -18,9 +18,9 @@ export default class AlertSearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      start_date: "2020-03-03",
-      end_date: "2020-03-03",
-      country: "Australia",
+      start_date: this.props.start_date,
+      end_date: this.props.end_date,
+      country: this.props.country,
     };
 
     this.onCountryChange = this.onCountryChange.bind(this);
@@ -31,6 +31,7 @@ export default class AlertSearchBar extends React.Component {
     this.fillLastTwoMonth = this.fillLastTwoMonth.bind(this);
     this.fillFortnight = this.fillLastWeek.bind(this);
     this.setPreviousDaysPeriod = this.setPreviousDaysPeriod.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
   onStartDateChange(evt) {
@@ -45,10 +46,6 @@ export default class AlertSearchBar extends React.Component {
     this.setState({ country: evt.target.value });
   }
 
-  componentDidMount() {
-    this.setPreviousDaysPeriod(7);
-  }
-
   setPreviousDaysPeriod(numOfDate) {
     const today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -60,9 +57,7 @@ export default class AlertSearchBar extends React.Component {
     dd = String(today.getDate()).padStart(2, '0');
     mm = String(today.getMonth() + 1).padStart(2, '0');
     yyyy = today.getFullYear();
-    const previousString = `${yyyy}-${mm}-${dd}`;
-    console.log(todayString)
-    console.log(previousString);
+    const previousString = `${yyyy}-${mm}-${dd}`;;
     this.setState({
       start_date: previousString,
       end_date: todayString
@@ -85,13 +80,16 @@ export default class AlertSearchBar extends React.Component {
     this.setPreviousDaysPeriod(60);
   }
 
-
+  onFormSubmit(evt) {
+    evt.preventDefault();
+    this.props.onSubmit(this.state);
+  }
 
   // User should able to use checkbox to represent start date and end date, or enter start date end date themselves.
   render() {
     return (
       <Box m={3}>
-        <form className="{classes.root}" noValidate autoComplete="on">
+        <form className="{classes.root}" noValidate autoComplete="on" onSubmit={this.onFormSubmit}>
           <div>
             <Grid container spacing={3}>
               <Grid item xs>
@@ -157,7 +155,7 @@ export default class AlertSearchBar extends React.Component {
             Go
           </Button>
           &nbsp;
-          <Button variant="contained" variant="outlined" disabled color="primary" type="submit">
+          <Button variant="contained outlined" color="primary" type="submit">
             Compare Two Countries
         </Button>
         </form>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardHeader from './Style/CardHeader.js'
 import { Typography, Grid } from '@material-ui/core';
+import StockChart from './StockChart.js';
 
 
 
@@ -16,10 +17,7 @@ class SocialMedia extends React.Component{
       Google Trend Chart
       </Typography>
       <Typography variant="h5">
-      Stock Price Chart
-      </Typography>
-      <Typography variant="h5">
-      Concurrency Chart
+        <StockChart />
       </Typography>
       </div>
     );

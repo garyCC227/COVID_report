@@ -29,14 +29,14 @@ export default class PieChart extends React.Component {
         // const result = Object.entries(rank).map(function(key, value){
         //   return {y:value, label:key}
         // })
-        console.log(res)
+        // console.log(res)
         return res.data;
       }).then(data =>{
-        console.log(data)
-        for (var key in Object.values(data)){
-          console.log(key)
+        var lists = []
+        for (var [key, value] of Object.entries(data)){
+          lists.push({y:value, label:key})
         }
-        return data
+        return lists
       });
     // console.log(rank.keys())
     this.setState({ranking: rank})
@@ -60,8 +60,7 @@ export default class PieChart extends React.Component {
 				legendText: "{label}",
 				indexLabelFontSize: 16,
 				indexLabel: "{label} - {y}%",
-				dataPoints: [this.state.ranking
-				]
+				dataPoints: this.state.ranking
 			}]
 		}
 		return (

@@ -7,6 +7,7 @@ import os
 import sys
 import re
 import itertools
+from pathlib import Path
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath('__file__'))))
 for root, dirs, files in os.walk(".."):
@@ -39,7 +40,9 @@ def getDiseaseRanking():
     #sort dict by value
     ret_dict = {k: v for k, v in sorted(ret_dict.items(), key=lambda item: item[1], reverse=True)}
     out = dict(itertools.islice(ret_dict.items(), 6))
-    print(out)
+    
+    with open(Path(sourcepath, 'DB/top6disease.json'), 'w') as f:
+      json.dump(out, f, default = lambda o: o.__dict__, sort_keys=True, indent=4)
     return out
 
 

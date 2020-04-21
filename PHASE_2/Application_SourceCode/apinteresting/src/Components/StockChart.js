@@ -12,11 +12,22 @@ import {
 } from '@devexpress/dx-react-chart-material-ui';
 
 import { withStyles } from '@material-ui/core/styles';
-import { Animation, ArgumentScale, EventTracker } from '@devexpress/dx-react-chart';
+import {
+  Animation, ArgumentScale, EventTracker,
+  ValueScale
+} from '@devexpress/dx-react-chart';
 import GetCovid19Data from './../Actions/GetCovid19Data';
 import GetStockPrices from './../Actions/GetStockPrices';
 
 
+const stockDetails = [
+  //{ "code": "^DJI", "name": "Dow Jones", "range": [0, 1] },
+  { "code": "^GSPC", "name": "S&P 500", "range": [0, 1] },
+  { "code": "^IXIC", "name": "Nasdaq", "range": [0, 1] },
+  { "code": "^AXJO", "name": "S&P/ASX 200", "range": [0, 1] },
+  { "code": "000001.SS", "name": "SSE Composite", "range": [0, 1] },
+  { "code": "^AORD", "name": "ALL ORDINARIES", "range": [0, 1] },
+];
 const format = () => tick => tick;
 const legendStyles = () => ({
   root: {
@@ -88,6 +99,15 @@ const ValueLabel = (props) => {
   );
 };
 
+const WorldwideLabel = (props) => {
+  const { text } = props;
+  return (
+    <ValueAxis.Label
+      {...props}
+    />
+  );
+};
+
 const titleStyles = {
   title: {
     whiteSpace: 'pre',
@@ -118,6 +138,11 @@ const normalizeData = (dataset, propertyName) => {
     const notNullValue = dataset.map(el => el[name]).filter((el) => el != null);
     const min = Math.min(...notNullValue);
     const max = Math.max(...notNullValue);
+    stockDetails.forEach((el, index) => {
+      if (el.code == name) {
+        stockDetails[index].range = [min, max];
+      }
+    })/* 
     dataset = dataset.map(el => {
       if (el[name]) {
         const result = el;
@@ -126,8 +151,9 @@ const normalizeData = (dataset, propertyName) => {
       } else {
         return el;
       }
-    })
+    }) */
   });
+  console.log(stockDetails);
   return dataset
 }
 
@@ -137,21 +163,25 @@ const combineData = (data) => {
 }
 
 
+
 class StockChart extends React.PureComponent {
   constructor(props) {
     super(props);
+    const setStockDetails = stockDetails => this.setState({ stockDetails });
     const changeData = (data) => { this.setState({ data }) }
     Promise.all([
       GetCovid19Data(data => data),
-      GetStockPrices(["^DJI", "^GSPC"], (data => data), { "from": "2020-01-22" })
+      GetStockPrices(stockDetails.map(el => el.code), (data => data), { "from": "2020-01-22" })
     ])
       .then((result) => {
-        const data = combineData(result)
+        const data = combineData(result);
         changeData(data);
+        setStockDetails(stockDetails);
       });
     this.state = {
       data: [],
-      targetItem: undefined,
+      targetItem: null,
+      stockDetails: stockDetails,
     };
 
     this.changeTargetItem = targetItem => this.setState({ targetItem });
@@ -171,26 +201,57 @@ class StockChart extends React.PureComponent {
           data={chartData}
           className={classes.chart}
         >
+
           <ArgumentAxis tickFormat={format} labelComponent={ArgumentLabel} />
           <ValueAxis
             max={50}
             labelComponent={ValueLabel}
           />
+
+          <ValueScale
+            name="worldwide"
+            modifyDomain={() => [0, 2500000]}
+          />
+          <ValueAxis
+            position="right"
+            labelComponent={WorldwideLabel}
+            scaleName="worldwide"
+          />
           <LineSeries
             name="Confirmed Cases Worldwide"
-            valueField="worldwideNormalized"
+            valueField="worldwide"
             argumentField="date"
-          />
+            scaleName="worldwide"
+          />{/* 
+          <ValueScale
+            name="^DJI"
+            modifyDomain={() => }
+          /> */}
+          {this.state.stockDetails.map((value, index) => {
+            return <ValueScale
+              name={value.code}
+              modifyDomain={() => value.range}
+            />
+          })}
+          {this.state.stockDetails.map((value, index) => {
+            return <LineSeries
+              name={value.name}
+              valueField={value.code}
+              argumentField="date"
+            />
+          })}{/* 
           <LineSeries
             name="Dow Jones"
-            valueField="^DJINormalized"
+            valueField="^DJI"
             argumentField="date"
-          />
+            scaleName="^DJI"
+          /> */}
+          {/* 
           <LineSeries
             name="S&P 500"
             valueField="^GSPCNormalized"
             argumentField="date"
-          />
+          /> */}
 
           <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
           <Title

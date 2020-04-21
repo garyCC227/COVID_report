@@ -4,6 +4,7 @@ import GoogleTrendChart from './GoogleTrendChart.js'
 import TrendQuestionCov19 from './TrendQuestionCov19.js'
 import CovSearchTrend from './CovSearchTrend.js'
 import DiseaseTopicTrend from './DiseaseTopicTrend.js'
+import PieChart from './Piechart1.js'
 
 export default class Home extends React.Component {
   constructor() {
@@ -51,6 +52,12 @@ export default class Home extends React.Component {
             <div class="w3-container">
               <h5> Disease Realted Topics Trend</h5>
               <DiseaseTopicTrend/>
+            </div>
+
+            <hr/>
+            <div class="w3-container">
+              <h5> Articles for each disease</h5>
+              <PieChart/>
             </div>
 
           </div>

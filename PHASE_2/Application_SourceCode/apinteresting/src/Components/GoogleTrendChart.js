@@ -29,7 +29,8 @@ export default class GoogleTrendChart extends Component {
             },
             {
                 "guestPath": "https://trends.google.com:443/trends/embed/"
-            })`
+            });
+            `
           }
         </ScriptTag>
       </div>

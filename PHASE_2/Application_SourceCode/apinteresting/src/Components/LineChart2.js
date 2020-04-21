@@ -3,7 +3,7 @@ import React from "react";
 import CanvasJSReact from './canvasjs.react';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-export default class LineChart extends React.Component {
+export default class LineChart2 extends React.Component {
 
     constructor(props){
 		super(props);
@@ -35,17 +35,12 @@ export default class LineChart extends React.Component {
             }
             var data_points = [];
 
-            var prev = 0;
-
             for (var k in dic) {
                 if (dic.hasOwnProperty(k)) {
                     data_points.push({"x" : new Date(k), "y" : dic[k]});
                 }
               }
-            data_points = data_points.sort((a,b) => a["x"] - b["x"]).map((key) => {
-                prev += key["y"];
-                return {"x" : key["x"], "y" : prev} 
-            })
+            data_points = data_points.sort((a,b) => a["x"] - b["x"])
             return {
                 type: "line",
                 axisYType: "secondary",
@@ -74,18 +69,14 @@ export default class LineChart extends React.Component {
                     total_list.push({"x" : new Date(o), "y" : total_dic[o]});
                 }
             }
-            var counter = 0;
-            total_list = total_list.sort((a,b) => a["x"] - b["x"]).map((key) => {
-                counter += key["y"];
-                return {"x" : key["x"], "y" : counter} 
-            })
+            total_list = total_list.sort((a,b) => a["x"] - b["x"]);
             data.push({
                 type: "line",
                 axisYType: "secondary",
                 name: "Total",
                 showInLegend: true,
                 markerSize: 13,
-                dataPoints: total_list.sort((a,b) => (a["x"] - b["x"]))}
+                dataPoints: total_list}
         )};
 		const options = {
             animationEnabled: true,

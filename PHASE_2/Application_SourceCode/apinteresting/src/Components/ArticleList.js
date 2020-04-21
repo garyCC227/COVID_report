@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import ArticleDialog from './ArticleDialog';
 
 // const useStyles = makeStyles((theme) => ({
@@ -46,6 +47,10 @@ class ArticleList extends React.Component {
                   {data.date_of_publication}
                   <br />
                   <p>{data.main_text}</p>
+                  <Button size="small" href={data.url} variant="outlined" color="primary">
+                    View Article
+                  </Button>
+                  &nbsp;
                   <ArticleDialog article={data} />
                 </React.Fragment>
 

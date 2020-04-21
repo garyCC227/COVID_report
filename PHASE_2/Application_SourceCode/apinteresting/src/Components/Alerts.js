@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PieChart from './PieChart';
 import LineChart from './LineChart';
 import AlertSearchBar from './AlertSearchBar';
-import Temp from './Temp';
+import Temp from './LineChart2';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -23,6 +23,7 @@ import {
   Path,
 } from 'react-static-google-map';
 import { Typography, Grid } from '@material-ui/core';
+import AlertsSingleCountry from './AlertsSingleCountry';
 
 
 // To Do
@@ -32,6 +33,19 @@ import { Typography, Grid } from '@material-ui/core';
 export default class Alerts extends React.Component {
   constructor(props) {
     super(props);
+
+    const today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+    const todayString = `${yyyy}-${mm}-${dd}`;
+
+    today.setDate(today.getDate() - 15);
+    dd = String(today.getDate()).padStart(2, '0');
+    mm = String(today.getMonth() + 1).padStart(2, '0');
+    yyyy = today.getFullYear();
+    const previousString = `${yyyy}-${mm}-${dd}`;
+    console.log(previousString);
 
     this.state = {
       articles: [],
@@ -49,10 +63,14 @@ export default class Alerts extends React.Component {
         "H1N5": false,
         "Zika": false,
         "Other": false,
-      }
+      },
+      start_date: previousString,
+      end_date: todayString,
+      country: "Global"
     }
 
     this.toggleDisplay = this.toggleDisplay.bind(this)
+    this.update_search_query = this.update_search_query.bind(this)
   }
 
   toggleDisplay(disease) {
@@ -61,14 +79,22 @@ export default class Alerts extends React.Component {
     this.setState({ display: displayState })
   }
 
+  update_search_query(state) {
+    this.setState({
+      start_date : state.start_date,
+      end_date : state.end_date,
+      country : state.country
+    });
+  }
+
   componentDidMount = () => {
     console.log("Mounted")
-
     // TO DO
     // Currently this is calling from google news api for category
     //health, waiting to change to other api if needed
-    var url = 'http://newsapi.org/v2/top-headlines?' +
-      'category=health&' +
+    var url = 'http://newsapi.org/v2/everything?' +
+      'q=outbreak&' +
+      'sortBy=popularity&' +
       'pageSize=5&' +
       'apiKey=cd9567c0810a4be09ec8558e5733d54c';
     var req = new Request(url);
@@ -87,18 +113,51 @@ export default class Alerts extends React.Component {
   }
 
   render() {
+    console.log("aaa")
     let styleobj = { font: "helvetica", fontSize: 35, fontWeight: "bold" }
     return (
       <div >
-        <CardHeader color="danger">
+        <CardHeader color="primary">
           <h2>Alerts</h2>
           <p>
             <a target="_blank" >
               Outbreak Alerts from Google News
             </a>
           </p>
+          <Box m ={1}>
+              <List style={{
+                    root: {
+                        width: '100%',
+                            },
+              }}> {this.state.articles.map((item, index) => {
+                          //console.log(item)
+                          return (
+                          <ListItem alignItems="flex-start">
+                            <ListItemText
+                              primary={
+                                <div>
+                                <Link href={item.url} color="inherit">
+                                <h3>{item.title}</h3>
+                                </Link>
+                                </div>
+                              }
+                              secondary={
+                                <React.Fragment>
+                                {item.publishedAt}
+                                <br />
+                                <span style={{ color: '#000', }}>{item.content}</span>
+                                </React.Fragment>
+                              }
+                              />
+                              </ListItem>
+                            )
+                          })
+                        }
+                </List>
+            </Box >
         </CardHeader>
-        <AlertSearchBar />
+        <AlertSearchBar start_date = {this.state.start_date} end_date = {this.state.end_date} 
+          country = {this.state.country} onSubmit = {this.update_search_query}/>
         <Divider />
         <br />
         <Grid
@@ -109,124 +168,8 @@ export default class Alerts extends React.Component {
         >
         </Grid>
         <br />
-        <Divider />
-        <br />
-        <Typography variant="h5">
-          Outbreaks
-        </Typography>
-        <PieChart />
-        <br />
-        <Divider />
-        <br />
-        <FormGroup row>
-            <FormControlLabel
-              control={<Checkbox name="gilad" checked="true" color="primary" />}
-              label="Total"
-            />
-            <FormControlLabel
-              control={<Checkbox name="jason" checked="true" color="primary" />}
-              label="Coronavirus"
-            />
-            <FormControlLabel
-              control={<Checkbox name="antoine" color="primary" />}
-              label="Swine Fever"
-            />
-            <FormControlLabel
-              control={<Checkbox name="antoine" color="primary" />}
-              label="Zika"
-            />
-            <FormControlLabel
-              control={<Checkbox name="antoine" checked="true" color="primary"  />}
-              label="Dengue"
-            />
-            <FormControlLabel
-              control={<Checkbox name="antoine" color="primary"  />}
-              label="Lassa Fever"
-            />
-            <FormControlLabel
-              control={<Checkbox name="antoine" color="primary"   />}
-              label="Hantavirus"
-            />
-          </FormGroup>
-        <Typography variant="h5">
-          Accumulated Cases
-        </Typography>
-        <LineChart />
-        <br />
-        <Divider />
-        <br />
-        <Typography variant="h5">
-          New Cases
-        </Typography>
-        <Temp />
-        <br />
-        <Divider />
-        <br />
-        <Typography variant="h5">
-          Outbreak Location
-        </Typography>
-        <StaticGoogleMap region="AU" scale="2" size="350x350" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center="AU">
-          <Marker.Group label="T" color="red" size="tiny">
-            <Marker location="Perth" />
-            <Marker location="Sydney" />
-            <Marker location="Gold Coast" />
-            <Marker location="Melbourn" />
-            <Marker location="Central Coast" />
-          </Marker.Group>
-          <Marker.Group label="T" color="blue" size="tiny">
-            <Marker location="Perth" />
-            <Marker location="Aldelaide" />
-          </Marker.Group>
-          <Marker.Group label="T" color="green" size="tiny">
-            <Marker location="Alice Spring" />
-          </Marker.Group>
-        </StaticGoogleMap>
-        <br />
-        <br />
-        <br />
-        <br />
-        {/* <CardHeader color="info">
-                  <h2>Health Care</h2>
-                  <p>
-                  <a target="_blank" >
-                  Prevent From disease
-                  </a>
-                  </p>
-                </CardHeader>
-                <Box m ={1}>
-                  <List style={{
-                      root: {
-                          width: '100%',
-                          },
-                      }}>
-                      {this.state.articles.map((item, index) => {
-                        //console.log(item)
-                        return (
-                        <ListItem alignItems="flex-start">
-                          <ListItemText
-                            primary={
-                              <div>
-                              <Link href={item.url} color="inherit">
-                              <h3>{item.title}</h3>
-                              </Link>
-                              </div>
-                            }
-                            secondary={
-                              <React.Fragment>
-                              {item.publishedAt}
-                              <span> - </span>
-                              <Link>{item.url}</Link>
-                              <br />
-                              <span style={{ color: '#000', }}>{item.content}</span>
-                              </React.Fragment>
-                            }
-                            />
-                            </ListItem>
-                          )
-                        })
-                      }
-                    </List>
-                  </Box > */}
+        <AlertsSingleCountry start_date = {this.state.start_date} end_date = {this.state.end_date} 
+          country = {this.state.country} />               
       </div >
     );
   }

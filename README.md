@@ -15,7 +15,8 @@
 | D2 API specification URL | Week 5 | 17/03/2020 17:00 |
 | D2    | Week 6 | 24/03/2020 17:00 |
 | D3    | Week 8 | 06/04/2020 10:30 |
-| D4    | Week 11 | 27/04/2020 10:30 |
+| D4-Demo | Week 11 | 27/04/2020 10:30 |
+| D4-Report | Week 11 | 01/05/2020 17:00 |
 
 ### Spec & Code
 
@@ -24,6 +25,7 @@
 + D1 Spec: [Here](https://webcms3.cse.unsw.edu.au/static/uploads/course/SENG3011/20T1/214ce623c79c14d025178d276e412a20a829da1cf467dbf917031f14b6f73711/Week3_D1_Requirements.pdf)
 + D2 Spec: [Here](https://webcms3.cse.unsw.edu.au/static/uploads/course/SENG3011/20T1/9c388def8b481ef564d80c0f76c110a05de6e34c18cced798346ace9f8560049/Week5and6_D2_Requirements.pdf)
 + D3 Spec: [Here](https://webcms3.cse.unsw.edu.au/static/uploads/course/SENG3011/20T1/3b8a2b56fb9191744960486c9d0015cf2586cd325517499674b37e2468cd5bf0/Week8__D3_Demo_requirements_2020.pdf)
++ D4 Spec: [Here](https://webcms3.cse.unsw.edu.au/static/uploads/course/SENG3011/20T1/05714b7953c5f45f714b4720f88ec6b3db55eb24bb4e9cf415159ebec9b38a1f/Week11_D4_requirements.pdf)
 
 ### Deliverables
 - [x] Design Details (D1) [Link](https://github.com/websterzh/SENG3011_APInteresting/blob/master/Reports/DesignDetails.md)
@@ -32,6 +34,4 @@
 - [x] API Endpoint (D2) (https://apinteresting.xyz/v1)
 - [x] Design Details (D2)
 - [x] Testing Scripts & Documentation (D2)
-- [ ] Final Report
-
-### Submit
+- [ ] __Final Report(D4)__

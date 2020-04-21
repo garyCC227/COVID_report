@@ -8,6 +8,7 @@ import Home from './Components/Home'
 import Map from './Components/Map'
 import Alerts from './Components/Alerts'
 import SocialMedia from './Components/SocialMedia'
+import HealthCare from './Components/HealthCare'
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
 import ArticleListPage from './Components/ArticleListPage';
 
@@ -57,6 +58,7 @@ export default function App() {
             <Route path="/alerts" component={Alerts} />
             <Route path="/article-list" component={ArticleListPage} />
             <Route path="/social-media" component={SocialMedia} />
+            <Route path="/health-care" component={HealthCare} />
             <Route path="/" component={Home} />
           </Switch>
 

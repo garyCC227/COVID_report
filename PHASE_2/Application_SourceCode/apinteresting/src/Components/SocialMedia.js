@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
-import CardHeader from './Style/CardHeader.js'
-import { Typography, Grid } from '@material-ui/core';
+import StockChart from './StockChart.js';
+import GoogleTrendChart from './GoogleTrendChart.js'
 
 
 
-class SocialMedia extends React.Component{
-  constructor(){
+class SocialMedia extends Component {
+  constructor() {
     super();
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
-      <Typography variant="h5">
-      Google Trend Chart
-      </Typography>
-      <Typography variant="h5">
-      Stock Price Chart
-      </Typography>
-      <Typography variant="h5">
-      Concurrency Chart
-      </Typography>
+        <GoogleTrendChart />
+        <StockChart />
       </div>
     );
   }

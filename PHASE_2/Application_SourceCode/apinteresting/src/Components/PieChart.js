@@ -4,24 +4,65 @@ import CanvasJSReact from './canvasjs.react';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 export default class PieChart extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+		super(props);
+		this.state = {
+			data_list : props.data_list,
+			country : props.country
+		}
+		this.same_data_list = this.same_data_list.bind();
     }
 
+	same_data_list(list1, list2) {
+		if (list1.length != list2.length) {
+			return false;
+		}
+		var i = 0;
+		while (list1[i]) {
+			if (list1[i]["Name"] != list2[i]["Name"] || list1[i]["Cases"] != list2[i]["Cases"]) {
+				return false;
+			}
+			i++;
+		}
+		return true;
+	}
+
+    componentWillReceiveProps(nextProps) {
+        if (!this.same_data_list(this.props.data_list, nextProps.data_list) || this.props.country !== nextProps.country) {
+            this.setState({data_list : nextProps.data_list,
+                country : nextProps.country});
+        }
+      }
+
 	render() {
+		var data_points = [];
+		var sub_title = 0;
+		var i = 0;
+		var indexLabel = "{name}: {y} cases";
+		while (this.state.data_list[i]) {
+			const data = {name: this.state.data_list[i]["Name"], y: this.state.data_list[i]["Cases"].length};
+			sub_title += this.state.data_list[i]["Cases"].length;
+			data_points.push(data);
+			i++;
+		}
+		if (data_points.length == 0) {
+			indexLabel = "";
+			data_points= [{ name: "Outbreak", y: 1 }];
+		}
 		const options = {
             animationEnabled: true,
             startAngle: 80,
             animationDuration: 1000,
 			title: {
+				text: this.state.country + " Overview",
                 verticalAlign: "top", // "top", "center", "bottom"
-				horizontalAlign: "left", // "left", "right", "center"
+				horizontalAlign: "center", // "left", "right", "center"
 				font: "helvetica",
                 fontWeight: "bold",
                 fontSize: "35"
 			},
 			subtitles: [{
-				text: "Total 148 Cases",
+				text: "Total " + sub_title +" Cases",
 				verticalAlign: "center",
 				fontSize: 22,
 				dockInsidePlotArea: true
@@ -33,16 +74,9 @@ export default class PieChart extends React.Component {
 			data: [{
 				type: "doughnut",
 				showInLegend: true,
-				indexLabel: "{name}: {y} cases",
+				indexLabel: indexLabel,
 				// yValueFormatString: "#,###'%'",
-				dataPoints: [
-					{ name: "Swine Fever", y: 2 },
-					{ name: "Dengue", y: 7 },
-                    { name: "Coronavirus", y: 122 },
-                    { name: "Zika", y: 9 },
-					{ name: "Lassa Fever", y: 3 },
-                    { name: "Hantavirus", y: 5 },
-				]
+				dataPoints: data_points
 			}]
 		}
 		return (

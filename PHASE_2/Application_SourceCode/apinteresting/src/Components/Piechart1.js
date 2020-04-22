@@ -55,19 +55,11 @@ export default class PieChart extends React.Component {
 			data: [{
 				type: "pie",
 				startAngle: 75,
-<<<<<<< HEAD
-				toolTipContent: "<b>{label}</b>: {y} cases",
-				showInLegend: "true",
-				legendText: "{label}",
-				indexLabelFontSize: 16,
-				indexLabel: "{label} : {y} cases",
-=======
 				toolTipContent: "<b>{label}</b>: {y}",
 				showInLegend: "true",
 				legendText: "{label}",
 				indexLabelFontSize: 16,
 				indexLabel: "{label} - {y} cases",
->>>>>>> 4bdd7fb9a77bb49fed532ff77ba54e4072dcaf30
 				dataPoints: this.state.ranking
 			}]
 		}

@@ -40,7 +40,7 @@ export default class Alerts extends React.Component {
     let yyyy = today.getFullYear();
     const todayString = `${yyyy}-${mm}-${dd}`;
 
-    today.setDate(today.getDate() - 15);
+    today.setDate(today.getDate() - 7);
     dd = String(today.getDate()).padStart(2, '0');
     mm = String(today.getMonth() + 1).padStart(2, '0');
     yyyy = today.getFullYear();

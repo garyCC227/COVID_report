@@ -12,13 +12,6 @@ export default class LineChart extends React.Component {
             display_total : props.display_total
 		}
     }
-    static getDerivedStateFromProps(nextProps, prevState){
-        if(nextProps.data_list!==prevState.data_list || nextProps.display_total!==prevState.display_total){
-          return { data_list: nextProps.data_list,
-                    display_total:  nextProps.display_total};
-       }
-       else return null;
-     }
 
 	render() {
         var data = this.state.data_list.filter((key) => key["is_checked"]).map((key) => {
@@ -116,7 +109,6 @@ export default class LineChart extends React.Component {
 		return (
 		<div>
 			<CanvasJSChart options = {options}
-				/* onRef={ref => this.chart = ref} */
 			/>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>

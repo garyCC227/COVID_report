@@ -56,14 +56,18 @@ export default class Home extends Component {
 
             <hr/>
             <div class="w3-container">
-              <h5> Articles for each disease</h5>
+              <h2 class="w3-center" style={{'fontFamily':'serif'}}> <b>Disease Articles in Database</b></h2>
               <PieChart/>
             </div>
 
             <hr/>
             <div class="w3-container">
-              <h5> Cov19</h5>
+            <h2 class="w3-center" style={{'fontFamily':'serif'}}> <b>Cov-19 Situation</b></h2>
               <Cov19Table/>
+              <div class="extra content w3-text-grey">
+                <i class="time icon"></i>
+                Just Now
+              </div>
             </div>
 
           </div>

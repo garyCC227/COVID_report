@@ -50,16 +50,16 @@ export default class PieChart extends React.Component {
 			exportEnabled: true,
 			animationEnabled: true,
 			title: {
-				text: "Articles for each disease"
+				text: ""
 			},
 			data: [{
 				type: "pie",
 				startAngle: 75,
-				toolTipContent: "<b>{label}</b>: {y}%",
+				toolTipContent: "<b>{label}</b>: {y}",
 				showInLegend: "true",
 				legendText: "{label}",
 				indexLabelFontSize: 16,
-				indexLabel: "{label} - {y}%",
+				indexLabel: "{label} - {y} cases",
 				dataPoints: this.state.ranking
 			}]
 		}

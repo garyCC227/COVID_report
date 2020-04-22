@@ -191,8 +191,7 @@ export default class Cov19Table extends React.Component {
   OnPageLoad = async ()=>{
     var url = `https://lab.isaaclin.cn/nCoV/api/area?lang=en`;
     var rows = await fetch(url, {
-      method: "GET",
-      headers: { identity: "header" }
+      method: "GET"
     })
       .then(res => {
         // console.log(res.json());

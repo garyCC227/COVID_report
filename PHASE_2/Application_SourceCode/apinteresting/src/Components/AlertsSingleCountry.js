@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PieChart from './PieChart';
 import LineChart from './LineChart';
+import AlertMap from './AlertMap';
 import AlertSearchBar from './AlertSearchBar';
 import LineChart2 from './LineChart2';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -12,6 +13,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 
+import Loader from 'react-loader-spinner'
 
 import {
   StaticGoogleMap,
@@ -30,21 +32,30 @@ export default class AlertsSingleCountry extends React.Component {
             end_date : this.props.end_date,
             country : this.props.country,
             display_total : true,
+            loading: true,
             second_country : "", // reserved for comparasion
             diseases : [],
-            diseases_second : [] // reserved for comparasion
+            diseases_second : [], // reserved for comparasion
+            colours : ["blue", "red", "green", "purple", "yellow", "ltblue", "pink", "orange"],
+            marker_group : [],
+            state_id: 0
         }
         this.fetch_disease = this.fetch_disease.bind();
         this.create_form_label = this.create_form_label.bind();
         this.map_name = this.map_name.bind();
         this.handleTotalCheckBox = this.handleTotalCheckBox.bind();
         this.handleNormalCheckBox = this.handleNormalCheckBox.bind();
+        this.create_marker_group = this.create_marker_group.bind();
+        this.create_marker = this.create_marker.bind();
+        this.renderMarkers = this.renderMarkers.bind();
     }
 
     handleNormalCheckBox = (e) => {
       var new_data = this.state.diseases;
       new_data[e.target.value]["is_checked"] = e.target.checked;
-      this.setState({diseases: new_data});
+      var id = this.state.state_id + 1;
+      this.setState({diseases: new_data,
+        state_id : id});
     }
 
     handleTotalCheckBox = () => {
@@ -71,6 +82,50 @@ export default class AlertsSingleCountry extends React.Component {
       return name;
     }
 
+    renderMarkers = async () => {
+      try {
+        const temp = await Promise.all(this.state.diseases.map((key,i) => this.create_marker_group(key,i)));
+        this.setState({
+          marker_group: temp
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    create_marker = async (key) => {
+      const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + key["City"] + "," + key["Country"] + "&key=AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0";
+      const data = await fetch(url).then(res => res.json());
+      if (data["status"] == "OK") {
+        const lat = data["results"][0]["geometry"]["location"]["lat"] + Math.random()/2 -0.25;
+        const lng = data["results"][0]["geometry"]["location"]["lng"] + Math.random()/2 -0.25;
+        const loc = lat.toString() + "," + lng.toString();
+        console.log("success");
+        return <Marker location = {loc}/>
+      }
+      console.log(data["status"]);
+      await new Promise(r => setTimeout(r, 500));
+      return <Marker location = "Shanghai, China"/>
+    }
+
+    create_marker_group = async  (key,i) => {
+      const url = "https://maps.gstatic.com/mapfiles/ms2/micons/" + this.state.colours[i] + "-dot.png";
+      const temp = key["Cases"].filter((key,i) => {
+        if (this.state.country == "Global" || this.state.country == "global") {
+          if (i < 6) {
+            return true;
+          } else {
+            return i%10 == 0;
+          }
+        }
+        return true;
+      }).map(k =>  this.create_marker(k));
+      const markers = await Promise.all(temp);
+      return <Marker.Group label="T" size="tiny"  iconURL = {url}>
+        {markers}
+    </Marker.Group>
+    }
+
     create_form_label = (key,i) => {
         return  <FormControlLabel
               control={<Checkbox name="antoine" value = {i} checked={key["is_checked"]} color="primary" onClick = {this.handleNormalCheckBox}/>}
@@ -79,6 +134,7 @@ export default class AlertsSingleCountry extends React.Component {
     }
 
     fetch_disease = async () => {
+        this.setState({loading: true});
         const url =
           "http://ken.crestruction.org:8000/user/epidemicInfo";
         var country_name = this.state.country;
@@ -102,7 +158,8 @@ export default class AlertsSingleCountry extends React.Component {
             return res.json();
           })
         if (lists["Message"]) {
-          this.setState({diseases : []})
+          this.setState({diseases : []});
+          // this.renderMarkers();
         } else {
           const diseases = lists.filter((key) => key["Name"] !== "General News").map((key,i) => {
             var checked = false;
@@ -111,15 +168,20 @@ export default class AlertsSingleCountry extends React.Component {
             }
             return {"Name" : this.map_name(key["Name"]), "Cases" : key["Cases"], "is_checked" : checked};
           })
-          this.setState({diseases : diseases})
+          this.setState({diseases : diseases});
+          // this.renderMarkers();
         }
-        console.log("fetch new result")
+        console.log("fetch new result");
+        this.setState({loading: false});
       };
 
     componentDidMount() {
-        this.fetch_disease();
+      this.fetch_disease();
     }
 
+    test = async () => {
+      await this.fetch_disease();
+    }
     
     componentDidUpdate(prevProps, prevState) {
       
@@ -128,7 +190,13 @@ export default class AlertsSingleCountry extends React.Component {
       // console.log(prevState)
       // console.log(this.state)
       if (prevState.start_date !== this.state.start_date || prevState.end_date !== this.state.end_date || prevState.country !== this.state.country) {
-        this.fetch_disease();
+        this.fetch_disease()
+        return ;
+      }
+      if (prevState.diseases !== this.state.diseases ) {
+        console.log("update disease")
+        // this.renderMarkers();
+        return;
       }
     }
 
@@ -141,9 +209,20 @@ export default class AlertsSingleCountry extends React.Component {
       }
 
     render() {
-        let styleobj = { font: "helvetica", fontSize: 35, fontWeight: "bold" }
+        let styleobj = { font: "helvetica", fontSize: 35, fontWeight: "bold" };
+        const loading = this.state.loading;
         return (
           <div >
+            {loading ? 
+
+            <Loader
+            type="Bars"
+            color="#00BFFF"
+            height={170}
+            width={350}
+            /> 
+            : 
+            <div>
             <Divider />
             <br />
             <Typography variant="h5">
@@ -177,26 +256,13 @@ export default class AlertsSingleCountry extends React.Component {
             <Typography variant="h5">
               Outbreak Location
             </Typography>
-            <StaticGoogleMap region="AU" scale="2" size="350x350" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center="AU">
-              <Marker.Group label="T" color="red" size="tiny">
-                <Marker location="Perth" />
-                <Marker location="Sydney" />
-                <Marker location="Gold Coast" />
-                <Marker location="Melbourn" />
-                <Marker location="Central Coast" />
-              </Marker.Group>
-              <Marker.Group label="T" color="blue" size="tiny">
-                <Marker location="Perth" />
-                <Marker location="Aldelaide" />
-              </Marker.Group>
-              <Marker.Group label="T" color="green" size="tiny">
-                <Marker location="Alice Spring" />
-              </Marker.Group>
-            </StaticGoogleMap>
+            <AlertMap data_list = {this.state.diseases} country = {this.state.country} state_id = {this.state.state_id}/>
             <br />
             <br />
             <br />
             <br />
+            </div>
+            }
           </div >
         );
       }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ScriptTag from 'react-script-tag';
 import GoogleTrendChart from './GoogleTrendChart.js'
 import TrendQuestionCov19 from './TrendQuestionCov19.js'
 import CovSearchTrend from './CovSearchTrend.js'
@@ -7,7 +6,7 @@ import DiseaseTopicTrend from './DiseaseTopicTrend.js'
 import PieChart from './Piechart1.js'
 import Cov19Table from './Cov19Table.js'
 
-export default class Home extends React.Component {
+export default class Home extends Component {
   constructor() {
     super();
     this.ref = React.createRef();

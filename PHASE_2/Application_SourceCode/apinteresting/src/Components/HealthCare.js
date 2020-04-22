@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
-import { Typography, Grid } from '@material-ui/core';
 import GridItem from "./Style/GridItem.js";
 import GridContainer from "./Style/GridContainer.js";
 import Card from "./Style/Card.js";
 import CardHeader from "./Style/CardHeader.js";
 import CardBody from "./Style/CardBody.js";
 import SnackbarContent from "./Style/SnackbarContent.js";
-import Snackbar from "./Style/Snackbar.js";
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
-import ListItemText from '@material-ui/core/ListItemText';
-import Link from '@material-ui/core/Link';
 import CardAvatar from "./Style/CardAvatar.js";
 
 import hand from "./Hands.jpg";
-class HealthCare extends React.Component{
+class HealthCare extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -45,9 +38,8 @@ class HealthCare extends React.Component{
       <GridContainer>
         <GridItem xs={12} sm={12} md={8}>
           <Card>
-            <CardHeader color="info">
-              <h4>HealthCare</h4>
-              <p>Things you need to know </p>
+            <CardHeader color="success">
+              <h2>Health Care Tips</h2>
             </CardHeader>
             <CardBody>
               <GridContainer>

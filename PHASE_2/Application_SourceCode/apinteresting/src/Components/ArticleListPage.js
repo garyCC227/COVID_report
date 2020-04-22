@@ -1,7 +1,9 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Divider from "@material-ui/core/Divider";
 import { Alert, AlertTitle } from '@material-ui/lab';
+import Card from "./Style/Card.js";
+import CardHeader from "./Style/CardHeader.js";
+import CardBody from "./Style/CardBody.js";
 
 import ArticleSearchToolbar from "./ArticleSearchToolbar";
 import ArticleList from "./ArticleList";
@@ -83,9 +85,22 @@ class ArticleListPage extends React.Component {
     }
     return (
       <div>
-        <ArticleSearchToolbar onSubmit={this.onSearchSubmit} />
-        <Divider />
-        {content}
+        <Card>
+          <CardHeader color="rose">
+            <h2>Article List</h2>
+          </CardHeader>
+          <CardBody />
+        </Card>
+        <Card>
+          <CardBody>
+            <ArticleSearchToolbar onSubmit={this.onSearchSubmit} />
+          </CardBody>
+        </Card>
+        <Card>
+          <CardBody>
+            {content}
+          </CardBody>
+        </Card>
       </div>
     );
   }

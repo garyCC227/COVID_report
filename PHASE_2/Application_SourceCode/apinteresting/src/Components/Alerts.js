@@ -114,16 +114,10 @@ export default class Alerts extends React.Component {
 
   render() {
     console.log("aaa")
-    let styleobj = { font: "helvetica", fontSize: 35, fontWeight: "bold" }
     return (
       <div >
         <CardHeader color="primary">
           <h2>Alerts</h2>
-          <p>
-            <a target="_blank" >
-              Outbreak Alerts from Google News
-            </a>
-          </p>
           <Box m ={1}>
               <List style={{
                     root: {

@@ -91,7 +91,7 @@ export default function Sidebar() {
                 <Link to="/social-media/trends" className={classes.sideNavText}>
                     <ListItem button>
                         <ListItemIcon><TrendingUpIcon /></ListItemIcon>
-                        <ListItemText>Google Trend</ListItemText>
+                        <ListItemText>Google Trends</ListItemText>
                     </ListItem>
                 </Link>
                 <Link to="/social-media/stocks" className={classes.sideNavText}>

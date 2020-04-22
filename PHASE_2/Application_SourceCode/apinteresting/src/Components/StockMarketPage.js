@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import GoogleTrendChart from './GoogleTrendChart.js'
+import StockChart from './StockChart.js';
 import Card from "./Style/Card.js";
 import CardHeader from "./Style/CardHeader.js";
 import CardBody from "./Style/CardBody.js";
 
-class SocialMedia extends Component {
+
+class StockMarketPage extends Component {
   constructor() {
     super();
   }
@@ -13,14 +14,14 @@ class SocialMedia extends Component {
     return (
       <div>
         <Card>
-          <CardHeader color="info">
-            <h2>Google Trends</h2>
+          <CardHeader color="danger">
+            <h2>Stock Market</h2>
           </CardHeader>
           <CardBody />
         </Card>
-        <GoogleTrendChart />
+        <StockChart />
       </div>
     );
   }
 }
-export default SocialMedia;
+export default StockMarketPage;

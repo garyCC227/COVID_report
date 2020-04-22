@@ -7,227 +7,27 @@ import {
   LineSeries,
   Title,
   Legend,
+  Tooltip,
+  ZoomAndPan,
 } from '@devexpress/dx-react-chart-material-ui';
+
 import { withStyles } from '@material-ui/core/styles';
-import { Animation, ArgumentScale } from '@devexpress/dx-react-chart';
-
-// Data derived from https://financialmodelingprep.com/api/v3/historical-price-full/index/^DJI?from=2020-02-01
-let data = [
-  {
-    "date": "2020-04-17",
-    "close": 24242.490234
-  },
-  {
-    "date": "2020-04-16",
-    "close": 23537.679688
-  },
-  {
-    "date": "2020-04-15",
-    "close": 23504.349609
-  },
-  {
-    "date": "2020-04-14",
-    "close": 23949.759766
-  },
-  {
-    "date": "2020-04-13",
-    "close": 23390.769531
-  },
-  {
-    "date": "2020-04-09",
-    "close": 23719.369141
-  },
-  {
-    "date": "2020-04-08",
-    "close": 23433.570313
-  },
-  {
-    "date": "2020-04-07",
-    "close": 22653.859375
-  },
-  {
-    "date": "2020-04-06",
-    "close": 22679.990234
-  },
-  {
-    "date": "2020-04-03",
-    "close": 21052.529297
-  },
-  {
-    "date": "2020-04-02",
-    "close": 21413.439453
-  },
-  {
-    "date": "2020-04-01",
-    "close": 20943.509766
-  },
-  {
-    "date": "2020-03-31",
-    "close": 21917.160156
-  },
-  {
-    "date": "2020-03-30",
-    "close": 22327.480469
-  },
-  {
-    "date": "2020-03-27",
-    "close": 21636.779297
-  },
-  {
-    "date": "2020-03-26",
-    "close": 22552.169922
-  },
-  {
-    "date": "2020-03-25",
-    "close": 21200.550781
-  },
-  {
-    "date": "2020-03-24",
-    "close": 20704.910156
-  },
-  {
-    "date": "2020-03-23",
-    "close": 18591.929688
-  },
-  {
-    "date": "2020-03-20",
-    "close": 19173.980469
-  },
-  {
-    "date": "2020-03-19",
-    "close": 20087.189453
-  },
-  {
-    "date": "2020-03-18",
-    "close": 19898.919922
-  },
-  {
-    "date": "2020-03-17",
-    "close": 21237.380859
-  },
-  {
-    "date": "2020-03-16",
-    "close": 20188.519531
-  },
-  {
-    "date": "2020-03-13",
-    "close": 23185.619141
-  },
-  {
-    "date": "2020-03-12",
-    "close": 21200.619141
-  },
-  {
-    "date": "2020-03-11",
-    "close": 23553.220703
-  },
-  {
-    "date": "2020-03-10",
-    "close": 25018.160156
-  },
-  {
-    "date": "2020-03-09",
-    "close": 23851.019531
-  },
-  {
-    "date": "2020-03-06",
-    "close": 25864.779297
-  },
-  {
-    "date": "2020-03-05",
-    "close": 26121.279297
-  },
-  {
-    "date": "2020-03-04",
-    "close": 27090.859375
-  },
-  {
-    "date": "2020-03-03",
-    "close": 25917.410156
-  },
-  {
-    "date": "2020-03-02",
-    "close": 26703.320313
-  },
-  {
-    "date": "2020-02-28",
-    "close": 25409.359375
-  },
-  {
-    "date": "2020-02-27",
-    "close": 25766.640625
-  },
-  {
-    "date": "2020-02-26",
-    "close": 26957.589844
-  },
-  {
-    "date": "2020-02-25",
-    "close": 27081.359375
-  },
-  {
-    "date": "2020-02-24",
-    "close": 27960.800781
-  },
-  {
-    "date": "2020-02-21",
-    "close": 28992.410156
-  },
-  {
-    "date": "2020-02-20",
-    "close": 29219.980469
-  },
-  {
-    "date": "2020-02-19",
-    "close": 29348.029297
-  },
-  {
-    "date": "2020-02-18",
-    "close": 29232.189453
-  },
-  {
-    "date": "2020-02-14",
-    "close": 29398.080078
-  },
-  {
-    "date": "2020-02-13",
-    "close": 29423.310547
-  },
-  {
-    "date": "2020-02-12",
-    "close": 29551.419922
-  },
-  {
-    "date": "2020-02-11",
-    "close": 29276.339844
-  },
-  {
-    "date": "2020-02-10",
-    "close": 29276.820313
-  },
-  {
-    "date": "2020-02-07",
-    "close": 29102.509766
-  },
-  {
-    "date": "2020-02-06",
-    "close": 29379.769531
-  },
-  {
-    "date": "2020-02-05",
-    "close": 29290.849609
-  },
-  {
-    "date": "2020-02-04",
-    "close": 28807.630859
-  },
-  {
-    "date": "2020-02-03",
-    "close": 28399.810547
-  }
-].reverse();
+import {
+  Animation, ArgumentScale, EventTracker,
+  ValueScale
+} from '@devexpress/dx-react-chart';
+import GetCovid19Data from './../Actions/GetCovid19Data';
+import GetStockPrices from './../Actions/GetStockPrices';
 
 
+const stockDetails = [
+  //{ "code": "^DJI", "name": "Dow Jones", "range": [0, 1] },
+  { "code": "^GSPC", "name": "S&P 500", "range": [0, 1] },
+  { "code": "^IXIC", "name": "Nasdaq", "range": [0, 1] },
+  { "code": "^AXJO", "name": "S&P/ASX 200", "range": [0, 1] },
+  { "code": "000001.SS", "name": "SSE Composite", "range": [0, 1] },
+  { "code": "^AORD", "name": "ALL ORDINARIES", "range": [0, 1] },
+];
 const format = () => tick => tick;
 const legendStyles = () => ({
   root: {
@@ -248,6 +48,9 @@ const legendItemStyles = () => ({
   },
 });
 
+const customizeTooltip = (pointInfo) => {
+  return pointInfo.value > 100 ? { color: "red" } : {};
+}
 
 const labelHalfWidth = 80;
 let lastLabelCoordinate;
@@ -296,6 +99,15 @@ const ValueLabel = (props) => {
   );
 };
 
+const WorldwideLabel = (props) => {
+  const { text } = props;
+  return (
+    <ValueAxis.Label
+      {...props}
+    />
+  );
+};
+
 const titleStyles = {
   title: {
     whiteSpace: 'pre',
@@ -305,17 +117,82 @@ const TitleText = withStyles(titleStyles)(({ classes, ...props }) => (
   <Title.Text {...props} className={classes.title} />
 ));
 
+const combineTwoArraysByDate = (array1, array2) => {
+  array2.forEach((date) => {
+    const existing = array1.filter((el) => el.date == date.date)
+
+    if (existing.length) {
+      var existingIndex = array1.indexOf(existing[0]);
+      array1[existingIndex] = { ...array1[existingIndex], ...date }
+    } else {
+      array1.push(date);
+    }
+  })
+  return array1;
+}
+
+const linearNormalize = (number, min, max) => (number - min) / (max - min);
+
+const normalizeData = (dataset, propertyName) => {
+  propertyName.forEach((name) => {
+    const notNullValue = dataset.map(el => el[name]).filter((el) => el != null);
+    const min = Math.min(...notNullValue);
+    const max = Math.max(...notNullValue);
+    stockDetails.forEach((el, index) => {
+      if (el.code == name) {
+        stockDetails[index].range = [min, max];
+      }
+    })/* 
+    dataset = dataset.map(el => {
+      if (el[name]) {
+        const result = el;
+        result[`${name}Normalized`] = linearNormalize(el[name], min, max)
+        return result
+      } else {
+        return el;
+      }
+    }) */
+  });
+  console.log(stockDetails);
+  return dataset
+}
+
+const combineData = (data) => {
+  const dataset = combineTwoArraysByDate(data[0], data[1]);
+  return normalizeData(dataset, ["worldwide", "^DJI", "^GSPC"]);
+}
+
+
+
 class StockChart extends React.PureComponent {
   constructor(props) {
     super(props);
-
+    const setStockDetails = stockDetails => this.setState({ stockDetails });
+    const changeData = (data) => { this.setState({ data }) }
+    Promise.all([
+      GetCovid19Data(data => data),
+      GetStockPrices(stockDetails.map(el => el.code), (data => data), { "from": "2020-01-22" })
+    ])
+      .then((result) => {
+        const data = combineData(result);
+        changeData(data);
+        setStockDetails(stockDetails);
+      });
     this.state = {
-      data
+      data: [],
+      targetItem: null,
+      stockDetails: stockDetails,
     };
+
+    this.changeTargetItem = targetItem => this.setState({ targetItem });
+  }
+
+  changeData(data) {
+    this.setState({ data });
   }
 
   render() {
-    const { data: chartData } = this.state;
+    const { data: chartData, targetItem } = this.state;
     const { classes } = this.props;
 
     return (
@@ -324,23 +201,66 @@ class StockChart extends React.PureComponent {
           data={chartData}
           className={classes.chart}
         >
+
           <ArgumentAxis tickFormat={format} labelComponent={ArgumentLabel} />
           <ValueAxis
             max={50}
             labelComponent={ValueLabel}
           />
 
-          <LineSeries
-            name="DJI"
-            valueField="close"
-            argumentField="date"
+          <ValueScale
+            name="worldwide"
+            modifyDomain={() => [0, 2500000]}
           />
+          <ValueAxis
+            position="right"
+            labelComponent={WorldwideLabel}
+            scaleName="worldwide"
+          />
+          <LineSeries
+            name="Confirmed Cases Worldwide"
+            valueField="worldwide"
+            argumentField="date"
+            scaleName="worldwide"
+          />{/* 
+          <ValueScale
+            name="^DJI"
+            modifyDomain={() => }
+          /> */}
+          {this.state.stockDetails.map((value, index) => {
+            return <ValueScale
+              name={value.code}
+              modifyDomain={() => value.range}
+            />
+          })}
+          {this.state.stockDetails.map((value, index) => {
+            return <LineSeries
+              name={value.name}
+              valueField={value.code}
+              argumentField="date"
+            />
+          })}{/* 
+          <LineSeries
+            name="Dow Jones"
+            valueField="^DJI"
+            argumentField="date"
+            scaleName="^DJI"
+          /> */}
+          {/* 
+          <LineSeries
+            name="S&P 500"
+            valueField="^GSPCNormalized"
+            argumentField="date"
+          /> */}
+
           <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
           <Title
             text={`Stock Market Chart`}
             textComponent={TitleText}
           />
-          <Animation />
+          <EventTracker />
+          <ZoomAndPan />
+          <Tooltip targetItem={targetItem} onTargetItemChange={this.changeTargetItem} />
         </Chart>
       </Paper>
     );

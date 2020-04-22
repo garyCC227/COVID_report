@@ -6,3 +6,4 @@ __pycache__
 .idea
 .vs
 ./node_modules
+PHASE_2/Application_SourceCode/apinteresting/package-lock.json

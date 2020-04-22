@@ -10,8 +10,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
 
     appBar: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
+        zIndex: theme.zIndex.drawer + 1,
     },
     drawer: {
         width: drawerWidth,
@@ -32,7 +31,7 @@ export default function Sidebar(props) {
         <AppBar position="fixed" className={classes.appBar}>
             <Toolbar>
                 <Typography variant="h6" noWrap>
-                    {props.pageName}
+                    SENG3011 - APInteresting
                 </Typography>
             </Toolbar>
         </AppBar>

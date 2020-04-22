@@ -11,6 +11,7 @@ import SocialMedia from './Components/SocialMedia'
 import HealthCare from './Components/HealthCare'
 import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
 import ArticleListPage from './Components/ArticleListPage';
+import StockMarketPage from './Components/StockMarketPage';
 
 
 const drawerWidth = 240;
@@ -57,7 +58,8 @@ export default function App() {
             <Route path="/map" component={Map} />
             <Route path="/alerts" component={Alerts} />
             <Route path="/article-list" component={ArticleListPage} />
-            <Route path="/social-media" component={SocialMedia} />
+            <Route path="/social-media/trends" component={SocialMedia} />
+            <Route path="/social-media/stocks" component={StockMarketPage} />
             <Route path="/health-care" component={HealthCare} />
             <Route path="/" component={Home} />
           </Switch>

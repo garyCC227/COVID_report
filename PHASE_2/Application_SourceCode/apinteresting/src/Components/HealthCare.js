@@ -45,7 +45,6 @@ class HealthCare extends Component {
               <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
                   {this.state.articles.map((item, index) => {
-                    console.log(item)
                     return (
                       <SnackbarContent message={item.content}>
                       </SnackbarContent>
@@ -64,7 +63,7 @@ class HealthCare extends Component {
               </a>
             </CardAvatar>
             <CardBody profile>
-              <h6>Advice to protect yourself</h6>
+              <h2>Advice to protect yourself</h2>
               <h4>1.Wash your hands frequently</h4>
               <h4>2.Maintain social distancing</h4>
               <h4>3.Avoid touching eyes, nose and mouth</h4>

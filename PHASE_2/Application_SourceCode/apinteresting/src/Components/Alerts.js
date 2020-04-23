@@ -16,6 +16,8 @@ import Link from '@material-ui/core/Link';
 import CardHeader from './Style/CardHeader.js'
 import GridItem from "./Style/GridItem.js";
 import GridContainer from "./Style/GridContainer.js";
+import Card from "./Style/Card.js";
+import CardBody from "./Style/CardBody.js";
 
 import {
   StaticGoogleMap,
@@ -116,14 +118,14 @@ export default class Alerts extends React.Component {
     console.log("aaa")
     return (
       <div >
-        <CardHeader color="primary">
-          <h2>Alerts</h2>
-          <Box m ={1}>
-              <List style={{
-                    root: {
-                        width: '100%',
-                            },
-              }}> {this.state.articles.map((item, index) => {
+        <Card>
+          <CardHeader color="primary">
+            <h2>Alerts</h2>
+          </CardHeader>
+          <CardBody>
+            <Box m ={1}>
+              <List style={{  root: {width: '100%',},}}>
+              {this.state.articles.map((item, index) => {
                           //console.log(item)
                           return (
                           <ListItem alignItems="flex-start">
@@ -149,8 +151,9 @@ export default class Alerts extends React.Component {
                         }
                 </List>
             </Box >
-        </CardHeader>
-        <AlertSearchBar start_date = {this.state.start_date} end_date = {this.state.end_date} 
+          </CardBody>
+        </Card>
+        <AlertSearchBar start_date = {this.state.start_date} end_date = {this.state.end_date}
           country = {this.state.country} onSubmit = {this.update_search_query}/>
         <Divider />
         <br />
@@ -162,8 +165,8 @@ export default class Alerts extends React.Component {
         >
         </Grid>
         <br />
-        <AlertsSingleCountry start_date = {this.state.start_date} end_date = {this.state.end_date} 
-          country = {this.state.country} />               
+        <AlertsSingleCountry start_date = {this.state.start_date} end_date = {this.state.end_date}
+          country = {this.state.country} />
       </div >
     );
   }

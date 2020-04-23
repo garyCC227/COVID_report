@@ -46,7 +46,7 @@ const grayColor = [
   "#e7e7e7"
 ];
 const defaultFont = {
-  fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  fontFamily: '"Roboto", "Helvetica", "Arial", arial',
   fontWeight: "300",
   lineHeight: "1.5em"
 };

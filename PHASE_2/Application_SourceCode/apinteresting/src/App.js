@@ -13,7 +13,7 @@ import HealthCare from './Components/HealthCare'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ArticleListPage from './Components/ArticleListPage';
 import StockMarketPage from './Components/StockMarketPage';
-
+import TwitterTrendsPage from './Components/TwitterTrendsPage'
 
 const drawerWidth = 240;
 
@@ -57,9 +57,11 @@ export default function App() {
           <div className={classes.toolbar} />
           <Switch>
             <Route path="/home" component={HomePage} />
+
             <Route path="/map" component={Map} />
             <Route path="/alerts" component={Alerts} />
             <Route path="/article-list" component={ArticleListPage} />
+            <Route path="/social-impacts/twitter-trends" component={TwitterTrendsPage} />
             <Route path="/social-impacts/trends" component={SocialMedia} />
             <Route path="/social-impacts/stocks" component={StockMarketPage} />
             <Route path="/health-care" component={HealthCare} />

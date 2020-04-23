@@ -81,9 +81,9 @@ export default class Alerts extends React.Component {
 
   update_search_query(state) {
     this.setState({
-      start_date : state.start_date,
-      end_date : state.end_date,
-      country : state.country
+      start_date: state.start_date,
+      end_date: state.end_date,
+      country: state.country
     });
   }
 
@@ -118,40 +118,40 @@ export default class Alerts extends React.Component {
       <div >
         <CardHeader color="primary">
           <h2>Alerts</h2>
-          <Box m ={1}>
-              <List style={{
-                    root: {
-                        width: '100%',
-                            },
-              }}> {this.state.articles.map((item, index) => {
-                          //console.log(item)
-                          return (
-                          <ListItem alignItems="flex-start">
-                            <ListItemText
-                              primary={
-                                <div>
-                                <Link href={item.url} color="inherit">
-                                <h3>{item.title}</h3>
-                                </Link>
-                                </div>
-                              }
-                              secondary={
-                                <React.Fragment>
-                                {item.publishedAt}
-                                <br />
-                                <span style={{ color: '#000', }}>{item.content}</span>
-                                </React.Fragment>
-                              }
-                              />
-                              </ListItem>
-                            )
-                          })
-                        }
-                </List>
-            </Box >
+          <Box m={1}>
+            <List style={{
+              root: {
+                width: '100%',
+              },
+            }}> {this.state.articles.map((item, index) => {
+              //console.log(item)
+              return (
+                <ListItem alignItems="flex-start">
+                  <ListItemText
+                    primary={
+                      <div>
+                        <Link href={item.url} color="inherit">
+                          <h3>{item.title}</h3>
+                        </Link>
+                      </div>
+                    }
+                    secondary={
+                      <React.Fragment>
+                        {item.publishedAt}
+                        <br />
+                        <span style={{ color: '#000', }}>{item.content}</span>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+              )
+            })
+              }
+            </List>
+          </Box >
         </CardHeader>
-        <AlertSearchBar start_date = {this.state.start_date} end_date = {this.state.end_date} 
-          country = {this.state.country} onSubmit = {this.update_search_query}/>
+        <AlertSearchBar start_date={this.state.start_date} end_date={this.state.end_date}
+          country={this.state.country} onSubmit={this.update_search_query} />
         <Divider />
         <br />
         <Grid
@@ -162,8 +162,8 @@ export default class Alerts extends React.Component {
         >
         </Grid>
         <br />
-        <AlertsSingleCountry start_date = {this.state.start_date} end_date = {this.state.end_date} 
-          country = {this.state.country} />               
+        <AlertsSingleCountry start_date={this.state.start_date} end_date={this.state.end_date}
+          country={this.state.country} />
       </div >
     );
   }

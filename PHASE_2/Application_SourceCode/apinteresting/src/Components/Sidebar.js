@@ -97,6 +97,12 @@ export default function Sidebar() {
                 </Link>
                 <Divider />
                 <ListItem disabled >Social Impact</ListItem>
+                <Link to="/social-impacts/twitter-trends" className={classes.sideNavText}>
+                    <ListItem button>
+                        <ListItemIcon><TrendingUpIcon /></ListItemIcon>
+                        <ListItemText>Twitter Trends</ListItemText>
+                    </ListItem>
+                </Link>
                 <Link to="/social-impacts/trends" className={classes.sideNavText}>
                     <ListItem button>
                         <ListItemIcon><TrendingUpIcon /></ListItemIcon>

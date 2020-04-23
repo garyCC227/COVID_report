@@ -102,6 +102,7 @@ export default class Alerts extends Component {
   render() {
     return (
       <div >
+
         <Card>
           <CardHeader color="primary">
             <h2>Outbreak Statistics</h2>
@@ -123,12 +124,14 @@ export default class Alerts extends Component {
           alignItems="center"
         />
         <br />
+
         <AlertsSingleCountry
           start_date={this.state.start_date}
           end_date={this.state.end_date}
           country={this.state.country}
         />
       </div>
+
     );
   }
 }

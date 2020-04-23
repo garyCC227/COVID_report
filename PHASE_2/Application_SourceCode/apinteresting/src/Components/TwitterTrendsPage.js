@@ -8,6 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import { usePromiseTracker, trackPromise } from 'react-promise-tracker'
+import Loader from 'react-loader-spinner'
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
 // Required for side-effects
@@ -44,18 +46,34 @@ class TwitterTrendsPage extends Component {
 
     componentDidMount = () => {
         var getTweets = firebase.functions().httpsCallable('getTweets')
-        getTweets()
-            .then(res => {
-                console.log(res.data)
-                this.setState({ twitterPosts: res.data, isLoading: false })
+        trackPromise(
+            getTweets()
+                .then(res => {
+                    console.log(res.data)
+                    this.setState({ twitterPosts: res.data, isLoading: false })
 
-            })
+                })
+        )
     }
+
+    LoadingIndicator = props => {
+        const { promiseInProgress } = usePromiseTracker();
+        return (
+            promiseInProgress &&
+            <span className="loader">
+
+                <Loader type="ThreeDots" height={100} width={100} />
+            </span>
+        );
+    }
+
+
 
     render() {
         const { classes } = this.props
         return (
             <div>
+                {this.state.isLoading ? <div style={{ textAlign: "center" }}><this.LoadingIndicator /></div> : <div></div>}
                 {(this.state.twitterPosts).map((item) => {
                     return (
                         <div key={item.id}>

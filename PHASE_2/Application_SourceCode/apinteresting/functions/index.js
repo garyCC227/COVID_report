@@ -14,7 +14,7 @@ var T = new Twit({
     consumer_secret: 'ZQTlKg8EfGooEay5ncu99KMNJ7yEAKXKGsBbKVDD7ZOYoB01iF',
     access_token: '784659830615085060-iEOfhsMjneyMlVWOVCKFoVeRe7XeEmW',
     access_token_secret: 'Y9fCIJwVe38cyK41ftYjSVtit0DERZIxScsS6KOjqdrrp',
-    timeout_ms: 60 * 1000,  // optional HTTP request timeout to apply to all requests.
+    timeout_ms: 10 * 1000,  // optional HTTP request timeout to apply to all requests.
     strictSSL: true,     // optional - requires SSL certificates to be valid.
 })
 
@@ -23,15 +23,21 @@ var T = new Twit({
 const admin = require('firebase-admin');
 admin.initializeApp();
 
-exports.getTweets = functions.https.onRequest(async (req, res) => {
+exports.getTweets = functions.https.onCall((data, context) => {
     var ret = ''
     console.log("Request Made")
-    // Grab the text parameter.
-    T.get('search/tweets', { q: 'banana since:2011-07-11', count: 100 }, (err, data, response) => {
-        console.log("Error ", err)
-        console.log("Data", data)
-        ret = data
-        res.send(data)
+    return T.get('search/tweets', { q: 'coronavirus since:2011-07-11', count: 100, tweet_mode: 'extended' })
+        .then((res) => {
+            console.log(res.data.statuses)
+            return res.data.statuses
+        })
+    // , (err, res, response) => {
+    //     console.log("Error ", err)
+    //     console.log("Data", res)
+    //     ret = res
+    //     return { test: "text" }
+    // }).then(res => {
+    //     return (res)
+    // })
 
-    })
 });

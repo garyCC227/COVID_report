@@ -47,7 +47,7 @@ class ArticleList extends React.Component {
                   {data.date_of_publication}
                   <br />
                   <p>{data.main_text}</p>
-                  <Button size="small" href={data.url} variant="outlined" color="primary">
+                  <Button size="small" href={data.url} target="_blank" variant="outlined" color="primary">
                     View Article
                   </Button>
                   &nbsp;

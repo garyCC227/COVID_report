@@ -15,6 +15,7 @@ import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import InsertChartIcon from '@material-ui/icons/InsertChart';
 import StorageIcon from '@material-ui/icons/Storage';
 import WarningIcon from '@material-ui/icons/Warning';
+import TwitterIcon from '@material-ui/icons/Twitter';
 import HomeIcon from '@material-ui/icons/Home';
 
 
@@ -99,7 +100,7 @@ export default function Sidebar() {
                 <ListItem disabled >Social Impact</ListItem>
                 <Link to="/social-impacts/twitter-trends" className={classes.sideNavText}>
                     <ListItem button>
-                        <ListItemIcon><TrendingUpIcon /></ListItemIcon>
+                        <ListItemIcon><TwitterIcon /></ListItemIcon>
                         <ListItemText>Twitter Trends</ListItemText>
                     </ListItem>
                 </Link>

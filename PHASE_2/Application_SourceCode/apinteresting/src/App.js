@@ -65,6 +65,7 @@ export default function App() {
             <Route path="/alerts" component={Alerts} />
             <Route path="/article-list" component={ArticleListPage} />
             <Route path="/social-impacts/twitter-trends" component={TwitterTrendsPage} />
+            <Route path="/social-impacts/trends" component={GoogleTrendsPage} />
             <Route path="/social-impacts/stocks" component={StockMarketPage} />
             <Route path="/health-care" component={HealthCare} />
             <Route path="/cov19" component={Cov19Page} />

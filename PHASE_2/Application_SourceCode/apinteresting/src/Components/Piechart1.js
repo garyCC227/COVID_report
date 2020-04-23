@@ -59,7 +59,7 @@ export default class PieChart extends React.Component {
 				showInLegend: "true",
 				legendText: "{label}",
 				indexLabelFontSize: 16,
-				indexLabel: "{label} - {y} cases",
+				indexLabel: "{label} - {y} articles",
 				dataPoints: this.state.ranking
 			}]
 		}

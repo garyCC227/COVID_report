@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import GoogleTrendChart from './GoogleTrendChart.js'
+import PieChart from './Piechart1.js'
 import Card from "./Style/Card.js";
 import CardHeader from "./Style/CardHeader.js";
 import CardBody from "./Style/CardBody.js";
+import Cov19Table from './Cov19Table.js'
 
-class SocialMedia extends Component {
+
+class Cov19Page extends Component {
   constructor() {
     super();
   }
@@ -13,14 +15,16 @@ class SocialMedia extends Component {
     return (
       <div>
         <Card>
-          <CardHeader color="info">
-            <h2>Google Trends</h2>
+          <CardHeader color="danger">
+            <h2>COV-19 Statistics</h2>
           </CardHeader>
           <CardBody />
         </Card>
-        <GoogleTrendChart />
+        <div class="w3-container">
+          <Cov19Table />
+        </div>
       </div>
     );
   }
 }
-export default SocialMedia;
+export default Cov19Page;

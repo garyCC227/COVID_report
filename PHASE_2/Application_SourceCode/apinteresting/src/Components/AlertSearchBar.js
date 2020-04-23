@@ -4,10 +4,6 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import FormControl from "@material-ui/core/FormControl";
-import Checkbox from '@material-ui/core/Checkbox';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { makeStyles } from "@material-ui/core/styles";
 import { ButtonGroup } from "@material-ui/core";
 
 // To Do
@@ -29,7 +25,7 @@ export default class AlertSearchBar extends React.Component {
     this.fillLastWeek = this.fillLastWeek.bind(this);
     this.fillLastMonth = this.fillLastMonth.bind(this);
     this.fillLastTwoMonth = this.fillLastTwoMonth.bind(this);
-    this.fillFortnight = this.fillLastWeek.bind(this);
+    this.fillFortnight = this.fillFortnight.bind(this);
     this.setPreviousDaysPeriod = this.setPreviousDaysPeriod.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
@@ -57,7 +53,7 @@ export default class AlertSearchBar extends React.Component {
     dd = String(today.getDate()).padStart(2, '0');
     mm = String(today.getMonth() + 1).padStart(2, '0');
     yyyy = today.getFullYear();
-    const previousString = `${yyyy}-${mm}-${dd}`;;
+    const previousString = `${yyyy}-${mm}-${dd}`;
     this.setState({
       start_date: previousString,
       end_date: todayString
@@ -69,7 +65,7 @@ export default class AlertSearchBar extends React.Component {
   }
 
   fillFortnight() {
-    this.setPreviousDaysPeriod(14); // TODO: FIXME!!!!
+    this.setPreviousDaysPeriod(14);
   }
 
   fillLastMonth() {
@@ -154,10 +150,6 @@ export default class AlertSearchBar extends React.Component {
           <Button variant="contained" color="primary" type="submit">
             Go
           </Button>
-          &nbsp;
-          <Button variant="contained outlined" color="primary" type="submit">
-            Compare Two Countries
-        </Button>
         </form>
       </Box>
     );

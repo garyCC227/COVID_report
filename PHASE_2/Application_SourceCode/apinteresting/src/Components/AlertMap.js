@@ -108,10 +108,11 @@ export default class AlertMap extends React.Component {
         return (
         <div>
         {this.state.data_list.filter(key => key["is_checked"]).map((key,i) => this.createLable(key,i))}
-        <br/>
-        <StaticGoogleMap size="650x650" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center = {country_name}>
+        <div>
+        <StaticGoogleMap size="850x850" apiKey="AIzaSyCZAhgGJq-k2ixG-fX-wbkUqbVaR8-WkR0" center = {country_name}>
             {this.state.marker_group}
         </StaticGoogleMap>
+        </div>
         </div>
         );
     }

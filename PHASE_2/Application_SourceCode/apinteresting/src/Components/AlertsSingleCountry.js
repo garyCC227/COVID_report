@@ -214,13 +214,18 @@ export default class AlertsSingleCountry extends React.Component {
         return (
           <div >
             {loading ? 
-
-            <Loader
-            type="Bars"
-            color="#00BFFF"
-            height={170}
-            width={350}
-            /> 
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+                <Loader
+                type="Bars"
+                color="#00BFFF"
+                height={180}
+                width={550}
+                /> 
+              </div>
             : 
             <div>
             <Divider />
@@ -256,7 +261,13 @@ export default class AlertsSingleCountry extends React.Component {
             <Typography variant="h5">
               Outbreak Location
             </Typography>
+            <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
             <AlertMap data_list = {this.state.diseases} country = {this.state.country} state_id = {this.state.state_id}/>
+            </div>
             <br />
             <br />
             <br />

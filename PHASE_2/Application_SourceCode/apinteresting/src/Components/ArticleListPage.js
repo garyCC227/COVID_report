@@ -96,11 +96,8 @@ class ArticleListPage extends React.Component {
             <ArticleSearchToolbar onSubmit={this.onSearchSubmit} />
           </CardBody>
         </Card>
-        <Card>
-          <CardBody>
-            {content}
-          </CardBody>
-        </Card>
+        {content}
+
       </div>
     );
   }

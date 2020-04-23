@@ -5,15 +5,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Sidebar from './Components/Sidebar'
 import Navbar from './Components/Navbar'
 import Home from './Components/Home'
-import HomePage from './Components/HomePage'
 import Map from './Components/Map'
 import Alerts from './Components/Alerts'
-import SocialMedia from './Components/SocialMedia'
+import GoogleTrendsPage from './Components/GoogleTrendsPage'
 import HealthCare from './Components/HealthCare'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import ArticleListPage from './Components/ArticleListPage';
 import StockMarketPage from './Components/StockMarketPage';
 import TwitterTrendsPage from './Components/TwitterTrendsPage'
+import ArticleStoragePage from './Components/ArticleStoragePage';
+import Cov19Page from './Components/Cov19Page';
 
 const drawerWidth = 240;
 
@@ -63,8 +64,10 @@ export default function App() {
             <Route path="/article-list" component={ArticleListPage} />
             <Route path="/social-impacts/twitter-trends" component={TwitterTrendsPage} />
             <Route path="/social-impacts/trends" component={SocialMedia} />
+
             <Route path="/social-impacts/stocks" component={StockMarketPage} />
             <Route path="/health-care" component={HealthCare} />
+            <Route path="/cov19" component={Cov19Page} />
             <Route path="/" component={Home} />
           </Switch>
 

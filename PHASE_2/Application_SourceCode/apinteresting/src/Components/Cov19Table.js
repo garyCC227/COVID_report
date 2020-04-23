@@ -165,8 +165,8 @@ const sample = [
   ["Gingerbread", 356, 16.0, 49, 3.9]
 ];
 
-function createData(id, Country, Comfirmed, Suspected, Cured, Death) {
-  return { id, Country, Comfirmed, Suspected, Cured, Death };
+function createData(id, Country, Confirmed, Suspected, Cured, Death) {
+  return { id, Country, Confirmed, Suspected, Cured, Death };
 }
 
 const rows = [];
@@ -206,10 +206,44 @@ export default class Cov19Table extends React.Component {
         }
         return rows
       });
+    rows.sort((a, b) => {
+      if (a.countryEnglishName === b.countryEnglishName) {
+        return 0;
+      }
+      if (a.countryEnglishName > b.countryEnglishName) {
+        return 1;
+      }
+      return -1;
+    });
+    let result = [];
+    let length = 0;
+    for (let i = 0; i < rows.length; i++) {
+      if (rows[i].Country === null) {
+        continue;
+      }
+      if (length === 0) {
+        result.push(rows[i]);
+        length += 1;
+        continue;
+      }
+      const last = result[length - 1];
+      const current = rows[i];
+      if (current.Country == last.Country) {
+        last.Confirmed += current.Confirmed;
+        last.Suspected += current.Suspected;
+        last.Cured += current.Cured;
+        last.Death += current.Death;
+        result[length - 1] = last;
+      } else {
+        result.push(rows[i]);
+        length += 1;
+      }
+    }
+    rows = result;
     rows.sort(function(a,b){
-      if (a.Comfirmed > b.Comfirmed){
+      if (a.Confirmed > b.Confirmed){
         return -1;
-      }else if (a.Comfirmed < b.Comfirmed){
+      }else if (a.Confirmed < b.Confirmed){
         return 1;
       }else{
         return 0;
@@ -219,38 +253,37 @@ export default class Cov19Table extends React.Component {
   }
 
   render() {
-    console.log(this.state.rows)
     return (
-      <Paper style={{ height: 400, width: "100%" }}>
+      <Paper style={{ height: 500, width: "100%" }} elevation={5}>
         <VirtualizedTable
           rowCount={this.state.rows.length}
           rowGetter={({ index }) => this.state.rows[index]}
           columns={[
             {
-              width: 200,
+              width: 300,
               label: "Country",
               dataKey: "Country"
             },
             {
-              width: 120,
-              label: "Comfirmed",
-              dataKey: "Comfirmed",
+              width: 200,
+              label: "Confirmed",
+              dataKey: "Confirmed",
               numeric: true
             },
             {
-              width: 120,
+              width: 200,
               label: "Suspected",
               dataKey: "Suspected",
               numeric: true
             },
             {
-              width: 120,
+              width: 200,
               label: "Cured",
               dataKey: "Cured",
               numeric: true
             },
             {
-              width: 120,
+              width: 200,
               label: "Death",
               dataKey: "Death",
               numeric: true

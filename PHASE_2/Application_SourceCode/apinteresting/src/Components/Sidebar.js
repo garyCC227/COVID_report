@@ -13,6 +13,8 @@ import TrendingDownIcon from '@material-ui/icons/TrendingDown';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import InsertChartIcon from '@material-ui/icons/InsertChart';
+import StorageIcon from '@material-ui/icons/Storage';
+import WarningIcon from '@material-ui/icons/Warning';
 import HomeIcon from '@material-ui/icons/Home';
 
 
@@ -80,10 +82,17 @@ export default function Sidebar() {
                     </ListItem>
                 </Link>
                 <Divider />
-                <Link to="/article-list" className={classes.sideNavText}>
+                <ListItem disabled >Articles</ListItem>
+                <Link to="/article/list" className={classes.sideNavText}>
                     <ListItem button>
                         <ListItemIcon><LibraryBooksIcon /></ListItemIcon>
                         <ListItemText>Article List</ListItemText>
+                    </ListItem>
+                </Link>
+                <Link to="/article/storage" className={classes.sideNavText}>
+                    <ListItem button>
+                        <ListItemIcon><StorageIcon /></ListItemIcon>
+                        <ListItemText>Storage Overview</ListItemText>
                     </ListItem>
                 </Link>
                 <Divider />
@@ -101,10 +110,17 @@ export default function Sidebar() {
                     </ListItem>
                 </Link>
                 <Divider />
+                <ListItem disabled >Statistics</ListItem>
                 <Link to="/alerts" className={classes.sideNavText}>
                     <ListItem button>
                         <ListItemIcon><InsertChartIcon /></ListItemIcon>
                         <ListItemText>Outbreak Statistics</ListItemText>
+                    </ListItem>
+                </Link>
+                <Link to="/cov19" className={classes.sideNavText}>
+                    <ListItem button>
+                        <ListItemIcon><WarningIcon /></ListItemIcon>
+                        <ListItemText>COV-19 Statistics</ListItemText>
                     </ListItem>
                 </Link>
                 <Divider />

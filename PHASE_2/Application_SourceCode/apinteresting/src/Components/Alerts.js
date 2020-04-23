@@ -1,29 +1,15 @@
 import React, { Component } from 'react';
-import PieChart from './PieChart';
-import LineChart from './LineChart';
 import AlertSearchBar from './AlertSearchBar';
-import Temp from './LineChart2';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Box from '@material-ui/core/Box';
-import Button from "@material-ui/core/Button";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import Link from '@material-ui/core/Link';
 import CardHeader from './Style/CardHeader.js'
-import GridItem from "./Style/GridItem.js";
-import GridContainer from "./Style/GridContainer.js";
 import Card from "./Style/Card.js";
 import CardBody from "./Style/CardBody.js";
 
-import {
-  StaticGoogleMap,
-  Marker,
-  Path,
-} from 'react-static-google-map';
 import { Typography, Grid } from '@material-ui/core';
 import AlertsSingleCountry from './AlertsSingleCountry';
 
@@ -32,7 +18,7 @@ import AlertsSingleCountry from './AlertsSingleCountry';
 // Css, Call real API from group Pigeons, Pass those data chart
 // customized marker on the map, compare function
 
-export default class Alerts extends React.Component {
+export default class Alerts extends Component {
   constructor(props) {
     super(props);
 
@@ -51,7 +37,6 @@ export default class Alerts extends React.Component {
 
     this.state = {
       articles: [],
-      // TODO: FIXME: Hard-coded
       diseases: [
         "Total",
         "Coronavirus",
@@ -83,9 +68,9 @@ export default class Alerts extends React.Component {
 
   update_search_query(state) {
     this.setState({
-      start_date : state.start_date,
-      end_date : state.end_date,
-      country : state.country
+      start_date: state.start_date,
+      end_date: state.end_date,
+      country: state.country
     });
   }
 
@@ -115,46 +100,20 @@ export default class Alerts extends React.Component {
   }
 
   render() {
-    console.log("aaa")
     return (
       <div >
         <Card>
           <CardHeader color="primary">
-            <h2>Alerts</h2>
+            <h2>Outbreak Statistics</h2>
           </CardHeader>
-          <CardBody>
-            <Box m ={1}>
-              <List style={{  root: {width: '100%',},}}>
-              {this.state.articles.map((item, index) => {
-                          //console.log(item)
-                          return (
-                          <ListItem alignItems="flex-start">
-                            <ListItemText
-                              primary={
-                                <div>
-                                <Link href={item.url} color="inherit">
-                                <h3>{item.title}</h3>
-                                </Link>
-                                </div>
-                              }
-                              secondary={
-                                <React.Fragment>
-                                {item.publishedAt}
-                                <br />
-                                <span style={{ color: '#000', }}>{item.content}</span>
-                                </React.Fragment>
-                              }
-                              />
-                              </ListItem>
-                            )
-                          })
-                        }
-                </List>
-            </Box >
-          </CardBody>
+          <CardBody />
         </Card>
-        <AlertSearchBar start_date = {this.state.start_date} end_date = {this.state.end_date}
-          country = {this.state.country} onSubmit = {this.update_search_query}/>
+        <AlertSearchBar
+          start_date={this.state.start_date}
+          end_date={this.state.end_date}
+          country={this.state.country}
+          onSubmit={this.update_search_query}
+        />
         <Divider />
         <br />
         <Grid
@@ -162,12 +121,14 @@ export default class Alerts extends React.Component {
           direction="row"
           justify="center"
           alignItems="center"
-        >
-        </Grid>
+        />
         <br />
-        <AlertsSingleCountry start_date = {this.state.start_date} end_date = {this.state.end_date}
-          country = {this.state.country} />
-      </div >
+        <AlertsSingleCountry
+          start_date={this.state.start_date}
+          end_date={this.state.end_date}
+          country={this.state.country}
+        />
+      </div>
     );
   }
 }

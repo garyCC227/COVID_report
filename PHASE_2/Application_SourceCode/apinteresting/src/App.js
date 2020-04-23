@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
+import HomePage from './Components/Home'
+// import SocialMedia from './Components/SocialMedia'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Sidebar from './Components/Sidebar'
 import Navbar from './Components/Navbar'
@@ -63,8 +65,6 @@ export default function App() {
             <Route path="/alerts" component={Alerts} />
             <Route path="/article-list" component={ArticleListPage} />
             <Route path="/social-impacts/twitter-trends" component={TwitterTrendsPage} />
-            <Route path="/social-impacts/trends" component={SocialMedia} />
-
             <Route path="/social-impacts/stocks" component={StockMarketPage} />
             <Route path="/health-care" component={HealthCare} />
             <Route path="/cov19" component={Cov19Page} />

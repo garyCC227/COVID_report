@@ -6,9 +6,9 @@ import CardHeader from "./Style/CardHeader.js";
 import CardBody from "./Style/CardBody.js";
 import { CardActionArea, CardContent, Typography, CardActions, Button } from "@material-ui/core"
 import CardAvatar from "./Style/CardAvatar.js";
-
 import hand from "./Hands.jpg";
 import { Box } from '@material-ui/core';
+
 class HealthCare extends Component {
   constructor(props) {
     super(props);

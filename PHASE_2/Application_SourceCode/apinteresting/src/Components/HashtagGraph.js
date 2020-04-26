@@ -119,14 +119,194 @@ export default class HashtagGraph extends React.Component {
                     "popularity": 51.1,
                     "weeks_ago": 7
                 }]
+            }, { "name" : "Sars",
+            "is_checked" : false,
+                "history": [
+                    {
+                        "popularity": 22,
+                        "weeks_ago": 0
+                    },
+                    {
+                        "popularity": 39.4,
+                        "weeks_ago": 1
+                    },
+                    {
+                        "popularity": 33.8,
+                        "weeks_ago": 2
+                    },
+                    {
+                        "popularity": 37.8,
+                        "weeks_ago": 3
+                    },
+                    {
+                        "popularity": 30.7,
+                        "weeks_ago": 4
+                    },
+                    {
+                        "popularity": 39.5,
+                        "weeks_ago": 5
+                    },
+                    {
+                        "popularity": 31.7,
+                        "weeks_ago": 6
+                    },
+                    {
+                        "popularity": 29.2,
+                        "weeks_ago": 7
+                    }]
+                
+            }, {"name": "Hepatitis",
+            "is_checked" : false,
+                "history": [
+                    {
+                        "popularity": 1,
+                        "weeks_ago": 0
+                    },
+                    {
+                        "popularity": 6.5,
+                        "weeks_ago": 1
+                    },
+                    {
+                        "popularity": 14.6,
+                        "weeks_ago": 2
+                    },
+                    {
+                        "popularity": 1,
+                        "weeks_ago": 3
+                    },
+                    {
+                        "popularity": 1,
+                        "weeks_ago": 4
+                    },
+                    {
+                        "popularity": 16.5,
+                        "weeks_ago": 5
+                    },
+                    {
+                        "popularity": 6.3,
+                        "weeks_ago": 6
+                    },
+                    {
+                        "popularity": 6.6,
+                        "weeks_ago": 7
+                    }
+                ]},
+                {"name": "hiv",
+                "is_checked" : false,
+                "history": [
+                    {
+                        "popularity": 29.6,
+                        "weeks_ago": 0
+                    },
+                    {
+                        "popularity": 35.2,
+                        "weeks_ago": 1
+                    },
+                    {
+                        "popularity": 35.8,
+                        "weeks_ago": 2
+                    },
+                    {
+                        "popularity": 38.2,
+                        "weeks_ago": 3
+                    },
+                    {
+                        "popularity": 29.6,
+                        "weeks_ago": 4
+                    },
+                    {
+                        "popularity": 37.8,
+                        "weeks_ago": 5
+                    },
+                    {
+                        "popularity": 35.6,
+                        "weeks_ago": 6
+                    },
+                    {
+                        "popularity": 37.5,
+                        "weeks_ago": 7
+                    }
+                ]}, {
+                    "name": "zika",
+                    "is_checked" : false,
+                    "history": [
+                        {
+                            "popularity": 0,
+                            "weeks_ago": 0
+                        },
+                        {
+                            "popularity": 10.2,
+                            "weeks_ago": 1
+                        },
+                        {
+                            "popularity": 14.6,
+                            "weeks_ago": 2
+                        },
+                        {
+                            "popularity": 9.8,
+                            "weeks_ago": 3
+                        },
+                        {
+                            "popularity": 0,
+                            "weeks_ago": 4
+                        },
+                        {
+                            "popularity": 16.5,
+                            "weeks_ago": 5
+                        },
+                        {
+                            "popularity": 14.7,
+                            "weeks_ago": 6
+                        },
+                        {
+                            "popularity": 6.6,
+                            "weeks_ago": 7
+                        }
+                    ]
+                }, {
+                    "name": "dengue",
+                    "is_checked" : false,
+                    "history": [
+            {
+                "popularity": 25.3,
+                "weeks_ago": 0
+            },
+            {
+                "popularity": 33.6,
+                "weeks_ago": 1
+            },
+            {
+                "popularity": 30.3,
+                "weeks_ago": 2
+            },
+            {
+                "popularity": 29.3,
+                "weeks_ago": 3
+            },
+            {
+                "popularity": 30.7,
+                "weeks_ago": 4
+            },
+            {
+                "popularity": 41.4,
+                "weeks_ago": 5
+            },
+            {
+                "popularity": 41.8,
+                "weeks_ago": 6
+            },
+            {
+                "popularity": 39.2,
+                "weeks_ago": 7
             }
+        ]
+                }
         ]
         }
 
 
         this.handleNormalCheckBox = this.handleNormalCheckBox.bind();
         this.create_form_label = this.create_form_label.bind();
-        this.add_tag = this.add_tag.bind();
     }
 
 
@@ -143,38 +323,6 @@ export default class HashtagGraph extends React.Component {
         />
     }
 
-
-    // add_tag = (e) => {
-    //     const url = 'https://api.hashtagify.me/1.0/tag/flu';
-    //     const lists = fetch(url, {
-    //         method: 'GET',
-    //         headers: {
-    //             'mode': "no-cors",
-    //             'cache-control': 'no-cache',
-    //             'authorization': 'Bearer 9b932c3d4ac124a34da4f8d3bfa3e9c70c9c015c'
-    //           }
-    //         mode : "no-cors",
-    //       }).then(res => res.json())
-    //         .then(res => {
-    //             console.log(res)
-    //         })
-    //     // var options = {
-    //     //     method: 'GET',
-    //     //     url: 'https://api.hashtagify.me/1.0/tag/flu',
-    //     //     headers: {
-    //     //       'mode': "no-cors",
-    //     //       'cache-control': 'no-cache',
-    //     //       'authorization': 'Bearer 9b932c3d4ac124a34da4f8d3bfa3e9c70c9c015c'
-    //     //     }
-    //     //   };
-    //     //   var response;
-    //     //   request(options, function (error, response, body) {
-    //     //     if (error) throw new Error(error);
-          
-    //     //     console.log(JSON.parse(body));
-    //     //     console.log(JSON.parse(response));
-    //     //   });
-    // }
 
     render() {
         const data = this.state.diseases.filter(key => key["is_checked"]).map((key) => {
@@ -209,9 +357,6 @@ export default class HashtagGraph extends React.Component {
             <Typography variant="h5" style = {{margin : "10px"}}>
               Display on graph:     
             </Typography>
-            {/* <Button variant="contained" color="primary" onClick = {this.add_tag} style={{ minWidth: '90px', minHeight: '20px', fontSize: '18px'}}>
-            Go
-          </Button> */}
               {this.state.diseases.map((key,i) => this.create_form_label(key,i))}
             </FormGroup>
                 <CanvasJSChart options = {options}/>

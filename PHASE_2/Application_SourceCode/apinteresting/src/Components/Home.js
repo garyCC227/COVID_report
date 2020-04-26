@@ -105,6 +105,9 @@ export default function Home(props) {
             </CardContent>
             <Divider />
             <CardActions>
+              <Button size="small" color="primary" href="/social-impacts/trends" className={classes.functionLinks}>
+                Google Trends
+                </Button>
               <Button size="small" color="primary" href="/social-impacts/stocks" className={classes.functionLinks}>
                 Stock Market
               </Button>

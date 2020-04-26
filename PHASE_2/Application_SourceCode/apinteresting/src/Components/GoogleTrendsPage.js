@@ -18,7 +18,7 @@ class GoogleTrendsPage extends Component {
       <div>
         <Card>
           <CardHeader color="info">
-            <h2>Google Trends</h2>
+            <h2>Google Trends on 'Disease'</h2>
           </CardHeader>
           <CardBody />
         </Card>
@@ -27,30 +27,6 @@ class GoogleTrendsPage extends Component {
           <Paper>
             <Box p={3}>
               <DiseaseTopicTrend />
-            </Box>
-          </Paper>
-        </Box>
-
-        <Box my={1}>
-          <Paper>
-            <Box p={3}>
-              <GoogleTrendsChart />
-            </Box>
-          </Paper>
-        </Box>
-
-        <Box my={1}>
-          <Paper>
-            <Box p={3}>
-              <CovSearchTrend />
-            </Box>
-          </Paper>
-        </Box>
-
-        <Box my={1}>
-          <Paper>
-            <Box p={3}>
-              <TrendQuestionCov19 />
             </Box>
           </Paper>
         </Box>

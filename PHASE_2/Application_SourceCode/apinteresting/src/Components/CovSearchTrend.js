@@ -11,7 +11,7 @@ export default class CovSearchTrend extends Component {
 
 
       <div>
-        <h3>Search Interest</h3>
+        <h3>Cov-19 Search frequency By Different States</h3>
         <div id="google-trend-container-2">
           <ScriptTag type="text/javascript">
             {`
@@ -27,3 +27,4 @@ export default class CovSearchTrend extends Component {
     );
   }
 }
+

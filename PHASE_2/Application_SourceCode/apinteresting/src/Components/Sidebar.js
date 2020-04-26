@@ -104,12 +104,6 @@ export default function Sidebar() {
                         <ListItemText>Twitter Trends</ListItemText>
                     </ListItem>
                 </Link>
-                <Link to="/social-impacts/trends" className={classes.sideNavText}>
-                    <ListItem button>
-                        <ListItemIcon><TrendingUpIcon /></ListItemIcon>
-                        <ListItemText>Google Trends</ListItemText>
-                    </ListItem>
-                </Link>
                 <Link to="/social-impacts/stocks" className={classes.sideNavText}>
                     <ListItem button>
                         <ListItemIcon><TrendingDownIcon /></ListItemIcon>

@@ -10,7 +10,7 @@ export default class GoogleTrendsChart extends Component {
   render() {
     return (
       <div>
-        <h3>Search Interest</h3>
+        <h3>Cov-19 Search Interest For Search Keyword</h3>
         <div id="google-trend-container">
           <ScriptTag type="text/javascript">
             {`

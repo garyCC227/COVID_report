@@ -64,11 +64,6 @@ class Cov19Page extends Component {
           </Paper>
         </Box>
         </div>
-
-
-        <div class="w3-right" style={{'width':'28%'}}>
-          <GoogleTrendsPage/>
-        </div>
       </div>
     );
   }

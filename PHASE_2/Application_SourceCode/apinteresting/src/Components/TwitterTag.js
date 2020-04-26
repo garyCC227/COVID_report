@@ -439,7 +439,7 @@ export default class TwitterTag extends React.Component{
         const tags = this.state.data.map(function(tag){
         var color = ['blue','red','green','teal', 'orange', 'black','pink']
         var i = Math.floor(Math.random() * 7);
-        var classname = "ui ".concat(color[i], " tag label w3-small w3-margin-left w3-margin-top");
+        var classname = "ui ".concat(color[i], " tag label w3-small w3-margin-left w3-margin-top w3-opacity");
         return (
           <a class={classname} href={tag.url} style={{'textDecoration':'underline'}}><b>{tag.name}: {tag.tweet_volume}</b>  <i class="hotjar icon"></i></a>
         );
@@ -450,9 +450,9 @@ export default class TwitterTag extends React.Component{
             <div class="content">
               <div class="header">
                 {/* input tag */}
-                <h5>Search by Country:</h5>
+                <h5>Search Tags By Country:</h5>
                 <div class="ui right labeled left icon input">
-                    <i class="tags icon"></i>
+                    <i class="map marker alternate icon"></i>
                     <input type="text" placeholder="Australia" id="input" onChange={this.onInputChange} name={this.state.inputval} value={this.state.inputval}/>
                     <a class="ui blue tag label" onClick={this.onMouseClick} name={this.state.inputval}>
                       Search

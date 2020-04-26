@@ -9,7 +9,7 @@ export default class TrendQuestionCov19 extends Component {
   render() {
     return (
       <div>
-        <h3>Trending Questions</h3>
+        <h3>Cov-19 Trending Questions</h3>
         <div id="google-trend-container-1">
           <ScriptTag type="text/javascript">
             {`

@@ -19,8 +19,8 @@ class HealthCare extends Component {
 
   componentDidMount = () => {
     var url = 'http://newsapi.org/v2/everything?' +
-      'q=health&' +
-      'pageSize=10&' +
+      'q=healthcare&' +
+      'pageSize=15&' +
       'apiKey=cd9567c0810a4be09ec8558e5733d54c';
     var req = new Request(url);
 
@@ -41,27 +41,27 @@ class HealthCare extends Component {
               <CardHeader color="success">
                 <h2>Health Care Tips</h2>
               </CardHeader>
-              <CardBody />
+              <CardBody>
+              {this.state.articles.map((item) => {
+                return (
+                  <Box mt={1}>
+                    <Card>
+                      <CardActionArea href={item.url} target="_blank">
+                        <CardContent>
+                          <Typography gutterBottom variant="h5" component="h2">
+                            {item.title}
+                          </Typography>
+                          <Typography variant="body2" color="textSecondary" component="p">
+                            {item.content}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </Box>
+                )
+              })}
+              </CardBody>
             </Card>
-
-            {this.state.articles.map((item) => {
-              return (
-                <Box mt={1}>
-                  <Card>
-                    <CardActionArea href={item.url} target="_blank">
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                          {item.title}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                          {item.content}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Card>
-                </Box>
-              )
-            })}
           </GridItem>
 
           <GridItem xs={12} sm={12} md={4}>

@@ -90,11 +90,10 @@ class ArticleListPage extends React.Component {
             <h2>Article List</h2>
           </CardHeader>
           <CardBody />
-        </Card>
-        <Card>
           <CardBody>
             <ArticleSearchToolbar onSubmit={this.onSearchSubmit} />
           </CardBody>
+
         </Card>
         {content}
 
@@ -104,4 +103,3 @@ class ArticleListPage extends React.Component {
 }
 
 export default ArticleListPage;
-

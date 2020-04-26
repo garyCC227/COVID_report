@@ -107,29 +107,31 @@ export default class Alerts extends Component {
           <CardHeader color="primary">
             <h2>Outbreak Statistics</h2>
           </CardHeader>
-          <CardBody />
-        </Card>
-        <AlertSearchBar
-          start_date={this.state.start_date}
-          end_date={this.state.end_date}
-          country={this.state.country}
-          onSubmit={this.update_search_query}
-        />
-        <Divider />
-        <br />
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-        />
-        <br />
+          <CardBody>
+          <AlertSearchBar
+            start_date={this.state.start_date}
+            end_date={this.state.end_date}
+            country={this.state.country}
+            onSubmit={this.update_search_query}
+          />
+          <Divider />
+          <br />
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          />
+          <br />
 
-        <AlertsSingleCountry
-          start_date={this.state.start_date}
-          end_date={this.state.end_date}
-          country={this.state.country}
-        />
+          <AlertsSingleCountry
+            start_date={this.state.start_date}
+            end_date={this.state.end_date}
+            country={this.state.country}
+          />
+          </CardBody>
+        </Card>
+
       </div>
 
     );

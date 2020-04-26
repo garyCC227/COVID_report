@@ -24,21 +24,22 @@ class Cov19Page extends Component {
             <CardHeader color="danger">
               <h2>COV-19 Statistics</h2>
             </CardHeader>
-            <CardBody />
+            <CardBody>
+            <div class="w3-container">
+              <Cov19Table />
+            </div>
+            </CardBody>
           </Card>
-          <div class="w3-container">
-            <Cov19Table />
-          </div>
         <br/>
         <br/>
-        
+
         <Card>
           <CardHeader color="danger">
             <h2>Google Trends on 'Cov-19'</h2>
           </CardHeader>
           <CardBody />
         </Card>
-        
+
         <Box my={1}>
           <Paper>
             <Box p={3}>
@@ -65,7 +66,7 @@ class Cov19Page extends Component {
         </div>
 
 
-        <div class="w3-right" style={{'width':'28%'}}> 
+        <div class="w3-right" style={{'width':'28%'}}>
           <GoogleTrendsPage/>
         </div>
       </div>

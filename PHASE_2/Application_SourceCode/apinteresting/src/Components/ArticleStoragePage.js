@@ -17,12 +17,13 @@ class ArticleStoragePage extends Component {
           <CardHeader color="warning">
             <h2>Article Storage Overview</h2>
           </CardHeader>
-          <CardBody />
-        </Card>
-        <div className="w3-container">
-          <h2 className="w3-center"> <b>Disease Articles in Database</b></h2>
-          <PieChart />
-        </div>
+          <CardBody>
+          <div className="w3-container">
+            <h2 className="w3-center"> <b>Disease Articles in Database</b></h2>
+            <PieChart />
+          </div>
+          </CardBody>
+        </Card>    
       </div>
     );
   }

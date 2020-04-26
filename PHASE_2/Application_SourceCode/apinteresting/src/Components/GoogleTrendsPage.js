@@ -20,16 +20,17 @@ class GoogleTrendsPage extends Component {
           <CardHeader color="info">
             <h2>Google Trends on 'Disease'</h2>
           </CardHeader>
-          <CardBody />
+          <CardBody>
+          <Box my={1}>
+
+              <Box p={3}>
+                <DiseaseTopicTrend />
+              </Box>
+
+          </Box>
+          </CardBody>
         </Card>
 
-        <Box my={1}>
-          <Paper>
-            <Box p={3}>
-              <DiseaseTopicTrend />
-            </Box>
-          </Paper>
-        </Box>
       </div>
     );
   }

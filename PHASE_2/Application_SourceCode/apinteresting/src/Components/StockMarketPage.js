@@ -17,9 +17,11 @@ class StockMarketPage extends Component {
           <CardHeader color="danger">
             <h2>Stock Market</h2>
           </CardHeader>
-          <CardBody />
+          <CardBody>
+            <StockChart />
+          </CardBody>
         </Card>
-        <StockChart />
+
       </div>
     );
   }

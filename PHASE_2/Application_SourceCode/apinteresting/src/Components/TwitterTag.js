@@ -374,7 +374,14 @@ export default class TwitterTag extends React.Component{
 
     this.setState(
       {
-        loading:true
+        loading:true,
+        data:[{
+          "name": "Tags Are Clickable",
+          "url": "http://twitter.com/search?q=Austrlia",
+          "promoted_content": null,
+          "query": "%23SoMeArrependoDe",
+          "tweet_volume": null
+        },]
       }
     )
   }

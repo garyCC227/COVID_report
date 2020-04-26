@@ -327,7 +327,7 @@ export default class HashtagGraph extends React.Component {
     render() {
         const data = this.state.diseases.filter(key => key["is_checked"]).map((key) => {
             return {
-                type: "splineArea",
+                type: "spline",
 				xValueFormatString: "YYYY-MM-DD",
                 showInLegend: true,
                 name: key["name"],

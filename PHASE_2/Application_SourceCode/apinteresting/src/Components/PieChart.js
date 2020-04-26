@@ -52,6 +52,7 @@ export default class PieChart extends React.Component {
       data_points = [{ name: "Outbreak", y: 1 }];
     }
     const options = {
+      exportEnabled: true,
       animationEnabled: true,
       startAngle: 80,
       animationDuration: 1000,

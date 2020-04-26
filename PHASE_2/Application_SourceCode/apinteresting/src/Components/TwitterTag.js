@@ -371,21 +371,17 @@ export default class TwitterTag extends React.Component{
 
   componentDidMount(){
     //TODO: default get austrlia tags
-    
-    //default show 5 tags + cov-19
-    var tag_keyword = "Cov-19";
-    var result = []
-    for(var tag of Hardcodedata){ //TODO: change this to loop through response data
-      if(tag.name.includes(tag_keyword)){
-        result.push(tag)
-      }
-    }
 
     this.setState(
       {
-        data:Hardcodedata.slice(0,5).concat(result), // TODO: change this to response data && default shown: 1 Cov-19 tags + 5 other tags
-        globaldata:Hardcodedata, // TODO:update response tags data here
-        loading:true
+        loading:true,
+        data:[{
+          "name": "Tags Are Clickable",
+          "url": "http://twitter.com/search?q=Austrlia",
+          "promoted_content": null,
+          "query": "%23SoMeArrependoDe",
+          "tweet_volume": null
+        },]
       }
     )
   }
@@ -445,8 +441,6 @@ export default class TwitterTag extends React.Component{
         );
       });
       Component = (
-        <div class="ui cards" >
-          <div class="card" style={{'width':'100%'}}>
             <div class="content">
               <div class="header">
                 {/* input tag */}
@@ -470,8 +464,6 @@ export default class TwitterTag extends React.Component{
                     </a>
                 </div>
                 {/* end of input tag */}
-              </div>
-            </div>
 
 
             {/* tag shown here */}

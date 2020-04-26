@@ -341,7 +341,8 @@ export default class HashtagGraph extends React.Component {
             };
         });
         const options = {
-			animationEnabled: true,
+            animationEnabled: true,
+            exportEnabled: true,
 			title: {
 				text: "Disease Twitter Hashtag Trend"
 			},
@@ -354,7 +355,7 @@ export default class HashtagGraph extends React.Component {
 		}
         return ( <div>
             <FormGroup row >
-            <Typography variant="h5" style = {{margin : "10px"}}>
+            <Typography variant="h5" style = {{margin : "20px"}}>
               Display on graph:     
             </Typography>
               {this.state.diseases.map((key,i) => this.create_form_label(key,i))}

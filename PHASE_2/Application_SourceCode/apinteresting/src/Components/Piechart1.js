@@ -44,8 +44,6 @@ export default class PieChart extends React.Component {
 
 
 	render() {
-    
-
 		const options = {
 			exportEnabled: true,
 			animationEnabled: true,

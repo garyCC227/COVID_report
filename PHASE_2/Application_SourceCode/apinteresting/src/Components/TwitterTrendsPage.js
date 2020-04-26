@@ -9,6 +9,8 @@ import { usePromiseTracker, trackPromise } from 'react-promise-tracker'
 import Loader from 'react-loader-spinner'
 import HashtagGraph from './HashtagGraph'
 import Divider from '@material-ui/core/Divider';
+import { Paper, Box, Grid } from "@material-ui/core";
+import TwitterTag from './TwitterTag.js'
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
 // Required for side-effects
@@ -89,42 +91,80 @@ class TwitterTrendsPage extends Component {
                 <CardHeader color="info">
                   <h2>Twitter Trends</h2>
                 </CardHeader>
-                <CardBody>
-                  <Typography variant="h6">
-                    Latest Tweets
-                  </Typography>
-                  {(this.state.twitterPosts).filter((key, i) => i < 8).map((item) => {
-                    return (
-                      <Card variant="outlined" style={{ marginTop: "0.5rem", marginBottom: "0.5rem" }}>
-                        <CardBody>
-                          <Typography className={classes.title} color="textSecondary" gutterBottom>
-                            {item.user['name']}
-                          </Typography>
-                          <Typography className={classes.pos} color="textSecondary">
-                            Retweeted: <b>{item.retweet_count} times</b>
-                          </Typography>
-
-                          <Typography variant="body2" component="p">
-                            {item.full_text}
-                            <br />
-                          </Typography>
-                        </CardBody>
-                      </Card>
-                    )
-                  })}
-                </CardBody>
+                <CardBody />
               </Card>
 
           }
         </div>
-          <HashtagGraph/>
-        <div className="hastagify_embed" data-hashtag="Disease" data-width="max" data-mode="table">
-          <div>
-            <a href="http://hashtagify.me/"></a>
-          </div>
-        </div>
+        <Box my={2}>
+          <Paper elevation={3}>
 
-      </div>);
+            <div className="hastagify_embed" data-hashtag="Disease" data-width="max" data-mode="table">
+              <div>
+                <a href="http://hashtagify.me/"></a>
+              </div>
+            </div>
+          </Paper>
+        </Box>
+
+        <Box my={2}>
+        </Box>
+        <Box my={2}>
+          <div style={{ flexGrow: 1 }}>
+            <Grid container spacing={3}>
+              <Grid item lg={8}>
+                <Card >
+                  <CardHeader color="info">
+                    <h2>Twitter Tag</h2>
+                  </CardHeader>
+                  <CardBody>
+                    <Box my={1}>
+                      <Box p={3}>
+                        <TwitterTag />
+                      </Box>
+                    </Box>
+                  </CardBody>
+                </Card>
+
+                <Paper elevation={3}>
+                  <HashtagGraph />
+                </Paper>
+              </Grid>
+              <Grid item lg={4}>
+                <Card>
+                  <CardHeader color="info">
+                    <h2>Latest Tweets</h2>
+                  </CardHeader>
+                  <CardBody>
+                    {(this.state.twitterPosts).filter((key, i) => i < 8).map((item) => {
+                      return (
+                        <Card variant="outlined" style={{ marginTop: "0.5rem", marginBottom: "0.5rem" }}>
+                          <CardBody>
+                            <Typography className={classes.title} color="textSecondary" gutterBottom>
+                              {item.user['name']}
+                            </Typography>
+                            <Typography className={classes.pos} color="textSecondary">
+                              Retweeted: <b>{item.retweet_count} times</b>
+                            </Typography>
+
+                            <Typography variant="body2" component="p">
+                              {item.full_text}
+                              <br />
+                            </Typography>
+                          </CardBody>
+                        </Card>
+                      )
+                    })}
+                  </CardBody>
+                </Card>
+
+              </Grid>
+            </Grid>
+          </div>
+        </Box>
+
+
+      </div >);
   }
 }
 export default withStyles(styles)(TwitterTrendsPage);

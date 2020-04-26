@@ -126,7 +126,7 @@ export default class HashtagGraph extends React.Component {
 
         this.handleNormalCheckBox = this.handleNormalCheckBox.bind();
         this.create_form_label = this.create_form_label.bind();
-        this.add_tag = this.add_tag.bind();
+        //this.add_tag = this.add_tag.bind();
     }
 
 

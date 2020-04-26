@@ -445,8 +445,6 @@ export default class TwitterTag extends React.Component{
         );
       });
       Component = (
-        <div class="ui cards" >
-          <div class="card" style={{'width':'100%'}}>
             <div class="content">
               <div class="header">
                 {/* input tag */}
@@ -470,8 +468,6 @@ export default class TwitterTag extends React.Component{
                     </a>
                 </div>
                 {/* end of input tag */}
-              </div>
-            </div>
 
 
             {/* tag shown here */}

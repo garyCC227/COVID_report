@@ -19,7 +19,7 @@ class Cov19Page extends Component {
   render() {
     return (
       <div class="w3-display-container">
-        <div class="w3-left">
+        <div class="w3-left" style={{'width':'100%'}}>
           <Card>
             <CardHeader color="danger">
               <h2>COV-19 Statistics</h2>

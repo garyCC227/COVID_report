@@ -8,11 +8,12 @@ import CardBody from "./Style/CardBody.js";
 import Typography from '@material-ui/core/Typography';
 import { usePromiseTracker, trackPromise } from 'react-promise-tracker'
 import Loader from 'react-loader-spinner'
+import HashtagGraph from './HashtagGraph'
+import Divider from '@material-ui/core/Divider';
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
 // Required for side-effects
 require("firebase/functions");
-
 const styles = ({
   root: {
     minWidth: 275,
@@ -80,13 +81,16 @@ class TwitterTrendsPage extends Component {
     const { classes } = this.props
     return (
       <div>
-      <div>
-        {this.state.isLoading ? <div style={{ textAlign: "center" }}><this.LoadingIndicator /></div> : <Card>
+        <Card>
           <CardHeader color="info">
             <h2>Twitter Trends</h2>
           </CardHeader>
           <CardBody />
-        </Card>}
+        </Card>
+      <div>
+        {this.state.isLoading ? <div style={{ textAlign: "center" }}><this.LoadingIndicator /></div> 
+        : 
+        <div>
         {(this.state.twitterPosts).filter((key,i) => i < 5).map((item) => {
           return (
             <div key={item.id}>
@@ -95,6 +99,7 @@ class TwitterTrendsPage extends Component {
                   <Typography className={classes.title} color="textSecondary" gutterBottom>
                     {item.user['name']}
                   </Typography>
+
                   <Typography className={classes.pos} color="textSecondary">
                     Retweeted: <b>{item.retweet_count} times</b>
                   </Typography>
@@ -110,7 +115,13 @@ class TwitterTrendsPage extends Component {
             </div>
           )
         })}
+        <Divider/>
+        <HashtagGraph />
+        </div>
+        }
+        <Divider/>
       </div>
+      <br/>
       <div class="hastagify_embed" data-hashtag="Disease" data-width="1600" data-mode="table"><div><a href="http://hashtagify.me/"></a></div></div>
       </div>);
   }

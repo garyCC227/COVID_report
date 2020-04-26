@@ -19,8 +19,8 @@ class ArticleStoragePage extends Component {
           </CardHeader>
           <CardBody />
         </Card>
-        <div class="w3-container">
-          <h2 class="w3-center"> <b>Disease Articles in Database</b></h2>
+        <div className="w3-container">
+          <h2 className="w3-center"> <b>Disease Articles in Database</b></h2>
           <PieChart />
         </div>
       </div>

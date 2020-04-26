@@ -80,22 +80,11 @@ class TwitterTrendsPage extends Component {
     return (
       <div>
         <div>
-          {
-            this.state.isLoading
-              ?
-              <div style={{ textAlign: "center" }}>
-                <this.LoadingIndicator />
-              </div>
-              :
-              <Card>
-                <CardHeader color="info">
-                  <h2>Twitter Trends</h2>
-                </CardHeader>
-                <CardBody />
-              </Card>
-
-          }
-        </div>
+        <Card>
+        <CardHeader color="info">
+          <h2>Twitter Trends</h2>
+        </CardHeader>
+        <CardBody>
         <Box my={2}>
           <Paper elevation={3}>
 
@@ -106,6 +95,9 @@ class TwitterTrendsPage extends Component {
             </div>
           </Paper>
         </Box>
+        </CardBody >
+        </Card>
+        </div>
 
         <Box my={2}>
         </Box>

@@ -144,37 +144,37 @@ export default class HashtagGraph extends React.Component {
     }
 
 
-    add_tag = (e) => {
-        const url = 'https://api.hashtagify.me/1.0/tag/flu';
-        const lists = fetch(url, {
-            method: 'GET',
-            headers: {
-                'mode': "no-cors",
-                'cache-control': 'no-cache',
-                'authorization': 'Bearer 9b932c3d4ac124a34da4f8d3bfa3e9c70c9c015c'
-              }
-            mode : "no-cors",
-          }).then(res => res.json())
-            .then(res => {
-                console.log(res)
-            })
-        // var options = {
-        //     method: 'GET',
-        //     url: 'https://api.hashtagify.me/1.0/tag/flu',
-        //     headers: {
-        //       'mode': "no-cors",
-        //       'cache-control': 'no-cache',
-        //       'authorization': 'Bearer 9b932c3d4ac124a34da4f8d3bfa3e9c70c9c015c'
-        //     }
-        //   };
-        //   var response;
-        //   request(options, function (error, response, body) {
-        //     if (error) throw new Error(error);
+    // add_tag = (e) => {
+    //     const url = 'https://api.hashtagify.me/1.0/tag/flu';
+    //     const lists = fetch(url, {
+    //         method: 'GET',
+    //         headers: {
+    //             'mode': "no-cors",
+    //             'cache-control': 'no-cache',
+    //             'authorization': 'Bearer 9b932c3d4ac124a34da4f8d3bfa3e9c70c9c015c'
+    //           }
+    //         mode : "no-cors",
+    //       }).then(res => res.json())
+    //         .then(res => {
+    //             console.log(res)
+    //         })
+    //     // var options = {
+    //     //     method: 'GET',
+    //     //     url: 'https://api.hashtagify.me/1.0/tag/flu',
+    //     //     headers: {
+    //     //       'mode': "no-cors",
+    //     //       'cache-control': 'no-cache',
+    //     //       'authorization': 'Bearer 9b932c3d4ac124a34da4f8d3bfa3e9c70c9c015c'
+    //     //     }
+    //     //   };
+    //     //   var response;
+    //     //   request(options, function (error, response, body) {
+    //     //     if (error) throw new Error(error);
           
-        //     console.log(JSON.parse(body));
-        //     console.log(JSON.parse(response));
-        //   });
-    }
+    //     //     console.log(JSON.parse(body));
+    //     //     console.log(JSON.parse(response));
+    //     //   });
+    // }
 
     render() {
         const data = this.state.diseases.filter(key => key["is_checked"]).map((key) => {

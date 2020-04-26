@@ -7,6 +7,7 @@ import CardBody from "./Style/CardBody.js";
 import { CardActionArea, CardContent, Typography, CardActions, Button } from "@material-ui/core"
 import CardAvatar from "./Style/CardAvatar.js";
 import hand from "./Hands.jpg";
+import ReactLoading from 'react-loading';
 import { Box } from '@material-ui/core';
 
 class HealthCare extends Component {
@@ -14,6 +15,7 @@ class HealthCare extends Component {
     super(props);
     this.state = {
       articles: [],
+      loading:false
     }
   }
 
@@ -28,41 +30,52 @@ class HealthCare extends Component {
       .then(res => res.json())
       .then(res => res.articles)
       .then(res => {
-        this.setState({ articles: res })
+        this.setState({ articles: res , loading:true})
       });
   }
 
   render() {
+    let data;
+    if(this.state.loading){
+      data = this.state.articles.map((item) => {
+        return (
+          <Box mt={1}>
+            <Card>
+              <CardActionArea href={item.url} target="_blank">
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    {item.content}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Box>
+        )
+      });
+      
+    }else{
+      data = (
+        <div className="">
+          <ReactLoading type="spin" color="#34c0eb" height={100} width={100} />
+        </div>
+      );
+    }
     return (
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={8}>
-            <Card>
-              <CardHeader color="success">
-                <h2>Health Care Tips</h2>
-              </CardHeader>
-              <CardBody>
-              {this.state.articles.map((item) => {
-                return (
-                  <Box mt={1}>
-                    <Card>
-                      <CardActionArea href={item.url} target="_blank">
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            {item.title}
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            {item.content}
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </Box>
-                )
-              })}
-              </CardBody>
-            </Card>
-          </GridItem>
+        <GridItem xs={12} sm={12} md={8}>
+        <Card>
+          <CardHeader color="success">
+            <h2>Health Care Tips</h2>
+          </CardHeader>
+          <CardBody>
+          {data}
+          </CardBody>
+        </Card>
+      </GridItem>
 
           <GridItem xs={12} sm={12} md={4}>
             <Box my={8}>

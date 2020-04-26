@@ -7,6 +7,10 @@ import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import { AutoSizer, Column, Table } from "react-virtualized";
+import Card from "./Style/Card.js";
+import CardHeader from "./Style/CardHeader.js";
+import CardBody from "./Style/CardBody.js";
+import ReactLoading from 'react-loading';
 
 const styles = theme => ({
   flexContainer: {
@@ -181,7 +185,7 @@ for (let i = 0; i < 200; i += 1) {
 export default class Cov19Table extends React.Component {
   constructor() {
     super()
-    this.state = { rows: [] }
+    this.state = {rows:[], loading:false}
 
     this.OnPageLoad = this.OnPageLoad.bind(this);
   }
@@ -251,8 +255,9 @@ export default class Cov19Table extends React.Component {
         return 0;
       }
     })
-    this.setState({ rows: rows })
+    this.setState({rows:rows, loading:true})
   }
+
 
   exportAsJson(json) {
     const element = document.createElement("a");
@@ -284,68 +289,78 @@ export default class Cov19Table extends React.Component {
     document.body.removeChild(element);
   }
 
+
   render() {
-    return (
+    let component;
+    if(this.state.loading){
+      component = (
       <div>
-
-        <Paper style={{ height: 500, width: "100%" }} elevation={5}>
-
-          <VirtualizedTable
-            rowCount={this.state.rows.length}
-            rowGetter={({ index }) => this.state.rows[index]}
-            columns={[
-              {
-                width: 300,
-                label: "Country",
-                dataKey: "Country"
-              },
-              {
-                width: 200,
-                label: "Confirmed",
-                dataKey: "Confirmed",
-                numeric: true
-              },
-              {
-                width: 200,
-                label: "Suspected",
-                dataKey: "Suspected",
-                numeric: true
-              },
-              {
-                width: 200,
-                label: "Cured",
-                dataKey: "Cured",
-                numeric: true
-              },
-              {
-                width: 200,
-                label: "Death",
-                dataKey: "Death",
-                numeric: true
-              }
-            ]}
-          />
-
-
-        </Paper>
-
-        <Box my={1}>
+      <Paper style={{ height: 500, width: "100%" }} elevation={5}>
+        <VirtualizedTable
+          rowCount={this.state.rows.length}
+          rowGetter={({ index }) => this.state.rows[index]}
+          columns={[
+            {
+              width: 300,
+              label: "Country",
+              dataKey: "Country"
+            },
+            {
+              width: 200,
+              label: "Confirmed",
+              dataKey: "Confirmed",
+              numeric: true
+            },
+            {
+              width: 200,
+              label: "Suspected",
+              dataKey: "Suspected",
+              numeric: true
+            },
+            {
+              width: 200,
+              label: "Cured",
+              dataKey: "Cured",
+              numeric: true
+            },
+            {
+              width: 200,
+              label: "Death",
+              dataKey: "Death",
+              numeric: true
+            }
+          ]}
+        />
+      </Paper>
+      <hr/>
+      <Box my={1}>
+        <Button
+          onClick={() => this.exportAsJson(this.state.rows)}
+          color="primary"
+          variant="outlined"
+        >
+          Export As Json
+          </Button>&nbsp;
           <Button
-            onClick={() => this.exportAsJson(this.state.rows)}
-            color="primary"
-            variant="outlined"
-          >
-            Export As Json
-            </Button>&nbsp;
-            <Button
-            onClick={() => this.exportAsCsv(this.state.rows)}
-            color="primary"
-            variant="outlined"
-          >
-            Export As CSV
-            </Button>
-        </Box>
-
+          onClick={() => this.exportAsCsv(this.state.rows)}
+          color="primary"
+          variant="outlined"
+        >
+          Export As CSV
+          </Button>
+      </Box>
+      </div>
+      );
+    }else{
+      component = (
+        <div className="w3-display-middle">
+          <ReactLoading type="spin" color="#34c0eb" height={100} width={100} />
+        </div>
+      );
+    }
+    return (
+      <div className="w3-middle">
+      {component} 
       </div>
     );
   }

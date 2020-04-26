@@ -26,7 +26,7 @@ admin.initializeApp();
 exports.getTweets = functions.https.onCall((data, context) => {
     var ret = ''
     console.log("Request Made")
-    return T.get('search/tweets', { q: 'coronavirus since:2011-07-11', count: 100, tweet_mode: 'extended' })
+    return T.get('search/tweets', { q: 'disease quarantine coronavirus since:2011-07-11', count: 100, tweet_mode: 'extended' })
         .then((res) => {
             console.log(res.data.statuses)
             return res.data.statuses

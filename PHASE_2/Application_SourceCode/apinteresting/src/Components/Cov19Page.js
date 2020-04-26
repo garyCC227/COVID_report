@@ -25,7 +25,7 @@ class Cov19Page extends Component {
               <h2>COV-19 Statistics</h2>
             </CardHeader>
             <CardBody>
-            <div class="w3-container">
+            <div class="w3-display-container" style={{'width':'100%', 'minHeight':'200px'}}>
               <Cov19Table />
             </div>
             </CardBody>

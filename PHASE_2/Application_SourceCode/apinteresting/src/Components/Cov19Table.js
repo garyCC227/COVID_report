@@ -5,6 +5,10 @@ import { withStyles } from "@material-ui/core/styles";
 import TableCell from "@material-ui/core/TableCell";
 import Paper from "@material-ui/core/Paper";
 import { AutoSizer, Column, Table } from "react-virtualized";
+import Card from "./Style/Card.js";
+import CardHeader from "./Style/CardHeader.js";
+import CardBody from "./Style/CardBody.js";
+import ReactLoading from 'react-loading';
 
 const styles = theme => ({
   flexContainer: {
@@ -179,7 +183,7 @@ for (let i = 0; i < 200; i += 1) {
 export default class Cov19Table extends React.Component {
   constructor(){
     super()
-    this.state = {rows:[]}
+    this.state = {rows:[], loading:false}
 
     this.OnPageLoad = this.OnPageLoad.bind(this);
   }
@@ -249,11 +253,13 @@ export default class Cov19Table extends React.Component {
         return 0;
       }
     })
-    this.setState({rows:rows})
+    this.setState({rows:rows, loading:true})
   }
 
   render() {
-    return (
+    let component;
+    if(this.state.loading){
+      component = (
       <Paper style={{ height: 500, width: "100%" }} elevation={5}>
         <VirtualizedTable
           rowCount={this.state.rows.length}
@@ -291,6 +297,18 @@ export default class Cov19Table extends React.Component {
           ]}
         />
       </Paper>
+      );
+    }else{
+      component = (
+        <div className="w3-display-middle">
+          <ReactLoading type="spin" color="#34c0eb" height={100} width={100} />
+        </div>
+      );
+    }
+    return (
+      <div className="w3-middle">
+      {component}  
+      </div>
     );
   }
 }

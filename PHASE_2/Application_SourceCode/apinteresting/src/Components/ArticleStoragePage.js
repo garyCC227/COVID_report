@@ -23,7 +23,7 @@ class ArticleStoragePage extends Component {
             <PieChart />
           </div>
           </CardBody>
-        </Card>    
+        </Card>
       </div>
     );
   }

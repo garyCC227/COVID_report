@@ -4,6 +4,8 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core/styles";
 import TableCell from "@material-ui/core/TableCell";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
 import { AutoSizer, Column, Table } from "react-virtualized";
 
 const styles = theme => ({
@@ -166,7 +168,7 @@ const sample = [
 ];
 
 function createData(id, Country, Confirmed, Suspected, Cured, Death) {
-  return { id, Country, Confirmed, Suspected, Cured, Death };
+  return { Country, Confirmed, Suspected, Cured, Death };
 }
 
 const rows = [];
@@ -177,18 +179,18 @@ for (let i = 0; i < 200; i += 1) {
 }
 
 export default class Cov19Table extends React.Component {
-  constructor(){
+  constructor() {
     super()
-    this.state = {rows:[]}
+    this.state = { rows: [] }
 
     this.OnPageLoad = this.OnPageLoad.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.OnPageLoad()
   }
 
-  OnPageLoad = async ()=>{
+  OnPageLoad = async () => {
     var url = `https://lab.isaaclin.cn/nCoV/api/area?lang=en`;
     var rows = await fetch(url, {
       method: "GET"
@@ -199,9 +201,9 @@ export default class Cov19Table extends React.Component {
       })
       .then(res => {
         return res.results;
-      }).then(data =>{
+      }).then(data => {
         var rows = []
-        for (var ct of data){
+        for (var ct of data) {
           rows.push(createData(ct.locationId, ct.countryEnglishName, ct.confirmedCount, ct.suspectedCount, ct.curedCount, ct.deadCount))
         }
         return rows
@@ -240,57 +242,111 @@ export default class Cov19Table extends React.Component {
       }
     }
     rows = result;
-    rows.sort(function(a,b){
-      if (a.Confirmed > b.Confirmed){
+    rows.sort(function (a, b) {
+      if (a.Confirmed > b.Confirmed) {
         return -1;
-      }else if (a.Confirmed < b.Confirmed){
+      } else if (a.Confirmed < b.Confirmed) {
         return 1;
-      }else{
+      } else {
         return 0;
       }
     })
-    this.setState({rows:rows})
+    this.setState({ rows: rows })
+  }
+
+  exportAsJson(json) {
+    const element = document.createElement("a");
+    const file = new Blob([JSON.stringify(json)], { type: 'text/plain' });
+    element.href = URL.createObjectURL(file);
+    element.download = "export.json";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+
+  exportAsCsv(json) {
+    // From https://stackoverflow.com/questions/8847766/how-to-convert-json-to-csv-format-and-store-in-a-variable
+    var fields = Object.keys(json[0])
+    var replacer = function (key, value) { return value === null ? '' : value }
+    var csv = json.map(function (row) {
+      return fields.map(function (fieldName) {
+        return JSON.stringify(row[fieldName], replacer)
+      }).join(',')
+    })
+    csv.unshift(fields.join(',')) // add header column
+    csv = csv.join('\r\n');
+    const element = document.createElement("a");
+    const file = new Blob([csv], { type: 'text/csv' });
+    element.href = URL.createObjectURL(file);
+    element.download = "export.csv";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
   }
 
   render() {
     return (
-      <Paper style={{ height: 500, width: "100%" }} elevation={5}>
-        <VirtualizedTable
-          rowCount={this.state.rows.length}
-          rowGetter={({ index }) => this.state.rows[index]}
-          columns={[
-            {
-              width: 300,
-              label: "Country",
-              dataKey: "Country"
-            },
-            {
-              width: 200,
-              label: "Confirmed",
-              dataKey: "Confirmed",
-              numeric: true
-            },
-            {
-              width: 200,
-              label: "Suspected",
-              dataKey: "Suspected",
-              numeric: true
-            },
-            {
-              width: 200,
-              label: "Cured",
-              dataKey: "Cured",
-              numeric: true
-            },
-            {
-              width: 200,
-              label: "Death",
-              dataKey: "Death",
-              numeric: true
-            }
-          ]}
-        />
-      </Paper>
+      <div>
+
+        <Paper style={{ height: 500, width: "100%" }} elevation={5}>
+
+          <VirtualizedTable
+            rowCount={this.state.rows.length}
+            rowGetter={({ index }) => this.state.rows[index]}
+            columns={[
+              {
+                width: 300,
+                label: "Country",
+                dataKey: "Country"
+              },
+              {
+                width: 200,
+                label: "Confirmed",
+                dataKey: "Confirmed",
+                numeric: true
+              },
+              {
+                width: 200,
+                label: "Suspected",
+                dataKey: "Suspected",
+                numeric: true
+              },
+              {
+                width: 200,
+                label: "Cured",
+                dataKey: "Cured",
+                numeric: true
+              },
+              {
+                width: 200,
+                label: "Death",
+                dataKey: "Death",
+                numeric: true
+              }
+            ]}
+          />
+
+
+        </Paper>
+
+        <Box my={1}>
+          <Button
+            onClick={() => this.exportAsJson(this.state.rows)}
+            color="primary"
+            variant="outlined"
+          >
+            Export As Json
+            </Button>&nbsp;
+            <Button
+            onClick={() => this.exportAsCsv(this.state.rows)}
+            color="primary"
+            variant="outlined"
+          >
+            Export As CSV
+            </Button>
+        </Box>
+
+      </div>
     );
   }
 }

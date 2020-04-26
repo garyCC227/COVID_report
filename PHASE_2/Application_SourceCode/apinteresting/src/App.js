@@ -60,7 +60,7 @@ export default function App() {
           <div className={classes.toolbar} />
           <Switch>
             <Route path="/home" component={HomePage} />
-
+            <Route path="/article/storage" component={ArticleStoragePage} />
             <Route path="/map" component={Map} />
             <Route path="/alerts" component={Alerts} />
             <Route path="/article-list" component={ArticleListPage} />
@@ -70,6 +70,7 @@ export default function App() {
             <Route path="/health-care" component={HealthCare} />
             <Route path="/cov19" component={Cov19Page} />
             <Route path="/" component={Home} />
+
           </Switch>
 
 

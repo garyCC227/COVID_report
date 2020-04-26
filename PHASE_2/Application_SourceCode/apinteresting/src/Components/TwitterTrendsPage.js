@@ -78,7 +78,7 @@ class TwitterTrendsPage extends Component {
           <CardBody />
         </Card>}
 
-        {(this.state.twitterPosts).map((item) => {
+        {(this.state.twitterPosts).filter((key,i) => i < 5).map((item) => {
           return (
             <div key={item.id}>
               <Card className={classes.root} variant="outlined">

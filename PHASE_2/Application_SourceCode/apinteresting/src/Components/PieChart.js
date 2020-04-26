@@ -40,7 +40,7 @@ export default class PieChart extends React.Component {
     var data_points = [];
     var sub_title = 0;
     var i = 0;
-    var indexLabel = "{name}: {y} cases";
+    var indexLabel = "{name}: {y} outbreaks";
     while (this.state.data_list[i]) {
       const data = { name: this.state.data_list[i]["Name"], y: this.state.data_list[i]["Cases"].length };
       sub_title += this.state.data_list[i]["Cases"].length;
@@ -63,9 +63,9 @@ export default class PieChart extends React.Component {
         fontSize: "30"
       },
       subtitles: [{
-        text: "Total " + sub_title + " Cases",
+        text: "Total " + sub_title + " \nOutbreaks",
         verticalAlign: "center",
-        fontSize: 22,
+        fontSize: 18,
         fontFamily: "Arial",
         dockInsidePlotArea: true
       }],

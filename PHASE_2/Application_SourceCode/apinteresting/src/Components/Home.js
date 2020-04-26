@@ -54,10 +54,11 @@ export default function Home(props) {
               Welcome to our application! We are aiming to provide data related to
               diseases collected from multiple data sources for...
               <ul>
+                <li>Data Scientists</li>
                 <li>Medical Officers</li>
                 <li>Academic Medical Researchers</li>
                 <li>Public people</li>
-                <li>Whoever wish to visualize or examine the impact of diseases</li>
+                <li>Whoever wishes to visualize or examine the impact of diseases</li>
               </ul>
             </article >
           </Paper>

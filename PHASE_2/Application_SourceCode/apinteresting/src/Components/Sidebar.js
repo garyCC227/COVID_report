@@ -131,6 +131,7 @@ export default function Sidebar() {
                     </ListItem>
                 </Link>
                 <Divider />
+                <ListItem disabled >General Help</ListItem>
                 <Link to="/health-care" className={classes.sideNavText}>
                     <ListItem button>
                         <ListItemIcon><LocalHospitalIcon /></ListItemIcon>

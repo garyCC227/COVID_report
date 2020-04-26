@@ -4,6 +4,9 @@ import React, { Component } from "react";
 export default class DiseaseTopicTrend extends Component {
   constructor(props) {
     super();
+    this.state = {
+      country : "AU",
+    };
   }
 
   render() {

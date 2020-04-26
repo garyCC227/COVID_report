@@ -86,7 +86,7 @@ export default class LineChart extends React.Component {
 			exportEnabled: true,
 			theme: "light1", // "light1", "dark1", "dark2"
 			title:{
-                text: "Accumulated Cases",
+                text: "Accumulated Outbreaks",
                 verticalAlign: "top", // "top", "center", "bottom"
                 horizontalAlign: "center", // "left", "right", "center"
                 font: "helvetica",

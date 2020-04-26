@@ -211,7 +211,7 @@ export default class AlertsSingleCountry extends React.Component {
 
     render() {
         let styleobj = { font: "helvetica", fontSize: 35, fontWeight: "bold" };
-        const loading = false;
+        const loading = this.state.loading;
         return (
           <div >
             {loading ? 

@@ -158,7 +158,7 @@ export default function Home(props) {
               </Typography>
             </CardContent>
             <Divider />
-            <CardActionArea href="/health-cares">
+            <CardActionArea href="/health-care">
               <CardActions>
                 <Button size="small" color="primary" className={classes.functionLinks}>
                   Enter

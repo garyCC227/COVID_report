@@ -59,9 +59,8 @@ export default class PieChart extends React.Component {
         text: this.state.country + " Overview",
         verticalAlign: "top", // "top", "center", "bottom"
         horizontalAlign: "center", // "left", "right", "center"
-        fontFamily: "Arial",
-        fontWeight: "bold",
-        fontSize: "24"
+        font: "helvetica",
+        fontSize: "30"
       },
       subtitles: [{
         text: "Total " + sub_title + " Cases",

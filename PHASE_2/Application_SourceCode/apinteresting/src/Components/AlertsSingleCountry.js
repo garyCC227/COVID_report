@@ -12,6 +12,7 @@ import Button from "@material-ui/core/Button";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
+import { Label } from 'semantic-ui-react'
 
 import Loader from 'react-loader-spinner'
 
@@ -210,7 +211,7 @@ export default class AlertsSingleCountry extends React.Component {
 
     render() {
         let styleobj = { font: "helvetica", fontSize: 35, fontWeight: "bold" };
-        const loading = this.state.loading;
+        const loading = false;
         return (
           <div >
             {loading ? 
@@ -230,37 +231,28 @@ export default class AlertsSingleCountry extends React.Component {
             <div>
             <Divider />
             <br />
-            <Typography variant="h5">
-              Outbreaks
-            </Typography>
             <PieChart data_list = {this.state.diseases} country = {this.state.country}/>
             <br />
             <Divider />
             <br />
-            <FormGroup row>
+            <br />
+            <FormGroup row >   
+            <Typography variant="h5" style = {{margin : "10px"}}>
+              Display on graph:     
+            </Typography>
               {this.state.diseases.map((key,i) => this.create_form_label(key,i))}
               <FormControlLabel
                 control={<Checkbox name="antoine" checked={this.state.display_total} color="primary" onClick = {this.handleTotalCheckBox}/>}
                 label="Total"
               />
             </FormGroup>
-            <Typography variant="h5">
-              Accumulated Cases
-            </Typography>
             <LineChart data_list = {this.state.diseases} display_total = {this.state.display_total}/>
             <br />
             <Divider />
             <br />
-            <Typography variant="h5">
-              New Cases
-            </Typography>
             <LineChart2 data_list = {this.state.diseases} display_total = {this.state.display_total}/>
             <br />
             <Divider />
-            <br />
-            <Typography variant="h5">
-              Outbreak Location
-            </Typography>
             <div style={{
                 display: 'flex',
                 alignItems: 'center',

@@ -84,7 +84,7 @@ export default class AlertSearchBar extends React.Component {
   // User should able to use checkbox to represent start date and end date, or enter start date end date themselves.
   render() {
     return (
-      <Box m={3}>
+      <Box m={4}>
         <form className="{classes.root}" noValidate autoComplete="on" onSubmit={this.onFormSubmit}>
           <div>
             <Grid container spacing={3}>
@@ -100,8 +100,6 @@ export default class AlertSearchBar extends React.Component {
                   />
                 </FormControl>
               </Grid>
-            </Grid>
-            <Grid container spacing={3}>
               <Grid item xs>
                 <FormControl fullWidth className="{classes.margin}">
                   <TextField
@@ -134,7 +132,7 @@ export default class AlertSearchBar extends React.Component {
                   />
                 </FormControl>
               </Grid>
-              <Grid md={6}>
+              <Grid md={4}>
                 <FormControl fullWidth>
                   <ButtonGroup variant="text" color="primary" aria-label="text primary button group" style={{ marginTop: "1.5rem" }}>
                     <Button onClick={this.fillLastWeek}>Last 7 Days</Button>
@@ -144,12 +142,15 @@ export default class AlertSearchBar extends React.Component {
                   </ButtonGroup>
                 </FormControl>
               </Grid>
-            </Grid>
+              </Grid>
           </div>
           <br />
-          <Button variant="contained" color="primary" type="submit">
+          <br />
+          <div style = {{display: 'flex', justifyContent: 'center'}}>
+          <Button variant="contained" color="primary" type="submit" style={{ minWidth: '90px', minHeight: '20px', fontSize: '18px'}}>
             Go
           </Button>
+          </div>
         </form>
       </Box>
     );

@@ -84,13 +84,13 @@ export default function Sidebar() {
                 </Link>
                 <Divider />
                 <ListItem disabled >Articles</ListItem>
-                <Link to="/article/list" className={classes.sideNavText}>
+                <Link to="/article-list" className={classes.sideNavText}>
                     <ListItem button>
                         <ListItemIcon><LibraryBooksIcon /></ListItemIcon>
                         <ListItemText>Article List</ListItemText>
                     </ListItem>
                 </Link>
-                <Link to="/article/storage" className={classes.sideNavText}>
+                <Link to="/article-storage" className={classes.sideNavText}>
                     <ListItem button>
                         <ListItemIcon><StorageIcon /></ListItemIcon>
                         <ListItemText>Storage Overview</ListItemText>

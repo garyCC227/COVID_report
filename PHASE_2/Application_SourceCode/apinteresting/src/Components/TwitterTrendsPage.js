@@ -42,6 +42,15 @@ class TwitterTrendsPage extends Component {
     isLoading: true,
   }
 
+  componentWillMount () {
+    const script = document.createElement("script");
+ 
+    script.src = 'https://hashtagify.me/assets/hashtagify/embed.js';
+    script.async = true;
+ 
+    document.body.appendChild(script);
+  }
+
   componentDidMount = () => {
     var getTweets = firebase.functions().httpsCallable('getTweets')
     trackPromise(
@@ -71,13 +80,13 @@ class TwitterTrendsPage extends Component {
     const { classes } = this.props
     return (
       <div>
+      <div>
         {this.state.isLoading ? <div style={{ textAlign: "center" }}><this.LoadingIndicator /></div> : <Card>
           <CardHeader color="info">
             <h2>Twitter Trends</h2>
           </CardHeader>
           <CardBody />
         </Card>}
-
         {(this.state.twitterPosts).filter((key,i) => i < 5).map((item) => {
           return (
             <div key={item.id}>
@@ -101,6 +110,8 @@ class TwitterTrendsPage extends Component {
             </div>
           )
         })}
+      </div>
+      <div class="hastagify_embed" data-hashtag="Disease" data-width="1600" data-mode="table"><div><a href="http://hashtagify.me/"></a></div></div>
       </div>);
   }
 }

@@ -77,7 +77,7 @@ export default class LineChart2 extends React.Component {
 			exportEnabled: true,
 			theme: "light1", // "light1", "dark1", "dark2"
 			title:{
-                text: "New Cases",
+                text: "New Outbreaks",
                 verticalAlign: "top", // "top", "center", "bottom"
                 horizontalAlign: "left", // "left", "right", "center"
                 horizontalAlign: "center", // "left", "right", "center"

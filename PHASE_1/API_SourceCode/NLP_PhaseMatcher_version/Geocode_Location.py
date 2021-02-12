@@ -4,7 +4,7 @@ import re
 
 class Geocode_Location:
 
-    def __init__(self, google_api_key = "AIzaSyD9uzu87hhGsu6Wh7C2-7F8tO2WIWWA5bY") :
+    def __init__(self, google_api_key = "") :
         self.google_api_key = google_api_key
         self.location_keywords = []
         self.ids = []
